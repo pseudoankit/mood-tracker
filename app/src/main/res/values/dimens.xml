@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="def_button_height">40dp</dimen>
+    <dimen name="bottom_nav_height">60dp</dimen>
+    <dimen name="padding_screen">10dp</dimen>
+    <dimen name="std_height">45dp</dimen>
+
+    <!-- action bar -->
+    <dimen name="icon_size_sml_action_bar">17sp</dimen>
+    <dimen name="icon_size_action_bar">24sp</dimen>
+
+    <!-- add new entries -->
+    <dimen name="header_text_size">22sp</dimen>
+    <dimen name="text_size_medium">14sp</dimen>
+    <dimen name="text_size_small">11sp</dimen>
+    <dimen name="text_size_xsmall">8sp</dimen>
+
+    <!-- add new entries -->
+    <dimen name="edit_btn_bg_size">33sp</dimen>
+    <dimen name="edit_btn_size">17sp</dimen>
+    <dimen name="mood_icon_size">50sp</dimen>
+    <dimen name="mood_name_size">12sp</dimen>
+    <dimen name="normal_icon_size">30sp</dimen>
+
+    <dimen name="drop_down_view_size">27dp</dimen>
+    <dimen name="drop_down_icon_size">19sp</dimen>
+
+</resources>

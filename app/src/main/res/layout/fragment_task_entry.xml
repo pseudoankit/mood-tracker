@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/std_height"
+        android:paddingHorizontal="15dp">
+
+        <LinearLayout
+            android:id="@+id/ll_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:background="@drawable/bg_rounded_ripple"
+            android:gravity="center"
+            android:padding="5dp">
+
+            <lostankit7.droid.CustomTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/fas_back"
+                android:textColor="@color/theme_color"
+                android:textSize="@dimen/icon_size_sml_action_bar"
+                app:fa_solid="true" />
+
+            <lostankit7.droid.CustomTextView
+                android:id="@+id/tvMoodIcon"
+                android:layout_marginStart="3dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/theme_color"
+                android:textSize="@dimen/icon_size_action_bar"
+                app:fa_regular="true" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:background="@drawable/bg_rounded_ripple"
+            android:gravity="center"
+            android:padding="5dp">
+
+            <lostankit7.droid.CustomTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/fas_save"
+                android:textColor="@color/theme_color"
+                android:textSize="@dimen/icon_size_action_bar"
+                app:fa_solid="true" />
+
+            <lostankit7.droid.CustomTextView
+                android:text="@string/text_save"
+                android:layout_marginStart="3dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/secondary_text_color"
+                android:textSize="@dimen/text_size_medium"/>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/padding_screen">
+
+            <TextView
+                style="@style/HeaderTextView"
+                android:layout_marginTop="20dp"
+                android:text="@string/header_add_task_entry" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvTask"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="15dp"
+                android:nestedScrollingEnabled="false" />
+
+            <EditText
+                android:id="@+id/etNote"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/std_height"
+                android:background="@drawable/bg_rounded_white_stroke"
+                android:hint="@string/et_note_hint"
+                android:padding="5dp"
+                android:textColor="@color/hint_color"
+                android:textColorHighlight="@color/hint_color"
+                android:textSize="@dimen/text_size_medium" />
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

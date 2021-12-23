@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:padding="5dp">
+
+    <lostankit7.droid.CustomTextView
+        android:id="@+id/tvIcon"
+        android:layout_width="@dimen/mood_icon_size"
+        android:layout_height="@dimen/mood_icon_size"
+        android:text="AB"
+        android:textColor="@color/task_icon"
+        app:solid_color="@color/task_icon_bg"
+        android:textSize="@dimen/normal_icon_size"
+        app:background_circular="true"
+        app:fa_regular="true"
+        app:ripple_color="@color/ripple_color"
+        app:stroke_color="@color/hint_color"
+        app:stroke_width="1dp" />
+
+    <TextView
+        android:id="@+id/tvName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Meh"
+        android:textColor="@color/mood_icon_color"
+        android:textSize="@dimen/mood_name_size" />
+</LinearLayout>

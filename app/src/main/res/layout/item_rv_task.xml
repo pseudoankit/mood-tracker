@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="8dp"
+    android:background="@drawable/bg_rounded_white_stroke_gray">
+
+    <LinearLayout
+        android:id="@+id/llTaskCategory"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/std_height"
+        android:layout_margin="3dp"
+        android:background="@drawable/bg_rounded_ripple"
+        android:gravity="center"
+        android:paddingHorizontal="10dp">
+
+        <TextView
+            android:id="@+id/tvTaskCategory"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Category A"
+            android:textColor="@color/secondary_text_color"
+            android:textSize="@dimen/text_size_medium" />
+
+        <lostankit7.droid.CustomTextView
+            android:id="@+id/tvDropDownIcon"
+            style="@style/dropDownIcon"
+            android:textColor="@color/mood_icon_color"
+            android:textSize="@dimen/drop_down_icon_size" />
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvTaskIcon"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/llTaskCategory"
+        android:layout_margin="5dp" />
+</RelativeLayout>

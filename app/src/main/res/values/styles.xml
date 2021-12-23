@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources >
+
+    <style name="dropDownIcon" xmlns:app="http://schemas.android.com/apk/res-auto">
+        <item name="android:layout_width">@dimen/drop_down_view_size</item>
+        <item name="android:layout_height">@dimen/drop_down_view_size</item>
+        <item name="android:text">@string/fas_drop_down</item>
+        <item name="android:textSize">@dimen/drop_down_icon_size</item>
+        <item name="background_circular">true</item>
+        <item name="fa_solid">true</item>
+        <item name="ripple_color">@color/ripple_color</item>
+        <item name="stroke_color">@color/hint_color</item>
+        <item name="stroke_width">1dp</item>
+    </style>
+
+    <style name="HeaderTextView">
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textSize">@dimen/header_text_size</item>
+        <item name="android:textColor">@color/header_text_color</item>
+    </style>
+</resources>

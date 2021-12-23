@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="theme_color">@android:color/holo_orange_dark</color>
+
+    <color name="splash_background">@color/purple_500</color>
+    <color name="hint_color">#aaa</color>
+
+    <!-- add new entries -->
+    <color name="header_text_color">@android:color/black</color>
+    <color name="mood_icon_color">@color/theme_color</color>
+    <color name="sec_mood_icon_color">@color/teal_700</color>
+    <color name="sec_mood_text_color">@color/teal_700</color>
+    <color name="secondary_text_color">#756565</color>
+    <color name="task_icon_bg">@color/white</color>
+    <color name="task_icon">@color/theme_color</color>
+
+</resources>

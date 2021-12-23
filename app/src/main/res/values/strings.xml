@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">MoodTracker</string>
+    <string name="text_save">Save</string>
+
+    <!-- Bottom navigation text -->
+    <string name="text_entries">Entries</string>
+    <string name="text_calendar">Calendar</string>
+    <string name="text_add_entry">Add Entry</string>
+    <string name="text_stats">Stats</string>
+    <string name="text_more">More</string>
+
+    <!-- add new mood entry page -->
+    <string name="header_add_mood_entry">Tell us about your mood</string>
+
+    <!-- add new task entry page -->
+    <string name="header_add_task_entry">What have you been up to?</string>
+    <string name="et_note_hint">Add Note</string>
+
+    <!-- font awesome codes -->
+    <string name="fas_edit">\uf303</string>
+    <string name="far_cross">\uf057</string>
+    <string name="fas_back">\uf053</string>
+    <string name="fas_save">\uf058</string>
+    <string name="fas_calendar">\uf133</string>
+    <string name="fas_clock">\uf017</string>
+    <string name="fas_drop_down">\uf0d7</string>
+    <string name="fas_expand">\uf078</string>
+    <string name="fas_collapse">\uF077</string>
+    <string name="fas_dot">\uf1ce</string>
+    <string name="text_add_new_mood">Add New Mood</string>
+</resources>

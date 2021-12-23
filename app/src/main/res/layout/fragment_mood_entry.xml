@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/padding_screen">
+
+    <lostankit7.droid.CustomTextView
+        android:id="@+id/btnClose"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:text="@string/far_cross"
+        android:textColor="@color/hint_color"
+        android:textSize="20sp"
+        app:fa_regular="true" />
+
+    <TextView
+        style="@style/HeaderTextView"
+        android:text="@string/header_add_mood_entry" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_marginTop="50dp"
+        android:gravity="center">
+
+        <lostankit7.droid.SelectorTextView
+            android:id="@+id/layoutDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:left_icon="@string/fas_calendar"
+            app:right_icon="@string/fas_drop_down"
+            app:stroke_color="@color/theme_color"
+            app:stroke_width="2dp"
+            app:text="11/06/2021"
+            app:text_color="@color/theme_color" />
+
+        <lostankit7.droid.SelectorTextView
+            android:id="@+id/layoutTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            app:left_icon="@string/fas_clock"
+            app:right_icon="@string/fas_drop_down"
+            app:stroke_color="@color/theme_color"
+            app:stroke_width="2dp"
+            app:text="11:00 pm"
+            app:text_color="@color/theme_color" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvMoodIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_centerHorizontal="true" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rvMoodIcon"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="10dp"
+            android:orientation="vertical">
+
+            <lostankit7.droid.CustomTextView
+                android:id="@+id/btnEditMood"
+                android:layout_width="@dimen/edit_btn_bg_size"
+                android:layout_height="@dimen/edit_btn_bg_size"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/fas_edit"
+                android:textColor="@color/hint_color"
+                android:textSize="@dimen/edit_btn_size"
+                app:background_circular="true"
+                app:fa_solid="true"
+                app:ripple_color="@color/ripple_color"
+                app:stroke_color="@color/theme_color"
+                app:stroke_width="2dp" />
+
+            <lostankit7.droid.CustomTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Edit Moods"
+                android:textColor="@color/theme_color"
+                android:textSize="@dimen/text_size_xsmall" />
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>
