@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.main.entry.mood.editMood.UpsertMoodIconFragment">
+
+    <include
+        android:id="@+id/action_bar"
+        layout="@layout/action_bar" />
+
+    <lostankit7.droid.CustomTextView
+        android:id="@+id/tvSelectedMoodIcon"
+        style="@style/moodIconStyle"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/sec_icon_color"
+        android:text="@string/far_circle"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/action_bar" />
+
+    <EditText
+        android:id="@+id/edtSelectedMoodName"
+        style="@style/defEdtStyle"
+        android:layout_marginHorizontal="10dp"
+        android:gravity="center_vertical"
+        android:hint="@string/enter_mood_name"
+        android:textColor="@color/sec_icon_color"
+        app:layout_constraintBottom_toBottomOf="@id/tvSelectedMoodIcon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tvSelectedMoodIcon"
+        app:layout_constraintTop_toTopOf="@id/tvSelectedMoodIcon" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvSelectMoodIcon"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:padding="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvSelectedMoodIcon" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,4 +1,4 @@
-package lostankit7.droid.moodtracker.ui.adapter
+package lostankit7.droid.moodtracker.ui.main.userEntries
 
 import android.text.SpannableStringBuilder
 import android.view.LayoutInflater
@@ -11,8 +11,8 @@ import lostankit7.droid.moodtracker.helper.FontAwesomeIcon
 
 class RvUserEntriesAdapter(private val itemClicked: (UserEntry) -> Unit) :
     BaseDiffRvAdapter<ItemRvUserEntriesBinding, UserEntry>(
-        ::areItemsTheSame,
-        ::areContentsTheSame
+        Companion::areItemsTheSame,
+        Companion::areContentsTheSame
     ) {
 
     override fun bindViewHolder(item: UserEntry, position: Int, binding: ItemRvUserEntriesBinding) {

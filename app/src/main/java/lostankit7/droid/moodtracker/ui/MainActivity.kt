@@ -4,13 +4,14 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.NavDestination
-import androidx.navigation.NavOptions
 import androidx.navigation.Navigation
 import androidx.navigation.ui.NavigationUI
 import lostankit7.droid.helper.hide
 import lostankit7.droid.helper.show
 import lostankit7.droid.moodtracker.R
 import lostankit7.droid.moodtracker.databinding.ActivityMainBinding
+import lostankit7.droid.moodtracker.helper.ANIMATE_TOP_BOTTOM
+import lostankit7.droid.moodtracker.helper.animate
 
 
 class MainActivity : AppCompatActivity() {
@@ -31,11 +32,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun addEntryButtonClicked() {
-        val navBuilder = NavOptions.Builder()
-        navBuilder.setEnterAnim(R.anim.anim_bottom_to_top)
-            .setPopExitAnim(R.anim.anim_top_to_bottom)
-
-        navController.navigate(R.id.addMoodEntryFragment, null, navBuilder.build())
+        navController.navigate(R.id.addMoodEntryFragment, null, animate(ANIMATE_TOP_BOTTOM))
     }
 
     private fun onNavControllerDestinationChanged(
@@ -56,7 +53,6 @@ class MainActivity : AppCompatActivity() {
             background = null
             menu.getItem(2).isEnabled = false
             NavigationUI.setupWithNavController(this, navController)
-
         }
     }
 

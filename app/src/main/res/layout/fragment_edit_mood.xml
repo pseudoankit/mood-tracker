@@ -4,16 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.main.customizeIcon.mood.EditMoodFragment">
+    tools:context=".ui.main.entry.mood.editMood.EditMoodFragment">
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvMoodIcon"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@id/addNewMood"
+        app:layout_constraintBottom_toTopOf="@id/btnAddNewMood"
         app:layout_constraintTop_toTopOf="parent" />
 
     <lostankit7.droid.CustomButton
-        android:id="@+id/addNewMood"
+        android:id="@+id/btnAddNewMood"
         android:layout_width="match_parent"
         android:layout_height="@dimen/def_button_height"
         android:layout_margin="10dp"

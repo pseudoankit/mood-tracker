@@ -14,6 +14,7 @@ import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.viewbinding.ViewBinding
 import lostankit7.droid.databinding.DialogProgressBinding
+import lostankit7.droid.moodtracker.MyApplication
 import lostankit7.droid.moodtracker.helper.inflateDialog
 import lostankit7.droid.moodtracker.helper.showSnackBar
 import lostankit7.droid.moodtracker.helper.showToast
@@ -26,6 +27,7 @@ abstract class BaseDaggerFragment<VB : ViewBinding, VM : ViewModel> : Fragment()
     lateinit var viewModel: VM
     protected lateinit var binding: VB
     lateinit var navController: NavController
+    val appComponent by lazy { (requireActivity().application as MyApplication).appComponent }
 
     private val progressBinding by lazy { DialogProgressBinding.inflate(layoutInflater) }
     private val progressDialog by lazy { requireActivity().inflateDialog(progressBinding.root) }
@@ -36,7 +38,7 @@ abstract class BaseDaggerFragment<VB : ViewBinding, VM : ViewModel> : Fragment()
         injectFragment()
     }
 
-    /** Inject fragment here (application as MyApplication).appComponent.inject(this) */
+    /** Inject fragment here appComponent.inject(this) */
     abstract fun injectFragment()
 
     override fun onCreateView(
@@ -84,15 +86,16 @@ abstract class BaseDaggerFragment<VB : ViewBinding, VM : ViewModel> : Fragment()
                     requireActivity().showSnackBar(value.message)
             }
             is Status.Loading -> showProgressDialog()
+            else -> ""
         }
     }
 
-    protected fun showProgressDialog(text: String = "Loading...") {
+    fun showProgressDialog(text: String = "Loading...") {
         progressBinding.tvProgressText.text = text
         progressDialog.show()
     }
 
-    protected fun hideProgressDialog() {
+    fun hideProgressDialog() {
         if (progressDialog.isShowing)
             progressDialog.dismiss()
     }

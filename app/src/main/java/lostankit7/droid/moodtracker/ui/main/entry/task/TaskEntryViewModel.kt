@@ -1,12 +1,9 @@
-package lostankit7.droid.moodtracker.ui.main.newentry.task
+package lostankit7.droid.moodtracker.ui.main.entry.task
 
-import android.app.Application
-import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import lostankit7.droid.moodtracker.data.database.AppDatabase
 import lostankit7.droid.moodtracker.data.database.entities.UserEntry
 import lostankit7.droid.moodtracker.data.repository.AddUserEntryRepository
 import lostankit7.droid.moodtracker.helper.Constants.dbEntrySeparator

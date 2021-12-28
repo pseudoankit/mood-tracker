@@ -1,6 +1,5 @@
-package lostankit7.droid.moodtracker.ui.main.newentry.task
+package lostankit7.droid.moodtracker.ui.main.entry.task.addTask
 
-import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -8,10 +7,10 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import lostankit7.droid.moodtracker.base.BaseDaggerFragment
 import lostankit7.droid.moodtracker.MyApplication
 import lostankit7.droid.moodtracker.R
-import lostankit7.droid.moodtracker.ui.adapter.RvTaskAdapter
 import lostankit7.droid.moodtracker.databinding.FragmentTaskEntryBinding
 import lostankit7.droid.moodtracker.model.Icon
 import lostankit7.droid.moodtracker.model.MoodEntry
+import lostankit7.droid.moodtracker.ui.main.entry.task.TaskEntryViewModel
 
 class TaskEntryFragment : BaseDaggerFragment<FragmentTaskEntryBinding, TaskEntryViewModel>() {
 
@@ -41,17 +40,17 @@ class TaskEntryFragment : BaseDaggerFragment<FragmentTaskEntryBinding, TaskEntry
         if (entry == null) requireActivity().onBackPressed()
         else moodEntry = entry
 
-        binding.tvMoodIcon.text = moodEntry.moodIcon.icon
+        binding.actionBar.tvLeftSubIcon.text = moodEntry.moodIcon.icon
 
         binding.rvTask.layoutManager = LinearLayoutManager(requireContext())
 
     }
 
     override fun initListeners() {
-        binding.llBack.setOnClickListener {
+        binding.actionBar.llBack.setOnClickListener {
             requireActivity().onBackPressed()
         }
-        binding.llSave.setOnClickListener {
+        binding.actionBar.llRight.setOnClickListener {
             viewModel.saveEntry(moodEntry, selectedTasksMap, binding.etNote.text.toString())
             navigateTo(R.id.action_addTaskEntryFragment_to_entriesFragment)
         }

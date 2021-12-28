@@ -16,7 +16,8 @@
     <!-- add new entries -->
     <color name="header_text_color">@android:color/black</color>
     <color name="mood_icon_color">@color/theme_color</color>
-    <color name="sec_mood_icon_color">@color/teal_700</color>
+    <color name="sec_icon_color">@color/teal_700</color>
+    <color name="suggested_mood_icon_color">@color/teal_200</color>
     <color name="sec_mood_text_color">@color/teal_700</color>
     <color name="secondary_text_color">#756565</color>
     <color name="task_icon_bg">@color/white</color>

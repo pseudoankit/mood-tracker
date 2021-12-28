@@ -1,4 +1,4 @@
-package lostankit7.droid.moodtracker.ui.adapter
+package lostankit7.droid.moodtracker.ui.main.entry.task.addTask
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -8,7 +8,6 @@ import lostankit7.droid.moodtracker.base.BaseRvAdapter
 import lostankit7.droid.moodtracker.R
 import lostankit7.droid.moodtracker.databinding.ItemRvTaskIconBinding
 import lostankit7.droid.moodtracker.model.Icon
-import lostankit7.droid.moodtracker.ui.main.newentry.task.TaskEntryViewModel
 
 class RvTaskItemAdapter(
     context: Context,
@@ -24,11 +23,11 @@ class RvTaskItemAdapter(
             binding.tvIcon.apply {
                 taskSelected.invoke(item)
                 if (item.isSelected) {
-                    setTextColor(ContextCompat.getColor(mContext, R.color.task_icon_bg))
-                    solidColor(ContextCompat.getColor(mContext, R.color.task_icon))
+                    setTextColor(ContextCompat.getColor(context, R.color.task_icon_bg))
+                    solidColor(ContextCompat.getColor(context, R.color.task_icon))
                 } else {
-                    setTextColor(ContextCompat.getColor(mContext, R.color.task_icon))
-                    solidColor(ContextCompat.getColor(mContext, R.color.task_icon_bg))
+                    setTextColor(ContextCompat.getColor(context, R.color.task_icon))
+                    solidColor(ContextCompat.getColor(context, R.color.task_icon_bg))
                 }
             }
         }

@@ -1,4 +1,4 @@
-package lostankit7.droid.moodtracker.ui.main.newentry.mood
+package lostankit7.droid.moodtracker.ui.main.entry.mood.addEntry
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,7 +8,6 @@ import androidx.recyclerview.widget.GridLayoutManager
 import lostankit7.droid.moodtracker.base.BaseDaggerFragment
 import lostankit7.droid.moodtracker.MyApplication
 import lostankit7.droid.moodtracker.R
-import lostankit7.droid.moodtracker.ui.adapter.RvMoodIconAdapter
 import lostankit7.droid.moodtracker.databinding.FragmentMoodEntryBinding
 import lostankit7.droid.moodtracker.helper.getCurrentDate
 import lostankit7.droid.moodtracker.helper.getCurrentTime
@@ -16,6 +15,7 @@ import lostankit7.droid.moodtracker.helper.getSelectedDate
 import lostankit7.droid.moodtracker.helper.getSelectedTime
 import lostankit7.droid.moodtracker.model.MoodEntry
 import lostankit7.droid.moodtracker.model.Icon
+import lostankit7.droid.moodtracker.ui.main.entry.mood.MoodEntryViewModel
 
 class MoodEntryFragment : BaseDaggerFragment<FragmentMoodEntryBinding, MoodEntryViewModel>() {
 
@@ -26,12 +26,13 @@ class MoodEntryFragment : BaseDaggerFragment<FragmentMoodEntryBinding, MoodEntry
         setUpRecyclerView()
     }
 
-    private fun setUpRecyclerView() {
+    private fun setUpRecyclerView() = with(binding.rvMoodIcon){
+        layoutManager = GridLayoutManager(requireContext(), moodRvSpan)
         val adapter =
             RvMoodIconAdapter.newInstance(
                 requireContext(),
-                viewModel.getMoodIconList(requireContext()),
-                this::onMoodIconSelected
+                viewModel.getMoodIconList(),
+                this@MoodEntryFragment::onMoodIconSelected
             )
         binding.rvMoodIcon.adapter = adapter
     }
@@ -47,7 +48,6 @@ class MoodEntryFragment : BaseDaggerFragment<FragmentMoodEntryBinding, MoodEntry
     }
 
     private fun dateTimeLayoutOperations() {
-
         binding.layoutDate.apply {
             setOnClickListener {
                 requireContext().getSelectedDate(binding.layoutDate.tvText.text.toString()) {
@@ -75,11 +75,6 @@ class MoodEntryFragment : BaseDaggerFragment<FragmentMoodEntryBinding, MoodEntry
     override fun init() {
         binding.layoutDate.tvText.text = getCurrentDate()
         binding.layoutTime.tvText.text = getCurrentTime()
-
-        binding.rvMoodIcon.apply {
-            layoutManager = GridLayoutManager(requireContext(), moodRvSpan)
-            hasFixedSize()
-        }
     }
 
     override fun inflateLayout(layoutInflater: LayoutInflater) =

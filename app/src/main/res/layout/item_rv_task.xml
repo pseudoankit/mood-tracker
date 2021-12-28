@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginTop="8dp"
+    android:animateLayoutChanges="true"
     android:background="@drawable/bg_rounded_white_stroke_gray">
 
     <LinearLayout
@@ -26,9 +26,9 @@
 
         <lostankit7.droid.CustomTextView
             android:id="@+id/tvDropDownIcon"
-            style="@style/dropDownIcon"
+            style="@style/icon_rounded_bg"
             android:textColor="@color/mood_icon_color"
-            android:textSize="@dimen/drop_down_icon_size" />
+            android:textSize="@dimen/rounded_icon_size" />
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView

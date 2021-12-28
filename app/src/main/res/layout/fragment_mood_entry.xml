@@ -73,11 +73,11 @@
 
             <lostankit7.droid.CustomTextView
                 android:id="@+id/btnEditMood"
-                android:layout_width="@dimen/edit_btn_bg_size"
-                android:layout_height="@dimen/edit_btn_bg_size"
+                android:layout_width="@dimen/lg_rounded_icon_bg_size"
+                android:layout_height="@dimen/lg_rounded_icon_bg_size"
                 android:layout_gravity="center_horizontal"
                 android:text="@string/fas_edit"
-                android:textColor="@color/hint_color"
+                android:textColor="@color/sec_icon_color"
                 android:textSize="@dimen/edit_btn_size"
                 app:background_circular="true"
                 app:fa_solid="true"
