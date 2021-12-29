@@ -5,28 +5,19 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import lostankit7.droid.moodtracker.R
+import lostankit7.droid.moodtracker.base.BaseDiffRvAdapter
 import lostankit7.droid.moodtracker.base.BaseRvAdapter
 import lostankit7.droid.moodtracker.databinding.ItemRvMoodIconBinding
 import lostankit7.droid.moodtracker.helper.hide
-import lostankit7.droid.moodtracker.data.database.entities.Icon
+import lostankit7.droid.moodtracker.data.database.entities.MoodIcon
+import lostankit7.droid.moodtracker.data.database.entities.UserEntry
 
 class RvMoodIconAdapter(
-    context: Context,
-    list: MutableList<Icon>,
-    private val iconSelected: (Icon) -> Unit,
-    private val type: Int
-) : BaseRvAdapter<ItemRvMoodIconBinding, Icon>(list, context) {
+    private val context: Context,
+    private val iconSelected: (MoodIcon) -> Unit
+) : BaseDiffRvAdapter<ItemRvMoodIconBinding, MoodIcon>() {
 
-    override fun onCreateViewHolder(binding: ItemRvMoodIconBinding) {
-        if (type == SUGGESTION_ADAPTER) {
-            binding.tvName.hide()
-            binding.tvIcon.setTextColor(
-                ContextCompat.getColor(context!!, R.color.sec_icon_color)
-            )
-        }
-    }
-
-    override fun bindViewHolder(item: Icon, position: Int, binding: ItemRvMoodIconBinding) {
+    override fun bindViewHolder(item: MoodIcon, position: Int, binding: ItemRvMoodIconBinding) {
         binding.tvName.text = item.name
         binding.tvIcon.text = item.icon
 
@@ -42,12 +33,8 @@ class RvMoodIconAdapter(
     ) = ItemRvMoodIconBinding.inflate(layoutInflater, parent, attachToParent)
 
     companion object {
-        const val SUGGESTION_ADAPTER = 1
-        fun newInstance(
-            context: Context,
-            list: MutableList<Icon>,
-            iconSelected: (Icon) -> Unit,
-            type: Int = 0
-        ) = RvMoodIconAdapter(context, list, iconSelected, type)
+
+        fun newInstance(context: Context, iconSelected: (MoodIcon) -> Unit) =
+            RvMoodIconAdapter(context, iconSelected)
     }
 }

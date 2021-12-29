@@ -10,14 +10,14 @@ import lostankit7.droid.moodtracker.databinding.ItemRvTaskBinding
 import lostankit7.droid.moodtracker.helper.constant.FontAwesomeIcon
 import lostankit7.droid.moodtracker.helper.hide
 import lostankit7.droid.moodtracker.helper.show
-import lostankit7.droid.moodtracker.data.database.entities.Icon
+import lostankit7.droid.moodtracker.data.database.entities.MoodIcon
 import lostankit7.droid.moodtracker.model.TaskCategory
 import lostankit7.droid.moodtracker.ui.main.entry.task.TaskEntryViewModel
 
 class RvTaskAdapter(
     context: Context,
     private val viewModel: TaskEntryViewModel,
-    private val taskSelected: (Icon) -> Unit
+    private val taskSelected: (MoodIcon) -> Unit
 ) : BaseRvAdapter<ItemRvTaskBinding, TaskCategory>(viewModel.getTaskCategories(), context) {
 
     override fun bindViewHolder(item: TaskCategory, position: Int, binding: ItemRvTaskBinding) {
@@ -61,7 +61,7 @@ class RvTaskAdapter(
     ) = ItemRvTaskBinding.inflate(layoutInflater, parent, attachToParent)
 
     companion object {
-        fun createInstance(context: Context, vm: TaskEntryViewModel, taskSelected: (Icon) -> Unit) =
+        fun createInstance(context: Context, vm: TaskEntryViewModel, taskSelected: (MoodIcon) -> Unit) =
             RvTaskAdapter(context, vm, taskSelected)
     }
 }

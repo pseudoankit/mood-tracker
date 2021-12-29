@@ -7,8 +7,8 @@ import androidx.room.Ignore
 import androidx.room.PrimaryKey
 import lostankit7.droid.moodtracker.data.database.AppDatabase
 
-@Entity(tableName = AppDatabase.tn_mood_icon)
-data class Icon(val icon: String, val name: String) : Parcelable {
+@Entity
+data class MoodIcon(val icon: String, val name: String) : Parcelable {
 
     @PrimaryKey(autoGenerate = true)
     var id: Int = 0
@@ -33,12 +33,12 @@ data class Icon(val icon: String, val name: String) : Parcelable {
         return 0
     }
 
-    companion object CREATOR : Parcelable.Creator<Icon> {
-        override fun createFromParcel(parcel: Parcel): Icon {
-            return Icon(parcel)
+    companion object CREATOR : Parcelable.Creator<MoodIcon> {
+        override fun createFromParcel(parcel: Parcel): MoodIcon {
+            return MoodIcon(parcel)
         }
 
-        override fun newArray(size: Int): Array<Icon?> {
+        override fun newArray(size: Int): Array<MoodIcon?> {
             return arrayOfNulls(size)
         }
     }

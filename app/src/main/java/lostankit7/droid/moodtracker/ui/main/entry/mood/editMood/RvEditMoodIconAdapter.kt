@@ -2,13 +2,14 @@ package lostankit7.droid.moodtracker.ui.main.entry.mood.editMood
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import lostankit7.droid.moodtracker.base.BaseRvAdapter
+import lostankit7.droid.moodtracker.base.BaseDiffRvAdapter
 import lostankit7.droid.moodtracker.databinding.ItemEditMoodIconBinding
-import lostankit7.droid.moodtracker.data.database.entities.Icon
+import lostankit7.droid.moodtracker.data.database.entities.MoodIcon
 
-class RvEditMoodIconAdapter(list: MutableList<Icon>) :
-    BaseRvAdapter<ItemEditMoodIconBinding, Icon>(list) {
-    override fun bindViewHolder(item: Icon, position: Int, binding: ItemEditMoodIconBinding) {
+class RvEditMoodIconAdapter() :
+    BaseDiffRvAdapter<ItemEditMoodIconBinding, MoodIcon>() {
+
+    override fun bindViewHolder(item: MoodIcon, position: Int, binding: ItemEditMoodIconBinding) {
         binding.tvMoodName.text = item.name
         binding.moodIcon.text = item.icon
     }
@@ -20,7 +21,6 @@ class RvEditMoodIconAdapter(list: MutableList<Icon>) :
     ) = ItemEditMoodIconBinding.inflate(layoutInflater)
 
     companion object {
-        fun newInstance(list: MutableList<Icon>) =
-            RvEditMoodIconAdapter(list)
+        fun newInstance() = RvEditMoodIconAdapter()
     }
 }

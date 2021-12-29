@@ -1,34 +1,28 @@
 package lostankit7.droid.moodtracker.ui.main.entry.mood
 
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import lostankit7.droid.moodtracker.helper.constant.FontAwesomeIcon
 import lostankit7.droid.moodtracker.helper.constant.MoodNames
-import lostankit7.droid.moodtracker.data.database.entities.Icon
+import lostankit7.droid.moodtracker.data.database.entities.MoodIcon
+import lostankit7.droid.moodtracker.data.database.entities.SuggestedMood
+import lostankit7.droid.moodtracker.data.repository.MoodRepository
 import javax.inject.Inject
 
-class MoodEntryViewModel @Inject constructor() : ViewModel() {
+class MoodEntryViewModel @Inject constructor(
+    private val moodRepository: MoodRepository
+) : ViewModel() {
 
-    fun insertMoodIcon(icon: Icon) {
+    val moodIcons: LiveData<List<MoodIcon>>
+        get() = moodRepository.moodIcons
 
+    val suggestedMood: LiveData<List<SuggestedMood>>
+        get() = moodRepository.suggestedMoodIcons
+
+    fun insertMoodIcon(icon: MoodIcon) = viewModelScope.launch(Dispatchers.IO) {
+        moodRepository.insertMoodIcon(icon)
     }
-
-    /** method which return mood icons stored in db*/
-    fun getMoodIconList() = mutableListOf<Icon>().also {
-        it.add(Icon(FontAwesomeIcon.happy, MoodNames.happy))
-        it.add(Icon(FontAwesomeIcon.jolly, MoodNames.jolly))
-        it.add(Icon(FontAwesomeIcon.meh, MoodNames.meh))
-        it.add(Icon(FontAwesomeIcon.sad, MoodNames.sad))
-        it.add(Icon(FontAwesomeIcon.awful, MoodNames.awful))
-    }
-
-    fun suggestedMoodIconList() = mutableListOf(
-        Icon(FontAwesomeIcon.m01, ""),
-        Icon(FontAwesomeIcon.m02, ""),
-        Icon(FontAwesomeIcon.m03, ""),
-        Icon(FontAwesomeIcon.m04, ""),
-        Icon(FontAwesomeIcon.m05, ""),
-        Icon(FontAwesomeIcon.m06, ""),
-        Icon(FontAwesomeIcon.m07, ""),
-        Icon(FontAwesomeIcon.m08, "")
-    )
 }

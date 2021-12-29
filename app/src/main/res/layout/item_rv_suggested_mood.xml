@@ -9,13 +9,6 @@
 
     <lostankit7.droid.CustomTextView
         android:id="@+id/tvIcon"
+        android:textColor="@color/sec_icon_color"
         style="@style/moodIconStyle" />
-
-    <TextView
-        android:id="@+id/tvName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Meh"
-        android:textColor="@color/mood_icon_color"
-        android:textSize="@dimen/mood_name_size" />
 </LinearLayout>

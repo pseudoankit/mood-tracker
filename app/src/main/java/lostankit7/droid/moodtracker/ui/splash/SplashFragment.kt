@@ -15,7 +15,7 @@ class SplashFragment : BaseDaggerFragment<FragmentSplashBinding, SplashViewModel
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        viewModel.saveMoodIcons()
+        viewModel.saveDefaultIcons()
 
         lifecycleScope.launchWhenCreated {
             delay(1500)

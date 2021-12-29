@@ -8,14 +8,14 @@ import lostankit7.droid.moodtracker.base.BaseDaggerFragment
 import lostankit7.droid.moodtracker.MyApplication
 import lostankit7.droid.moodtracker.R
 import lostankit7.droid.moodtracker.databinding.FragmentTaskEntryBinding
-import lostankit7.droid.moodtracker.data.database.entities.Icon
+import lostankit7.droid.moodtracker.data.database.entities.MoodIcon
 import lostankit7.droid.moodtracker.model.MoodEntry
 import lostankit7.droid.moodtracker.ui.main.entry.task.TaskEntryViewModel
 
 class TaskEntryFragment : BaseDaggerFragment<FragmentTaskEntryBinding, TaskEntryViewModel>() {
 
     private lateinit var moodEntry: MoodEntry
-    private val selectedTasksMap = mutableMapOf<Int, Icon>()
+    private val selectedTasksMap = mutableMapOf<Int, MoodIcon>()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

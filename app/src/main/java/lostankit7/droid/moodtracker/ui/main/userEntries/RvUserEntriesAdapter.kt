@@ -10,10 +10,7 @@ import lostankit7.droid.moodtracker.helper.constant.Constants
 import lostankit7.droid.moodtracker.helper.constant.FontAwesomeIcon
 
 class RvUserEntriesAdapter(private val itemClicked: (UserEntry) -> Unit) :
-    BaseDiffRvAdapter<ItemRvUserEntriesBinding, UserEntry>(
-        Companion::areItemsTheSame,
-        Companion::areContentsTheSame
-    ) {
+    BaseDiffRvAdapter<ItemRvUserEntriesBinding, UserEntry>() {
 
     override fun bindViewHolder(item: UserEntry, position: Int, binding: ItemRvUserEntriesBinding) {
         val tasks = SpannableStringBuilder()
@@ -40,13 +37,6 @@ class RvUserEntriesAdapter(private val itemClicked: (UserEntry) -> Unit) :
     ) = ItemRvUserEntriesBinding.inflate(layoutInflater, parent, false)
 
     companion object {
-        private fun areItemsTheSame(oldItem: UserEntry, newItem: UserEntry): Boolean {
-            return oldItem.date == newItem.date && oldItem.time == newItem.time
-        }
-
-        private fun areContentsTheSame(oldItem: UserEntry, newItem: UserEntry): Boolean {
-            return oldItem == newItem
-        }
 
         fun newInstance(itemClicked: (UserEntry) -> Unit) = RvUserEntriesAdapter(itemClicked)
     }

@@ -14,10 +14,17 @@ import lostankit7.droid.moodtracker.helper.getCurrentTime
 import lostankit7.droid.moodtracker.helper.getSelectedDate
 import lostankit7.droid.moodtracker.helper.getSelectedTime
 import lostankit7.droid.moodtracker.model.MoodEntry
-import lostankit7.droid.moodtracker.data.database.entities.Icon
+import lostankit7.droid.moodtracker.data.database.entities.MoodIcon
 import lostankit7.droid.moodtracker.ui.main.entry.mood.MoodEntryViewModel
 
 class MoodEntryFragment : BaseDaggerFragment<FragmentMoodEntryBinding, MoodEntryViewModel>() {
+
+    private val moodIconAdapter by lazy {
+        RvMoodIconAdapter.newInstance(
+            requireContext(),
+            this@MoodEntryFragment::onMoodIconSelected
+        )
+    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -26,18 +33,19 @@ class MoodEntryFragment : BaseDaggerFragment<FragmentMoodEntryBinding, MoodEntry
         setUpRecyclerView()
     }
 
-    private fun setUpRecyclerView() = with(binding.rvMoodIcon){
-        layoutManager = GridLayoutManager(requireContext(), moodRvSpan)
-        val adapter =
-            RvMoodIconAdapter.newInstance(
-                requireContext(),
-                viewModel.getMoodIconList(),
-                this@MoodEntryFragment::onMoodIconSelected
-            )
-        binding.rvMoodIcon.adapter = adapter
+    override suspend fun registerObservers() {
+        super.registerObservers()
+        viewModel.moodIcons.observe(viewLifecycleOwner) {
+            moodIconAdapter.submitList(it)
+        }
     }
 
-    private fun onMoodIconSelected(icon: Icon) {
+    private fun setUpRecyclerView() = with(binding.rvMoodIcon) {
+        layoutManager = GridLayoutManager(requireContext(), moodRvSpan)
+        binding.rvMoodIcon.adapter = moodIconAdapter
+    }
+
+    private fun onMoodIconSelected(icon: MoodIcon) {
         val moodEntry = MoodEntry(
             icon,
             binding.layoutDate.tvText.text.toString(),
