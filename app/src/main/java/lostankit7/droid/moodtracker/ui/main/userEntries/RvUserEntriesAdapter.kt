@@ -6,8 +6,8 @@ import android.view.ViewGroup
 import lostankit7.droid.moodtracker.base.BaseDiffRvAdapter
 import lostankit7.droid.moodtracker.data.database.entities.UserEntry
 import lostankit7.droid.moodtracker.databinding.ItemRvUserEntriesBinding
-import lostankit7.droid.moodtracker.helper.Constants
-import lostankit7.droid.moodtracker.helper.FontAwesomeIcon
+import lostankit7.droid.moodtracker.helper.constant.Constants
+import lostankit7.droid.moodtracker.helper.constant.FontAwesomeIcon
 
 class RvUserEntriesAdapter(private val itemClicked: (UserEntry) -> Unit) :
     BaseDiffRvAdapter<ItemRvUserEntriesBinding, UserEntry>(

@@ -6,11 +6,11 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import lostankit7.droid.moodtracker.data.database.entities.UserEntry
 import lostankit7.droid.moodtracker.data.repository.AddUserEntryRepository
-import lostankit7.droid.moodtracker.helper.Constants.dbEntrySeparator
-import lostankit7.droid.moodtracker.helper.FontAwesomeIcon
-import lostankit7.droid.moodtracker.helper.MoodNames
-import lostankit7.droid.moodtracker.helper.TaskCategories
-import lostankit7.droid.moodtracker.model.Icon
+import lostankit7.droid.moodtracker.helper.constant.Constants.dbEntrySeparator
+import lostankit7.droid.moodtracker.helper.constant.FontAwesomeIcon
+import lostankit7.droid.moodtracker.helper.constant.MoodNames
+import lostankit7.droid.moodtracker.helper.constant.TaskCategories
+import lostankit7.droid.moodtracker.data.database.entities.Icon
 import lostankit7.droid.moodtracker.model.MoodEntry
 import lostankit7.droid.moodtracker.model.TaskCategory
 import javax.inject.Inject

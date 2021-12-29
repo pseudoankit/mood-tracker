@@ -1,8 +1,6 @@
 package lostankit7.droid.moodtracker.ui.main.entry.mood.addEntry
 
 import android.content.Context
-import android.graphics.Color
-import android.os.Build
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
@@ -10,7 +8,7 @@ import lostankit7.droid.moodtracker.R
 import lostankit7.droid.moodtracker.base.BaseRvAdapter
 import lostankit7.droid.moodtracker.databinding.ItemRvMoodIconBinding
 import lostankit7.droid.moodtracker.helper.hide
-import lostankit7.droid.moodtracker.model.Icon
+import lostankit7.droid.moodtracker.data.database.entities.Icon
 
 class RvMoodIconAdapter(
     context: Context,

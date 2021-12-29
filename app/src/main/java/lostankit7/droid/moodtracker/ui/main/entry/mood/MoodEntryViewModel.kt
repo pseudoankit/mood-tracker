@@ -1,10 +1,9 @@
 package lostankit7.droid.moodtracker.ui.main.entry.mood
 
-import android.content.Context
 import androidx.lifecycle.ViewModel
-import lostankit7.droid.moodtracker.helper.FontAwesomeIcon
-import lostankit7.droid.moodtracker.helper.MoodNames
-import lostankit7.droid.moodtracker.model.Icon
+import lostankit7.droid.moodtracker.helper.constant.FontAwesomeIcon
+import lostankit7.droid.moodtracker.helper.constant.MoodNames
+import lostankit7.droid.moodtracker.data.database.entities.Icon
 import javax.inject.Inject
 
 class MoodEntryViewModel @Inject constructor() : ViewModel() {

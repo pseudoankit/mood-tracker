@@ -2,6 +2,7 @@ package lostankit7.droid.moodtracker.model
 
 import android.os.Parcel
 import android.os.Parcelable
+import lostankit7.droid.moodtracker.data.database.entities.Icon
 
 data class MoodEntry(val moodIcon: Icon, val date: String, val time: String) : Parcelable {
 

@@ -1,4 +1,4 @@
-package lostankit7.droid.moodtracker.helper
+package lostankit7.droid.moodtracker.helper.constant
 
 object FontAwesomeIcon {
     const val collapsed = "\uF077"

@@ -1,16 +1,14 @@
 package lostankit7.droid.moodtracker.ui.main.entry.mood.editMood
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import androidx.recyclerview.widget.GridLayoutManager
 import lostankit7.droid.moodtracker.R
 import lostankit7.droid.moodtracker.base.BaseDaggerFragment
 import lostankit7.droid.moodtracker.databinding.FragmentUpsertMoodIconBinding
 import lostankit7.droid.moodtracker.helper.showToast
-import lostankit7.droid.moodtracker.model.Icon
+import lostankit7.droid.moodtracker.data.database.entities.Icon
 import lostankit7.droid.moodtracker.ui.main.entry.mood.MoodEntryViewModel
 import lostankit7.droid.moodtracker.ui.main.entry.mood.addEntry.RvMoodIconAdapter
 

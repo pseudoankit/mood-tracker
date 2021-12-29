@@ -14,7 +14,7 @@ import lostankit7.droid.moodtracker.helper.getCurrentTime
 import lostankit7.droid.moodtracker.helper.getSelectedDate
 import lostankit7.droid.moodtracker.helper.getSelectedTime
 import lostankit7.droid.moodtracker.model.MoodEntry
-import lostankit7.droid.moodtracker.model.Icon
+import lostankit7.droid.moodtracker.data.database.entities.Icon
 import lostankit7.droid.moodtracker.ui.main.entry.mood.MoodEntryViewModel
 
 class MoodEntryFragment : BaseDaggerFragment<FragmentMoodEntryBinding, MoodEntryViewModel>() {

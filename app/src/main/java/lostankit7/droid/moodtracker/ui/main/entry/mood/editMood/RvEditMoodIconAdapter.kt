@@ -4,7 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import lostankit7.droid.moodtracker.base.BaseRvAdapter
 import lostankit7.droid.moodtracker.databinding.ItemEditMoodIconBinding
-import lostankit7.droid.moodtracker.model.Icon
+import lostankit7.droid.moodtracker.data.database.entities.Icon
 
 class RvEditMoodIconAdapter(list: MutableList<Icon>) :
     BaseRvAdapter<ItemEditMoodIconBinding, Icon>(list) {

@@ -7,10 +7,10 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import lostankit7.droid.moodtracker.base.BaseRvAdapter
 import lostankit7.droid.moodtracker.databinding.ItemRvTaskBinding
-import lostankit7.droid.moodtracker.helper.FontAwesomeIcon
+import lostankit7.droid.moodtracker.helper.constant.FontAwesomeIcon
 import lostankit7.droid.moodtracker.helper.hide
 import lostankit7.droid.moodtracker.helper.show
-import lostankit7.droid.moodtracker.model.Icon
+import lostankit7.droid.moodtracker.data.database.entities.Icon
 import lostankit7.droid.moodtracker.model.TaskCategory
 import lostankit7.droid.moodtracker.ui.main.entry.task.TaskEntryViewModel
 

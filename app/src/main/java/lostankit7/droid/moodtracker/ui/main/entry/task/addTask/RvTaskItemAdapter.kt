@@ -7,7 +7,7 @@ import androidx.core.content.ContextCompat
 import lostankit7.droid.moodtracker.base.BaseRvAdapter
 import lostankit7.droid.moodtracker.R
 import lostankit7.droid.moodtracker.databinding.ItemRvTaskIconBinding
-import lostankit7.droid.moodtracker.model.Icon
+import lostankit7.droid.moodtracker.data.database.entities.Icon
 
 class RvTaskItemAdapter(
     context: Context,

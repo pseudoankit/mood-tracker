@@ -15,6 +15,8 @@ class SplashFragment : BaseDaggerFragment<FragmentSplashBinding, SplashViewModel
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        viewModel.saveMoodIcons()
+
         lifecycleScope.launchWhenCreated {
             delay(1500)
             navigateTo(R.id.userEntriesFragment)
@@ -30,4 +32,7 @@ class SplashFragment : BaseDaggerFragment<FragmentSplashBinding, SplashViewModel
         (requireActivity().application as MyApplication).appComponent.inject(this)
     }
 
+    companion object {
+
+    }
 }

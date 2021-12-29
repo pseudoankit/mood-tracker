@@ -1,9 +1,19 @@
-package lostankit7.droid.moodtracker.model
+package lostankit7.droid.moodtracker.data.database.entities
 
 import android.os.Parcel
 import android.os.Parcelable
+import androidx.room.Entity
+import androidx.room.Ignore
+import androidx.room.PrimaryKey
+import lostankit7.droid.moodtracker.data.database.AppDatabase
 
+@Entity(tableName = AppDatabase.tn_mood_icon)
 data class Icon(val icon: String, val name: String) : Parcelable {
+
+    @PrimaryKey(autoGenerate = true)
+    var id: Int = 0
+
+    @Ignore
     var isSelected: Boolean = false
 
     constructor(parcel: Parcel) : this(
