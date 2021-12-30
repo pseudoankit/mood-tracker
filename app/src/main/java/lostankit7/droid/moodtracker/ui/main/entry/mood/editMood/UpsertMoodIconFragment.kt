@@ -42,17 +42,8 @@ class UpsertMoodIconFragment :
         binding.tvSelectedMoodIcon.text = icon.icon
     }
 
-    override fun initListeners() {
-        binding.actionBar.llRight.setOnClickListener {
-            saveMoodIcon()
-        }
-    }
-
-    private fun saveMoodIcon() {
+    fun saveMoodIcon() {
         when {
-            binding.tvSelectedMoodIcon.text.isBlank() -> {
-                requireContext().showToast(resources.getString(R.string.error_empty_mood_icon))
-            }
             binding.edtSelectedMoodName.text.isBlank() -> {
                 requireContext().showToast(resources.getString(R.string.enter_mood_name))
             }
@@ -63,6 +54,7 @@ class UpsertMoodIconFragment :
                 )
                 viewModel.insertMoodIcon(icon)
                 navController.popBackStack()
+                hideKeyBoard()
             }
         }
     }

@@ -74,9 +74,8 @@ class MoodEntryFragment : BaseDaggerFragment<FragmentMoodEntryBinding, MoodEntry
     }
 
     override fun initListeners() {
-        binding.btnClose.setOnClickListener { requireActivity().onBackPressed() }
         binding.btnEditMood.setOnClickListener {
-            navigateTo(R.id.editMoodFragment)
+            navigateTo(R.id.action_addMoodEntryFragment_to_editMoodFragment)
         }
     }
 

@@ -19,14 +19,6 @@ class TaskEntryViewModel @Inject constructor(
     private val repository: UserEntriesRepository
 ) : ViewModel() {
 
-    /*private val repository: AddUserEntryRepository
-
-    init {
-        val dao = AppDatabase.getDatabase(application,viewModelScope).userEntryDao()
-        repository = AddUserEntryRepository(dao)
-    }*/
-
-
     fun saveEntry(moodEntry: MoodEntry, tasksMap: MutableMap<Int, MoodIcon>, note: String) {
 
         val userEntry = getEntry(moodEntry, tasksMap, note)

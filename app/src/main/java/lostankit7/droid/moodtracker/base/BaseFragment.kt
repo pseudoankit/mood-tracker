@@ -23,12 +23,12 @@ import lostankit7.droid.moodtracker.model.Status
 abstract class BaseFragment<VB : ViewBinding, VM : ViewModel> : Fragment() {
 
     lateinit var viewModel: VM
-    protected lateinit var binding: VB
-    protected lateinit var navController: NavController
+    lateinit var binding: VB
+    lateinit var navController: NavController
 
     private val progressBinding by lazy { DialogProgressBinding.inflate(layoutInflater) }
     private val progressDialog by lazy { requireActivity().inflateDialog(progressBinding.root) }
-    protected var TAG = "Activity"
+    var TAG = "Activity"
 
     override fun onCreateView(
         inflater: LayoutInflater,

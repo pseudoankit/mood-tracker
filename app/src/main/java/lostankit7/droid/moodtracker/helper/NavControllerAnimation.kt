@@ -6,7 +6,7 @@ import lostankit7.droid.moodtracker.R
 const val NO_ANIMATION = -1
 const val ANIMATE_TOP_BOTTOM = 1
 
-fun animate(
+fun navOptions(
     enter: Int,
     exit: Int,
     reverse: Boolean = true
@@ -14,7 +14,7 @@ fun animate(
     if (reverse) it.setPopEnterAnim(exit).setExitAnim(enter)
 }.build()
 
-fun animate(
+fun navOptions(
     enter: Int = NO_ANIMATION,
     popExit: Int = NO_ANIMATION,
     exit: Int = NO_ANIMATION,
@@ -26,10 +26,10 @@ fun animate(
     if (popEnter != NO_ANIMATION) it.setPopEnterAnim(popEnter)
 }.build()
 
-fun animate(type: Int, reverse: Boolean = true): NavOptions {
+fun navOptions(animation: Int, reverse: Boolean = true): NavOptions {
     val enter: Int
     val exit: Int
-    when (type) {
+    when (animation) {
         ANIMATE_TOP_BOTTOM -> {
             enter = R.anim.anim_bottom_to_top
             exit = R.anim.anim_top_to_bottom

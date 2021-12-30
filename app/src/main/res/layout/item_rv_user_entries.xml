@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_margin="10dp"
     android:background="@drawable/bg_rounded_white"
     android:elevation="3dp"
-    android:paddingHorizontal="5dp"
-    android:padding="10dp">
+    android:padding="10dp"
+    android:paddingHorizontal="5dp">
 
     <lostankit7.droid.CustomTextView
         android:id="@+id/tvMoodIcon"
+        tools:text="@string/far_circle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
@@ -29,6 +30,7 @@
 
         <TextView
             android:id="@+id/tvDate"
+            tools:text="Date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/secondary_text_color"
@@ -41,6 +43,7 @@
             <TextView
                 android:id="@+id/tvMoodName"
                 android:layout_width="wrap_content"
+                tools:text="joy"
                 android:layout_height="wrap_content"
                 android:textColor="@color/mood_icon_color"
                 android:textSize="@dimen/header_text_size" />
@@ -49,6 +52,7 @@
                 android:id="@+id/tvTime"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                tools:text="time"
                 android:layout_marginStart="8dp"
                 android:textColor="@color/secondary_text_color"
                 android:textSize="@dimen/text_size_small" />
@@ -60,6 +64,15 @@
             android:layout_height="wrap_content"
             android:textColor="@color/mood_icon_color"
             android:textSize="@dimen/text_size_medium"
+            tools:text="yuppy . okay"
+            app:fa_regular="true" />
+        <lostankit7.droid.CustomTextView
+            android:id="@+id/tvNote"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/mood_icon_color"
+            android:textSize="@dimen/text_size_medium"
+            tools:text="did amazing"
             app:fa_regular="true" />
     </LinearLayout>
 </RelativeLayout>

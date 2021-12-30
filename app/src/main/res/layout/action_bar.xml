@@ -1,11 +1,12 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="@dimen/std_height"
-    android:paddingHorizontal="15dp">
+    android:paddingHorizontal="@dimen/padding_screen">
 
     <LinearLayout
-        android:id="@+id/ll_back"
+        android:id="@+id/btn_back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
@@ -14,15 +15,16 @@
         android:padding="5dp">
 
         <lostankit7.droid.CustomTextView
+            android:id="@+id/leftIcon1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/fas_back"
+            android:text="@string/fas_circular_back"
             android:textColor="@color/theme_color"
-            android:textSize="@dimen/icon_size_sml_action_bar"
+            android:textSize="@dimen/icon_size_action_bar"
             app:fa_solid="true" />
 
         <lostankit7.droid.CustomTextView
-            android:id="@+id/tvLeftSubIcon"
+            android:id="@+id/leftIcon2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="3dp"
@@ -32,7 +34,7 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/ll_right"
+        android:id="@+id/btn_save"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
@@ -42,7 +44,7 @@
         android:padding="5dp">
 
         <lostankit7.droid.CustomTextView
-            android:id="@+id/btnRightIcon"
+            android:id="@+id/rightIcon1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/fas_save"
@@ -51,7 +53,7 @@
             app:fa_solid="true" />
 
         <lostankit7.droid.CustomTextView
-            android:id="@+id/tvRightIcon"
+            android:id="@+id/rightIcon2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="3dp"

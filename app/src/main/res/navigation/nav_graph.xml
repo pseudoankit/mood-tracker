@@ -9,7 +9,14 @@
         android:id="@+id/splashFragment"
         android:name="lostankit7.droid.moodtracker.ui.splash.SplashFragment"
         android:label="fragment_splash"
-        tools:layout="@layout/fragment_splash" />
+        tools:layout="@layout/fragment_splash" >
+        <action
+            android:id="@+id/action_splashFragment_to_userEntriesFragment"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/nav_graph"
+            app:popUpToInclusive="true"
+            app:destination="@id/userEntriesFragment" />
+    </fragment>
     <fragment
         android:id="@+id/userEntriesFragment"
         android:name="lostankit7.droid.moodtracker.ui.main.userEntries.UserEntriesFragment"

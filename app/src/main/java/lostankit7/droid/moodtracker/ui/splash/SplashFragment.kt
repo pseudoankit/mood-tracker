@@ -19,7 +19,7 @@ class SplashFragment : BaseDaggerFragment<FragmentSplashBinding, SplashViewModel
 
         lifecycleScope.launchWhenCreated {
             delay(1500)
-            navigateTo(R.id.userEntriesFragment)
+            navigateTo(R.id.action_splashFragment_to_userEntriesFragment)
         }
 
     }
@@ -29,7 +29,7 @@ class SplashFragment : BaseDaggerFragment<FragmentSplashBinding, SplashViewModel
 
     override fun viewModel() = SplashViewModel::class.java
     override fun injectFragment() {
-        (requireActivity().application as MyApplication).appComponent.inject(this)
+        appComponent.inject(this)
     }
 
     companion object {

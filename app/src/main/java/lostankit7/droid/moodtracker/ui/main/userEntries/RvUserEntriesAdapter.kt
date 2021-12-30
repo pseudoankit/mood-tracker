@@ -26,7 +26,7 @@ class RvUserEntriesAdapter(private val itemClicked: (UserEntry) -> Unit) :
             tvMoodIcon.text = item.moodIcon
             tvMoodName.text = item.moodName
             tvTasks.text = tasks.substring(2)
-
+            tvNote.text = item.note
         }
     }
 
@@ -37,7 +37,6 @@ class RvUserEntriesAdapter(private val itemClicked: (UserEntry) -> Unit) :
     ) = ItemRvUserEntriesBinding.inflate(layoutInflater, parent, false)
 
     companion object {
-
         fun newInstance(itemClicked: (UserEntry) -> Unit) = RvUserEntriesAdapter(itemClicked)
     }
 }

@@ -6,16 +6,6 @@
     android:orientation="vertical"
     android:padding="@dimen/padding_screen">
 
-    <lostankit7.droid.CustomTextView
-        android:id="@+id/btnClose"
-        android:layout_width="wrap_content"
-        android:layout_height="40dp"
-        android:gravity="center"
-        android:text="@string/far_cross"
-        android:textColor="@color/hint_color"
-        android:textSize="20sp"
-        app:fa_regular="true" />
-
     <TextView
         style="@style/HeaderTextView"
         android:text="@string/header_add_mood_entry" />
@@ -68,6 +58,7 @@
             android:layout_below="@id/rvMoodIcon"
             android:layout_alignParentEnd="true"
             android:layout_marginTop="5dp"
+
             android:layout_marginEnd="10dp"
             android:orientation="vertical">
 

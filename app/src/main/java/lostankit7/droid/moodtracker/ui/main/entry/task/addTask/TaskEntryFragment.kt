@@ -40,20 +40,16 @@ class TaskEntryFragment : BaseDaggerFragment<FragmentTaskEntryBinding, TaskEntry
         if (entry == null) requireActivity().onBackPressed()
         else moodEntry = entry
 
-        binding.actionBar.tvLeftSubIcon.text = moodEntry.moodIcon.icon
+        actionBar?.leftIcon2?.text = moodEntry.moodIcon.icon
 
         binding.rvTask.layoutManager = LinearLayoutManager(requireContext())
 
     }
 
-    override fun initListeners() {
-        binding.actionBar.llBack.setOnClickListener {
-            requireActivity().onBackPressed()
-        }
-        binding.actionBar.llRight.setOnClickListener {
-            viewModel.saveEntry(moodEntry, selectedTasksMap, binding.etNote.text.toString())
-            navigateTo(R.id.action_addTaskEntryFragment_to_entriesFragment)
-        }
+    fun saveEntry() {
+        hideKeyBoard()
+        viewModel.saveEntry(moodEntry, selectedTasksMap, binding.etNote.text.toString())
+        navigateTo(R.id.action_addTaskEntryFragment_to_entriesFragment)
     }
 
     override fun inflateLayout(layoutInflater: LayoutInflater) =
