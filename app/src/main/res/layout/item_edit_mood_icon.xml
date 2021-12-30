@@ -5,13 +5,12 @@
     android:layout_height="wrap_content">
 
     <RelativeLayout
-        android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:background="@drawable/bg_rounded_white_stroke_gray"
         android:paddingHorizontal="10dp"
         android:paddingVertical="5dp">
-
 
         <lostankit7.droid.CustomTextView
             android:id="@+id/moodIcon"
@@ -28,20 +27,24 @@
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_marginHorizontal="10dp"
-            android:layout_toStartOf="@id/dropDownIcon"
+            android:layout_toStartOf="@id/tvEditMood"
             android:layout_toEndOf="@id/moodIcon"
             android:textAlignment="textStart"
             android:textColor="@color/sec_icon_color" />
 
         <lostankit7.droid.CustomTextView
-            android:id="@+id/dropDownIcon"
-            style="@style/icon_rounded_bg"
-            android:layout_width="@dimen/sml_rounded_icon_bg_size"
-            android:layout_height="@dimen/sml_rounded_icon_bg_size"
+            android:id="@+id/tvEditMood"
+            style="@style/editMoodRoundedIcon"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="5dp"
+            android:layout_toStartOf="@id/tvDeleteMood"
+            android:text="@string/fas_edit" />
+
+        <lostankit7.droid.CustomTextView
+            android:id="@+id/tvDeleteMood"
+            style="@style/editMoodRoundedIcon"
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
-            android:text="@string/fas_drop_down"
-            android:textColor="@color/sec_icon_color" />
+            android:text="@string/fas_delete" />
     </RelativeLayout>
-
 </RelativeLayout>

@@ -9,13 +9,13 @@
         android:id="@+id/splashFragment"
         android:name="lostankit7.droid.moodtracker.ui.splash.SplashFragment"
         android:label="fragment_splash"
-        tools:layout="@layout/fragment_splash" >
+        tools:layout="@layout/fragment_splash">
         <action
             android:id="@+id/action_splashFragment_to_userEntriesFragment"
+            app:destination="@id/userEntriesFragment"
             app:launchSingleTop="true"
             app:popUpTo="@id/nav_graph"
-            app:popUpToInclusive="true"
-            app:destination="@id/userEntriesFragment" />
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/userEntriesFragment"
@@ -76,5 +76,11 @@
         android:id="@+id/upsertMoodIconFragment"
         android:name="lostankit7.droid.moodtracker.ui.main.entry.mood.editMood.UpsertMoodIconFragment"
         android:label="fragment_upsert_mood_icon"
-        tools:layout="@layout/fragment_upsert_mood_icon" />
+        tools:layout="@layout/fragment_upsert_mood_icon">
+        <argument
+            android:name="@string/arg_to_upsertMoodFrag"
+            android:defaultValue="@null"
+            app:argType="lostankit7.droid.moodtracker.data.database.entities.MoodIcon"
+            app:nullable="true" />
+    </fragment>
 </navigation>

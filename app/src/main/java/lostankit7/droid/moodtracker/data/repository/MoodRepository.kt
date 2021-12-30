@@ -19,6 +19,10 @@ class MoodRepository @Inject constructor(
 
     suspend fun insertMoodIcon(icon: MoodIcon) = moodIconDao.insertMoodIcon(icon)
 
+    fun deleteMoodIcon(icon: MoodIcon) = moodIconDao.deleteMoodIcon(icon)
+
+    fun updateMoodIcon(icon: MoodIcon) = moodIconDao.updateMoodIcon(icon)
+
     suspend fun insertSuggestedMoods(list: List<SuggestedMood>) =
         suggestedMoodDao.insertSuggestions(list)
 

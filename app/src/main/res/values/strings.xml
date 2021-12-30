@@ -24,6 +24,7 @@
     <!-- font awesome codes -->
     <string name="far_circle">\uf111</string>
     <string name="fas_edit">\uf303</string>
+    <string name="fas_delete">\uf1f8</string>
     <string name="far_cross">\uf057</string>
     <string name="fas_back">\uf053</string>
     <string name="fas_circular_back">\uf137</string>

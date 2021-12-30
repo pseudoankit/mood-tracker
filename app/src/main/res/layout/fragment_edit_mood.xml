@@ -19,7 +19,8 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/def_button_height"
         android:layout_marginHorizontal="10dp"
-        android:background="@drawable/bg_rounded_white_stroke_gray"
+        app:stroke_color="@color/hint_color"
+        app:corner_radius="5dp"
         android:text="@string/text_add_new_mood"
         android:textAllCaps="false"
         app:layout_constraintBottom_toBottomOf="parent" />

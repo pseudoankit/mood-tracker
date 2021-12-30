@@ -11,11 +11,11 @@ import lostankit7.droid.moodtracker.helper.showToast
 import lostankit7.droid.moodtracker.data.database.entities.MoodIcon
 import lostankit7.droid.moodtracker.data.database.entities.SuggestedMood
 import lostankit7.droid.moodtracker.ui.main.entry.mood.MoodEntryViewModel
-import lostankit7.droid.moodtracker.ui.main.entry.mood.addEntry.RvMoodIconAdapter
 
 class UpsertMoodIconFragment :
     BaseDaggerFragment<FragmentUpsertMoodIconBinding, MoodEntryViewModel>() {
 
+    private var editMoodIcon: MoodIcon? = null
     private val adapter by lazy { RvSuggestedMoodAdapter.newInstance(this::onMoodIconSelected) }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -52,11 +52,25 @@ class UpsertMoodIconFragment :
                     binding.tvSelectedMoodIcon.text.toString(),
                     binding.edtSelectedMoodName.text.toString()
                 )
-                viewModel.insertMoodIcon(icon)
+
+                if (editMoodIcon == null) {
+                    viewModel.insertMoodIcon(icon)
+                } else {
+                    icon.id = editMoodIcon!!.id
+                    viewModel.updateMoodIcon(icon)
+                }
                 navController.popBackStack()
                 hideKeyBoard()
             }
         }
+    }
+
+    override fun init() {
+        editMoodIcon = arguments?.getParcelable(resources.getString(R.string.arg_to_upsertMoodFrag))
+        if (editMoodIcon == null) return
+
+        binding.tvSelectedMoodIcon.text = editMoodIcon!!.icon
+        binding.edtSelectedMoodName.setText(editMoodIcon!!.name)
     }
 
     override fun injectFragment() {

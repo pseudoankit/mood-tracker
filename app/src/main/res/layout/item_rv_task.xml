@@ -26,7 +26,7 @@
 
         <lostankit7.droid.CustomTextView
             android:id="@+id/tvDropDownIcon"
-            style="@style/icon_rounded_bg"
+            style="@style/dropDownStyle"
             android:textColor="@color/mood_icon_color"
             android:textSize="@dimen/rounded_icon_size" />
     </LinearLayout>

@@ -25,4 +25,12 @@ class MoodEntryViewModel @Inject constructor(
     fun insertMoodIcon(icon: MoodIcon) = viewModelScope.launch(Dispatchers.IO) {
         moodRepository.insertMoodIcon(icon)
     }
+
+    fun deleteMoodIcon(icon: MoodIcon) = viewModelScope.launch(Dispatchers.IO) {
+        moodRepository.deleteMoodIcon(icon)
+    }
+
+    fun updateMoodIcon(icon: MoodIcon) = viewModelScope.launch(Dispatchers.IO) {
+        moodRepository.updateMoodIcon(icon)
+    }
 }
