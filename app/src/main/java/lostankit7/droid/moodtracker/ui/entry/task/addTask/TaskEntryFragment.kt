@@ -1,26 +1,22 @@
-package lostankit7.droid.moodtracker.ui.main.entry.task.addTask
+package lostankit7.droid.moodtracker.ui.entry.task.addTask
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
-import androidx.lifecycle.liveData
 import androidx.recyclerview.widget.LinearLayoutManager
 import lostankit7.droid.moodtracker.base.BaseDaggerFragment
 import lostankit7.droid.moodtracker.MyApplication
 import lostankit7.droid.moodtracker.R
 import lostankit7.droid.moodtracker.databinding.FragmentTaskEntryBinding
-import lostankit7.droid.moodtracker.data.database.entities.MoodIcon
 import lostankit7.droid.moodtracker.data.database.entities.TaskIcon
 import lostankit7.droid.moodtracker.model.MoodEntry
-import lostankit7.droid.moodtracker.ui.main.entry.task.TaskEntryViewModel
+import lostankit7.droid.moodtracker.ui.entry.task.TaskEntryViewModel
 
 class TaskEntryFragment : BaseDaggerFragment<FragmentTaskEntryBinding, TaskEntryViewModel>() {
 
     private lateinit var moodEntry: MoodEntry
     private val selectedTasksMap = mutableMapOf<Int, TaskIcon>()
-    private val adapter by lazy {
-        RvTaskAdapter.createInstance(requireContext(), viewModel, this::onTaskSelected)
-    }
+    private val adapter by lazy { RvTaskAdapter.createInstance(viewModel, this::onTaskSelected) }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -34,6 +30,10 @@ class TaskEntryFragment : BaseDaggerFragment<FragmentTaskEntryBinding, TaskEntry
 
         viewModel.taskCategories.observe(viewLifecycleOwner) {
             adapter.submitList(it)
+        }
+
+        viewModel.taskIcons.observe(viewLifecycleOwner) {
+            val x = it
         }
     }
 

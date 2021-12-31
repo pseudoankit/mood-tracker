@@ -1,4 +1,4 @@
-package lostankit7.droid.moodtracker.ui.main.entry.task.addTask
+package lostankit7.droid.moodtracker.ui.entry.task.addTask
 
 import android.content.Context
 import android.view.LayoutInflater

@@ -1,4 +1,4 @@
-package lostankit7.droid.moodtracker.ui.main.entry.mood.editMood
+package lostankit7.droid.moodtracker.ui.entry.mood.editMood
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -11,7 +11,7 @@ import lostankit7.droid.moodtracker.data.database.entities.MoodIcon
 import lostankit7.droid.moodtracker.databinding.FragmentEditMoodBinding
 import lostankit7.droid.moodtracker.helper.constant.Action.DELETE
 import lostankit7.droid.moodtracker.helper.constant.Action.EDIT
-import lostankit7.droid.moodtracker.ui.main.entry.mood.MoodEntryViewModel
+import lostankit7.droid.moodtracker.ui.entry.mood.MoodEntryViewModel
 
 class EditMoodFragment : BaseDaggerFragment<FragmentEditMoodBinding, MoodEntryViewModel>() {
 

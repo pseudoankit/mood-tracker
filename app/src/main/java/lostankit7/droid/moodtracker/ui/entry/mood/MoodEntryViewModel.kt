@@ -1,12 +1,10 @@
-package lostankit7.droid.moodtracker.ui.main.entry.mood
+package lostankit7.droid.moodtracker.ui.entry.mood
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import lostankit7.droid.moodtracker.helper.constant.FontAwesomeIcon
-import lostankit7.droid.moodtracker.helper.constant.MoodNames
 import lostankit7.droid.moodtracker.data.database.entities.MoodIcon
 import lostankit7.droid.moodtracker.data.database.entities.SuggestedMood
 import lostankit7.droid.moodtracker.data.repository.MoodRepository

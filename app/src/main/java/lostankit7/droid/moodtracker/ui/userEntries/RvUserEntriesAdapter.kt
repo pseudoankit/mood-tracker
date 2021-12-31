@@ -1,4 +1,4 @@
-package lostankit7.droid.moodtracker.ui.main.userEntries
+package lostankit7.droid.moodtracker.ui.userEntries
 
 import android.text.SpannableStringBuilder
 import android.view.LayoutInflater

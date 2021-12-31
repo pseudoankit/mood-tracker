@@ -3,11 +3,11 @@ package lostankit7.droid.moodtracker.di
 import android.content.Context
 import dagger.BindsInstance
 import dagger.Component
-import lostankit7.droid.moodtracker.ui.main.entry.mood.addEntry.MoodEntryFragment
-import lostankit7.droid.moodtracker.ui.main.entry.mood.editMood.EditMoodFragment
-import lostankit7.droid.moodtracker.ui.main.entry.mood.editMood.UpsertMoodIconFragment
-import lostankit7.droid.moodtracker.ui.main.entry.task.addTask.TaskEntryFragment
-import lostankit7.droid.moodtracker.ui.main.userEntries.UserEntriesFragment
+import lostankit7.droid.moodtracker.ui.entry.mood.addEntry.MoodEntryFragment
+import lostankit7.droid.moodtracker.ui.entry.mood.editMood.EditMoodFragment
+import lostankit7.droid.moodtracker.ui.entry.mood.editMood.UpsertMoodIconFragment
+import lostankit7.droid.moodtracker.ui.entry.task.addTask.TaskEntryFragment
+import lostankit7.droid.moodtracker.ui.userEntries.UserEntriesFragment
 import lostankit7.droid.moodtracker.ui.splash.SplashFragment
 import javax.inject.Singleton
 

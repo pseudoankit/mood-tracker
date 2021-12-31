@@ -2,11 +2,13 @@ package lostankit7.droid.moodtracker.data.repository
 
 import androidx.lifecycle.LiveData
 import lostankit7.droid.moodtracker.data.database.dao.TaskCategoryDao
+import lostankit7.droid.moodtracker.data.database.dao.TaskIconDao
 import lostankit7.droid.moodtracker.data.database.entities.TaskCategory
 import javax.inject.Inject
 
 class TaskRepository @Inject constructor(
-    private val taskCategoryDao: TaskCategoryDao
+    private val taskCategoryDao: TaskCategoryDao,
+    private val taskIconDao: TaskIconDao
 ) {
 
     val taskCategories: LiveData<List<TaskCategory>> = taskCategoryDao.getTaskCategories()
@@ -16,5 +18,7 @@ class TaskRepository @Inject constructor(
     fun deleteTaskCategory(it: TaskCategory) = taskCategoryDao.deleteTaskCategory(it)
 
     suspend fun insertTaskCategory(it: TaskCategory) = taskCategoryDao.insertTaskCategory(it)
+
+    fun x() = taskIconDao.getTaskIcons()
 
 }

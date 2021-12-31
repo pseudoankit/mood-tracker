@@ -1,4 +1,4 @@
-package lostankit7.droid.moodtracker.ui.main.entry.mood.editMood
+package lostankit7.droid.moodtracker.ui.entry.mood.editMood
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

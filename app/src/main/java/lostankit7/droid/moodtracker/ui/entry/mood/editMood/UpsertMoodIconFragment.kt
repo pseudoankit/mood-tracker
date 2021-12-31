@@ -1,4 +1,4 @@
-package lostankit7.droid.moodtracker.ui.main.entry.mood.editMood
+package lostankit7.droid.moodtracker.ui.entry.mood.editMood
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,7 +10,7 @@ import lostankit7.droid.moodtracker.databinding.FragmentUpsertMoodIconBinding
 import lostankit7.droid.moodtracker.helper.showToast
 import lostankit7.droid.moodtracker.data.database.entities.MoodIcon
 import lostankit7.droid.moodtracker.data.database.entities.SuggestedMood
-import lostankit7.droid.moodtracker.ui.main.entry.mood.MoodEntryViewModel
+import lostankit7.droid.moodtracker.ui.entry.mood.MoodEntryViewModel
 
 class UpsertMoodIconFragment :
     BaseDaggerFragment<FragmentUpsertMoodIconBinding, MoodEntryViewModel>() {

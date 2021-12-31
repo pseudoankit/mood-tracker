@@ -1,4 +1,4 @@
-package lostankit7.droid.moodtracker.ui.main.calendar
+package lostankit7.droid.moodtracker.ui.calendar
 
 import android.os.Bundle
 import android.view.LayoutInflater

@@ -1,14 +1,11 @@
-package lostankit7.droid.moodtracker.ui.main.userEntries
+package lostankit7.droid.moodtracker.ui.userEntries
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
-import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import lostankit7.droid.CustomTextView
 import lostankit7.droid.moodtracker.base.BaseDaggerFragment
 import lostankit7.droid.moodtracker.MyApplication
-import lostankit7.droid.moodtracker.R
 import lostankit7.droid.moodtracker.data.database.entities.UserEntry
 import lostankit7.droid.moodtracker.databinding.FragmentUserEntriesBinding
 

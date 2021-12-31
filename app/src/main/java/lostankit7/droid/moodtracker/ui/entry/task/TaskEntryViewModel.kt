@@ -1,4 +1,4 @@
-package lostankit7.droid.moodtracker.ui.main.entry.task
+package lostankit7.droid.moodtracker.ui.entry.task
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -19,6 +19,7 @@ class TaskEntryViewModel @Inject constructor(
     private val taskRepository: TaskRepository
 ) : ViewModel() {
 
+    val taskIcons = taskRepository.x()
     val taskCategories = taskRepository.taskCategories
 
     fun saveEntry(moodEntry: MoodEntry, tasksMap: MutableMap<Int, TaskIcon>, note: String) {

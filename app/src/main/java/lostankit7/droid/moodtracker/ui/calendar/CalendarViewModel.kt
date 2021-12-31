@@ -1,4 +1,4 @@
-package lostankit7.droid.moodtracker.ui.main.calendar
+package lostankit7.droid.moodtracker.ui.calendar
 
 import androidx.lifecycle.ViewModel
 

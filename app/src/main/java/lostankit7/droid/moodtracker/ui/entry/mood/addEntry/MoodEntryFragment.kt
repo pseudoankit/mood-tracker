@@ -1,4 +1,4 @@
-package lostankit7.droid.moodtracker.ui.main.entry.mood.addEntry
+package lostankit7.droid.moodtracker.ui.entry.mood.addEntry
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -15,7 +15,7 @@ import lostankit7.droid.moodtracker.helper.getSelectedDate
 import lostankit7.droid.moodtracker.helper.getSelectedTime
 import lostankit7.droid.moodtracker.model.MoodEntry
 import lostankit7.droid.moodtracker.data.database.entities.MoodIcon
-import lostankit7.droid.moodtracker.ui.main.entry.mood.MoodEntryViewModel
+import lostankit7.droid.moodtracker.ui.entry.mood.MoodEntryViewModel
 
 class MoodEntryFragment : BaseDaggerFragment<FragmentMoodEntryBinding, MoodEntryViewModel>() {
 

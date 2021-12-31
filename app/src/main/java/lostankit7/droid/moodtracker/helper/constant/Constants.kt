@@ -5,11 +5,6 @@ object Action {
     const val DELETE = 2
 }
 
-object DBConst {
-    const val DB_NAME = "mood_database"
-    const val DB_VERSION = 1
-}
-
 const val dbEntrySeparator = "*"
 
 
