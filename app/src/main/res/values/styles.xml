@@ -10,7 +10,7 @@
         <item name="background_circular">true</item>
         <item name="fa_solid">true</item>
         <item name="ripple_color">@color/ripple_color</item>
-        <item name="stroke_color">@color/hint_color</item>
+        <item name="stroke_color">@color/stroke_color</item>
         <item name="stroke_width">1dp</item>
     </style>
 
@@ -23,7 +23,7 @@
         <item name="background_circular">true</item>
         <item name="fa_solid">true</item>
         <item name="ripple_color">@color/ripple_color</item>
-        <item name="stroke_color">@color/hint_color</item>
+        <item name="stroke_color">@color/stroke_color</item>
         <item name="stroke_width">1dp</item>
     </style>
 
@@ -41,15 +41,15 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="fa_regular">true</item>
         <item name="android:textColor">@color/mood_icon_color</item>
-        <item name="android:textSize">@dimen/mood_icon_size</item>
+        <item name="android:textSize">@dimen/large_icon_size</item>
     </style>
 
     <style name="defEdtStyle">
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">@dimen/std_height</item>
-        <item name="android:background">@drawable/bg_rounded_white_stroke</item>
+        <item name="android:background">@drawable/bg_rounded_white_stroke_gray</item>
         <item name="android:paddingStart">10dp</item>
-        <item name="android:textColor">@color/hint_color</item>
+        <item name="android:textColor">@color/secondary_text_color</item>
         <item name="android:textColorHighlight">@color/hint_color</item>
         <item name="android:textSize">@dimen/text_size_medium</item>
     </style>

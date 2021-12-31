@@ -9,14 +9,14 @@
 
     <lostankit7.droid.CustomTextView
         android:id="@+id/tvIcon"
-        android:layout_width="@dimen/mood_icon_size"
-        android:layout_height="@dimen/mood_icon_size"
+        android:layout_width="@dimen/large_icon_size"
+        android:layout_height="@dimen/large_icon_size"
         android:text="AB"
         android:textColor="@color/task_icon"
         app:solid_color="@color/task_icon_bg"
-        android:textSize="@dimen/normal_icon_size"
+        android:textSize="@dimen/small_icon_size"
         app:background_circular="true"
-        app:fa_regular="true"
+        app:fa_solid="true"
         app:ripple_color="@color/ripple_color"
         app:stroke_color="@color/hint_color"
         app:stroke_width="1dp" />

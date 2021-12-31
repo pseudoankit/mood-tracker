@@ -19,6 +19,6 @@ class TaskRepository @Inject constructor(
 
     suspend fun insertTaskCategory(it: TaskCategory) = taskCategoryDao.insertTaskCategory(it)
 
-    fun x() = taskIconDao.getTaskIcons()
+    fun getTaskIcons(category: String) = taskIconDao.getTaskIcons(category)
 
 }

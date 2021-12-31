@@ -16,7 +16,9 @@ class TaskEntryFragment : BaseDaggerFragment<FragmentTaskEntryBinding, TaskEntry
 
     private lateinit var moodEntry: MoodEntry
     private val selectedTasksMap = mutableMapOf<Int, TaskIcon>()
-    private val adapter by lazy { RvTaskAdapter.createInstance(viewModel, this::onTaskSelected) }
+    private val adapter by lazy {
+        RvTaskAdapter.createInstance(this::provideTaskIcons, this::onTaskSelected)
+    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -25,15 +27,17 @@ class TaskEntryFragment : BaseDaggerFragment<FragmentTaskEntryBinding, TaskEntry
 
     }
 
+    private fun provideTaskIcons(category: String, adapter: RvTaskItemAdapter) {
+        viewModel.getTaskIcons(category).observe(viewLifecycleOwner) {
+            adapter.submitList(it)
+        }
+    }
+
     override suspend fun registerObservers() {
         super.registerObservers()
 
         viewModel.taskCategories.observe(viewLifecycleOwner) {
             adapter.submitList(it)
-        }
-
-        viewModel.taskIcons.observe(viewLifecycleOwner) {
-            val x = it
         }
     }
 

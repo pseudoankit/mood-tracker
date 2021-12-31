@@ -14,7 +14,7 @@ import lostankit7.droid.moodtracker.data.database.entities.TaskIcon
 import lostankit7.droid.moodtracker.ui.entry.task.TaskEntryViewModel
 
 class RvTaskAdapter(
-    private val viewModel: TaskEntryViewModel,
+    private val getTaskIcons: (String, RvTaskItemAdapter) -> Unit,
     private val taskSelected: (TaskIcon) -> Unit
 ) : BaseDiffRvAdapter<ItemRvTaskBinding, TaskCategory>() {
 
@@ -45,11 +45,11 @@ class RvTaskAdapter(
 
     private fun RecyclerView.setUpRecyclerView(category: String) {
         layoutManager = GridLayoutManager(context, TaskEntryFragment.taskSpan)
-        hasFixedSize()
 
-        val mAdapter =
-            RvTaskItemAdapter(context, viewModel.getTaskOfCategory(category), taskSelected)
+        val mAdapter = RvTaskItemAdapter(taskSelected)
         adapter = mAdapter
+
+        getTaskIcons.invoke(category, mAdapter)
     }
 
     override fun inflateLayout(
@@ -59,8 +59,10 @@ class RvTaskAdapter(
     ) = ItemRvTaskBinding.inflate(layoutInflater, parent, attachToParent)
 
     companion object {
-        fun createInstance(vm: TaskEntryViewModel, taskSelected: (TaskIcon) -> Unit) =
-            RvTaskAdapter(vm, taskSelected)
+        fun createInstance(
+            getTaskIcons: (String, RvTaskItemAdapter) -> Unit,
+            taskSelected: (TaskIcon) -> Unit
+        ) = RvTaskAdapter(getTaskIcons, taskSelected)
     }
 }
 

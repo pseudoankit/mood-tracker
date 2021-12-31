@@ -8,7 +8,8 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
-    <color name="theme_color">@android:color/holo_orange_dark</color>
+    <color name="theme_color">#ee699b</color>
+    <color name="stroke_color">#A39696</color>
 
     <color name="splash_background">@color/purple_500</color>
     <color name="hint_color">#aaa</color>
@@ -16,7 +17,7 @@
     <!-- add new entries -->
     <color name="header_text_color">@android:color/black</color>
     <color name="mood_icon_color">@color/theme_color</color>
-    <color name="sec_icon_color">@color/teal_700</color>
+    <color name="sec_icon_color">#076C6B</color>
     <color name="suggested_mood_icon_color">@color/teal_200</color>
     <color name="sec_mood_text_color">@color/teal_700</color>
     <color name="secondary_text_color">#756565</color>

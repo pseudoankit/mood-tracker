@@ -18,7 +18,7 @@
             android:layout_height="wrap_content"
             android:text="@string/fas_save"
             android:textColor="@color/sec_icon_color"
-            android:textSize="@dimen/normal_icon_size"
+            android:textSize="@dimen/small_icon_size"
             app:fa_regular="true" />
 
         <lostankit7.droid.CustomTextView

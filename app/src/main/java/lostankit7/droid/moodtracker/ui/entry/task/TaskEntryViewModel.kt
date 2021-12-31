@@ -19,7 +19,6 @@ class TaskEntryViewModel @Inject constructor(
     private val taskRepository: TaskRepository
 ) : ViewModel() {
 
-    val taskIcons = taskRepository.x()
     val taskCategories = taskRepository.taskCategories
 
     fun saveEntry(moodEntry: MoodEntry, tasksMap: MutableMap<Int, TaskIcon>, note: String) {
@@ -30,13 +29,7 @@ class TaskEntryViewModel @Inject constructor(
         }
     }
 
-    fun getTaskOfCategory(category: String) = mutableListOf(
-        TaskIcon(FontAwesomeIcon.happy, MoodNames.happy, category),
-        TaskIcon(FontAwesomeIcon.jolly, MoodNames.jolly, category),
-        TaskIcon(FontAwesomeIcon.meh, MoodNames.meh, category),
-        TaskIcon(FontAwesomeIcon.sad, MoodNames.sad, category),
-        TaskIcon(FontAwesomeIcon.awful, MoodNames.awful, category)
-    )
+    fun getTaskIcons(category: String) = taskRepository.getTaskIcons(category)
 
     private fun mapInputToUserEntry(
         moodEntry: MoodEntry,

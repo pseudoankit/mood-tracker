@@ -1,13 +1,16 @@
 package lostankit7.droid.moodtracker.ui.userEntries
 
 import android.text.SpannableStringBuilder
+import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.TextView
 import lostankit7.droid.moodtracker.base.BaseDiffRvAdapter
 import lostankit7.droid.moodtracker.data.database.entities.UserEntry
 import lostankit7.droid.moodtracker.databinding.ItemRvUserEntriesBinding
 import lostankit7.droid.moodtracker.helper.constant.FontAwesomeIcon
 import lostankit7.droid.moodtracker.helper.constant.dbEntrySeparator
+import lostankit7.droid.moodtracker.helper.hide
 
 class RvUserEntriesAdapter(private val itemClicked: (UserEntry) -> Unit) :
     BaseDiffRvAdapter<ItemRvUserEntriesBinding, UserEntry>() {
@@ -18,16 +21,22 @@ class RvUserEntriesAdapter(private val itemClicked: (UserEntry) -> Unit) :
         val names = item.taskNames.split(dbEntrySeparator)
         for (i in icons.indices) {
             //todo correct it
-            tasks.append("${FontAwesomeIcon.dot} ${icons[i]}  ${names[i]} ")
+            tasks.append("  ${FontAwesomeIcon.dot}  ${icons[i]} ${names[i]}")
         }
         binding.apply {
-            tvDate.text = item.date
-            tvTime.text = item.time
-            tvMoodIcon.text = item.moodIcon
-            tvMoodName.text = item.moodName
-            tvTasks.text = tasks.substring(2)
-            tvNote.text = item.note
+            tvTasks.gravity = Gravity.START
+            tvDate.text(item.date)
+            tvTime.text(item.time)
+            tvMoodIcon.text(item.moodIcon)
+            tvMoodName.text(item.moodName)
+            tvTasks.text(tasks.substring(4))
+            tvNote.text(item.note)
         }
+    }
+
+    private fun TextView.text(it: String) {
+        if (it.isBlank()) hide()
+        else text = it
     }
 
     override fun inflateLayout(

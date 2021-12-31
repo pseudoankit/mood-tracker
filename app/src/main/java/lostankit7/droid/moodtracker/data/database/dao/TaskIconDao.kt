@@ -9,8 +9,8 @@ import lostankit7.droid.moodtracker.data.database.entities.TaskIcon
 @Dao
 interface TaskIconDao {
 
-    @Query("SELECT * FROM TaskIcon")
-    fun getTaskIcons(): LiveData<List<TaskIcon>>
+    @Query("SELECT * FROM TaskIcon where category = :category")
+    fun getTaskIcons(category: String): LiveData<List<TaskIcon>>
 
     @Insert
     suspend fun insertTaskIcons(list: List<TaskIcon>)

@@ -71,7 +71,7 @@
                 app:background_circular="true"
                 app:fa_solid="true"
                 app:ripple_color="@color/ripple_color"
-                app:stroke_color="@color/theme_color"
+                app:stroke_color="@color/stroke_color"
                 app:stroke_width="2dp" />
 
             <lostankit7.droid.CustomTextView
