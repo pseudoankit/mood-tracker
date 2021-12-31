@@ -12,7 +12,7 @@ import lostankit7.droid.moodtracker.ui.splash.SplashFragment
 import javax.inject.Singleton
 
 @Singleton
-@Component(modules = [DataBaseModule::class, StorageModule::class])
+@Component(modules = [DataBaseModule::class])
 interface AppComponent {
 
     @Component.Factory

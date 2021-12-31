@@ -6,16 +6,16 @@ import android.view.ViewGroup
 import lostankit7.droid.moodtracker.base.BaseDiffRvAdapter
 import lostankit7.droid.moodtracker.data.database.entities.UserEntry
 import lostankit7.droid.moodtracker.databinding.ItemRvUserEntriesBinding
-import lostankit7.droid.moodtracker.helper.constant.Constants
 import lostankit7.droid.moodtracker.helper.constant.FontAwesomeIcon
+import lostankit7.droid.moodtracker.helper.constant.dbEntrySeparator
 
 class RvUserEntriesAdapter(private val itemClicked: (UserEntry) -> Unit) :
     BaseDiffRvAdapter<ItemRvUserEntriesBinding, UserEntry>() {
 
     override fun bindViewHolder(item: UserEntry, position: Int, binding: ItemRvUserEntriesBinding) {
         val tasks = SpannableStringBuilder()
-        val icons = item.taskIcons.split(Constants.dbEntrySeparator)
-        val names = item.taskNames.split(Constants.dbEntrySeparator)
+        val icons = item.taskIcons.split(dbEntrySeparator)
+        val names = item.taskNames.split(dbEntrySeparator)
         for (i in icons.indices) {
             //todo correct it
             tasks.append("${FontAwesomeIcon.dot} ${icons[i]}  ${names[i]} ")

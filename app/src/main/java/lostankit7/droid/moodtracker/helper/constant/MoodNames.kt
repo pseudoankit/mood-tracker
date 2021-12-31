@@ -1,9 +1,5 @@
 package lostankit7.droid.moodtracker.helper.constant
 
-object Constants {
-    const val dbEntrySeparator = "*"
-}
-
 object MoodNames {
     const val happy = "Happy"
     const val sad = "Sad"
@@ -18,9 +14,4 @@ object MoodNames {
     const val romantic = "Romantic"
     const val naughty = "Naughty"
     const val okay = "Okay"
-}
-
-object TaskCategories {
-    const val other = "Other"
-    const val entertainment = "Entertainment"
 }

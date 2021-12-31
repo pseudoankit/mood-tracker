@@ -3,7 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/kumar/.gradle/caches/transforms-3/51af7829921406165d1d0a211091d440/transformed/jetified-AndroidCustomViews-1.2/res/drawable/bg_rounded_ripple.xml" value="0.28055555555555556" />
         <entry key="..\:/Users/kumar/.gradle/caches/transforms-3/51af7829921406165d1d0a211091d440/transformed/jetified-AndroidCustomViews-1.2/res/drawable/bg_rounded_white.xml" value="0.15925925925925927" />
+        <entry key="..\:/Users/kumar/AndroidStudioProjects/MoodTracker/app/src/main/res/drawable/bg_rounded_white_stroke_gray.xml" value="0.28055555555555556" />
+        <entry key="..\:/Users/kumar/AndroidStudioProjects/MoodTracker/app/src/main/res/drawable/bg_white_stroke_gray_ripple.xml" value="0.28055555555555556" />
         <entry key="..\:/Users/kumar/AndroidStudioProjects/MoodTracker/app/src/main/res/layout/action_bar.xml" value="0.2234375" />
         <entry key="..\:/Users/kumar/AndroidStudioProjects/MoodTracker/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/kumar/AndroidStudioProjects/MoodTracker/app/src/main/res/layout/fragment_edit_mood.xml" value="0.176" />
@@ -12,7 +15,7 @@
         <entry key="..\:/Users/kumar/AndroidStudioProjects/MoodTracker/app/src/main/res/layout/fragment_task_entry.xml" value="0.2234375" />
         <entry key="..\:/Users/kumar/AndroidStudioProjects/MoodTracker/app/src/main/res/layout/fragment_upsert_mood_icon.xml" value="0.2234375" />
         <entry key="..\:/Users/kumar/AndroidStudioProjects/MoodTracker/app/src/main/res/layout/fragment_user_entries.xml" value="0.10740740740740741" />
-        <entry key="..\:/Users/kumar/AndroidStudioProjects/MoodTracker/app/src/main/res/layout/item_edit_mood_icon.xml" value="0.152" />
+        <entry key="..\:/Users/kumar/AndroidStudioProjects/MoodTracker/app/src/main/res/layout/item_edit_mood_icon.xml" value="0.25" />
         <entry key="..\:/Users/kumar/AndroidStudioProjects/MoodTracker/app/src/main/res/layout/item_rv_mood_icon.xml" value="0.16" />
         <entry key="..\:/Users/kumar/AndroidStudioProjects/MoodTracker/app/src/main/res/layout/item_rv_suggested_mood.xml" value="0.3359375" />
         <entry key="..\:/Users/kumar/AndroidStudioProjects/MoodTracker/app/src/main/res/layout/item_rv_task.xml" value="0.17222222222222222" />

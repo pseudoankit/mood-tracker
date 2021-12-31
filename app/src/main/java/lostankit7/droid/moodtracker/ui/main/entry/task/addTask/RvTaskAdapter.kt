@@ -5,20 +5,21 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import lostankit7.droid.moodtracker.base.BaseDiffRvAdapter
 import lostankit7.droid.moodtracker.base.BaseRvAdapter
+import lostankit7.droid.moodtracker.data.database.entities.TaskCategory
 import lostankit7.droid.moodtracker.databinding.ItemRvTaskBinding
 import lostankit7.droid.moodtracker.helper.constant.FontAwesomeIcon
 import lostankit7.droid.moodtracker.helper.hide
 import lostankit7.droid.moodtracker.helper.show
-import lostankit7.droid.moodtracker.data.database.entities.MoodIcon
-import lostankit7.droid.moodtracker.model.TaskCategory
+import lostankit7.droid.moodtracker.data.database.entities.TaskIcon
 import lostankit7.droid.moodtracker.ui.main.entry.task.TaskEntryViewModel
 
 class RvTaskAdapter(
     context: Context,
     private val viewModel: TaskEntryViewModel,
-    private val taskSelected: (MoodIcon) -> Unit
-) : BaseRvAdapter<ItemRvTaskBinding, TaskCategory>(viewModel.getTaskCategories(), context) {
+    private val taskSelected: (TaskIcon) -> Unit
+) : BaseDiffRvAdapter<ItemRvTaskBinding, TaskCategory>() {
 
     override fun bindViewHolder(item: TaskCategory, position: Int, binding: ItemRvTaskBinding) {
 
@@ -61,7 +62,7 @@ class RvTaskAdapter(
     ) = ItemRvTaskBinding.inflate(layoutInflater, parent, attachToParent)
 
     companion object {
-        fun createInstance(context: Context, vm: TaskEntryViewModel, taskSelected: (MoodIcon) -> Unit) =
+        fun createInstance(context: Context, vm: TaskEntryViewModel, taskSelected: (TaskIcon) -> Unit) =
             RvTaskAdapter(context, vm, taskSelected)
     }
 }

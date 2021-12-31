@@ -7,7 +7,9 @@ import dagger.Provides
 import lostankit7.droid.moodtracker.data.database.AppDatabase
 import lostankit7.droid.moodtracker.data.database.dao.MoodIconDao
 import lostankit7.droid.moodtracker.data.database.dao.SuggestedMoodDao
+import lostankit7.droid.moodtracker.data.database.dao.TaskCategoryDao
 import lostankit7.droid.moodtracker.data.database.dao.UserEntryDao
+import lostankit7.droid.moodtracker.helper.constant.DBConst
 import javax.inject.Singleton
 
 @Module
@@ -19,7 +21,7 @@ class DataBaseModule {
     fun provideRoomDB(context: Context) = Room.databaseBuilder(
         context.applicationContext,
         AppDatabase::class.java,
-        AppDatabase.DB_NAME
+        DBConst.DB_NAME
     ).build()
 
 
@@ -34,4 +36,8 @@ class DataBaseModule {
     @Singleton
     @Provides
     fun provideSuggestedMoodDao(db: AppDatabase) : SuggestedMoodDao = db.suggestedMoodDao()
+
+    @Singleton
+    @Provides
+    fun provideTaskCategoryDao(db: AppDatabase) : TaskCategoryDao = db.taskCategoryDao()
 }

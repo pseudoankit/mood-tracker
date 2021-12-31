@@ -3,19 +3,24 @@ package lostankit7.droid.moodtracker.ui.main.entry.task.addTask
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
+import androidx.lifecycle.liveData
 import androidx.recyclerview.widget.LinearLayoutManager
 import lostankit7.droid.moodtracker.base.BaseDaggerFragment
 import lostankit7.droid.moodtracker.MyApplication
 import lostankit7.droid.moodtracker.R
 import lostankit7.droid.moodtracker.databinding.FragmentTaskEntryBinding
 import lostankit7.droid.moodtracker.data.database.entities.MoodIcon
+import lostankit7.droid.moodtracker.data.database.entities.TaskIcon
 import lostankit7.droid.moodtracker.model.MoodEntry
 import lostankit7.droid.moodtracker.ui.main.entry.task.TaskEntryViewModel
 
 class TaskEntryFragment : BaseDaggerFragment<FragmentTaskEntryBinding, TaskEntryViewModel>() {
 
     private lateinit var moodEntry: MoodEntry
-    private val selectedTasksMap = mutableMapOf<Int, MoodIcon>()
+    private val selectedTasksMap = mutableMapOf<Int, TaskIcon>()
+    private val adapter by lazy {
+        RvTaskAdapter.createInstance(requireContext(), viewModel, this::onTaskSelected)
+    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -24,13 +29,23 @@ class TaskEntryFragment : BaseDaggerFragment<FragmentTaskEntryBinding, TaskEntry
 
     }
 
-    private fun setUpRecyclerView() {
-        val adapter = RvTaskAdapter.createInstance(requireContext(), viewModel) { task ->
-            if (selectedTasksMap.containsKey(task.hashCode()))
-                selectedTasksMap.remove(task.hashCode())
-            else
-                selectedTasksMap[task.hashCode()] = task
+    override suspend fun registerObservers() {
+        super.registerObservers()
+
+        viewModel.taskCategories.observe(viewLifecycleOwner) {
+            adapter.submitList(it)
         }
+    }
+
+    private fun onTaskSelected(task: TaskIcon) {
+        if (selectedTasksMap.containsKey(task.hashCode()))
+            selectedTasksMap.remove(task.hashCode())
+        else
+            selectedTasksMap[task.hashCode()] = task
+    }
+
+    private fun setUpRecyclerView() {
+        binding.rvTask.layoutManager = LinearLayoutManager(requireContext())
         binding.rvTask.adapter = adapter
     }
 
@@ -41,9 +56,6 @@ class TaskEntryFragment : BaseDaggerFragment<FragmentTaskEntryBinding, TaskEntry
         else moodEntry = entry
 
         actionBar?.leftIcon2?.text = moodEntry.moodIcon.icon
-
-        binding.rvTask.layoutManager = LinearLayoutManager(requireContext())
-
     }
 
     fun saveEntry() {

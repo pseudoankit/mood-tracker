@@ -4,46 +4,42 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import lostankit7.droid.moodtracker.data.database.entities.TaskIcon
 import lostankit7.droid.moodtracker.data.database.entities.UserEntry
-import lostankit7.droid.moodtracker.helper.constant.Constants.dbEntrySeparator
+import lostankit7.droid.moodtracker.data.repository.TaskRepository
+import lostankit7.droid.moodtracker.data.repository.UserEntriesRepository
 import lostankit7.droid.moodtracker.helper.constant.FontAwesomeIcon
 import lostankit7.droid.moodtracker.helper.constant.MoodNames
-import lostankit7.droid.moodtracker.helper.constant.TaskCategories
-import lostankit7.droid.moodtracker.data.database.entities.MoodIcon
-import lostankit7.droid.moodtracker.data.repository.UserEntriesRepository
+import lostankit7.droid.moodtracker.helper.constant.dbEntrySeparator
 import lostankit7.droid.moodtracker.model.MoodEntry
-import lostankit7.droid.moodtracker.model.TaskCategory
 import javax.inject.Inject
 
 class TaskEntryViewModel @Inject constructor(
-    private val repository: UserEntriesRepository
+    private val repository: UserEntriesRepository,
+    private val taskRepository: TaskRepository
 ) : ViewModel() {
 
-    fun saveEntry(moodEntry: MoodEntry, tasksMap: MutableMap<Int, MoodIcon>, note: String) {
+    val taskCategories = taskRepository.taskCategories
 
-        val userEntry = getEntry(moodEntry, tasksMap, note)
+    fun saveEntry(moodEntry: MoodEntry, tasksMap: MutableMap<Int, TaskIcon>, note: String) {
+        val userEntry = mapInputToUserEntry(moodEntry, tasksMap, note)
+
         viewModelScope.launch(Dispatchers.IO) {
             repository.saveUserEntry(userEntry)
         }
     }
 
-    fun getTaskCategories() = mutableListOf(
-        TaskCategory(TaskCategories.other, true),
-        TaskCategory(TaskCategories.entertainment, false)
-    )
-
     fun getTaskOfCategory(category: String) = mutableListOf(
-        MoodIcon(FontAwesomeIcon.happy, MoodNames.happy),
-        MoodIcon(FontAwesomeIcon.jolly, MoodNames.jolly),
-        MoodIcon(FontAwesomeIcon.meh, MoodNames.meh),
-        MoodIcon(FontAwesomeIcon.sad, MoodNames.sad),
-        MoodIcon(FontAwesomeIcon.awful, MoodNames.awful)
+        TaskIcon(FontAwesomeIcon.happy, MoodNames.happy, category),
+        TaskIcon(FontAwesomeIcon.jolly, MoodNames.jolly, category),
+        TaskIcon(FontAwesomeIcon.meh, MoodNames.meh, category),
+        TaskIcon(FontAwesomeIcon.sad, MoodNames.sad, category),
+        TaskIcon(FontAwesomeIcon.awful, MoodNames.awful, category)
     )
 
-
-    private fun getEntry(
+    private fun mapInputToUserEntry(
         moodEntry: MoodEntry,
-        tasksMap: MutableMap<Int, MoodIcon>,
+        tasksMap: MutableMap<Int, TaskIcon>,
         note: String
     ): UserEntry {
         val taskIcons = StringBuilder("")

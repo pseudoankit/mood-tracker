@@ -5,5 +5,11 @@ object Action {
     const val DELETE = 2
 }
 
-const val PREFS_NAME = "mood_tracker_prefs"
-const val IS_INITIAL_LAUNCH = "is_initial_launch"
+object DBConst {
+    const val DB_NAME = "mood_database"
+    const val DB_VERSION = 1
+}
+
+const val dbEntrySeparator = "*"
+
+

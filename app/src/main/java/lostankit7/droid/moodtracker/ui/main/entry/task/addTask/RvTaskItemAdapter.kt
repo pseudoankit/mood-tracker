@@ -7,14 +7,15 @@ import androidx.core.content.ContextCompat
 import lostankit7.droid.moodtracker.base.BaseRvAdapter
 import lostankit7.droid.moodtracker.R
 import lostankit7.droid.moodtracker.databinding.ItemRvTaskIconBinding
-import lostankit7.droid.moodtracker.data.database.entities.MoodIcon
+import lostankit7.droid.moodtracker.data.database.entities.TaskIcon
 
 class RvTaskItemAdapter(
     context: Context,
-    list: MutableList<MoodIcon>,
-    private val taskSelected: (MoodIcon) -> Unit
-) : BaseRvAdapter<ItemRvTaskIconBinding, MoodIcon>(list, context) {
-    override fun bindViewHolder(item: MoodIcon, position: Int, binding: ItemRvTaskIconBinding) {
+    list: MutableList<TaskIcon>,
+    private val taskSelected: (TaskIcon) -> Unit
+) : BaseRvAdapter<ItemRvTaskIconBinding, TaskIcon>(list, context) {
+    
+    override fun bindViewHolder(item: TaskIcon, position: Int, binding: ItemRvTaskIconBinding) {
         binding.tvName.text = item.name
         binding.tvIcon.text = item.icon
 
@@ -40,7 +41,7 @@ class RvTaskItemAdapter(
     ) = ItemRvTaskIconBinding.inflate(layoutInflater, parent, attachToParent)
 
     companion object {
-        fun newInstance(context: Context, list: MutableList<MoodIcon>, taskSelected: (MoodIcon) -> Unit) =
+        fun newInstance(context: Context, list: MutableList<TaskIcon>, taskSelected: (TaskIcon) -> Unit) =
             RvTaskItemAdapter(context, list, taskSelected)
     }
 }
