@@ -4,6 +4,7 @@
     <dimen name="bottom_nav_height">55dp</dimen>
     <dimen name="padding_screen">10dp</dimen>
     <dimen name="std_height">45dp</dimen>
+    <dimen name="corner_radius">8dp</dimen>
 
     <!-- action bar -->
     <dimen name="icon_size_sml_action_bar">17sp</dimen>

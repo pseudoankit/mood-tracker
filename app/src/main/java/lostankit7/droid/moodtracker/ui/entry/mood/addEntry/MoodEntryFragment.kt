@@ -15,6 +15,7 @@ import lostankit7.droid.moodtracker.helper.getSelectedDate
 import lostankit7.droid.moodtracker.helper.getSelectedTime
 import lostankit7.droid.moodtracker.model.MoodEntry
 import lostankit7.droid.moodtracker.data.database.entities.MoodIcon
+import lostankit7.droid.moodtracker.helper.constant.FontAwesomeIcon
 import lostankit7.droid.moodtracker.ui.entry.mood.MoodEntryViewModel
 
 class MoodEntryFragment : BaseDaggerFragment<FragmentMoodEntryBinding, MoodEntryViewModel>() {
@@ -41,7 +42,7 @@ class MoodEntryFragment : BaseDaggerFragment<FragmentMoodEntryBinding, MoodEntry
     }
 
     private fun setUpRecyclerView() = with(binding.rvMoodIcon) {
-        layoutManager = GridLayoutManager(requireContext(), moodRvSpan)
+        layoutManager = GridLayoutManager(requireContext(), spanCount)
         binding.rvMoodIcon.adapter = moodIconAdapter
     }
 
@@ -94,6 +95,6 @@ class MoodEntryFragment : BaseDaggerFragment<FragmentMoodEntryBinding, MoodEntry
     }
 
     companion object {
-        private const val moodRvSpan = 5
+        private const val spanCount = 5
     }
 }

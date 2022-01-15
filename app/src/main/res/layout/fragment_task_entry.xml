@@ -1,42 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="@dimen/padding_screen">
+        android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/tvHeader"
-            style="@style/HeaderTextView"
-            android:text="@string/header_add_task_entry"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rvTask"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:nestedScrollingEnabled="false"
-            app:layout_constraintTop_toBottomOf="@id/tvHeader" />
+            android:orientation="vertical"
+            android:padding="@dimen/padding_screen">
 
-        <EditText
-            android:id="@+id/etNote"
-            style="@style/defEdtStyle"
-            android:layout_marginTop="15dp"
-            android:hint="@string/et_note_hint"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/rvTask"
-            tools:layout_editor_absoluteY="10dp" />
+            <TextView
+                android:id="@+id/tvHeader"
+                style="@style/HeaderTextView"
+                android:text="@string/header_add_task_entry"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</ScrollView>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvTask"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:nestedScrollingEnabled="false"
+                app:layout_constraintTop_toBottomOf="@id/tvHeader" />
+
+            <EditText
+                android:id="@+id/etNote"
+                style="@style/defEdtStyle"
+                android:layout_marginTop="15dp"
+                android:hint="@string/et_note_hint"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/rvTask"
+                tools:layout_editor_absoluteY="10dp" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/btnEditMood"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <lostankit7.droid.CustomTextView
+            android:layout_width="@dimen/lg_rounded_icon_bg_size"
+            android:layout_height="@dimen/lg_rounded_icon_bg_size"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/fas_edit"
+            android:textColor="@color/sec_icon_color"
+            android:textSize="@dimen/edit_btn_size"
+            app:background_circular="true"
+            app:fa_solid="true"
+            app:ripple_color="@color/ripple_color"
+            app:stroke_color="@color/stroke_color"
+            app:stroke_width="2dp" />
+
+        <lostankit7.droid.CustomTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Edit Tasks"
+            android:textColor="@color/theme_color"
+            android:textSize="@dimen/text_size_xsmall" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

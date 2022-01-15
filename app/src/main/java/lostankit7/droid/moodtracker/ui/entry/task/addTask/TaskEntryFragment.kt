@@ -17,7 +17,7 @@ class TaskEntryFragment : BaseDaggerFragment<FragmentTaskEntryBinding, TaskEntry
     private lateinit var moodEntry: MoodEntry
     private val selectedTasksMap = mutableMapOf<Int, TaskIcon>()
     private val adapter by lazy {
-        RvTaskAdapter.createInstance(this::provideTaskIcons, this::onTaskSelected)
+        RvTaskAdapter.createInstance(::provideTaskIcons, ::onTaskSelected)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

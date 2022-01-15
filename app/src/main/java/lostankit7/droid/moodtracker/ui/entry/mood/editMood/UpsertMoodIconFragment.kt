@@ -16,7 +16,7 @@ class UpsertMoodIconFragment :
     BaseDaggerFragment<FragmentUpsertMoodIconBinding, MoodEntryViewModel>() {
 
     private var editMoodIcon: MoodIcon? = null
-    private val adapter by lazy { RvSuggestedMoodAdapter.newInstance(this::onMoodIconSelected) }
+    private val adapter by lazy { RvSuggestedMoodAdapter.newInstance(::onMoodIconSelected) }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

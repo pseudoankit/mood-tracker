@@ -15,7 +15,7 @@ import lostankit7.droid.moodtracker.ui.entry.mood.MoodEntryViewModel
 
 class EditMoodFragment : BaseDaggerFragment<FragmentEditMoodBinding, MoodEntryViewModel>() {
 
-    private val adapter by lazy { RvEditMoodIconAdapter.newInstance(this::onItemClick) }
+    private val adapter by lazy { RvEditMoodIconAdapter.newInstance(::onItemClick) }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

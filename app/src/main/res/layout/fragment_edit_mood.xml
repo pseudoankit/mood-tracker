@@ -20,7 +20,7 @@
         android:layout_height="@dimen/def_button_height"
         android:layout_marginHorizontal="10dp"
         app:stroke_color="@color/stroke_color"
-        app:corner_radius="5dp"
+        app:corner_radius="@dimen/corner_radius"
         android:text="@string/text_add_new_mood"
         android:textAllCaps="false"
         app:layout_constraintBottom_toBottomOf="parent" />
