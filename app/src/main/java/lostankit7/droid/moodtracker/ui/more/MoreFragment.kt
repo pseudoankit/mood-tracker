@@ -6,7 +6,7 @@ import android.view.View
 import lostankit7.droid.moodtracker.base.BaseFragment
 import lostankit7.droid.moodtracker.databinding.FragmentMoreBinding
 
-class MoreFragment : BaseFragment<FragmentMoreBinding, MoreViewModel>() {
+class MoreFragment : BaseFragment<FragmentMoreBinding>() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -17,5 +17,4 @@ class MoreFragment : BaseFragment<FragmentMoreBinding, MoreViewModel>() {
     override fun inflateLayout(layoutInflater: LayoutInflater) =
         FragmentMoreBinding.inflate(layoutInflater)
 
-    override fun viewModel() = MoreViewModel::class.java
 }

@@ -39,7 +39,6 @@ class UserEntriesFragment : BaseDaggerFragment<FragmentUserEntriesBinding, UserE
     override fun inflateLayout(layoutInflater: LayoutInflater) =
         FragmentUserEntriesBinding.inflate(layoutInflater)
 
-    override fun viewModel() = UserEntriesViewModel::class.java
     override fun injectFragment() {
         (requireActivity().application as MyApplication).appComponent.inject(this)
     }

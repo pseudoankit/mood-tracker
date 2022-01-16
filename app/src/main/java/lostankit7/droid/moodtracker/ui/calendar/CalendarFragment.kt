@@ -6,7 +6,7 @@ import android.view.View
 import lostankit7.droid.moodtracker.base.BaseFragment
 import lostankit7.droid.moodtracker.databinding.FragmentCalendarBinding
 
-class CalendarFragment : BaseFragment<FragmentCalendarBinding, CalendarViewModel>() {
+class CalendarFragment : BaseFragment<FragmentCalendarBinding>() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -17,6 +17,5 @@ class CalendarFragment : BaseFragment<FragmentCalendarBinding, CalendarViewModel
     override fun inflateLayout(layoutInflater: LayoutInflater) =
         FragmentCalendarBinding.inflate(layoutInflater)
 
-    override fun viewModel() = CalendarViewModel::class.java
 
 }

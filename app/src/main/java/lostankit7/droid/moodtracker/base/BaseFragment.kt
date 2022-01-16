@@ -5,29 +5,30 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.EditText
-import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.viewbinding.ViewBinding
 import lostankit7.droid.databinding.DialogProgressBinding
-import lostankit7.droid.helper.inflateDialog
+import lostankit7.droid.moodtracker.MyApplication
+import lostankit7.droid.moodtracker.helper.DialogHelper
 import lostankit7.droid.moodtracker.helper.showSnackBar
 import lostankit7.droid.moodtracker.helper.showToast
 import lostankit7.droid.moodtracker.model.Status
+import lostankit7.droid.moodtracker.ui.MainActivity
 
-abstract class BaseFragment<VB : ViewBinding, VM : ViewModel> : Fragment() {
+abstract class BaseFragment<VB : ViewBinding> : Fragment() {
 
-    lateinit var viewModel: VM
     lateinit var binding: VB
+
     lateinit var navController: NavController
+    val actionBar by lazy { (requireActivity() as? MainActivity)?.actionBar() }
+    val appComponent by lazy { (requireActivity().application as MyApplication).appComponent }
 
     private val progressBinding by lazy { DialogProgressBinding.inflate(layoutInflater) }
-    private val progressDialog by lazy { requireActivity().inflateDialog(progressBinding.root) }
+    private val progressDialog by lazy { DialogHelper.build(requireActivity(), progressBinding) }
+
     var TAG = "Activity"
 
     override fun onCreateView(
@@ -36,74 +37,58 @@ abstract class BaseFragment<VB : ViewBinding, VM : ViewModel> : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = inflateLayout(layoutInflater)
-        viewModel = ViewModelProvider(
-            requireActivity(),
-            ViewModelProvider.AndroidViewModelFactory.getInstance(requireActivity().application)
-        ).get(viewModel())
         TAG = binding.javaClass.simpleName
         onCreateView()
         return binding.root
     }
 
     open fun onCreateView() {}
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         Log.d(TAG, "onViewCreated: ")
-
         navController = Navigation.findNavController(view)
-        if (actionBarTitle().isNotEmpty())
-            (requireActivity() as? AppCompatActivity)?.supportActionBar?.title = actionBarTitle()
 
         init()
-        lifecycleScope.launchWhenStarted {
-            registerObservers()
-        }
+        initRecyclerView()
         initListeners()
+        lifecycleScope.launchWhenStarted { registerObservers() }
     }
 
     open fun init() {}
+    open fun initRecyclerView() {}
+    open suspend fun registerObservers() {}
     open fun initListeners() {}
 
-    open suspend fun registerObservers() {
-        //todo observe stateflow of base view model which will be common for all frags
-        /*if (viewModel is BaseViewModel) {
-            (viewModel as BaseViewModel).apply {
-                this.uiStatus.collect {
-                    handleUIState(it)
-                }
-            }
-        }*/
-    }
+    abstract fun inflateLayout(layoutInflater: LayoutInflater): VB
 
     fun handleUIState(value: Status) {
         when (value) {
             is Status.Success -> {
                 hideProgressDialog()
                 if (value.message?.trim()?.isNotEmpty() == true)
-                    requireContext().showToast(value.message!!)
+                    requireContext().showToast(value.message)
             }
             is Status.Error -> {
                 hideProgressDialog()
                 if (value.message?.trim()?.isNotEmpty() == true)
-                    requireActivity().showSnackBar(value.message!!)
+                    requireActivity().showSnackBar(value.message)
             }
             is Status.Loading -> showProgressDialog()
+            else -> ""
         }
     }
 
-    protected fun showProgressDialog(text: String = "Loading...") {
+    fun showProgressDialog(text: String = "Loading...") {
         progressBinding.tvProgressText.text = text
         progressDialog.show()
     }
 
-    protected fun hideProgressDialog() {
+    fun hideProgressDialog() {
         if (progressDialog.isShowing)
             progressDialog.dismiss()
     }
 
-    open fun actionBarTitle() = ""
-    abstract fun inflateLayout(layoutInflater: LayoutInflater): VB
-    abstract fun viewModel(): Class<VM>
     protected fun navigateTo(id: Int) {
         navController.navigate(id)
     }
@@ -111,8 +96,6 @@ abstract class BaseFragment<VB : ViewBinding, VM : ViewModel> : Fragment() {
     protected fun navigateTo(id: Int, bundle: Bundle) {
         navController.navigate(id, bundle)
     }
-
-    protected fun getText(txt: EditText) = txt.text.toString().trim()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

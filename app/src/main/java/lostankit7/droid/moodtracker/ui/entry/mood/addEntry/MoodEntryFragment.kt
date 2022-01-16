@@ -87,7 +87,6 @@ class MoodEntryFragment : BaseDaggerFragment<FragmentMoodEntryBinding, MoodEntry
     override fun inflateLayout(layoutInflater: LayoutInflater) =
         FragmentMoodEntryBinding.inflate(layoutInflater)
 
-    override fun viewModel() = MoodEntryViewModel::class.java
 
     override fun injectFragment() {
         (requireActivity().application as MyApplication).appComponent.inject(this)

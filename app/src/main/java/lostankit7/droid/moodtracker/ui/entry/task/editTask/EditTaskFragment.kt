@@ -13,7 +13,7 @@ import lostankit7.droid.moodtracker.data.database.entities.TaskCategory
 import lostankit7.droid.moodtracker.databinding.DialogTextEntryBinding
 import lostankit7.droid.moodtracker.databinding.FragmentEditBinding
 import lostankit7.droid.moodtracker.databinding.ItemRvSingleTextBinding
-import lostankit7.droid.moodtracker.helper.Dialog
+import lostankit7.droid.moodtracker.helper.DialogHelper
 import lostankit7.droid.moodtracker.ui.entry.task.TaskEntryViewModel
 
 class EditTaskFragment : BaseDaggerFragment<FragmentEditBinding, TaskEntryViewModel>() {
@@ -64,7 +64,7 @@ class EditTaskFragment : BaseDaggerFragment<FragmentEditBinding, TaskEntryViewMo
     }
 
     private fun showDialog() {
-        Dialog.build(requireActivity(), DialogTextEntryBinding.inflate(layoutInflater))
+        DialogHelper.build(requireActivity(), DialogTextEntryBinding.inflate(layoutInflater))
         { view, dialog ->
             view.btnCancel.setOnClickListener { dialog.dismiss() }
             view.btnOkay.setOnClickListener {
@@ -78,7 +78,6 @@ class EditTaskFragment : BaseDaggerFragment<FragmentEditBinding, TaskEntryViewMo
     override fun inflateLayout(layoutInflater: LayoutInflater) =
         FragmentEditBinding.inflate(layoutInflater)
 
-    override fun viewModel() = TaskEntryViewModel::class.java
     override fun injectFragment() {
         (requireActivity().application as MyApplication).appComponent.inject(this)
     }

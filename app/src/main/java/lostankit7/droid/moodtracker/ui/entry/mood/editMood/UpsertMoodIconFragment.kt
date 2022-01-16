@@ -10,6 +10,7 @@ import lostankit7.droid.moodtracker.databinding.FragmentUpsertMoodIconBinding
 import lostankit7.droid.moodtracker.helper.showToast
 import lostankit7.droid.moodtracker.data.database.entities.MoodIcon
 import lostankit7.droid.moodtracker.data.database.entities.SuggestedMood
+import lostankit7.droid.moodtracker.helper.hideKeyBoard
 import lostankit7.droid.moodtracker.ui.entry.mood.MoodEntryViewModel
 
 class UpsertMoodIconFragment :
@@ -60,7 +61,7 @@ class UpsertMoodIconFragment :
                     viewModel.updateMoodIcon(icon)
                 }
                 navController.popBackStack()
-                hideKeyBoard()
+                requireActivity().hideKeyBoard()
             }
         }
     }
@@ -79,8 +80,6 @@ class UpsertMoodIconFragment :
 
     override fun inflateLayout(layoutInflater: LayoutInflater) =
         FragmentUpsertMoodIconBinding.inflate(layoutInflater)
-
-    override fun viewModel() = MoodEntryViewModel::class.java
 
     companion object {
         private const val spanCount = 6

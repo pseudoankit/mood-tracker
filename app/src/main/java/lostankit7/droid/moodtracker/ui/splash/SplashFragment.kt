@@ -26,7 +26,6 @@ class SplashFragment : BaseDaggerFragment<FragmentSplashBinding, SplashViewModel
     override fun inflateLayout(layoutInflater: LayoutInflater) =
         FragmentSplashBinding.inflate(layoutInflater)
 
-    override fun viewModel() = SplashViewModel::class.java
     override fun injectFragment() {
         appComponent.inject(this)
     }

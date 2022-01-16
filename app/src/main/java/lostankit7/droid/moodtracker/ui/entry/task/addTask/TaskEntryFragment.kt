@@ -9,6 +9,7 @@ import lostankit7.droid.moodtracker.MyApplication
 import lostankit7.droid.moodtracker.R
 import lostankit7.droid.moodtracker.databinding.FragmentTaskEntryBinding
 import lostankit7.droid.moodtracker.data.database.entities.TaskIcon
+import lostankit7.droid.moodtracker.helper.hideKeyBoard
 import lostankit7.droid.moodtracker.model.MoodEntry
 import lostankit7.droid.moodtracker.ui.entry.task.TaskEntryViewModel
 
@@ -71,7 +72,7 @@ class TaskEntryFragment : BaseDaggerFragment<FragmentTaskEntryBinding, TaskEntry
     }
 
     fun saveEntry() {
-        hideKeyBoard()
+        requireActivity().hideKeyBoard()
         viewModel.saveEntry(moodEntry, selectedTasksMap, binding.etNote.text.toString())
         navigateTo(R.id.action_taskEntryFragment_to_entriesFragment)
     }
@@ -79,7 +80,6 @@ class TaskEntryFragment : BaseDaggerFragment<FragmentTaskEntryBinding, TaskEntry
     override fun inflateLayout(layoutInflater: LayoutInflater) =
         FragmentTaskEntryBinding.inflate(layoutInflater)
 
-    override fun viewModel() = TaskEntryViewModel::class.java
 
     override fun injectFragment() {
         (requireActivity().application as MyApplication).appComponent.inject(this)

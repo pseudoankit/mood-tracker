@@ -7,10 +7,10 @@ import android.view.Window
 import android.view.WindowManager
 import androidx.viewbinding.ViewBinding
 
-object Dialog {
+object DialogHelper {
 
     fun <VB : ViewBinding> build(
-        activity: Activity, vb: VB, block: (VB, dialog: Dialog) -> Unit
+        activity: Activity, vb: VB, fullWidth: Boolean = true, block: ((VB, Dialog) -> Unit)? = null
     ): Dialog {
         val dialog = Dialog(activity)
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
@@ -21,9 +21,8 @@ object Dialog {
         lp.width = WindowManager.LayoutParams.MATCH_PARENT
         lp.height = WindowManager.LayoutParams.WRAP_CONTENT
         dialog.window?.attributes = lp
-        block(vb,dialog)
+        block?.invoke(vb, dialog)
 
         return dialog
     }
-
 }
