@@ -4,6 +4,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import lostankit7.droid.moodtracker.data.database.entities.TaskCategory
 import lostankit7.droid.moodtracker.data.database.entities.TaskIcon
 import lostankit7.droid.moodtracker.data.database.entities.UserEntry
 import lostankit7.droid.moodtracker.data.repository.TaskRepository
@@ -20,6 +21,10 @@ class TaskEntryViewModel @Inject constructor(
 ) : ViewModel() {
 
     val taskCategories = taskRepository.taskCategories
+
+    fun addCategory(item: TaskCategory) = viewModelScope.launch(Dispatchers.IO) {
+        taskRepository.insertTaskCategory(item)
+    }
 
     fun saveEntry(moodEntry: MoodEntry, tasksMap: MutableMap<Int, TaskIcon>, note: String) {
         val userEntry = mapInputToUserEntry(moodEntry, tasksMap, note)

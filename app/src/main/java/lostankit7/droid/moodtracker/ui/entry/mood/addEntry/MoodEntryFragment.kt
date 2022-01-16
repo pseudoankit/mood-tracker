@@ -15,7 +15,6 @@ import lostankit7.droid.moodtracker.helper.getSelectedDate
 import lostankit7.droid.moodtracker.helper.getSelectedTime
 import lostankit7.droid.moodtracker.model.MoodEntry
 import lostankit7.droid.moodtracker.data.database.entities.MoodIcon
-import lostankit7.droid.moodtracker.helper.constant.FontAwesomeIcon
 import lostankit7.droid.moodtracker.ui.entry.mood.MoodEntryViewModel
 
 class MoodEntryFragment : BaseDaggerFragment<FragmentMoodEntryBinding, MoodEntryViewModel>() {
@@ -53,7 +52,7 @@ class MoodEntryFragment : BaseDaggerFragment<FragmentMoodEntryBinding, MoodEntry
             binding.layoutTime.tvText.text.toString()
         )
         val bundle = bundleOf(resources.getString(R.string.arg_to_addNewTaskFrag) to moodEntry)
-        navigateTo(R.id.action_addMoodEntryFragment_to_addTaskEntryFragment, bundle)
+        navigateTo(R.id.action_moodEntryFragment_to_taskEntryFragment, bundle)
     }
 
     private fun dateTimeLayoutOperations() {
@@ -76,7 +75,7 @@ class MoodEntryFragment : BaseDaggerFragment<FragmentMoodEntryBinding, MoodEntry
 
     override fun initListeners() {
         binding.btnEditMood.setOnClickListener {
-            navigateTo(R.id.action_addMoodEntryFragment_to_editMoodFragment)
+            navigateTo(R.id.action_moodEntryFragment_to_editMoodFragment)
         }
     }
 

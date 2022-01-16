@@ -56,7 +56,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun addEntryButtonClicked() {
-        navController.navigate(R.id.addMoodEntryFragment, null, navOptions(ANIMATE_TOP_BOTTOM))
+        navController.navigate(R.id.moodEntryFragment, null, navOptions(ANIMATE_TOP_BOTTOM))
     }
 
     private fun onNavControllerDestinationChanged(
@@ -81,7 +81,7 @@ class MainActivity : AppCompatActivity() {
                 hideActionBar()
                 showBottomNav()
             }
-            R.id.addTaskEntryFragment -> {
+            R.id.taskEntryFragment -> {
                 showActionBarLeftSubIcon()
                 showSaveButton()
             }

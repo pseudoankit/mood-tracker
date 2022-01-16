@@ -40,9 +40,7 @@ class RvUserEntriesAdapter(private val itemClicked: (UserEntry) -> Unit) :
     }
 
     override fun inflateLayout(
-        layoutInflater: LayoutInflater,
-        parent: ViewGroup,
-        attachToParent: Boolean
+        layoutInflater: LayoutInflater, parent: ViewGroup, attachToParent: Boolean
     ) = ItemRvUserEntriesBinding.inflate(layoutInflater, parent, false)
 
     companion object {

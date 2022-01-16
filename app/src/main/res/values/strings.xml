@@ -9,17 +9,19 @@
     <string name="text_stats">Stats</string>
     <string name="text_more">More</string>
 
-    <!-- add new mood entry page -->
-    <string name="header_add_mood_entry">Tell us about your mood</string>
-
-    <!-- add new task entry page -->
-    <string name="header_add_task_entry">What have you been up to?</string>
-    <string name="et_note_hint">Add Note</string>
-
     <!-- edit or add new mood icons -->
+    <string name="header_add_mood_entry">Tell us about your mood</string>
     <string name="enter_mood_name">Enter mood name</string>
     <string name="text_add_new_mood">Add New Mood</string>
     <string name="error_empty_mood_icon">Please select any emoji</string>
+
+    <!-- edit or add new task entry page -->
+    <string name="header_add_task_entry">What have you been up to?</string>
+    <string name="et_note_hint">Add Note</string>
+    <string name="text_add_new_category">Add New Category</string>
+    <string name="text_enter_category">Enter Category</string>
+
+
 
     <!-- Task Categories -->
     <string name="other">Other</string>
@@ -62,4 +64,9 @@
     <string name="football">football</string>
     <string name="cricket">cricket</string>
     <string name="sports">sports</string>
+
+
+    <string name="text_add">Add</string>
+    <string name="text_cancel">Cancel</string>
+
 </resources>

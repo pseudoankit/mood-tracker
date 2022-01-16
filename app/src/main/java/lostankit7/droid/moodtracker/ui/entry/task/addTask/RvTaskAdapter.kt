@@ -53,9 +53,7 @@ class RvTaskAdapter(
     }
 
     override fun inflateLayout(
-        layoutInflater: LayoutInflater,
-        parent: ViewGroup,
-        attachToParent: Boolean
+        layoutInflater: LayoutInflater, parent: ViewGroup, attachToParent: Boolean
     ) = ItemRvTaskBinding.inflate(layoutInflater, parent, attachToParent)
 
     companion object {

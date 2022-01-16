@@ -8,21 +8,18 @@
     tools:context=".ui.entry.mood.editMood.EditMoodFragment">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvMoodIcon"
+        android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@id/btnAddNewMood"
+        app:layout_constraintBottom_toTopOf="@id/btnAddNew"
         app:layout_constraintTop_toTopOf="parent" />
 
     <lostankit7.droid.CustomButton
-        android:id="@+id/btnAddNewMood"
+        android:id="@+id/btnAddNew"
+        style="@style/defButtonStyle"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/def_button_height"
         android:layout_marginHorizontal="10dp"
-        app:stroke_color="@color/stroke_color"
-        app:corner_radius="@dimen/corner_radius"
         android:text="@string/text_add_new_mood"
-        android:textAllCaps="false"
         app:layout_constraintBottom_toBottomOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

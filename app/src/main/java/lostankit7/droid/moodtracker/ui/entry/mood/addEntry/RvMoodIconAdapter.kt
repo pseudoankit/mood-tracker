@@ -22,9 +22,7 @@ class RvMoodIconAdapter(
     }
 
     override fun inflateLayout(
-        layoutInflater: LayoutInflater,
-        parent: ViewGroup,
-        attachToParent: Boolean
+        layoutInflater: LayoutInflater, parent: ViewGroup, attachToParent: Boolean
     ) = ItemRvMoodIconBinding.inflate(layoutInflater, parent, attachToParent)
 
     companion object {

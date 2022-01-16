@@ -68,11 +68,13 @@ abstract class BaseDaggerFragment<VB : ViewBinding, VM : ViewModel> : Fragment()
         navController = Navigation.findNavController(view)
 
         init()
+        initRecyclerView()
         lifecycleScope.launchWhenStarted { registerObservers() }
         initListeners()
     }
 
     open fun init() {}
+    open fun initRecyclerView() {}
     open suspend fun registerObservers() {}
     open fun initListeners() {}
 

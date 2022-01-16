@@ -33,6 +33,14 @@ class TaskEntryFragment : BaseDaggerFragment<FragmentTaskEntryBinding, TaskEntry
         }
     }
 
+    override fun initListeners() {
+        super.initListeners()
+
+        binding.btnEditTask.setOnClickListener {
+            navigateTo(R.id.action_taskEntryFragment_to_editTaskFragment)
+        }
+    }
+
     override suspend fun registerObservers() {
         super.registerObservers()
 
@@ -65,7 +73,7 @@ class TaskEntryFragment : BaseDaggerFragment<FragmentTaskEntryBinding, TaskEntry
     fun saveEntry() {
         hideKeyBoard()
         viewModel.saveEntry(moodEntry, selectedTasksMap, binding.etNote.text.toString())
-        navigateTo(R.id.action_addTaskEntryFragment_to_entriesFragment)
+        navigateTo(R.id.action_taskEntryFragment_to_entriesFragment)
     }
 
     override fun inflateLayout(layoutInflater: LayoutInflater) =

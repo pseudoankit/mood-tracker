@@ -19,12 +19,10 @@ class RvEditMoodIconAdapter(private val onClick: (Int, MoodIcon) -> Unit) :
         binding.tvEditMood.setOnClickListener { onClick(EDIT, item) }
         binding.tvDeleteMood.setOnClickListener { onClick(DELETE, item) }
     }
-//todo add ripple effect on root view click
+
     override fun inflateLayout(
-        layoutInflater: LayoutInflater,
-        parent: ViewGroup,
-        attachToParent: Boolean
-    ) = ItemEditMoodIconBinding.inflate(layoutInflater)
+        layoutInflater: LayoutInflater, parent: ViewGroup, attachToParent: Boolean
+    ) = ItemEditMoodIconBinding.inflate(layoutInflater, parent, attachToParent)
 
     companion object {
         fun newInstance(onClick: (Int, MoodIcon) -> Unit) = RvEditMoodIconAdapter(onClick)

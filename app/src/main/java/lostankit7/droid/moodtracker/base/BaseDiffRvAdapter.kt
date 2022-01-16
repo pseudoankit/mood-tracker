@@ -2,6 +2,7 @@ package lostankit7.droid.moodtracker.base
 
 import android.content.Context
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
@@ -9,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.viewbinding.ViewBinding
 import lostankit7.droid.moodtracker.base.BaseDiffRvAdapter.Companion.ViewHolder
 import lostankit7.droid.moodtracker.data.database.entities.UserEntry
+import lostankit7.droid.moodtracker.databinding.ActionBarBinding.inflate
 
 abstract class BaseDiffRvAdapter<VB : ViewBinding, T : Any>(
     areItemsSame: (oldItem: T, newItem: T) -> Boolean = { old, new -> old === new },
@@ -20,6 +22,7 @@ abstract class BaseDiffRvAdapter<VB : ViewBinding, T : Any>(
         onCreateViewHolder(binding)
         return ViewHolder(binding)
     }
+
     open fun onCreateViewHolder(binding: VB) {}
 
     override fun onBindViewHolder(holder: ViewHolder<VB>, position: Int) {
@@ -28,9 +31,7 @@ abstract class BaseDiffRvAdapter<VB : ViewBinding, T : Any>(
 
     abstract fun bindViewHolder(item: T, position: Int, binding: VB)
     abstract fun inflateLayout(
-        layoutInflater: LayoutInflater,
-        parent: ViewGroup,
-        attachToParent: Boolean
+        layoutInflater: LayoutInflater, parent: ViewGroup, attachToParent: Boolean
     ): VB
 
     companion object {

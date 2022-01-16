@@ -11,9 +11,7 @@ class RvSuggestedMoodAdapter(
 ) : BaseDiffRvAdapter<ItemRvSuggestedMoodBinding, SuggestedMood>() {
 
     override fun bindViewHolder(
-        item: SuggestedMood,
-        position: Int,
-        binding: ItemRvSuggestedMoodBinding
+        item: SuggestedMood, position: Int, binding: ItemRvSuggestedMoodBinding
     ) {
 
         binding.tvIcon.text = item.icon
@@ -23,9 +21,7 @@ class RvSuggestedMoodAdapter(
     }
 
     override fun inflateLayout(
-        layoutInflater: LayoutInflater,
-        parent: ViewGroup,
-        attachToParent: Boolean
+        layoutInflater: LayoutInflater, parent: ViewGroup, attachToParent: Boolean
     ) = ItemRvSuggestedMoodBinding.inflate(layoutInflater)
 
     companion object {

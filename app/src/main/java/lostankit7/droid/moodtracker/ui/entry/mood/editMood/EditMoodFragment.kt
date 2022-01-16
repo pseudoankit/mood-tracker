@@ -8,12 +8,12 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import lostankit7.droid.moodtracker.R
 import lostankit7.droid.moodtracker.base.BaseDaggerFragment
 import lostankit7.droid.moodtracker.data.database.entities.MoodIcon
-import lostankit7.droid.moodtracker.databinding.FragmentEditMoodBinding
+import lostankit7.droid.moodtracker.databinding.FragmentEditBinding
 import lostankit7.droid.moodtracker.helper.constant.Action.DELETE
 import lostankit7.droid.moodtracker.helper.constant.Action.EDIT
 import lostankit7.droid.moodtracker.ui.entry.mood.MoodEntryViewModel
 
-class EditMoodFragment : BaseDaggerFragment<FragmentEditMoodBinding, MoodEntryViewModel>() {
+class EditMoodFragment : BaseDaggerFragment<FragmentEditBinding, MoodEntryViewModel>() {
 
     private val adapter by lazy { RvEditMoodIconAdapter.newInstance(::onItemClick) }
 
@@ -43,18 +43,18 @@ class EditMoodFragment : BaseDaggerFragment<FragmentEditMoodBinding, MoodEntryVi
     }
 
     override fun initListeners() {
-        binding.btnAddNewMood.setOnClickListener {
+        binding.btnAddNew.setOnClickListener {
             navigateTo(R.id.action_editMoodFragment_to_upsertMoodIconFragment)
         }
     }
 
     private fun setUpRecyclerView() {
-        binding.rvMoodIcon.layoutManager = LinearLayoutManager(requireContext())
-        binding.rvMoodIcon.adapter = adapter
+        binding.recyclerView.layoutManager = LinearLayoutManager(requireContext())
+        binding.recyclerView.adapter = adapter
     }
 
     override fun inflateLayout(layoutInflater: LayoutInflater) =
-        FragmentEditMoodBinding.inflate(layoutInflater)
+        FragmentEditBinding.inflate(layoutInflater)
 
     override fun viewModel() = MoodEntryViewModel::class.java
     override fun injectFragment() {
