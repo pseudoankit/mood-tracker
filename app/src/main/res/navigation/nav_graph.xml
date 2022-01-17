@@ -62,13 +62,13 @@
             app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_taskEntryFragment_to_editTaskFragment"
-            app:destination="@id/editTaskFragment" />
+            app:destination="@id/taskCategoriesFragment" />
     </fragment>
     <fragment
         android:id="@+id/editMoodFragment"
-        android:name="lostankit7.droid.moodtracker.ui.entry.mood.editMood.EditMoodFragment"
+        android:name="lostankit7.droid.moodtracker.ui.entry.mood.editMood.MoodListFragment"
         android:label="fragment_edit_mood"
-        tools:layout="@layout/fragment_edit">
+        tools:layout="@layout/fragment_show_list">
         <action
             android:id="@+id/action_editMoodFragment_to_upsertMoodIconFragment"
             app:destination="@id/upsertMoodIconFragment"
@@ -87,7 +87,18 @@
             app:nullable="true" />
     </fragment>
     <fragment
-        android:id="@+id/editTaskFragment"
-        android:name="lostankit7.droid.moodtracker.ui.entry.task.editTask.EditTaskFragment"
-        android:label="EditTaskFragment" />
+        android:id="@+id/taskCategoriesFragment"
+        android:name="lostankit7.droid.moodtracker.ui.entry.task.editTask.TaskCategoriesFragment"
+        android:label="EditTaskFragment">
+        <argument
+            android:name="@string/arg_to_taskItemsFrag"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_taskCategoriesFragment_to_taskItemsFragment"
+            app:destination="@id/taskItemsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/taskItemsFragment"
+        android:name="lostankit7.droid.moodtracker.ui.entry.task.editTask.TaskItemsFragment"
+        android:label="TaskItemsFragment" />
 </navigation>

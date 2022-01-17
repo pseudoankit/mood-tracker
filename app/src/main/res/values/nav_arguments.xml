@@ -2,4 +2,5 @@
 <resources>
     <string name="arg_to_addNewTaskFrag">moodEntryDetails</string>
     <string name="arg_to_upsertMoodFrag">moodItem</string>
+    <string name="arg_to_taskItemsFrag">taskItemArg</string>
 </resources>

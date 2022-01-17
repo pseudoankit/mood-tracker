@@ -8,14 +8,14 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import lostankit7.droid.moodtracker.R
 import lostankit7.droid.moodtracker.base.BaseDaggerFragment
 import lostankit7.droid.moodtracker.data.database.entities.MoodIcon
-import lostankit7.droid.moodtracker.databinding.FragmentEditBinding
+import lostankit7.droid.moodtracker.databinding.FragmentShowListBinding
 import lostankit7.droid.moodtracker.helper.constant.Action.DELETE
 import lostankit7.droid.moodtracker.helper.constant.Action.EDIT
 import lostankit7.droid.moodtracker.ui.entry.mood.MoodEntryViewModel
 
-class EditMoodFragment : BaseDaggerFragment<FragmentEditBinding, MoodEntryViewModel>() {
+class MoodListFragment : BaseDaggerFragment<FragmentShowListBinding, MoodEntryViewModel>() {
 
-    private val adapter by lazy { RvEditMoodIconAdapter.newInstance(::onItemClick) }
+    private val adapter by lazy { MoodIconsRvAdapter.newInstance(::onItemClick) }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -54,7 +54,7 @@ class EditMoodFragment : BaseDaggerFragment<FragmentEditBinding, MoodEntryViewMo
     }
 
     override fun inflateLayout(layoutInflater: LayoutInflater) =
-        FragmentEditBinding.inflate(layoutInflater)
+        FragmentShowListBinding.inflate(layoutInflater)
 
     override fun injectFragment() {
         appComponent.inject(this)

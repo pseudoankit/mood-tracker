@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingHorizontal="@dimen/padding_screen"
-    tools:context=".ui.entry.mood.editMood.EditMoodFragment">
+    tools:context=".ui.entry.mood.editMood.MoodListFragment">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"

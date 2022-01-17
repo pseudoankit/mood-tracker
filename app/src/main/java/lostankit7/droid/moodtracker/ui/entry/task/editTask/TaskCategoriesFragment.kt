@@ -3,22 +3,21 @@ package lostankit7.droid.moodtracker.ui.entry.task.editTask
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
+import androidx.core.os.bundleOf
 import androidx.recyclerview.widget.LinearLayoutManager
 import lostankit7.droid.moodtracker.MyApplication
 import lostankit7.droid.moodtracker.R
 import lostankit7.droid.moodtracker.base.BaseDaggerFragment
-import lostankit7.droid.moodtracker.base.BaseDiffRvAdapter
 import lostankit7.droid.moodtracker.data.database.entities.TaskCategory
 import lostankit7.droid.moodtracker.databinding.DialogTextEntryBinding
-import lostankit7.droid.moodtracker.databinding.FragmentEditBinding
-import lostankit7.droid.moodtracker.databinding.ItemRvSingleTextBinding
+import lostankit7.droid.moodtracker.databinding.FragmentShowListBinding
 import lostankit7.droid.moodtracker.helper.DialogHelper
 import lostankit7.droid.moodtracker.ui.entry.task.TaskEntryViewModel
+import lostankit7.droid.moodtracker.ui.entry.task.editTask.adapter.TaskCategoryRvAdapter
 
-class EditTaskFragment : BaseDaggerFragment<FragmentEditBinding, TaskEntryViewModel>() {
+class TaskCategoriesFragment : BaseDaggerFragment<FragmentShowListBinding, TaskEntryViewModel>() {
 
-    private lateinit var adapter: BaseDiffRvAdapter<ItemRvSingleTextBinding, TaskCategory>
+    private val adapter by lazy { TaskCategoryRvAdapter.createInstance(::itemClick) }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -34,19 +33,15 @@ class EditTaskFragment : BaseDaggerFragment<FragmentEditBinding, TaskEntryViewMo
         }
     }
 
+    private fun itemClick(category: String) {
+        navigateTo(
+            R.id.action_taskCategoriesFragment_to_taskItemsFragment,
+            bundleOf(resources.getString(R.string.arg_to_taskItemsFrag) to category)
+        )
+    }
+
     override fun initRecyclerView() {
         binding.recyclerView.layoutManager = LinearLayoutManager(requireContext())
-        adapter = object : BaseDiffRvAdapter<ItemRvSingleTextBinding, TaskCategory>() {
-            override fun bindViewHolder(
-                item: TaskCategory, position: Int, binding: ItemRvSingleTextBinding
-            ) {
-                binding.tvText.text = item.category
-            }
-
-            override fun inflateLayout(
-                layoutInflater: LayoutInflater, parent: ViewGroup, attachToParent: Boolean
-            ) = ItemRvSingleTextBinding.inflate(layoutInflater, parent, attachToParent)
-        }
         binding.recyclerView.adapter = adapter
     }
 
@@ -76,7 +71,7 @@ class EditTaskFragment : BaseDaggerFragment<FragmentEditBinding, TaskEntryViewMo
     }
 
     override fun inflateLayout(layoutInflater: LayoutInflater) =
-        FragmentEditBinding.inflate(layoutInflater)
+        FragmentShowListBinding.inflate(layoutInflater)
 
     override fun injectFragment() {
         (requireActivity().application as MyApplication).appComponent.inject(this)

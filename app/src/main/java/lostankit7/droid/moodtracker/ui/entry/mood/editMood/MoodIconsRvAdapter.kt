@@ -3,15 +3,15 @@ package lostankit7.droid.moodtracker.ui.entry.mood.editMood
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import lostankit7.droid.moodtracker.base.BaseDiffRvAdapter
-import lostankit7.droid.moodtracker.databinding.ItemEditMoodIconBinding
 import lostankit7.droid.moodtracker.data.database.entities.MoodIcon
+import lostankit7.droid.moodtracker.databinding.ItemIconListBinding
 import lostankit7.droid.moodtracker.helper.constant.Action.DELETE
 import lostankit7.droid.moodtracker.helper.constant.Action.EDIT
 
-class RvEditMoodIconAdapter(private val onClick: (Int, MoodIcon) -> Unit) :
-    BaseDiffRvAdapter<ItemEditMoodIconBinding, MoodIcon>() {
+class MoodIconsRvAdapter(private val onClick: (Int, MoodIcon) -> Unit) :
+    BaseDiffRvAdapter<ItemIconListBinding, MoodIcon>() {
 
-    override fun bindViewHolder(item: MoodIcon, position: Int, binding: ItemEditMoodIconBinding) {
+    override fun bindViewHolder(item: MoodIcon, position: Int, binding: ItemIconListBinding) {
         binding.tvMoodName.text = item.name
         binding.moodIcon.text = item.icon
 
@@ -22,9 +22,9 @@ class RvEditMoodIconAdapter(private val onClick: (Int, MoodIcon) -> Unit) :
 
     override fun inflateLayout(
         layoutInflater: LayoutInflater, parent: ViewGroup, attachToParent: Boolean
-    ) = ItemEditMoodIconBinding.inflate(layoutInflater, parent, attachToParent)
+    ) = ItemIconListBinding.inflate(layoutInflater, parent, attachToParent)
 
     companion object {
-        fun newInstance(onClick: (Int, MoodIcon) -> Unit) = RvEditMoodIconAdapter(onClick)
+        fun newInstance(onClick: (Int, MoodIcon) -> Unit) = MoodIconsRvAdapter(onClick)
     }
 }
