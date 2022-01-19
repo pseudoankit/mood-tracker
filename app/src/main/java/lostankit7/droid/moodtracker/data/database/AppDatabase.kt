@@ -6,7 +6,7 @@ import lostankit7.droid.moodtracker.data.database.dao.*
 import lostankit7.droid.moodtracker.data.database.entities.*
 
 @Database(
-    entities = [UserEntry::class, MoodIcon::class, SuggestedMood::class, TaskCategory::class, TaskIcon::class],
+    entities = [UserEntry::class, MoodIcon::class, SuggestedMoodIcon::class, TaskCategory::class, TaskIcon::class],
     version = AppDatabase.DB_VERSION,
     exportSchema = true
 )

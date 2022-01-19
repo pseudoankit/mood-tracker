@@ -3,7 +3,7 @@ package lostankit7.droid.moodtracker.data.repository
 import lostankit7.droid.moodtracker.data.database.dao.MoodIconDao
 import lostankit7.droid.moodtracker.data.database.dao.SuggestedMoodDao
 import lostankit7.droid.moodtracker.data.database.entities.MoodIcon
-import lostankit7.droid.moodtracker.data.database.entities.SuggestedMood
+import lostankit7.droid.moodtracker.data.database.entities.SuggestedMoodIcon
 import javax.inject.Inject
 
 class MoodRepository @Inject constructor(
@@ -23,7 +23,7 @@ class MoodRepository @Inject constructor(
 
     fun updateMoodIcon(icon: MoodIcon) = moodIconDao.updateMoodIcon(icon)
 
-    suspend fun insertSuggestedMoods(list: List<SuggestedMood>) =
+    suspend fun insertSuggestedMoods(list: List<SuggestedMoodIcon>) =
         suggestedMoodDao.insertSuggestions(list)
 
 }

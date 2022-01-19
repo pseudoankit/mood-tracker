@@ -20,10 +20,7 @@ import lostankit7.droid.moodtracker.ui.entry.mood.MoodEntryViewModel
 class MoodEntryFragment : BaseDaggerFragment<FragmentMoodEntryBinding, MoodEntryViewModel>() {
 
     private val moodIconAdapter by lazy {
-        RvMoodIconAdapter.newInstance(
-            requireContext(),
-            this@MoodEntryFragment::onMoodIconSelected
-        )
+        RvMoodIconAdapter.newInstance(requireContext(), ::onMoodIconSelected)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

@@ -3,11 +3,9 @@ package lostankit7.droid.moodtracker.ui.splash
 import android.content.Context
 import lostankit7.droid.moodtracker.R
 import lostankit7.droid.moodtracker.data.database.entities.MoodIcon
-import lostankit7.droid.moodtracker.data.database.entities.SuggestedMood
+import lostankit7.droid.moodtracker.data.database.entities.SuggestedMoodIcon
 import lostankit7.droid.moodtracker.data.database.entities.TaskCategory
 import lostankit7.droid.moodtracker.data.database.entities.TaskIcon
-import lostankit7.droid.moodtracker.helper.constant.FontAwesomeIcon
-import lostankit7.droid.moodtracker.helper.constant.MoodNames
 
 object DefaultValues {
 
@@ -53,36 +51,36 @@ object DefaultValues {
     )
 
     fun suggestedMoodIcons() = listOf(
-        SuggestedMood("\uf5b8"),
-        SuggestedMood("\uf5b3"),
-        SuggestedMood("\uf5a4"),
-        SuggestedMood("\uf59c"),
-        SuggestedMood("\uf59a"),
-        SuggestedMood("\uf598"),
-        SuggestedMood("\uf58c"),
-        SuggestedMood("\uf58b"),
-        SuggestedMood("\uf589"),
-        SuggestedMood("\uf588"),
-        SuggestedMood("\uf587"),
-        SuggestedMood("\uf586"),
-        SuggestedMood("\uf585"),
-        SuggestedMood("\uf584"),
-        SuggestedMood("\uf583"),
-        SuggestedMood("\uf582"),
-        SuggestedMood("\uf581"),
-        SuggestedMood("\uf580"),
-        SuggestedMood("\uf57f"),
-        SuggestedMood("\uf57a"),
-        SuggestedMood("\uf579"),
-        SuggestedMood("\uf556"),
-        SuggestedMood("\uf5a5"),
-        SuggestedMood("\uf5c8"),
-        SuggestedMood("\uf5c2"),
-        SuggestedMood("\uf4da"),
-        SuggestedMood("\uf5b4"),
-        SuggestedMood("\uf596"),
-        SuggestedMood("\uf58a"),
-        SuggestedMood("\uf118"),
+        SuggestedMoodIcon("\uf5b8"),
+        SuggestedMoodIcon("\uf5b3"),
+        SuggestedMoodIcon("\uf5a4"),
+        SuggestedMoodIcon("\uf59c"),
+        SuggestedMoodIcon("\uf59a"),
+        SuggestedMoodIcon("\uf598"),
+        SuggestedMoodIcon("\uf58c"),
+        SuggestedMoodIcon("\uf58b"),
+        SuggestedMoodIcon("\uf589"),
+        SuggestedMoodIcon("\uf588"),
+        SuggestedMoodIcon("\uf587"),
+        SuggestedMoodIcon("\uf586"),
+        SuggestedMoodIcon("\uf585"),
+        SuggestedMoodIcon("\uf584"),
+        SuggestedMoodIcon("\uf583"),
+        SuggestedMoodIcon("\uf582"),
+        SuggestedMoodIcon("\uf581"),
+        SuggestedMoodIcon("\uf580"),
+        SuggestedMoodIcon("\uf57f"),
+        SuggestedMoodIcon("\uf57a"),
+        SuggestedMoodIcon("\uf579"),
+        SuggestedMoodIcon("\uf556"),
+        SuggestedMoodIcon("\uf5a5"),
+        SuggestedMoodIcon("\uf5c8"),
+        SuggestedMoodIcon("\uf5c2"),
+        SuggestedMoodIcon("\uf4da"),
+        SuggestedMoodIcon("\uf5b4"),
+        SuggestedMoodIcon("\uf596"),
+        SuggestedMoodIcon("\uf58a"),
+        SuggestedMoodIcon("\uf118"),
     )
 
     fun moodIcons(context: Context) = listOf(

@@ -1,19 +1,18 @@
-package lostankit7.droid.moodtracker.ui.entry.mood.editMood
+package lostankit7.droid.moodtracker.ui.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import lostankit7.droid.moodtracker.base.BaseDiffRvAdapter
-import lostankit7.droid.moodtracker.data.database.entities.SuggestedMood
+import lostankit7.droid.moodtracker.data.database.entities.Icon
 import lostankit7.droid.moodtracker.databinding.ItemRvSuggestedMoodBinding
 
-class RvSuggestedMoodAdapter(
-    private val iconSelected: (SuggestedMood) -> Unit,
-) : BaseDiffRvAdapter<ItemRvSuggestedMoodBinding, SuggestedMood>() {
+class DisplayIconRvAdapter(
+    private val iconSelected: (Icon) -> Unit,
+) : BaseDiffRvAdapter<ItemRvSuggestedMoodBinding, Icon>() {
 
     override fun bindViewHolder(
-        item: SuggestedMood, position: Int, binding: ItemRvSuggestedMoodBinding
+        item: Icon, position: Int, binding: ItemRvSuggestedMoodBinding
     ) {
-
         binding.tvIcon.text = item.icon
         binding.root.setOnClickListener {
             iconSelected.invoke(item)
@@ -25,7 +24,7 @@ class RvSuggestedMoodAdapter(
     ) = ItemRvSuggestedMoodBinding.inflate(layoutInflater)
 
     companion object {
-        fun newInstance(iconSelected: (SuggestedMood) -> Unit) =
-            RvSuggestedMoodAdapter(iconSelected)
+        fun newInstance(iconSelected: (Icon) -> Unit) =
+            DisplayIconRvAdapter(iconSelected)
     }
 }

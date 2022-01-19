@@ -5,6 +5,7 @@ import android.os.Parcelable
 import androidx.room.Entity
 import androidx.room.Ignore
 import androidx.room.PrimaryKey
+import androidx.versionedparcelable.ParcelField
 import lostankit7.droid.moodtracker.data.database.AppDatabase
 
 @Entity

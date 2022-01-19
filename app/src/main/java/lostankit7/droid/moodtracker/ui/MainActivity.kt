@@ -40,7 +40,10 @@ class MainActivity : AppCompatActivity() {
         binding.fabAddUserEntry.setOnClickListener { addEntryButtonClicked() }
 
         binding.actionBar.btnBack.setOnClickListener {
-            (getSystemService(Context.INPUT_METHOD_SERVICE) as? InputMethodManager)?.hideSoftInputFromWindow(this.currentFocus?.windowToken,0)
+            (getSystemService(Context.INPUT_METHOD_SERVICE) as? InputMethodManager)?.hideSoftInputFromWindow(
+                this.currentFocus?.windowToken,
+                0
+            )
             navController.popBackStack()
         }
 
@@ -52,6 +55,7 @@ class MainActivity : AppCompatActivity() {
             supportFragmentManager.findFragmentById(R.id.fragment_container)?.childFragmentManager?.primaryNavigationFragment) {
             is TaskEntryFragment -> fragment.saveEntry()
             is UpsertMoodIconFragment -> fragment.saveMoodIcon()
+
         }
     }
 
@@ -85,7 +89,7 @@ class MainActivity : AppCompatActivity() {
                 showActionBarLeftSubIcon()
                 showSaveButton()
             }
-            R.id.upsertMoodIconFragment -> {
+            R.id.upsertMoodIconFragment, R.id.upsertTaskIconFragment -> {
                 showSaveButton()
             }
         }
@@ -117,22 +121,22 @@ class MainActivity : AppCompatActivity() {
         binding.actionBar.btnSave.hide()
     }
 
-    private fun hideActionBar() {
-        binding.actionBar.container.hide()
-    }
-
     private fun showActionBar() {
         binding.actionBar.container.show()
     }
 
-    private fun hideBottomNav() {
-        binding.bottomLayout.hide()
-        binding.fragmentBottomGuide.hide()
+    private fun hideActionBar() {
+        binding.actionBar.container.hide()
     }
 
     private fun showBottomNav() {
         binding.bottomLayout.show()
         binding.fragmentBottomGuide.show()
+    }
+
+    private fun hideBottomNav() {
+        binding.bottomLayout.hide()
+        binding.fragmentBottomGuide.hide()
     }
 
     fun actionBar() = binding.actionBar

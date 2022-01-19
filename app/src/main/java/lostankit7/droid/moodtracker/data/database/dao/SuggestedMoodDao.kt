@@ -4,18 +4,18 @@ import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
-import lostankit7.droid.moodtracker.data.database.entities.SuggestedMood
+import lostankit7.droid.moodtracker.data.database.entities.SuggestedMoodIcon
 
 @Dao
 interface SuggestedMoodDao {
 
     @Insert
-    suspend fun insertSuggestions(icons: List<SuggestedMood>)
+    suspend fun insertSuggestions(icons: List<SuggestedMoodIcon>)
 
-    @Query("SELECT * FROM SuggestedMood")
-    fun suggestedMoodIcons(): LiveData<List<SuggestedMood>>
+    @Query("SELECT * FROM SuggestedMoodIcon")
+    fun suggestedMoodIcons(): LiveData<List<SuggestedMoodIcon>>
 
-    @Query("SELECT * FROM SuggestedMood")
-    fun suggestedMoodNames(): List<SuggestedMood>
+    @Query("SELECT * FROM SuggestedMoodIcon")
+    fun suggestedMoodNames(): List<SuggestedMoodIcon>
 
 }

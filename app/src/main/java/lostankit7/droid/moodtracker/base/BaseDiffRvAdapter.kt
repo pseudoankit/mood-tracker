@@ -16,11 +16,11 @@ abstract class BaseDiffRvAdapter<VB : ViewBinding, T : Any>(
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder<VB> {
         val binding = inflateLayout(LayoutInflater.from(parent.context), parent, false)
         val holder = ViewHolder(binding)
-        onCreateViewHolder(holder)
+        onCreateHolder(holder, parent, viewType)
         return holder
     }
 
-    open fun onCreateViewHolder(holder: ViewHolder<VB>) {}
+    open fun onCreateHolder(holder: ViewHolder<VB>, parent: ViewGroup, viewType: Int) {}
 
     override fun onBindViewHolder(holder: ViewHolder<VB>, position: Int) {
         bindViewHolder(getItem(position), position, holder.binding)

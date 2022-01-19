@@ -9,8 +9,11 @@ import lostankit7.droid.moodtracker.databinding.ItemRvSingleTextBinding
 class TaskCategoryRvAdapter(private val itemClick: (String) -> Unit) :
     BaseDiffRvAdapter<ItemRvSingleTextBinding, TaskCategory>() {
 
-    override fun onCreateViewHolder(holder: BaseDiffRvAdapter.Companion.ViewHolder<ItemRvSingleTextBinding>) {
-        super.onCreateViewHolder(holder)
+    override fun onCreateHolder(
+        holder: BaseDiffRvAdapter.Companion.ViewHolder<ItemRvSingleTextBinding>,
+        parent: ViewGroup, viewType: Int
+    ) {
+        super.onCreateHolder(holder, parent, viewType)
 
         holder.binding.root.setOnClickListener {
             itemClick(getItem(holder.adapterPosition).category)

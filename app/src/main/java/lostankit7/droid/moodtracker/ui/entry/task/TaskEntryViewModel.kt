@@ -22,20 +22,17 @@ class TaskEntryViewModel @Inject constructor(
 ) : BaseViewModel() {
 
     val taskCategories = taskRepository.taskCategories
-
-    fun addCategory(item: TaskCategory) = launchIo {
-        taskRepository.insertTaskCategory(item)
-    }
-
-    fun saveEntry(moodEntry: MoodEntry, tasksMap: MutableMap<Int, TaskIcon>, note: String) {
-        val userEntry = mapInputToUserEntry(moodEntry, tasksMap, note)
-
-        launchIo {
-            repository.saveUserEntry(userEntry)
-        }
-    }
+    fun addCategory(item: TaskCategory) = launchIo { taskRepository.insertTaskCategory(item) }
 
     fun getTaskIcons(category: String) = taskRepository.getTaskIcons(category)
+    fun insertTask(it: TaskIcon) = launchIo { taskRepository.insertTask(it) }
+    fun updateTask(it: TaskIcon) = launchIo { taskRepository.updateTask(it) }
+    fun deleteTask(it: TaskIcon) = launchIo { taskRepository.deleteTask(it) }
+
+    fun saveEntry(moodEntry: MoodEntry, tasksMap: MutableMap<Int, TaskIcon>, note: String) =
+        launchIo {
+            repository.saveUserEntry(mapInputToUserEntry(moodEntry, tasksMap, note))
+        }
 
     private fun mapInputToUserEntry(
         moodEntry: MoodEntry,

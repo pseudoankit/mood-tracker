@@ -8,7 +8,7 @@
     tools:context=".ui.entry.mood.editMood.UpsertMoodIconFragment">
 
     <lostankit7.droid.CustomTextView
-        android:id="@+id/tvSelectedMoodIcon"
+        android:id="@+id/tvSelectedIcon"
         style="@style/moodIconStyle"
         android:layout_marginStart="10dp"
         android:text="@string/far_circle"
@@ -17,21 +17,21 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/edtSelectedMoodName"
+        android:id="@+id/edtSelectedName"
         style="@style/defEdtStyle"
         android:layout_marginHorizontal="10dp"
         android:gravity="center_vertical"
         android:hint="@string/enter_mood_name"
         android:textColor="@color/sec_icon_color"
-        app:layout_constraintBottom_toBottomOf="@id/tvSelectedMoodIcon"
+        app:layout_constraintBottom_toBottomOf="@id/tvSelectedIcon"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/tvSelectedMoodIcon"
-        app:layout_constraintTop_toTopOf="@id/tvSelectedMoodIcon" />
+        app:layout_constraintStart_toEndOf="@id/tvSelectedIcon"
+        app:layout_constraintTop_toTopOf="@id/tvSelectedIcon" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvSelectMoodIcon"
+        android:id="@+id/rvDisplayIcons"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvSelectedMoodIcon" />
+        app:layout_constraintTop_toBottomOf="@id/tvSelectedIcon" />
 </androidx.constraintlayout.widget.ConstraintLayout>

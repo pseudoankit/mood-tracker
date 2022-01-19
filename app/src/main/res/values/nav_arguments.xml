@@ -3,4 +3,6 @@
     <string name="arg_to_addNewTaskFrag">moodEntryDetails</string>
     <string name="arg_to_upsertMoodFrag">moodItem</string>
     <string name="arg_to_taskItemsFrag">taskItemArg</string>
+    <string name="taskIcon_to_upsertTaskFrag">upsertTaskItemArg</string>
+    <string name="category_to_upsertTaskFrag">category</string>
 </resources>

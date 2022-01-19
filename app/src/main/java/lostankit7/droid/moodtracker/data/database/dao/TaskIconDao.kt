@@ -1,9 +1,7 @@
 package lostankit7.droid.moodtracker.data.database.dao
 
 import androidx.lifecycle.LiveData
-import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.Query
+import androidx.room.*
 import lostankit7.droid.moodtracker.data.database.entities.TaskIcon
 
 @Dao
@@ -18,4 +16,9 @@ interface TaskIconDao {
     @Insert
     suspend fun insertTaskIcon(icon: TaskIcon)
 
+    @Delete
+    suspend fun deleteTask(icon: TaskIcon)
+
+    @Update
+    suspend fun updateTask(icon: TaskIcon)
 }

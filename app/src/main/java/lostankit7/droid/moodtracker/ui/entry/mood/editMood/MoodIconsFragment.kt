@@ -2,6 +2,7 @@ package lostankit7.droid.moodtracker.ui.entry.mood.editMood
 
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.MenuItem
 import android.view.View
 import androidx.core.os.bundleOf
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -9,28 +10,38 @@ import lostankit7.droid.moodtracker.R
 import lostankit7.droid.moodtracker.base.BaseDaggerFragment
 import lostankit7.droid.moodtracker.data.database.entities.MoodIcon
 import lostankit7.droid.moodtracker.databinding.FragmentShowListBinding
-import lostankit7.droid.moodtracker.helper.constant.Action.DELETE
-import lostankit7.droid.moodtracker.helper.constant.Action.EDIT
 import lostankit7.droid.moodtracker.ui.entry.mood.MoodEntryViewModel
+import lostankit7.droid.moodtracker.ui.adapter.IconListRvAdapter
 
-class MoodListFragment : BaseDaggerFragment<FragmentShowListBinding, MoodEntryViewModel>() {
+class MoodIconsFragment : BaseDaggerFragment<FragmentShowListBinding, MoodEntryViewModel>() {
 
-    private val adapter by lazy { MoodIconsRvAdapter.newInstance(::onItemClick) }
+    private val adapter by lazy {
+        IconListRvAdapter.newInstance(::editMoodIcon, ::rvOptionsSelected)
+    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        setUpRecyclerView()
     }
 
-    private fun onItemClick(action: Int, item: MoodIcon) {
-        when (action) {
-            EDIT -> navigateTo(
-                R.id.action_editMoodFragment_to_upsertMoodIconFragment,
-                bundleOf(resources.getString(R.string.arg_to_upsertMoodFrag) to item)
-            )
+    private fun editMoodIcon(item: Any) {
+        navigateTo(
+            R.id.action_editMoodFragment_to_upsertMoodIconFragment,
+            bundleOf(resources.getString(R.string.arg_to_upsertMoodFrag) to item)
+        )
+    }
 
-            DELETE -> viewModel.deleteMoodIcon(item)
+    private fun rvOptionsSelected(menuItem: MenuItem, item: Any): Boolean {
+        return when (menuItem.itemId) {
+            R.id.edit -> {
+                editMoodIcon(item)
+                true
+            }
+            R.id.delete -> {
+                viewModel.deleteMoodIcon(item as MoodIcon)
+                true
+            }
+            else -> false
         }
     }
 
@@ -48,7 +59,8 @@ class MoodListFragment : BaseDaggerFragment<FragmentShowListBinding, MoodEntryVi
         }
     }
 
-    private fun setUpRecyclerView() {
+    override fun initRecyclerView() {
+        super.initRecyclerView()
         binding.recyclerView.layoutManager = LinearLayoutManager(requireContext())
         binding.recyclerView.adapter = adapter
     }

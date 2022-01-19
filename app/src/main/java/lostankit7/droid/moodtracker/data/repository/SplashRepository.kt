@@ -5,7 +5,7 @@ import lostankit7.droid.moodtracker.data.database.dao.SuggestedMoodDao
 import lostankit7.droid.moodtracker.data.database.dao.TaskCategoryDao
 import lostankit7.droid.moodtracker.data.database.dao.TaskIconDao
 import lostankit7.droid.moodtracker.data.database.entities.MoodIcon
-import lostankit7.droid.moodtracker.data.database.entities.SuggestedMood
+import lostankit7.droid.moodtracker.data.database.entities.SuggestedMoodIcon
 import lostankit7.droid.moodtracker.data.database.entities.TaskCategory
 import lostankit7.droid.moodtracker.data.database.entities.TaskIcon
 import javax.inject.Inject
@@ -24,6 +24,6 @@ class SplashRepository @Inject constructor(
 
     suspend fun insertMoodIcons(icons: List<MoodIcon>) = moodIconDao.insertMoodIcons(icons)
 
-    suspend fun insertSuggestedMoods(list: List<SuggestedMood>) =
+    suspend fun insertSuggestedMoods(list: List<SuggestedMoodIcon>) =
         suggestedMoodDao.insertSuggestions(list)
 }

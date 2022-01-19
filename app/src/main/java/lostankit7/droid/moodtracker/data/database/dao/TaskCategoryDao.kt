@@ -17,7 +17,7 @@ interface TaskCategoryDao {
     suspend fun insertTaskCategories(list: List<TaskCategory>)
 
     @Delete
-    fun deleteTaskCategory(it: TaskCategory)
+    suspend fun deleteTaskCategory(it: TaskCategory)
 
     @Insert
     suspend fun insertTaskCategory(it: TaskCategory)
