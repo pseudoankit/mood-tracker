@@ -8,7 +8,10 @@ import androidx.room.PrimaryKey
 import lostankit7.droid.moodtracker.data.database.AppDatabase
 
 @Entity
-data class TaskIcon(override var icon: String, override var name: String, val category: String) : Icon(), Parcelable {
+data class TaskIcon(
+    override var icon: String, override var name: String, val category: String,
+    override var isSolid: Boolean = true
+) : Icon(), Parcelable {
 
     @PrimaryKey(autoGenerate = true)
     override var id: Int = 0

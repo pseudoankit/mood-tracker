@@ -2,7 +2,6 @@ package lostankit7.droid.moodtracker.ui.adapter
 
 import android.view.LayoutInflater
 import android.view.MenuItem
-import android.view.View
 import android.view.ViewGroup
 import lostankit7.droid.moodtracker.R
 import lostankit7.droid.moodtracker.base.BaseDiffRvAdapter
@@ -11,8 +10,6 @@ import lostankit7.droid.moodtracker.data.database.entities.MoodIcon
 import lostankit7.droid.moodtracker.data.database.entities.TaskIcon
 import lostankit7.droid.moodtracker.databinding.ItemIconListBinding
 import lostankit7.droid.moodtracker.helper.DialogHelper
-import lostankit7.droid.moodtracker.helper.constant.Action.EDIT
-import lostankit7.droid.moodtracker.helper.invert
 
 class IconListRvAdapter(
     private val itemClick: (Icon) -> Unit,
@@ -35,6 +32,7 @@ class IconListRvAdapter(
 
     override fun bindViewHolder(item: Icon, position: Int, binding: ItemIconListBinding) {
 
+        if(item.isSolid) binding.faIcon.isSolidIcon() else binding.faIcon.isRegularIcon()
         binding.tvName.text = item.name
         binding.faIcon.text = item.icon
 

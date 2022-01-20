@@ -2,7 +2,9 @@ package lostankit7.droid.moodtracker.helper
 
 import android.app.Activity
 import android.content.Context
+import android.util.TypedValue
 import android.view.inputmethod.InputMethodManager
+import android.widget.TextView
 import android.widget.Toast
 import androidx.core.content.ContextCompat
 import com.google.android.material.snackbar.Snackbar
@@ -21,4 +23,8 @@ fun Activity.showSnackBar(message: String, snackBarColor: Int = R.color.snackBar
 
 fun Context.showToast(message: String) {
     Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+}
+
+fun TextView.asTextDimen(id: Int) {
+    setTextSize(TypedValue.COMPLEX_UNIT_PX, resources.getDimension(id))
 }

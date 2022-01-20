@@ -6,7 +6,6 @@ import android.view.MenuItem
 import android.view.View
 import androidx.core.os.bundleOf
 import androidx.recyclerview.widget.LinearLayoutManager
-import lostankit7.droid.moodtracker.MyApplication
 import lostankit7.droid.moodtracker.R
 import lostankit7.droid.moodtracker.base.BaseDaggerFragment
 import lostankit7.droid.moodtracker.data.database.entities.Icon

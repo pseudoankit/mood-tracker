@@ -6,13 +6,14 @@ import lostankit7.droid.moodtracker.base.BaseDiffRvAdapter
 import lostankit7.droid.moodtracker.data.database.entities.Icon
 import lostankit7.droid.moodtracker.databinding.ItemRvSuggestedMoodBinding
 
-class DisplayIconRvAdapter(
+class MoodIconRvAdapter(
     private val iconSelected: (Icon) -> Unit,
 ) : BaseDiffRvAdapter<ItemRvSuggestedMoodBinding, Icon>() {
 
     override fun bindViewHolder(
         item: Icon, position: Int, binding: ItemRvSuggestedMoodBinding
     ) {
+        if(item.isSolid) binding.tvIcon.isSolidIcon() else binding.tvIcon.isRegularIcon()
         binding.tvIcon.text = item.icon
         binding.root.setOnClickListener {
             iconSelected.invoke(item)
@@ -25,6 +26,6 @@ class DisplayIconRvAdapter(
 
     companion object {
         fun newInstance(iconSelected: (Icon) -> Unit) =
-            DisplayIconRvAdapter(iconSelected)
+            MoodIconRvAdapter(iconSelected)
     }
 }

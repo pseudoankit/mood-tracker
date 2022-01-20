@@ -9,6 +9,7 @@ class SplashViewModel @Inject constructor(
     private val prefs: SharedPrefsRepository,
     private val moodIconRepo: MoodIconRepository,
     private val suggestedMoodIconRepo: SuggestedMoodIconRepository,
+    private val suggestedTaskIconRepository: SuggestedTaskIconRepository,
     private val taskCategoryRepo: TaskCategoryRepository,
     private val taskIconRepo: TaskIconRepository
 ) : BaseViewModel() {
@@ -22,6 +23,7 @@ class SplashViewModel @Inject constructor(
             suggestedMoodIconRepo.insertSuggestedMoods(DefaultValues.suggestedMoodIcons())
             taskCategoryRepo.insertTaskCategories(DefaultValues.taskCategories(context))
             taskIconRepo.insertTaskIcons(DefaultValues.taskIcons(context))
+            suggestedTaskIconRepository.insertSuggestedTaskIcons(DefaultValues.suggestedTaskIcons())
         }
         //todo if insertion fails
         prefs.isInitialLaunch(false)

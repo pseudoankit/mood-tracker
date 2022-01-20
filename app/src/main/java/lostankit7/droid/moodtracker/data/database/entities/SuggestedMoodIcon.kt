@@ -4,7 +4,8 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 @Entity
-data class SuggestedMoodIcon(override var icon: String) : Icon() {
+data class SuggestedMoodIcon(override var icon: String, override var isSolid: Boolean = false) :
+    Icon() {
     @PrimaryKey(autoGenerate = true)
     override var id: Int = 0
 }

@@ -5,16 +5,17 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import lostankit7.droid.moodtracker.base.BaseDiffRvAdapter
+import lostankit7.droid.moodtracker.data.database.entities.Icon
 import lostankit7.droid.moodtracker.data.database.entities.TaskCategory
 import lostankit7.droid.moodtracker.databinding.ItemRvTaskBinding
 import lostankit7.droid.moodtracker.helper.constant.FontAwesomeIcon
 import lostankit7.droid.moodtracker.helper.hide
 import lostankit7.droid.moodtracker.helper.show
-import lostankit7.droid.moodtracker.data.database.entities.TaskIcon
+import lostankit7.droid.moodtracker.ui.adapter.TaskIconRvAdapter
 
 class RvTaskAdapter(
-    private val getTaskIcons: (String, RvTaskItemAdapter) -> Unit,
-    private val taskSelected: (TaskIcon) -> Unit
+    private val getTaskIcons: (String, TaskIconRvAdapter) -> Unit,
+    private val taskSelected: (Icon) -> Unit
 ) : BaseDiffRvAdapter<ItemRvTaskBinding, TaskCategory>() {
 
     override fun bindViewHolder(item: TaskCategory, position: Int, binding: ItemRvTaskBinding) {
@@ -45,7 +46,7 @@ class RvTaskAdapter(
     private fun RecyclerView.setUpRecyclerView(category: String) {
         layoutManager = GridLayoutManager(context, TaskEntryFragment.taskSpan)
 
-        val mAdapter = RvTaskItemAdapter(taskSelected)
+        val mAdapter = TaskIconRvAdapter.newInstance(taskSelected,true)
         adapter = mAdapter
 
         getTaskIcons.invoke(category, mAdapter)
@@ -57,8 +58,8 @@ class RvTaskAdapter(
 
     companion object {
         fun createInstance(
-            getTaskIcons: (String, RvTaskItemAdapter) -> Unit,
-            taskSelected: (TaskIcon) -> Unit
+            getTaskIcons: (String, TaskIconRvAdapter) -> Unit,
+            taskSelected: (Icon) -> Unit
         ) = RvTaskAdapter(getTaskIcons, taskSelected)
     }
 }

@@ -1,5 +1,6 @@
 package lostankit7.droid.moodtracker.ui.entry.task.editTask
 
+import android.util.TypedValue
 import android.view.LayoutInflater
 import androidx.recyclerview.widget.GridLayoutManager
 import lostankit7.droid.moodtracker.R
@@ -8,9 +9,10 @@ import lostankit7.droid.moodtracker.data.database.entities.Icon
 import lostankit7.droid.moodtracker.data.database.entities.TaskIcon
 import lostankit7.droid.moodtracker.databinding.FragmentUpsertMoodIconBinding
 import lostankit7.droid.moodtracker.di.AppComponent
+import lostankit7.droid.moodtracker.helper.asTextDimen
 import lostankit7.droid.moodtracker.helper.hideKeyBoard
 import lostankit7.droid.moodtracker.helper.showToast
-import lostankit7.droid.moodtracker.ui.adapter.DisplayIconRvAdapter
+import lostankit7.droid.moodtracker.ui.adapter.TaskIconRvAdapter
 import lostankit7.droid.moodtracker.ui.entry.task.TaskEntryViewModel
 
 class UpsertTaskIconFragment :
@@ -18,7 +20,7 @@ class UpsertTaskIconFragment :
 
     private var editTaskIcon: TaskIcon? = null
     private var category: String? = null
-    private val adapter by lazy { DisplayIconRvAdapter.newInstance(::onTaskIconSelected) }
+    private val adapter by lazy { TaskIconRvAdapter.newInstance(::onTaskIconSelected, false) }
 
     override suspend fun registerObservers() {
         super.registerObservers()
@@ -63,6 +65,7 @@ class UpsertTaskIconFragment :
     }
 
     override fun init() {
+        binding.tvSelectedIcon.asTextDimen(R.dimen.small_icon_size)
         binding.tvSelectedIcon.isSolidIcon()
 
         category = arguments?.getString(resources.getString(R.string.category_to_upsertTaskFrag))

@@ -12,14 +12,14 @@ import lostankit7.droid.moodtracker.databinding.FragmentUpsertMoodIconBinding
 import lostankit7.droid.moodtracker.di.AppComponent
 import lostankit7.droid.moodtracker.helper.hideKeyBoard
 import lostankit7.droid.moodtracker.helper.showToast
-import lostankit7.droid.moodtracker.ui.adapter.DisplayIconRvAdapter
+import lostankit7.droid.moodtracker.ui.adapter.MoodIconRvAdapter
 import lostankit7.droid.moodtracker.ui.entry.mood.MoodEntryViewModel
 
 class UpsertMoodIconFragment :
     BaseDaggerFragment<FragmentUpsertMoodIconBinding, MoodEntryViewModel>() {
 
     private var editMoodIcon: MoodIcon? = null
-    private val adapter by lazy { DisplayIconRvAdapter.newInstance(::onMoodIconSelected) }
+    private val adapter by lazy { MoodIconRvAdapter.newInstance(::onMoodIconSelected) }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

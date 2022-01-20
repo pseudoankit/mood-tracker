@@ -5,13 +5,14 @@ import android.view.LayoutInflater
 import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import lostankit7.droid.moodtracker.base.BaseDaggerFragment
-import lostankit7.droid.moodtracker.MyApplication
 import lostankit7.droid.moodtracker.R
+import lostankit7.droid.moodtracker.data.database.entities.Icon
 import lostankit7.droid.moodtracker.databinding.FragmentTaskEntryBinding
 import lostankit7.droid.moodtracker.data.database.entities.TaskIcon
 import lostankit7.droid.moodtracker.di.AppComponent
 import lostankit7.droid.moodtracker.helper.hideKeyBoard
 import lostankit7.droid.moodtracker.model.MoodEntry
+import lostankit7.droid.moodtracker.ui.adapter.TaskIconRvAdapter
 import lostankit7.droid.moodtracker.ui.entry.task.TaskEntryViewModel
 
 class TaskEntryFragment : BaseDaggerFragment<FragmentTaskEntryBinding, TaskEntryViewModel>() {
@@ -29,7 +30,7 @@ class TaskEntryFragment : BaseDaggerFragment<FragmentTaskEntryBinding, TaskEntry
 
     }
 
-    private fun provideTaskIcons(category: String, adapter: RvTaskItemAdapter) {
+    private fun provideTaskIcons(category: String, adapter: TaskIconRvAdapter) {
         viewModel.getTaskIcons(category).observe(viewLifecycleOwner) {
             adapter.submitList(it)
         }
@@ -51,11 +52,11 @@ class TaskEntryFragment : BaseDaggerFragment<FragmentTaskEntryBinding, TaskEntry
         }
     }
 
-    private fun onTaskSelected(task: TaskIcon) {
+    private fun onTaskSelected(task: Icon) {
         if (selectedTasksMap.containsKey(task.hashCode()))
             selectedTasksMap.remove(task.hashCode())
         else
-            selectedTasksMap[task.hashCode()] = task
+            selectedTasksMap[task.hashCode()] = task as TaskIcon
     }
 
     private fun setUpRecyclerView() {
