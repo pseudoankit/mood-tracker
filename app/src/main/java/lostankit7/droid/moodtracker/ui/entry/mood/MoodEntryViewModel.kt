@@ -4,18 +4,20 @@ import androidx.lifecycle.LiveData
 import lostankit7.droid.moodtracker.base.BaseViewModel
 import lostankit7.droid.moodtracker.data.database.entities.MoodIcon
 import lostankit7.droid.moodtracker.data.database.entities.SuggestedMoodIcon
-import lostankit7.droid.moodtracker.data.repository.MoodRepository
+import lostankit7.droid.moodtracker.data.repository.MoodIconRepository
+import lostankit7.droid.moodtracker.data.repository.SuggestedMoodIconRepository
 import javax.inject.Inject
 
 class MoodEntryViewModel @Inject constructor(
-    private val moodRepository: MoodRepository
+    private val moodRepository: MoodIconRepository,
+    private val suggestedMoodIconRepo: SuggestedMoodIconRepository
 ) : BaseViewModel() {
 
     val moodIcons: LiveData<List<MoodIcon>>
         get() = moodRepository.moodIcons
 
     val suggestedMood: LiveData<List<SuggestedMoodIcon>>
-        get() = moodRepository.suggestedMoodIcons
+        get() = suggestedMoodIconRepo.suggestedMoodIcons
 
     fun insertMoodIcon(icon: MoodIcon) = launchIo {
         moodRepository.insertMoodIcon(icon)

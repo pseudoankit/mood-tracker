@@ -7,6 +7,6 @@ import javax.inject.Inject
 class SuggestedTaskIconRepository @Inject constructor(private val dao: SuggestedTaskIconDao) {
 
     val suggestedTaskIcon = dao.suggestedTaskIcons()
-    suspend fun insertSuggestedTaskIcons(list: List<SuggestedTaskIcon>) = dao.insertSuggestedIcons(list)
 
+    suspend fun insertSuggestedTaskIcons(list: List<SuggestedTaskIcon>) = dao.insertSuggestedIcons(list)
 }

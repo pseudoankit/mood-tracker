@@ -8,9 +8,7 @@ import javax.inject.Inject
 import javax.inject.Singleton
 
 @Singleton
-class SharedPrefsRepository @Inject constructor(
-    context: Context
-) {
+class SharedPrefsRepository @Inject constructor(context: Context) {
     private val prefs = context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
 
     fun isInitialLaunch(value: Boolean) {

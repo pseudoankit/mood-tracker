@@ -5,12 +5,11 @@ import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import lostankit7.droid.moodtracker.base.BaseViewModel
+import lostankit7.droid.moodtracker.data.database.dao.TaskIconDao
 import lostankit7.droid.moodtracker.data.database.entities.TaskCategory
 import lostankit7.droid.moodtracker.data.database.entities.TaskIcon
 import lostankit7.droid.moodtracker.data.database.entities.UserEntry
-import lostankit7.droid.moodtracker.data.repository.SuggestedTaskIconRepository
-import lostankit7.droid.moodtracker.data.repository.TaskRepository
-import lostankit7.droid.moodtracker.data.repository.UserEntriesRepository
+import lostankit7.droid.moodtracker.data.repository.*
 import lostankit7.droid.moodtracker.helper.constant.FontAwesomeIcon
 import lostankit7.droid.moodtracker.helper.constant.MoodNames
 import lostankit7.droid.moodtracker.helper.constant.dbEntrySeparator
@@ -19,19 +18,20 @@ import javax.inject.Inject
 
 class TaskEntryViewModel @Inject constructor(
     private val repository: UserEntriesRepository,
-    private val taskRepository: TaskRepository,
+    private val taskCategoryRepo: TaskCategoryRepository,
+    private val taskIconRepo: TaskIconRepository,
     suggestedTaskRepo: SuggestedTaskIconRepository
 ) : BaseViewModel() {
 
     val suggestedTaskIcons = suggestedTaskRepo.suggestedTaskIcon
 
-    val taskCategories = taskRepository.taskCategories
-    fun addCategory(item: TaskCategory) = launchIo { taskRepository.insertTaskCategory(item) }
+    val taskCategories = taskCategoryRepo.taskCategories
+    fun addCategory(item: TaskCategory) = launchIo { taskCategoryRepo.insertTaskCategory(item) }
 
-    fun getTaskIcons(category: String) = taskRepository.getTaskIcons(category)
-    fun insertTask(it: TaskIcon) = launchIo { taskRepository.insertTask(it) }
-    fun updateTask(it: TaskIcon) = launchIo { taskRepository.updateTask(it) }
-    fun deleteTask(it: TaskIcon) = launchIo { taskRepository.deleteTask(it) }
+    fun getTaskIcons(category: String) = taskIconRepo.getTaskIcons(category)
+    fun insertTask(it: TaskIcon) = launchIo { taskIconRepo.insertTask(it) }
+    fun updateTask(it: TaskIcon) = launchIo { taskIconRepo.updateTask(it) }
+    fun deleteTask(it: TaskIcon) = launchIo { taskIconRepo.deleteTask(it) }
 
     fun saveEntry(moodEntry: MoodEntry, tasksMap: MutableMap<Int, TaskIcon>, note: String) =
         launchIo {
