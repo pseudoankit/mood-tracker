@@ -1,14 +1,13 @@
 package lostankit7.droid.moodtracker.ui.entry.task.editTask
 
-import android.os.Bundle
 import android.view.LayoutInflater
-import android.view.View
 import androidx.recyclerview.widget.GridLayoutManager
 import lostankit7.droid.moodtracker.R
 import lostankit7.droid.moodtracker.base.BaseDaggerFragment
 import lostankit7.droid.moodtracker.data.database.entities.Icon
 import lostankit7.droid.moodtracker.data.database.entities.TaskIcon
 import lostankit7.droid.moodtracker.databinding.FragmentUpsertMoodIconBinding
+import lostankit7.droid.moodtracker.di.AppComponent
 import lostankit7.droid.moodtracker.helper.hideKeyBoard
 import lostankit7.droid.moodtracker.helper.showToast
 import lostankit7.droid.moodtracker.ui.adapter.DisplayIconRvAdapter
@@ -21,16 +20,12 @@ class UpsertTaskIconFragment :
     private var category: String? = null
     private val adapter by lazy { DisplayIconRvAdapter.newInstance(::onTaskIconSelected) }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-
-    }
-
     override suspend fun registerObservers() {
         super.registerObservers()
 
-
+        viewModel.suggestedTaskIcons.observe(viewLifecycleOwner) {
+            adapter.submitList(it)
+        }
     }
 
     override fun initRecyclerView() {
@@ -43,7 +38,7 @@ class UpsertTaskIconFragment :
         binding.tvSelectedIcon.text = icon.icon
     }
 
-    fun saveTask() {
+    fun upsertTaskIcon() {
         when {
             binding.edtSelectedName.text.isBlank() -> {
                 requireContext().showToast(resources.getString(R.string.enter_mood_name))
@@ -80,7 +75,7 @@ class UpsertTaskIconFragment :
         binding.edtSelectedName.setText(editTaskIcon!!.name)
     }
 
-    override fun injectFragment() {
+    override fun injectFragment(appComponent: AppComponent) {
         appComponent.inject(this)
     }
 

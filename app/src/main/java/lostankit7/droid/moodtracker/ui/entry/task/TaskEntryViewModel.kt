@@ -8,6 +8,7 @@ import lostankit7.droid.moodtracker.base.BaseViewModel
 import lostankit7.droid.moodtracker.data.database.entities.TaskCategory
 import lostankit7.droid.moodtracker.data.database.entities.TaskIcon
 import lostankit7.droid.moodtracker.data.database.entities.UserEntry
+import lostankit7.droid.moodtracker.data.repository.SuggestedTaskIconRepository
 import lostankit7.droid.moodtracker.data.repository.TaskRepository
 import lostankit7.droid.moodtracker.data.repository.UserEntriesRepository
 import lostankit7.droid.moodtracker.helper.constant.FontAwesomeIcon
@@ -18,8 +19,11 @@ import javax.inject.Inject
 
 class TaskEntryViewModel @Inject constructor(
     private val repository: UserEntriesRepository,
-    private val taskRepository: TaskRepository
+    private val taskRepository: TaskRepository,
+    suggestedTaskRepo: SuggestedTaskIconRepository
 ) : BaseViewModel() {
+
+    val suggestedTaskIcons = suggestedTaskRepo.suggestedTaskIcon
 
     val taskCategories = taskRepository.taskCategories
     fun addCategory(item: TaskCategory) = launchIo { taskRepository.insertTaskCategory(item) }

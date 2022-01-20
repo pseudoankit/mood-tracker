@@ -9,6 +9,7 @@ import lostankit7.droid.moodtracker.base.BaseDaggerFragment
 import lostankit7.droid.moodtracker.data.database.entities.Icon
 import lostankit7.droid.moodtracker.data.database.entities.MoodIcon
 import lostankit7.droid.moodtracker.databinding.FragmentUpsertMoodIconBinding
+import lostankit7.droid.moodtracker.di.AppComponent
 import lostankit7.droid.moodtracker.helper.hideKeyBoard
 import lostankit7.droid.moodtracker.helper.showToast
 import lostankit7.droid.moodtracker.ui.adapter.DisplayIconRvAdapter
@@ -44,7 +45,7 @@ class UpsertMoodIconFragment :
         binding.tvSelectedIcon.text = icon.icon
     }
 
-    fun saveMoodIcon() {
+    fun upsertMoodIcon() {
         when {
             binding.edtSelectedName.text.isBlank() -> {
                 requireContext().showToast(resources.getString(R.string.enter_mood_name))
@@ -75,7 +76,7 @@ class UpsertMoodIconFragment :
         binding.edtSelectedName.setText(editMoodIcon!!.name)
     }
 
-    override fun injectFragment() {
+    override fun injectFragment(appComponent: AppComponent) {
         appComponent.inject(this)
     }
 

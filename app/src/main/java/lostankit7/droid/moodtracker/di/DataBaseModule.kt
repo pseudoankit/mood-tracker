@@ -11,7 +11,6 @@ import javax.inject.Singleton
 @Module
 class DataBaseModule {
 
-    //todo binds vs provides
     @Singleton
     @Provides
     fun provideRoomDB(context: Context) = Room.databaseBuilder(
@@ -23,21 +22,25 @@ class DataBaseModule {
 
     @Singleton
     @Provides
-    fun provideUserDao(db: AppDatabase) : UserEntryDao = db.userEntryDao()
+    fun provideUserDao(db: AppDatabase): UserEntryDao = db.userEntryDao()
 
     @Singleton
     @Provides
-    fun provideMoodIconDao(db: AppDatabase) : MoodIconDao = db.moodIconDao()
+    fun provideMoodIconDao(db: AppDatabase): MoodIconDao = db.moodIconDao()
 
     @Singleton
     @Provides
-    fun provideSuggestedMoodDao(db: AppDatabase) : SuggestedMoodDao = db.suggestedMoodDao()
+    fun provideSuggestedMoodDao(db: AppDatabase): SuggestedMoodIconDao = db.suggestedMoodDao()
 
     @Singleton
     @Provides
-    fun provideTaskCategoryDao(db: AppDatabase) : TaskCategoryDao = db.taskCategoryDao()
+    fun provideTaskCategoryDao(db: AppDatabase): TaskCategoryDao = db.taskCategoryDao()
 
     @Singleton
     @Provides
-    fun provideTaskIconDao(db: AppDatabase) : TaskIconDao = db.taskIconDao()
+    fun provideTaskIconDao(db: AppDatabase): TaskIconDao = db.taskIconDao()
+
+    @Singleton
+    @Provides
+    fun provideSuggestedTaskIconDao(db: AppDatabase): SuggestedTaskIconDao = db.suggestedTaskIcon()
 }

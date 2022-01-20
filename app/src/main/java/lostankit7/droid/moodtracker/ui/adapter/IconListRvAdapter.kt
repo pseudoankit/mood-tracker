@@ -2,19 +2,22 @@ package lostankit7.droid.moodtracker.ui.adapter
 
 import android.view.LayoutInflater
 import android.view.MenuItem
+import android.view.View
 import android.view.ViewGroup
 import lostankit7.droid.moodtracker.R
 import lostankit7.droid.moodtracker.base.BaseDiffRvAdapter
+import lostankit7.droid.moodtracker.data.database.entities.Icon
 import lostankit7.droid.moodtracker.data.database.entities.MoodIcon
 import lostankit7.droid.moodtracker.data.database.entities.TaskIcon
 import lostankit7.droid.moodtracker.databinding.ItemIconListBinding
 import lostankit7.droid.moodtracker.helper.DialogHelper
 import lostankit7.droid.moodtracker.helper.constant.Action.EDIT
+import lostankit7.droid.moodtracker.helper.invert
 
 class IconListRvAdapter(
-    private val itemClick: (Any) -> Unit,
-    private val optionsSelected: (MenuItem,Any) -> Boolean
-) : BaseDiffRvAdapter<ItemIconListBinding, Any>() {
+    private val itemClick: (Icon) -> Unit,
+    private val optionsSelected: (MenuItem, Icon) -> Boolean
+) : BaseDiffRvAdapter<ItemIconListBinding, Icon>() {
 
     override fun onCreateHolder(
         holder: BaseDiffRvAdapter.Companion.ViewHolder<ItemIconListBinding>,
@@ -26,21 +29,21 @@ class IconListRvAdapter(
         holder.binding.optionMenu.setOnClickListener {
             DialogHelper.showMenu(
                 parent.context, holder.binding.optionMenu, R.menu.menu_options
-            ) { optionsSelected(it,getItem(holder.adapterPosition)) }
+            ) { optionsSelected(it, getItem(holder.adapterPosition)) }
         }
     }
 
-    override fun bindViewHolder(item: Any, position: Int, binding: ItemIconListBinding) {
+    override fun bindViewHolder(item: Icon, position: Int, binding: ItemIconListBinding) {
+
+        binding.tvName.text = item.name
+        binding.faIcon.text = item.icon
+
         when (item) {
             is MoodIcon -> {
                 binding.faIcon.isRegularIcon()
-                binding.tvName.text = item.name
-                binding.faIcon.text = item.icon
             }
             is TaskIcon -> {
                 binding.faIcon.isSolidIcon()
-                binding.tvName.text = item.name
-                binding.faIcon.text = item.icon
             }
         }
     }
@@ -50,7 +53,7 @@ class IconListRvAdapter(
     ) = ItemIconListBinding.inflate(layoutInflater, parent, attachToParent)
 
     companion object {
-        fun newInstance(onClick: (Any) -> Unit, optionsSelected: (MenuItem,Any) -> Boolean) =
+        fun newInstance(onClick: (Icon) -> Unit, optionsSelected: (MenuItem, Icon) -> Boolean) =
             IconListRvAdapter(onClick, optionsSelected)
     }
 }

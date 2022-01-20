@@ -11,3 +11,7 @@ fun View.show() {
 fun View.hide() {
     visibility = View.GONE
 }
+
+fun View.invert(show: Boolean) {
+    if (show) show() else hide()
+}

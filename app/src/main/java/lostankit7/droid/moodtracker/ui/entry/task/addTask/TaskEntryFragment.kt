@@ -9,6 +9,7 @@ import lostankit7.droid.moodtracker.MyApplication
 import lostankit7.droid.moodtracker.R
 import lostankit7.droid.moodtracker.databinding.FragmentTaskEntryBinding
 import lostankit7.droid.moodtracker.data.database.entities.TaskIcon
+import lostankit7.droid.moodtracker.di.AppComponent
 import lostankit7.droid.moodtracker.helper.hideKeyBoard
 import lostankit7.droid.moodtracker.model.MoodEntry
 import lostankit7.droid.moodtracker.ui.entry.task.TaskEntryViewModel
@@ -81,8 +82,8 @@ class TaskEntryFragment : BaseDaggerFragment<FragmentTaskEntryBinding, TaskEntry
         FragmentTaskEntryBinding.inflate(layoutInflater)
 
 
-    override fun injectFragment() {
-        (requireActivity().application as MyApplication).appComponent.inject(this)
+    override fun injectFragment(appComponent: AppComponent) {
+        appComponent.inject(this)
     }
 
     companion object {

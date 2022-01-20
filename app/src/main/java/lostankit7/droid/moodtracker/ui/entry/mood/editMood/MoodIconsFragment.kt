@@ -8,8 +8,10 @@ import androidx.core.os.bundleOf
 import androidx.recyclerview.widget.LinearLayoutManager
 import lostankit7.droid.moodtracker.R
 import lostankit7.droid.moodtracker.base.BaseDaggerFragment
+import lostankit7.droid.moodtracker.data.database.entities.Icon
 import lostankit7.droid.moodtracker.data.database.entities.MoodIcon
 import lostankit7.droid.moodtracker.databinding.FragmentShowListBinding
+import lostankit7.droid.moodtracker.di.AppComponent
 import lostankit7.droid.moodtracker.ui.entry.mood.MoodEntryViewModel
 import lostankit7.droid.moodtracker.ui.adapter.IconListRvAdapter
 
@@ -24,14 +26,14 @@ class MoodIconsFragment : BaseDaggerFragment<FragmentShowListBinding, MoodEntryV
 
     }
 
-    private fun editMoodIcon(item: Any) {
+    private fun editMoodIcon(item: Icon) {
         navigateTo(
             R.id.action_editMoodFragment_to_upsertMoodIconFragment,
             bundleOf(resources.getString(R.string.arg_to_upsertMoodFrag) to item)
         )
     }
 
-    private fun rvOptionsSelected(menuItem: MenuItem, item: Any): Boolean {
+    private fun rvOptionsSelected(menuItem: MenuItem, item: Icon): Boolean {
         return when (menuItem.itemId) {
             R.id.edit -> {
                 editMoodIcon(item)
@@ -68,7 +70,7 @@ class MoodIconsFragment : BaseDaggerFragment<FragmentShowListBinding, MoodEntryV
     override fun inflateLayout(layoutInflater: LayoutInflater) =
         FragmentShowListBinding.inflate(layoutInflater)
 
-    override fun injectFragment() {
+    override fun injectFragment(appComponent: AppComponent) {
         appComponent.inject(this)
     }
 }

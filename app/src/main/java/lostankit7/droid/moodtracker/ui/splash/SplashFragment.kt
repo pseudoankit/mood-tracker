@@ -8,6 +8,7 @@ import kotlinx.coroutines.delay
 import lostankit7.droid.moodtracker.base.BaseDaggerFragment
 import lostankit7.droid.moodtracker.R
 import lostankit7.droid.moodtracker.databinding.FragmentSplashBinding
+import lostankit7.droid.moodtracker.di.AppComponent
 
 class SplashFragment : BaseDaggerFragment<FragmentSplashBinding, SplashViewModel>() {
 
@@ -26,7 +27,7 @@ class SplashFragment : BaseDaggerFragment<FragmentSplashBinding, SplashViewModel
     override fun inflateLayout(layoutInflater: LayoutInflater) =
         FragmentSplashBinding.inflate(layoutInflater)
 
-    override fun injectFragment() {
+    override fun injectFragment(appComponent: AppComponent) {
         appComponent.inject(this)
     }
 

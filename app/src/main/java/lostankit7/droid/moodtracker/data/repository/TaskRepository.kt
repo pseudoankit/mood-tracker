@@ -15,11 +15,11 @@ class TaskRepository @Inject constructor(
     val taskCategories: LiveData<List<TaskCategory>> = taskCategoryDao.getTaskCategories()
     suspend fun insertTaskCategories(list: List<TaskCategory>) =
         taskCategoryDao.insertTaskCategories(list)
-
     suspend fun insertTaskCategory(it: TaskCategory) = taskCategoryDao.insertTaskCategory(it)
     suspend fun deleteTaskCategory(it: TaskCategory) = taskCategoryDao.deleteTaskCategory(it)
 
     fun getTaskIcons(category: String) = taskIconDao.getTaskIcons(category)
+
     suspend fun insertTask(it: TaskIcon) = taskIconDao.insertTaskIcon(it)
     suspend fun updateTask(it: TaskIcon) = taskIconDao.updateTask(it)
     suspend fun deleteTask(it: TaskIcon) = taskIconDao.deleteTask(it)

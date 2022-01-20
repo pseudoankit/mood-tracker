@@ -7,15 +7,11 @@ import androidx.room.Query
 import lostankit7.droid.moodtracker.data.database.entities.SuggestedMoodIcon
 
 @Dao
-interface SuggestedMoodDao {
+interface SuggestedMoodIconDao {
 
     @Insert
     suspend fun insertSuggestions(icons: List<SuggestedMoodIcon>)
 
     @Query("SELECT * FROM SuggestedMoodIcon")
     fun suggestedMoodIcons(): LiveData<List<SuggestedMoodIcon>>
-
-    @Query("SELECT * FROM SuggestedMoodIcon")
-    fun suggestedMoodNames(): List<SuggestedMoodIcon>
-
 }

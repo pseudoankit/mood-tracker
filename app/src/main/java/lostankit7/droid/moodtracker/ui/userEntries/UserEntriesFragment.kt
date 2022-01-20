@@ -8,6 +8,7 @@ import lostankit7.droid.moodtracker.base.BaseDaggerFragment
 import lostankit7.droid.moodtracker.MyApplication
 import lostankit7.droid.moodtracker.data.database.entities.UserEntry
 import lostankit7.droid.moodtracker.databinding.FragmentUserEntriesBinding
+import lostankit7.droid.moodtracker.di.AppComponent
 
 class UserEntriesFragment : BaseDaggerFragment<FragmentUserEntriesBinding, UserEntriesViewModel>() {
 
@@ -39,7 +40,7 @@ class UserEntriesFragment : BaseDaggerFragment<FragmentUserEntriesBinding, UserE
     override fun inflateLayout(layoutInflater: LayoutInflater) =
         FragmentUserEntriesBinding.inflate(layoutInflater)
 
-    override fun injectFragment() {
-        (requireActivity().application as MyApplication).appComponent.inject(this)
+    override fun injectFragment(appComponent: AppComponent) {
+        appComponent.inject(this)
     }
 }

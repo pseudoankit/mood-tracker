@@ -11,7 +11,6 @@ import lostankit7.droid.moodtracker.helper.constant.FontAwesomeIcon
 import lostankit7.droid.moodtracker.helper.hide
 import lostankit7.droid.moodtracker.helper.show
 import lostankit7.droid.moodtracker.data.database.entities.TaskIcon
-import lostankit7.droid.moodtracker.ui.entry.task.TaskEntryViewModel
 
 class RvTaskAdapter(
     private val getTaskIcons: (String, RvTaskItemAdapter) -> Unit,
@@ -20,10 +19,10 @@ class RvTaskAdapter(
 
     override fun bindViewHolder(item: TaskCategory, position: Int, binding: ItemRvTaskBinding) {
 
-        binding.tvTaskCategory.text = item.category
+        binding.tvTaskCategory.text = item.name
 
         binding.toggleTaskCategory(item, true)
-        binding.rvTaskIcon.setUpRecyclerView(item.category)
+        binding.rvTaskIcon.setUpRecyclerView(item.name)
 
         binding.tvDropDownIcon.setOnClickListener { binding.toggleTaskCategory(item) }
         binding.llTaskCategory.setOnClickListener { binding.toggleTaskCategory(item) }

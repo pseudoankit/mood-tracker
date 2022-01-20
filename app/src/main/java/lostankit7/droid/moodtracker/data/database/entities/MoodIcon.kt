@@ -9,10 +9,10 @@ import androidx.versionedparcelable.ParcelField
 import lostankit7.droid.moodtracker.data.database.AppDatabase
 
 @Entity
-data class MoodIcon(val icon: String, val name: String) : Parcelable {
+data class MoodIcon(override var icon: String, override var name: String) : Icon(), Parcelable {
 
     @PrimaryKey(autoGenerate = true)
-    var id: Int = 0
+    override var id: Int = 0
 
     @Ignore
     var isSelected: Boolean = false

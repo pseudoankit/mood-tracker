@@ -16,6 +16,7 @@ import lostankit7.droid.moodtracker.helper.ANIMATE_TOP_BOTTOM
 import lostankit7.droid.moodtracker.helper.navOptions
 import lostankit7.droid.moodtracker.ui.entry.mood.editMood.UpsertMoodIconFragment
 import lostankit7.droid.moodtracker.ui.entry.task.addTask.TaskEntryFragment
+import lostankit7.droid.moodtracker.ui.entry.task.editTask.UpsertTaskIconFragment
 
 
 class MainActivity : AppCompatActivity() {
@@ -54,8 +55,8 @@ class MainActivity : AppCompatActivity() {
         when (val fragment =
             supportFragmentManager.findFragmentById(R.id.fragment_container)?.childFragmentManager?.primaryNavigationFragment) {
             is TaskEntryFragment -> fragment.saveEntry()
-            is UpsertMoodIconFragment -> fragment.saveMoodIcon()
-
+            is UpsertMoodIconFragment -> fragment.upsertMoodIcon()
+            is UpsertTaskIconFragment -> fragment.upsertTaskIcon()
         }
     }
 

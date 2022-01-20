@@ -9,8 +9,10 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import lostankit7.droid.moodtracker.MyApplication
 import lostankit7.droid.moodtracker.R
 import lostankit7.droid.moodtracker.base.BaseDaggerFragment
+import lostankit7.droid.moodtracker.data.database.entities.Icon
 import lostankit7.droid.moodtracker.data.database.entities.TaskIcon
 import lostankit7.droid.moodtracker.databinding.FragmentShowListBinding
+import lostankit7.droid.moodtracker.di.AppComponent
 import lostankit7.droid.moodtracker.ui.adapter.IconListRvAdapter
 import lostankit7.droid.moodtracker.ui.entry.task.TaskEntryViewModel
 
@@ -35,7 +37,7 @@ class TaskItemsFragment : BaseDaggerFragment<FragmentShowListBinding, TaskEntryV
         }
     }
 
-    private fun rvOptionsSelected(menuItem: MenuItem, item: Any): Boolean {
+    private fun rvOptionsSelected(menuItem: MenuItem, item: Icon): Boolean {
         return when (menuItem.itemId) {
             R.id.edit -> {
                 editTaskIcon(item)
@@ -49,7 +51,7 @@ class TaskItemsFragment : BaseDaggerFragment<FragmentShowListBinding, TaskEntryV
         }
     }
 
-    private fun editTaskIcon(item: Any) {
+    private fun editTaskIcon(item: Icon) {
         navigateTo(
             R.id.action_taskItemsFragment_to_upsertTaskIconFragment,
             bundleOf(
@@ -80,8 +82,8 @@ class TaskItemsFragment : BaseDaggerFragment<FragmentShowListBinding, TaskEntryV
 
     }
 
-    override fun injectFragment() {
-        (requireActivity().application as MyApplication).appComponent.inject(this)
+    override fun injectFragment(appComponent: AppComponent) {
+        appComponent.inject(this)
     }
 
     override fun inflateLayout(layoutInflater: LayoutInflater) =
