@@ -21,6 +21,22 @@
     <string name="romantic">romantic</string>
     <string name="naughty">naughty</string>
     <string name="okay">okay</string>
+    <string name="silent">silent</string>
+    <string name="bad">bad</string>
+
+    <string-array name="suggested_mood_names">
+        <item>@string/confuse</item>
+        <item>@string/tired</item>
+        <item>@string/surprise</item>
+        <item>@string/cookies</item>
+        <item>@string/tear</item>
+        <item>@string/silent</item>
+        <item>@string/bad</item>
+        <item>@string/jolly</item>
+        <item>@string/romantic</item>
+        <item>@string/naughty</item>
+        <item>@string/okay</item>
+    </string-array>
 
     <!-- Task Names  -->
     <string name="movies">movies</string>

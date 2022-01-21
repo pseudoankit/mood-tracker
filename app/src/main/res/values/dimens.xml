@@ -28,4 +28,17 @@
     <dimen name="lg_rounded_icon_bg_size">33dp</dimen>
     <dimen name="rounded_icon_size">19sp</dimen>
 
+
+    <!-- common -->
+    <dimen name="elevation">3dp</dimen>
+    <dimen name="_dimen_3">3dp</dimen>
+    <dimen name="_dimen_6">6dp</dimen>
+    <dimen name="_dimen_7">7dp</dimen>
+    <dimen name="_dimen_5">5dp</dimen>
+    <dimen name="_dimen_10">10dp</dimen>
+    <dimen name="_dimen_15">15dp</dimen>
+    <dimen name="_dimen_30">30dp</dimen>
+    <dimen name="_dimen_50">50dp</dimen>
+    <dimen name="_dimen_1">1dp</dimen>
+
 </resources>

@@ -248,7 +248,3 @@ object DefaultValues {
     private const val MOOD_ICON_AWFUL = "\uf567"
     private const val MOOD_ICON_JOLLY = "\uf59b"
 }
-
-/*
-* bath, baseball,sleep,charge,beer,pray,bicycle, biking,explore,shooting
-* */

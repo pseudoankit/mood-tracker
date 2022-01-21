@@ -31,7 +31,7 @@
             android:id="@+id/layoutTime"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
+            android:layout_marginStart="@dimen/_dimen_10"
             app:left_icon="@string/fas_clock"
             app:right_icon="@string/fas_drop_down"
             app:stroke_color="@color/theme_color"
@@ -56,8 +56,8 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/rvMoodIcon"
             android:layout_alignParentEnd="true"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="10dp"
+            android:layout_marginTop="@dimen/_dimen_5"
+            android:layout_marginEnd="@dimen/_dimen_10"
             android:orientation="vertical">
 
             <lostankit7.droid.CustomTextView

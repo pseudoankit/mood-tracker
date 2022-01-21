@@ -38,9 +38,9 @@
             android:layout_width="match_parent"
             android:layout_height="@dimen/bottom_nav_height"
             android:layout_gravity="bottom"
-            app:fabCradleMargin="10dp"
-            app:fabCradleRoundedCornerRadius="30dp"
-            app:fabCradleVerticalOffset="5dp"
+            app:fabCradleMargin="@dimen/_dimen_10"
+            app:fabCradleRoundedCornerRadius="@dimen/_dimen_30"
+            app:fabCradleVerticalOffset="@dimen/_dimen_5"
             app:hideOnScroll="true">
 
             <com.google.android.material.bottomnavigation.BottomNavigationView

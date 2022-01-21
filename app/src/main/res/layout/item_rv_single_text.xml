@@ -8,5 +8,5 @@
     android:textSize="@dimen/text_size_medium"
     tools:text="test"
     android:layout_margin="5dp"
-    android:elevation="3dp"
+    android:elevation="@dimen/elevation"
     android:background="@drawable/bg_white_stroke_n_ripple" />

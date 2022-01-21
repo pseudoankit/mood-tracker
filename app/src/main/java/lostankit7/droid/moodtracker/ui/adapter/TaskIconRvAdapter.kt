@@ -18,6 +18,11 @@ class TaskIconRvAdapter(
 
         if (item.isSolid) binding.tvIcon.isSolidIcon() else binding.tvIcon.isRegularIcon()
         binding.tvName.invert(item is TaskIcon)
+        binding.tvIcon
+            .setTextColor(ContextCompat.getColor(binding.tvIcon.context, R.color.sec_icon_color))
+        binding.tvName
+            .setTextColor(ContextCompat.getColor(binding.tvName.context, R.color.sec_icon_color))
+
         binding.tvName.text = item.name
         binding.tvIcon.text = item.icon
 

@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="@dimen/std_height"
-    android:layout_marginTop="10dp"
+    android:layout_marginTop="@dimen/padding_screen"
     android:background="@drawable/bg_white_stroke_n_ripple">
 
     <lostankit7.droid.CustomTextView
@@ -20,7 +20,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
-        android:layout_marginHorizontal="10dp"
+        android:layout_marginHorizontal="@dimen/_dimen_10"
         android:layout_toStartOf="@id/optionMenu"
         android:layout_toEndOf="@id/faIcon"
         android:textAlignment="textStart"
