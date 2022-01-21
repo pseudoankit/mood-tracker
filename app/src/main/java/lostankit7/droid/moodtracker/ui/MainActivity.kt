@@ -55,8 +55,8 @@ class MainActivity : AppCompatActivity() {
         when (val fragment =
             supportFragmentManager.findFragmentById(R.id.fragment_container)?.childFragmentManager?.primaryNavigationFragment) {
             is TaskEntryFragment -> fragment.saveEntry()
-            is UpsertMoodIconFragment -> fragment.upsertMoodIcon()
-            is UpsertTaskIconFragment -> fragment.upsertTaskIcon()
+            is UpsertMoodIconFragment -> fragment.saveMoodIcon()
+            is UpsertTaskIconFragment -> fragment.saveTaskIcon()
         }
     }
 

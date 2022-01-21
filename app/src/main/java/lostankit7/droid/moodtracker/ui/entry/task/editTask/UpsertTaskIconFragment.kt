@@ -40,7 +40,7 @@ class UpsertTaskIconFragment :
         binding.tvSelectedIcon.text = icon.icon
     }
 
-    fun upsertTaskIcon() {
+    fun saveTaskIcon() {
         when {
             binding.edtSelectedName.text.isBlank() -> {
                 requireContext().showToast(resources.getString(R.string.enter_mood_name))

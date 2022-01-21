@@ -6,22 +6,14 @@
     android:background="@drawable/bg_rounded_white"
     android:padding="@dimen/padding_screen">
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/edtTextLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/edtText"
+        style="@style/defEdtStyle"
         android:layout_margin="@dimen/padding_screen"
+        android:hint="@string/text_enter_category"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/edtText"
-            style="@style/defEdtStyle"
-            android:layout_width="match_parent"
-            android:hint="@string/text_enter_category" />
-
-    </com.google.android.material.textfield.TextInputLayout>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <lostankit7.droid.CustomButton
         android:id="@+id/btnOkay"
@@ -29,8 +21,8 @@
         android:layout_width="wrap_content"
         android:layout_marginTop="30dp"
         android:text="@string/text_add"
-        app:layout_constraintEnd_toEndOf="@id/edtTextLayout"
-        app:layout_constraintTop_toBottomOf="@id/edtTextLayout" />
+        app:layout_constraintEnd_toEndOf="@id/edtText"
+        app:layout_constraintTop_toBottomOf="@id/edtText" />
 
     <lostankit7.droid.CustomButton
         android:id="@+id/btnCancel"

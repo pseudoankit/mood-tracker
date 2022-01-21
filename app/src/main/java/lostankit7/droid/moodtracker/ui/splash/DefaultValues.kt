@@ -231,14 +231,13 @@ object DefaultValues {
         SuggestedTaskIcon("\uF769", "thermometer", true),
         SuggestedTaskIcon("\uF76B", "thermometer", true),
         SuggestedTaskIcon("\uF2C7", "thermometer", true),
-        SuggestedTaskIcon("\uF2C7", "thermometer", true),
         SuggestedTaskIcon("\uF491", "thermometer", true),
         SuggestedTaskIcon("\uF2C8", "thermometer", true),
         SuggestedTaskIcon("\uF164", "thumbs", true),
-        SuggestedTaskIcon("\uF164", "thumbs", true),
+        SuggestedTaskIcon("\uF165", "thumbs", true),
         SuggestedTaskIcon("\uF722", "tractor", true),
         SuggestedTaskIcon("\uF637", "traffic", true),
-        SuggestedTaskIcon("\uF637", "tools", true),
+        SuggestedTaskIcon("\uF7D9", "tools", true),
         SuggestedTaskIcon("\uF552", "toolbox", true),
         SuggestedTaskIcon("\uF238", "train", true)
     )

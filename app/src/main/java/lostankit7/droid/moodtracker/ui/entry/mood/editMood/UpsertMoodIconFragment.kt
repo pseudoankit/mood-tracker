@@ -45,7 +45,7 @@ class UpsertMoodIconFragment :
         binding.tvSelectedIcon.text = icon.icon
     }
 
-    fun upsertMoodIcon() {
+    fun saveMoodIcon() {
         when {
             binding.edtSelectedName.text.isBlank() -> {
                 requireContext().showToast(resources.getString(R.string.enter_mood_name))

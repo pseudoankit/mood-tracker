@@ -1,10 +1,7 @@
 package lostankit7.droid.moodtracker.data.database.dao
 
 import androidx.lifecycle.LiveData
-import androidx.room.Dao
-import androidx.room.Delete
-import androidx.room.Insert
-import androidx.room.Query
+import androidx.room.*
 import lostankit7.droid.moodtracker.data.database.entities.TaskCategory
 
 @Dao
@@ -21,5 +18,8 @@ interface TaskCategoryDao {
 
     @Insert
     suspend fun insertTaskCategory(it: TaskCategory)
+
+    @Update
+    suspend fun updateCategory(it: TaskCategory)
 
 }

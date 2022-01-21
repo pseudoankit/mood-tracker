@@ -13,5 +13,7 @@ class TaskCategoryRepository @Inject constructor(private val dao: TaskCategoryDa
 
     suspend fun insertTaskCategory(it: TaskCategory) = dao.insertTaskCategory(it)
 
+    suspend fun updateCategory(it: TaskCategory) = dao.updateCategory(it)
+
     suspend fun deleteTaskCategory(it: TaskCategory) = dao.deleteTaskCategory(it)
 }

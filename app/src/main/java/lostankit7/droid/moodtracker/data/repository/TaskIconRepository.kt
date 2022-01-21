@@ -15,4 +15,6 @@ class TaskIconRepository @Inject constructor(private val dao: TaskIconDao) {
     suspend fun updateTask(it: TaskIcon) = dao.updateTask(it)
 
     suspend fun deleteTask(it: TaskIcon) = dao.deleteTask(it)
+
+    suspend fun updateTaskCategory(old: String, new: String) = dao.updateTaskCategory(old, new)
 }

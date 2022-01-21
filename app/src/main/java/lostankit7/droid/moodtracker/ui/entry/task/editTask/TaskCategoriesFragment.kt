@@ -19,7 +19,7 @@ import lostankit7.droid.moodtracker.ui.entry.task.TaskEntryViewModel
 
 class TaskCategoriesFragment : BaseDaggerFragment<FragmentShowListBinding, TaskEntryViewModel>() {
 
-    private val adapter by lazy { IconListRvAdapter.newInstance(::itemClick,::rvOptionsSelected) }
+    private val adapter by lazy { IconListRvAdapter.newInstance(::itemClick, ::rvOptionsSelected) }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -36,13 +36,18 @@ class TaskCategoriesFragment : BaseDaggerFragment<FragmentShowListBinding, TaskE
     }
 
     private fun rvOptionsSelected(menuItem: MenuItem, item: Icon): Boolean {
+        val _item = item as TaskCategory
+        val oldText = _item.name
         return when (menuItem.itemId) {
             R.id.edit -> {
-                TODO()
+                showEdtDialog(oldText) { newText ->
+                    _item.name = newText
+                    viewModel.updateCategory(oldText, _item)
+                }
                 true
             }
             R.id.delete -> {
-                TODO()
+                viewModel.deleteCategory(_item)
                 true
             }
             else -> false
@@ -65,7 +70,9 @@ class TaskCategoriesFragment : BaseDaggerFragment<FragmentShowListBinding, TaskE
         super.initListeners()
 
         binding.btnAddNew.setOnClickListener {
-            showDialog()
+            showEdtDialog {
+                viewModel.addCategory(TaskCategory(it))
+            }
         }
     }
 
@@ -74,13 +81,14 @@ class TaskCategoriesFragment : BaseDaggerFragment<FragmentShowListBinding, TaskE
         binding.btnAddNew.text = resources.getString(R.string.text_add_new_category)
     }
 
-    private fun showDialog() {
+    private fun showEdtDialog(defValue: String = "", newText: (String) -> Unit) {
         DialogHelper.build(requireActivity(), DialogTextEntryBinding.inflate(layoutInflater))
         { view, dialog ->
+            view.edtText.setText(defValue)
             view.btnCancel.setOnClickListener { dialog.dismiss() }
             view.btnOkay.setOnClickListener {
                 val text = view.edtText.text.toString().trim()
-                if (text.isNotEmpty()) viewModel.addCategory(TaskCategory(text))
+                if (text.isNotEmpty()) newText(text)
                 dialog.dismiss()
             }
         }.show()

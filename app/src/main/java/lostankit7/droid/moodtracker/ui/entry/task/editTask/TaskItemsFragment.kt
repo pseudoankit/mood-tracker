@@ -19,7 +19,7 @@ class TaskItemsFragment : BaseDaggerFragment<FragmentShowListBinding, TaskEntryV
 
     private var category: String? = null
     private val adapter by lazy {
-        IconListRvAdapter.newInstance(::editTaskIcon, ::rvOptionsSelected)
+        IconListRvAdapter.newInstance(::upsertTaskIcon, ::rvOptionsSelected)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -32,14 +32,14 @@ class TaskItemsFragment : BaseDaggerFragment<FragmentShowListBinding, TaskEntryV
         super.initListeners()
 
         binding.btnAddNew.setOnClickListener {
-
+            upsertTaskIcon(null)
         }
     }
 
     private fun rvOptionsSelected(menuItem: MenuItem, item: Icon): Boolean {
         return when (menuItem.itemId) {
             R.id.edit -> {
-                editTaskIcon(item)
+                upsertTaskIcon(item)
                 true
             }
             R.id.delete -> {
@@ -50,7 +50,7 @@ class TaskItemsFragment : BaseDaggerFragment<FragmentShowListBinding, TaskEntryV
         }
     }
 
-    private fun editTaskIcon(item: Icon) {
+    private fun upsertTaskIcon(item: Icon?) {
         navigateTo(
             R.id.action_taskItemsFragment_to_upsertTaskIconFragment,
             bundleOf(
