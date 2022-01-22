@@ -32,7 +32,7 @@
         android:id="@+id/rvSuggestedNames"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/_dimen_10"
+        android:layout_marginVertical="@dimen/_dimen_15"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/barrier" />
 
@@ -40,7 +40,6 @@
         android:id="@+id/rvDisplayIcons"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="@dimen/_dimen_10"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@id/rvSuggestedNames" />
 

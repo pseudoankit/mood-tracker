@@ -1,18 +1,20 @@
 package lostankit7.droid.moodtracker.ui.entry.mood.editMood
 
-import android.os.Bundle
 import android.view.LayoutInflater
-import android.view.View
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import lostankit7.droid.moodtracker.R
 import lostankit7.droid.moodtracker.base.BaseDaggerFragment
 import lostankit7.droid.moodtracker.data.database.entities.Icon
 import lostankit7.droid.moodtracker.data.database.entities.MoodIcon
+import lostankit7.droid.moodtracker.data.database.entities.Suggestion
 import lostankit7.droid.moodtracker.databinding.FragmentUpsertMoodIconBinding
 import lostankit7.droid.moodtracker.di.AppComponent
 import lostankit7.droid.moodtracker.helper.hideKeyBoard
 import lostankit7.droid.moodtracker.helper.showToast
 import lostankit7.droid.moodtracker.ui.adapter.MoodIconRvAdapter
+import lostankit7.droid.moodtracker.ui.adapter.TextRvAdapter
 import lostankit7.droid.moodtracker.ui.entry.mood.MoodEntryViewModel
 
 class UpsertMoodIconFragment :
@@ -20,18 +22,21 @@ class UpsertMoodIconFragment :
 
     private var editMoodIcon: MoodIcon? = null
     private val adapter by lazy { MoodIconRvAdapter.newInstance(::onMoodIconSelected) }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-    }
+    private val suggestedNamesAdapter by lazy { TextRvAdapter.createInstance(::suggestedNameTap) }
 
     override suspend fun registerObservers() {
         super.registerObservers()
 
+        viewModel.suggestedMoodNames.observe(viewLifecycleOwner) {
+            suggestedNamesAdapter.submitList(it)
+        }
         viewModel.suggestedMood.observe(viewLifecycleOwner) {
             adapter.submitList(it)
         }
+    }
+
+    private fun suggestedNameTap(it: Suggestion) {
+        binding.edtSelectedName.setText(it.name)
     }
 
     override fun initRecyclerView() {
@@ -39,6 +44,10 @@ class UpsertMoodIconFragment :
 
         binding.rvDisplayIcons.layoutManager = GridLayoutManager(requireContext(), spanCount)
         binding.rvDisplayIcons.adapter = adapter
+
+        binding.rvSuggestedNames.adapter = suggestedNamesAdapter
+        binding.rvSuggestedNames.layoutManager =
+            LinearLayoutManager(requireContext(), RecyclerView.HORIZONTAL, false)
     }
 
     private fun onMoodIconSelected(icon: Icon) {

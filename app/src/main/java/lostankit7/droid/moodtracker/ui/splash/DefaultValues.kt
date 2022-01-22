@@ -242,6 +242,16 @@ object DefaultValues {
         SuggestedTaskIcon("\uF238", "train", true)
     )
 
+    fun suggestedMoodNames(context: Context): List<SuggestedMoodName> {
+        val suggNames = context.resources.getStringArray(R.array.suggested_mood_names)
+       return suggNames.map { SuggestedMoodName(it) }
+    }
+
+    fun suggestedTaskNames(context: Context) : List<SuggestedTaskName> {
+        val suggNames = context.resources.getStringArray(R.array.suggested_task_names)
+        return suggNames.map { SuggestedTaskName(it) }
+    }
+
     private const val MOOD_ICON_HAPPY = "\uf599"
     private const val MOOD_ICON_SAD = "\uf119"
     private const val MOOD_ICON_MEH = "\uf11a"

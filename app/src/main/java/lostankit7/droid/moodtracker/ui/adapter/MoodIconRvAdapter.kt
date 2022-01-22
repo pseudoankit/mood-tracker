@@ -22,7 +22,7 @@ class MoodIconRvAdapter(
 
     override fun inflateLayout(
         layoutInflater: LayoutInflater, parent: ViewGroup, attachToParent: Boolean
-    ) = ItemRvSuggestedMoodBinding.inflate(layoutInflater)
+    ) = ItemRvSuggestedMoodBinding.inflate(layoutInflater,parent, attachToParent)
 
     companion object {
         fun newInstance(iconSelected: (Icon) -> Unit) =

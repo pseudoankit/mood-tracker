@@ -13,9 +13,11 @@ class TaskEntryViewModel @Inject constructor(
     private val repository: UserEntriesRepository,
     private val taskCategoryRepo: TaskCategoryRepository,
     private val taskIconRepo: TaskIconRepository,
-    suggestedTaskRepo: SuggestedTaskIconRepository
+    suggestedTaskRepo: SuggestedTaskIconRepository,
+    suggestedTaskNameRepository: SuggestedTaskNameRepository
 ) : BaseViewModel() {
 
+    val suggestedTaskNames = suggestedTaskNameRepository.suggestedNames
     val suggestedTaskIcons = suggestedTaskRepo.suggestedTaskIcon
 
     val taskCategories = taskCategoryRepo.taskCategories

@@ -1,6 +1,39 @@
 <resources>
     <string name="app_name">MoodTracker</string>
 
+    <string-array name="suggested_task_names">
+        <item>@string/cycling</item>
+        <item>@string/baseball</item>
+        <item>@string/basketball</item>
+        <item>@string/bath</item>
+        <item>@string/books</item>
+        <item>@string/puzzle</item>
+        <item>@string/business</item>
+        <item>@string/meeting</item>
+        <item>@string/hockey</item>
+        <item>@string/teaching</item>
+        <item>@string/chess</item>
+        <item>@string/nothing</item>
+        <item>@string/coffee</item>
+        <item>@string/cubes</item>
+        <item>@string/pizza</item>
+        <item>@string/tractor</item>
+    </string-array>
+
+    <string-array name="suggested_mood_names">
+        <item>@string/confuse</item>
+        <item>@string/tired</item>
+        <item>@string/surprise</item>
+        <item>@string/cookies</item>
+        <item>@string/tear</item>
+        <item>@string/silent</item>
+        <item>@string/bad</item>
+        <item>@string/jolly</item>
+        <item>@string/romantic</item>
+        <item>@string/naughty</item>
+        <item>@string/okay</item>
+    </string-array>
+
     <!-- Task Categories -->
     <string name="other">Other</string>
     <string name="entertainment">Entertainment</string>
@@ -24,20 +57,6 @@
     <string name="silent">silent</string>
     <string name="bad">bad</string>
 
-    <string-array name="suggested_mood_names">
-        <item>@string/confuse</item>
-        <item>@string/tired</item>
-        <item>@string/surprise</item>
-        <item>@string/cookies</item>
-        <item>@string/tear</item>
-        <item>@string/silent</item>
-        <item>@string/bad</item>
-        <item>@string/jolly</item>
-        <item>@string/romantic</item>
-        <item>@string/naughty</item>
-        <item>@string/okay</item>
-    </string-array>
-
     <!-- Task Names  -->
     <string name="movies">movies</string>
     <string name="family">family</string>
@@ -58,6 +77,20 @@
     <string name="football">football</string>
     <string name="cricket">cricket</string>
     <string name="sports">sports</string>
+    <string name="baseball">baseball</string>
+    <string name="basketball">basketball</string>
+    <string name="bath">bath</string>
+    <string name="puzzle">puzzle</string>
+    <string name="business">business</string>
+    <string name="meeting">meeting</string>
+    <string name="hockey">hockey</string>
+    <string name="teaching">teaching</string>
+    <string name="chess">chess</string>
+    <string name="nothing">nothing</string>
+    <string name="coffee">coffee</string>
+    <string name="cubes">cubes</string>
+    <string name="pizza">pizza</string>
+    <string name="tractor">tractor</string>
 
     <!-- Bottom navigation text -->
     <string name="text_entries">Entries</string>
@@ -77,7 +110,6 @@
     <string name="et_note_hint">Add Note</string>
     <string name="text_add_new_category">Add New Category</string>
     <string name="text_enter_category">Enter Category</string>
-
 
 
     <string name="text_save">Save</string>

@@ -43,4 +43,12 @@ class DataBaseModule {
     @Singleton
     @Provides
     fun provideSuggestedTaskIconDao(db: AppDatabase): SuggestedTaskIconDao = db.suggestedTaskIcon()
+
+    @Singleton
+    @Provides
+    fun provideSuggestedTaskNameDao(db: AppDatabase): SuggestedTaskNameDao = db.suggestedTaskName()
+
+    @Singleton
+    @Provides
+    fun provideSuggestedMoodNameDao(db: AppDatabase): SuggestedMoodNameDao = db.suggestedMoodName()
 }

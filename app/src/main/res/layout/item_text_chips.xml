@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<lostankit7.droid.CustomTextView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/tvName"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="@dimen/_dimen_7"
+    android:paddingHorizontal="@dimen/_dimen_10"
+    android:paddingVertical="@dimen/_dimen_7"
+    app:corner_radius="@dimen/corner_radius"
+    app:ripple_color="@color/ripple_color"
+    app:stroke_color="@color/stroke_color"
+    app:stroke_width="@dimen/_dimen_1"
+    tools:text="ankit" />
