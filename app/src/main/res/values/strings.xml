@@ -108,6 +108,7 @@
     <string name="header_add_task_entry">What have you been up to?</string>
     <string name="et_note_hint">Add Note</string>
     <string name="text_add_new_category">Add New Category</string>
+    <string name="text_add_new_task">Add New Task</string>
     <string name="text_enter_category">Enter Category</string>
 
 

@@ -25,8 +25,7 @@ class TaskEntryFragment : BaseDaggerFragment<FragmentTaskEntryBinding, TaskEntry
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        setUpRecyclerView()
+        //todo list always getting refreshed
 
     }
 
@@ -59,7 +58,8 @@ class TaskEntryFragment : BaseDaggerFragment<FragmentTaskEntryBinding, TaskEntry
             selectedTasksMap[task.hashCode()] = task as TaskIcon
     }
 
-    private fun setUpRecyclerView() {
+    override fun initRecyclerView() {
+        super.initRecyclerView()
         binding.rvTask.layoutManager = LinearLayoutManager(requireContext())
         binding.rvTask.adapter = adapter
     }

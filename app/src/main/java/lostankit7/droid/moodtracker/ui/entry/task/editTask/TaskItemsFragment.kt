@@ -12,6 +12,7 @@ import lostankit7.droid.moodtracker.data.database.entities.Icon
 import lostankit7.droid.moodtracker.data.database.entities.TaskIcon
 import lostankit7.droid.moodtracker.databinding.FragmentShowListBinding
 import lostankit7.droid.moodtracker.di.AppComponent
+import lostankit7.droid.moodtracker.ui.MainActivity
 import lostankit7.droid.moodtracker.ui.adapter.IconListRvAdapter
 import lostankit7.droid.moodtracker.ui.entry.task.TaskEntryViewModel
 
@@ -76,9 +77,19 @@ class TaskItemsFragment : BaseDaggerFragment<FragmentShowListBinding, TaskEntryV
 
     override fun init() {
         super.init()
+        binding.btnAddNew.text = resources.getString(R.string.text_add_new_task)
         category = arguments?.getString(resources.getString(R.string.arg_to_taskItemsFrag))
         if (category.isNullOrBlank()) navController.popBackStack()
+    }
 
+    override fun onResume() {
+        super.onResume()
+        actionBar?.tvTitle?.text = category
+    }
+
+    override fun onPause() {
+        super.onPause()
+        actionBar?.tvTitle?.text = ""
     }
 
     override fun injectFragment(appComponent: AppComponent) {

@@ -2,7 +2,9 @@ package lostankit7.droid.moodtracker.ui.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.core.content.ContextCompat
+import lostankit7.droid.CustomTextView
 import lostankit7.droid.moodtracker.R
 import lostankit7.droid.moodtracker.base.BaseDiffRvAdapter
 import lostankit7.droid.moodtracker.data.database.entities.Icon
@@ -25,22 +27,27 @@ class TaskIconRvAdapter(
 
         binding.tvName.text = item.name
         binding.tvIcon.text = item.icon
+        if (isMultiSelect && item is TaskIcon) {
+            binding.tvIcon.updateSelection(item.isSelected)
+        }
 
         binding.root.setOnClickListener {
             taskSelected.invoke(item)
 
             if (isMultiSelect && item is TaskIcon) {
                 item.isSelected = !item.isSelected
-                binding.tvIcon.apply {
-                    if (item.isSelected) {
-                        setTextColor(ContextCompat.getColor(context, R.color.task_icon_bg))
-                        solidColor(ContextCompat.getColor(context, R.color.task_icon))
-                    } else {
-                        setTextColor(ContextCompat.getColor(context, R.color.task_icon))
-                        solidColor(ContextCompat.getColor(context, R.color.task_icon_bg))
-                    }
-                }
+                binding.tvIcon.updateSelection(item.isSelected)
             }
+        }
+    }
+
+    private fun CustomTextView.updateSelection(isSelected: Boolean) {
+        if (isSelected) {
+            setTextColor(ContextCompat.getColor(context, R.color.task_icon_bg))
+            solidColor(ContextCompat.getColor(context, R.color.task_icon))
+        } else {
+            setTextColor(ContextCompat.getColor(context, R.color.task_icon))
+            solidColor(ContextCompat.getColor(context, R.color.task_icon_bg))
         }
     }
 

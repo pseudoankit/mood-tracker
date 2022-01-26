@@ -22,7 +22,7 @@ abstract class BaseFragment<VB : ViewBinding> : Fragment() {
     lateinit var binding: VB
 
     lateinit var navController: NavController
-    val actionBar by lazy { (requireActivity() as? MainActivity)?.actionBar() }
+    val actionBar by lazy { (requireActivity() as? MainActivity)?.mActionBar }
 
     private val progressBinding by lazy { DialogProgressBinding.inflate(layoutInflater) }
     private val progressDialog by lazy { DialogHelper.showDialog(requireActivity(), progressBinding) }

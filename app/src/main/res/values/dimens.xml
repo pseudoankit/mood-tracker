@@ -7,6 +7,7 @@
     <dimen name="corner_radius">8dp</dimen>
 
     <!-- action bar -->
+    <dimen name="action_bar_title">20sp</dimen>
     <dimen name="icon_size_sml_action_bar">17sp</dimen>
     <dimen name="icon_size_action_bar">24sp</dimen>
 

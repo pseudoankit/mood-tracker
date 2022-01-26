@@ -23,6 +23,7 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
     private lateinit var navController: NavController
+    val mActionBar by lazy { binding.actionBar }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -139,6 +140,4 @@ class MainActivity : AppCompatActivity() {
         binding.bottomLayout.hide()
         binding.fragmentBottomGuide.hide()
     }
-
-    fun actionBar() = binding.actionBar
 }
