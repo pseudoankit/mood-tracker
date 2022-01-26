@@ -32,7 +32,7 @@ class IconListRvAdapter(
 
     override fun bindViewHolder(item: Icon, position: Int, binding: ItemIconListBinding) {
 
-        if(item.isSolid) binding.faIcon.isSolidIcon() else binding.faIcon.isRegularIcon()
+        if (item.isSolid) binding.faIcon.isSolidIcon() else binding.faIcon.isRegularIcon()
         binding.tvName.text = item.name
         binding.faIcon.text = item.icon
 

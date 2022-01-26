@@ -3,25 +3,45 @@ package lostankit7.droid.moodtracker.ui.userEntries
 import android.text.SpannableStringBuilder
 import android.view.Gravity
 import android.view.LayoutInflater
+import android.view.MenuItem
 import android.view.ViewGroup
 import android.widget.TextView
+import lostankit7.droid.moodtracker.R
 import lostankit7.droid.moodtracker.base.BaseDiffRvAdapter
 import lostankit7.droid.moodtracker.data.database.entities.UserEntry
 import lostankit7.droid.moodtracker.databinding.ItemRvUserEntriesBinding
-import lostankit7.droid.moodtracker.helper.constant.FontAwesomeIcon
+import lostankit7.droid.moodtracker.helper.DialogHelper
 import lostankit7.droid.moodtracker.helper.constant.dbEntrySeparator
 import lostankit7.droid.moodtracker.helper.hide
 
-class RvUserEntriesAdapter(private val itemClicked: (UserEntry) -> Unit) :
-    BaseDiffRvAdapter<ItemRvUserEntriesBinding, UserEntry>() {
+class RvUserEntriesAdapter(
+    private val itemClicked: (MenuItem, UserEntry) -> Boolean,
+) : BaseDiffRvAdapter<ItemRvUserEntriesBinding, UserEntry>() {
+
+    override fun onCreateHolder(
+        holder: BaseDiffRvAdapter.Companion.ViewHolder<ItemRvUserEntriesBinding>,
+        parent: ViewGroup,
+        viewType: Int
+    ) {
+        super.onCreateHolder(holder, parent, viewType)
+
+        fun showOptionDialog() {
+            DialogHelper.showMenu(
+                parent.context, holder.binding.optionMenu, R.menu.menu_options
+            ) {
+                itemClicked(it, getItem(holder.adapterPosition))
+            }
+        }
+        holder.binding.optionMenu.setOnClickListener { showOptionDialog() }
+        holder.binding.root.setOnClickListener { showOptionDialog() }
+    }
 
     override fun bindViewHolder(item: UserEntry, position: Int, binding: ItemRvUserEntriesBinding) {
         val tasks = SpannableStringBuilder()
         val icons = item.taskIcons.split(dbEntrySeparator)
         val names = item.taskNames.split(dbEntrySeparator)
         for (i in icons.indices) {
-            //todo correct it
-            tasks.append("  ${FontAwesomeIcon.dot}  ${icons[i]} ${names[i]}")
+            tasks.append("  |  ${icons[i]} ${names[i]}")
         }
         binding.apply {
             tvTasks.gravity = Gravity.START
@@ -44,6 +64,7 @@ class RvUserEntriesAdapter(private val itemClicked: (UserEntry) -> Unit) :
     ) = ItemRvUserEntriesBinding.inflate(layoutInflater, parent, false)
 
     companion object {
-        fun newInstance(itemClicked: (UserEntry) -> Unit) = RvUserEntriesAdapter(itemClicked)
+        fun newInstance(itemClicked: (MenuItem, UserEntry) -> Boolean) =
+            RvUserEntriesAdapter(itemClicked)
     }
 }

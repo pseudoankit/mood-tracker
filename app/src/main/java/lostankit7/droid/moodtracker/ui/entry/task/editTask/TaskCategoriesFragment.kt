@@ -82,7 +82,7 @@ class TaskCategoriesFragment : BaseDaggerFragment<FragmentShowListBinding, TaskE
     }
 
     private fun showEdtDialog(defValue: String = "", newText: (String) -> Unit) {
-        DialogHelper.build(requireActivity(), DialogTextEntryBinding.inflate(layoutInflater))
+        DialogHelper.showDialog(requireActivity(), DialogTextEntryBinding.inflate(layoutInflater))
         { view, dialog ->
             view.edtText.setText(defValue)
             view.btnCancel.setOnClickListener { dialog.dismiss() }

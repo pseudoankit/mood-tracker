@@ -23,7 +23,7 @@
     <dimen name="mood_name_size">12sp</dimen>
     <dimen name="small_icon_size">30sp</dimen>
 
-    <dimen name="sml_rounded_icon_bg_size">23dp</dimen>
+    <dimen name="sml_rounded_icon_bg_size">24dp</dimen>
     <dimen name="mid_rounded_icon_bg_size">27dp</dimen>
     <dimen name="lg_rounded_icon_bg_size">33dp</dimen>
     <dimen name="rounded_icon_size">19sp</dimen>

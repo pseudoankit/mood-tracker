@@ -1,9 +1,7 @@
 package lostankit7.droid.moodtracker.data.database.dao
 
 import androidx.lifecycle.LiveData
-import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.Query
+import androidx.room.*
 import lostankit7.droid.moodtracker.data.database.entities.UserEntry
 
 @Dao
@@ -14,4 +12,10 @@ interface UserEntryDao {
 
     @Insert
     suspend fun saveUserEntry(userEntry: UserEntry)
+
+    @Delete
+    suspend fun deleteUserEntry(userEntry: UserEntry)
+
+    @Update
+    suspend fun updateUserEntry(userEntry: UserEntry)
 }

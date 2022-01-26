@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="editMoodRoundedIcon">
+    <style name="roundedIcon">
         <item name="android:layout_width">@dimen/sml_rounded_icon_bg_size</item>
         <item name="android:layout_height">@dimen/sml_rounded_icon_bg_size</item>
         <item name="android:gravity">center</item>

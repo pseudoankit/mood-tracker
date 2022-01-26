@@ -13,7 +13,7 @@ import kotlin.reflect.KProperty0
 
 object DialogHelper {
 
-    fun <VB : ViewBinding> build(
+    fun <VB : ViewBinding> showDialog(
         activity: Activity, vb: VB, fullWidth: Boolean = true, block: ((VB, Dialog) -> Unit)? = null
     ): Dialog {
         val dialog = Dialog(activity)

@@ -2,10 +2,12 @@ package lostankit7.droid.moodtracker.ui.userEntries
 
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.MenuItem
 import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import lostankit7.droid.moodtracker.base.BaseDaggerFragment
 import lostankit7.droid.moodtracker.MyApplication
+import lostankit7.droid.moodtracker.R
 import lostankit7.droid.moodtracker.data.database.entities.UserEntry
 import lostankit7.droid.moodtracker.databinding.FragmentUserEntriesBinding
 import lostankit7.droid.moodtracker.di.AppComponent
@@ -20,8 +22,18 @@ class UserEntriesFragment : BaseDaggerFragment<FragmentUserEntriesBinding, UserE
 
     }
 
-    private fun onItemClicked(userEntry: UserEntry) {
-
+    private fun onItemClicked(menuItem: MenuItem, userEntry: UserEntry): Boolean {
+        return when (menuItem.itemId) {
+            R.id.edit -> {
+                //todo edit
+                true
+            }
+            R.id.delete -> {
+                viewModel.deleteUserEntry(userEntry)
+                true
+            }
+            else -> false
+        }
     }
 
     override suspend fun registerObservers() {

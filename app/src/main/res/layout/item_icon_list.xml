@@ -28,7 +28,7 @@
 
     <lostankit7.droid.CustomTextView
         android:id="@+id/optionMenu"
-        style="@style/editMoodRoundedIcon"
+        style="@style/roundedIcon"
         android:layout_alignParentEnd="true"
         android:layout_centerVertical="true"
         android:text="@string/fas_options" />

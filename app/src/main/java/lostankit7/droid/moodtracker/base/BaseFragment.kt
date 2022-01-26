@@ -11,7 +11,6 @@ import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.viewbinding.ViewBinding
 import lostankit7.droid.databinding.DialogProgressBinding
-import lostankit7.droid.moodtracker.MyApplication
 import lostankit7.droid.moodtracker.helper.DialogHelper
 import lostankit7.droid.moodtracker.helper.showSnackBar
 import lostankit7.droid.moodtracker.helper.showToast
@@ -26,7 +25,7 @@ abstract class BaseFragment<VB : ViewBinding> : Fragment() {
     val actionBar by lazy { (requireActivity() as? MainActivity)?.actionBar() }
 
     private val progressBinding by lazy { DialogProgressBinding.inflate(layoutInflater) }
-    private val progressDialog by lazy { DialogHelper.build(requireActivity(), progressBinding) }
+    private val progressDialog by lazy { DialogHelper.showDialog(requireActivity(), progressBinding) }
 
     var TAG = "Activity"
 
