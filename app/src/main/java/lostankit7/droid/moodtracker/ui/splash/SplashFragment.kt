@@ -15,7 +15,15 @@ class SplashFragment : BaseDaggerFragment<FragmentSplashBinding, SplashViewModel
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        viewModel.saveDefaultIcons(requireContext())
+        viewModel.saveDefaultIcons(
+            DefaultValues.moodIcons(requireContext()),
+            DefaultValues.suggestedMoodIcons(),
+            DefaultValues.taskCategories(requireContext()),
+            DefaultValues.taskIcons(requireContext()),
+            DefaultValues.suggestedTaskIcons(),
+            DefaultValues.suggestedMoodNames(requireContext()),
+            DefaultValues.suggestedTaskNames(requireContext())
+        )
 
         lifecycleScope.launchWhenCreated {
             delay(1500)

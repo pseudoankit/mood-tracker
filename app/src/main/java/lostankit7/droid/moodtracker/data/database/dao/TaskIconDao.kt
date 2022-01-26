@@ -22,6 +22,6 @@ interface TaskIconDao {
     @Update
     suspend fun updateTask(icon: TaskIcon)
 
-    @Query("UPDATE or REPLACE TaskIcon SET name = :newT WHERE name = :old")
-    suspend fun updateTaskCategory(old: String, newT: String)
+    @Query("UPDATE TaskIcon SET category = :newCategory WHERE category = :oldCategory")
+    suspend fun updateTaskCategory(oldCategory: String, newCategory: String)
 }

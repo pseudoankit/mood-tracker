@@ -1,7 +1,7 @@
 package lostankit7.droid.moodtracker.ui.splash
 
-import android.content.Context
 import lostankit7.droid.moodtracker.base.BaseViewModel
+import lostankit7.droid.moodtracker.data.database.entities.*
 import lostankit7.droid.moodtracker.data.repository.*
 import javax.inject.Inject
 
@@ -16,18 +16,25 @@ class SplashViewModel @Inject constructor(
     private val suggestedTaskNameRepository: SuggestedTaskNameRepository
 ) : BaseViewModel() {
 
-    //todo check for context in view model
-    fun saveDefaultIcons(context: Context) {
+    fun saveDefaultIcons(
+        moodIcons: List<MoodIcon>,
+        suggestedMoodIcons: List<SuggestedMoodIcon>,
+        taskCategories: List<TaskCategory>,
+        taskIcons: List<TaskIcon>,
+        suggestedTaskIcons: List<SuggestedTaskIcon>,
+        suggestedMoodNames: List<SuggestedMoodName>,
+        suggestedTaskNames: List<SuggestedTaskName>
+    ) {
         if (!prefs.isInitialLaunch()) return
 
         launchIo {
-            moodIconRepo.insertMoodIcons(DefaultValues.moodIcons(context))
-            suggestedMoodIconRepo.insertSuggestedMoods(DefaultValues.suggestedMoodIcons())
-            taskCategoryRepo.insertTaskCategories(DefaultValues.taskCategories(context))
-            taskIconRepo.insertTaskIcons(DefaultValues.taskIcons(context))
-            suggestedTaskIconRepository.insertSuggestedTaskIcons(DefaultValues.suggestedTaskIcons())
-            suggestedMoodNameRep.insertSuggestions(DefaultValues.suggestedMoodNames(context))
-            suggestedTaskNameRepository.insertSuggestions(DefaultValues.suggestedTaskNames(context))
+            moodIconRepo.insertMoodIcons(moodIcons)
+            suggestedMoodIconRepo.insertSuggestedMoods(suggestedMoodIcons)
+            taskCategoryRepo.insertTaskCategories(taskCategories)
+            taskIconRepo.insertTaskIcons(taskIcons)
+            suggestedTaskIconRepository.insertSuggestedTaskIcons(suggestedTaskIcons)
+            suggestedMoodNameRep.insertSuggestions(suggestedMoodNames)
+            suggestedTaskNameRepository.insertSuggestions(suggestedTaskNames)
         }
         //todo if insertion fails
         prefs.isInitialLaunch(false)

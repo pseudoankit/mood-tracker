@@ -25,9 +25,7 @@ class TaskEntryViewModel @Inject constructor(
     fun deleteCategory(it: TaskCategory) = launchIo { taskCategoryRepo.deleteTaskCategory(it) }
     fun updateCategory(oldText: String, new: TaskCategory) {
         launchIo { taskCategoryRepo.updateCategory(new) }
-        launchIo { //todo not working
-            taskIconRepo.updateTaskCategory(oldText, new.name)
-        }
+        launchIo { taskIconRepo.updateTaskCategory(oldText, new.name) }
     }
 
     fun getTaskIcons(category: String) = taskIconRepo.getTaskIcons(category)
