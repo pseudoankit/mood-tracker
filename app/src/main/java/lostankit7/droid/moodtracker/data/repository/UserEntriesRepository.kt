@@ -9,6 +9,8 @@ class UserEntriesRepository @Inject constructor(private val dao: UserEntryDao) {
 
     val userEntries: LiveData<MutableList<UserEntry>> = dao.userEntries()
 
+    fun userEntries(date: String) = dao.userEntries(date)
+
     suspend fun saveUserEntry(userEntry: UserEntry) = dao.saveUserEntry(userEntry)
 
     suspend fun deleteUserEntry(userEntry: UserEntry) = dao.deleteUserEntry(userEntry)

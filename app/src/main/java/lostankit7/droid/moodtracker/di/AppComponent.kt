@@ -10,7 +10,7 @@ import lostankit7.droid.moodtracker.ui.entry.task.addTask.TaskEntryFragment
 import lostankit7.droid.moodtracker.ui.entry.task.editTask.TaskCategoriesFragment
 import lostankit7.droid.moodtracker.ui.entry.task.editTask.TaskItemsFragment
 import lostankit7.droid.moodtracker.ui.entry.task.editTask.UpsertTaskIconFragment
-import lostankit7.droid.moodtracker.ui.userEntries.UserEntriesFragment
+import lostankit7.droid.moodtracker.ui.userEntries.UserEntriesBaseFragment
 import lostankit7.droid.moodtracker.ui.splash.SplashFragment
 import javax.inject.Singleton
 
@@ -26,7 +26,7 @@ interface AppComponent {
     }
 
     fun inject(frag: SplashFragment)
-    fun inject(frag: UserEntriesFragment)
+    fun inject(frag: UserEntriesBaseFragment)
     fun inject(frag: MoodEntryFragment)
     fun inject(frag: TaskEntryFragment)
     fun inject(frag: UpsertMoodIconFragment)

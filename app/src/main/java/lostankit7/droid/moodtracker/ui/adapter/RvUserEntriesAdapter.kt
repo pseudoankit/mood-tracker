@@ -1,4 +1,4 @@
-package lostankit7.droid.moodtracker.ui.userEntries
+package lostankit7.droid.moodtracker.ui.adapter
 
 import android.text.SpannableStringBuilder
 import android.view.Gravity

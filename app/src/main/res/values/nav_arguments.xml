@@ -5,4 +5,5 @@
     <string name="arg_to_taskItemsFrag">taskItemArg</string>
     <string name="taskIcon_to_upsertTaskFrag">upsertTaskItemArg</string>
     <string name="category_to_upsertTaskFrag">category</string>
+    <string name="arg_date">date</string>
 </resources>

@@ -27,7 +27,7 @@ class SplashFragment : BaseDaggerFragment<FragmentSplashBinding, SplashViewModel
 
         lifecycleScope.launchWhenCreated {
             delay(1500)
-            navigateTo(R.id.action_splashFragment_to_userEntriesFragment)
+            navigateTo(R.id.action_splashFragment_to_allUserEntriesFragment)
         }
 
     }

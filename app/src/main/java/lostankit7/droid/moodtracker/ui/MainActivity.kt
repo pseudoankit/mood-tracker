@@ -83,7 +83,7 @@ class MainActivity : AppCompatActivity() {
             R.id.splashFragment -> {
                 hideActionBar()
             }
-            R.id.userEntriesFragment, R.id.calendarFragment, R.id.moreFragment -> {
+            R.id.calendarFragment, R.id.moreFragment -> {
                 hideActionBar()
                 showBottomNav()
             }
@@ -105,38 +105,38 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun hideActionBarLeftSubIcon() {
+    fun hideActionBarLeftSubIcon() {
         binding.actionBar.leftIcon2.hide()
         binding.actionBar.leftIcon1.text = resources.getString(R.string.fas_circular_back)
     }
 
-    private fun showActionBarLeftSubIcon() {
+    fun showActionBarLeftSubIcon() {
         binding.actionBar.leftIcon2.show()
         binding.actionBar.leftIcon1.text = resources.getString(R.string.fas_back)
     }
 
-    private fun showSaveButton() {
+    fun showSaveButton() {
         binding.actionBar.btnSave.show()
     }
 
-    private fun hideSaveButton() {
+    fun hideSaveButton() {
         binding.actionBar.btnSave.hide()
     }
 
-    private fun showActionBar() {
+    fun showActionBar() {
         binding.actionBar.container.show()
     }
 
-    private fun hideActionBar() {
+    fun hideActionBar() {
         binding.actionBar.container.hide()
     }
 
-    private fun showBottomNav() {
+    fun showBottomNav() {
         binding.bottomLayout.show()
         binding.fragmentBottomGuide.show()
     }
 
-    private fun hideBottomNav() {
+    fun hideBottomNav() {
         binding.bottomLayout.hide()
         binding.fragmentBottomGuide.hide()
     }

@@ -10,6 +10,9 @@ interface UserEntryDao {
     @Query("SELECT * FROM UserEntry")
     fun userEntries(): LiveData<MutableList<UserEntry>>
 
+    @Query("SELECT * FROM UserEntry WHERE date = :date")
+    fun userEntries(date: String): LiveData<MutableList<UserEntry>>
+
     @Insert
     suspend fun saveUserEntry(userEntry: UserEntry)
 
