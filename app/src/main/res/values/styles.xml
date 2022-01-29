@@ -1,5 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    
+    <style name="editButtonStyle">
+        <item name="android:layout_width">@dimen/lg_rounded_icon_bg_size</item>
+        <item name="android:layout_height">@dimen/lg_rounded_icon_bg_size</item>
+        <item name="android:text">@string/fas_edit</item>
+        <item name="android:textColor">@color/sec_icon_color</item>
+        <item name="android:textSize">@dimen/edit_btn_size</item>
+        <item name="background_circular">true</item>
+        <item name="fa_solid">true</item>
+        <item name="ripple_color">@color/ripple_color</item>
+        <item name="stroke_color">@color/stroke_color</item>
+        <item name="stroke_width">@dimen/dp_2</item>
+    </style>
 
     <style name="roundedIcon">
         <item name="android:layout_width">@dimen/sml_rounded_icon_bg_size</item>
@@ -7,19 +20,6 @@
         <item name="android:gravity">center</item>
         <item name="android:textSize">12sp</item>
         <item name="android:textColor">@color/sec_icon_color</item>
-        <item name="background_circular">true</item>
-        <item name="fa_solid">true</item>
-        <item name="ripple_color">@color/ripple_color</item>
-        <item name="stroke_color">@color/stroke_color</item>
-        <item name="stroke_width">1dp</item>
-    </style>
-
-    <style name="dropDownStyle">
-        <item name="android:layout_width">@dimen/lg_rounded_icon_bg_size</item>
-        <item name="android:layout_height">@dimen/lg_rounded_icon_bg_size</item>
-        <item name="android:gravity">center</item>
-        <item name="android:text">@string/fas_drop_down</item>
-        <item name="android:textSize">@dimen/rounded_icon_size</item>
         <item name="background_circular">true</item>
         <item name="fa_solid">true</item>
         <item name="ripple_color">@color/ripple_color</item>

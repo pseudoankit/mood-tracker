@@ -56,7 +56,7 @@
             android:id="@+id/rightIcon1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/fas_save"
+            android:text="@string/fas_circular_tick"
             android:textColor="@color/theme_color"
             android:textSize="@dimen/icon_size_action_bar"
             app:fa_solid="true" />

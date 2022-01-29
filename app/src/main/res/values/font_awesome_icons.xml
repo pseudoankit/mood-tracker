@@ -4,9 +4,11 @@
     <string name="fas_edit">\uf303</string>
     <string name="fas_delete">\uf1f8</string>
     <string name="far_cross">\uf057</string>
+    <string name="fas_cross">\uf00d</string>
+    <string name="fas_tick">\uf00c</string>
     <string name="fas_back">\uf053</string>
     <string name="fas_circular_back">\uf137</string>
-    <string name="fas_save">\uf058</string>
+    <string name="fas_circular_tick">\uf058</string>
     <string name="fas_calendar">\uf133</string>
     <string name="fas_clock">\uf017</string>
     <string name="fas_drop_down">\uf0d7</string>

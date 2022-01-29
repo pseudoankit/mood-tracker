@@ -52,5 +52,6 @@ class SharedPrefsRepository @Inject constructor(context: Context) {
     companion object {
         private const val PREFS_NAME = "mood_tracker_prefs"
         private const val IS_INITIAL_LAUNCH = "is_initial_launch"
+        private const val LANGUAGE_SELECTED = ""
     }
 }

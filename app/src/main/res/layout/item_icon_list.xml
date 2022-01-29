@@ -11,7 +11,7 @@
         android:id="@+id/faIcon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/fas_save"
+        android:text="@string/fas_circular_tick"
         android:layout_centerVertical="true"
         android:textColor="@color/sec_icon_color"
         android:textSize="@dimen/small_icon_size"

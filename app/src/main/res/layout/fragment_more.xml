@@ -1,13 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="@dimen/padding_screen"
     tools:context=".ui.more.MoreFragment">
 
-    <TextView
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_user_profile"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Hello" />
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_20"
+        android:background="@drawable/bg_rounded_white"
+        android:elevation="@dimen/elevation"
+        android:padding="@dimen/dp_10"
+        app:layout_constraintTop_toTopOf="parent">
 
-</FrameLayout>
+        <ImageView
+            android:id="@+id/userImage"
+            android:layout_width="@dimen/profile_image_dimen"
+            android:layout_height="@dimen/profile_image_dimen"
+            android:src="@drawable/ic_launcher_background"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/edtUserName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_20"
+            android:background="@drawable/bg_rounded_white_stroke_gray"
+            android:hint="@string/edt_hint_enter_your_name"
+            android:padding="@dimen/dp_10"
+            app:layout_constraintBottom_toBottomOf="@id/userImage"
+            app:layout_constraintStart_toEndOf="@id/userImage"
+            app:layout_constraintTop_toTopOf="@id/userImage"
+            tools:text="ankit" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <lostankit7.droid.CustomTextView
+        android:id="@+id/btnEditProfile"
+        style="@style/editButtonStyle"
+        android:elevation="@dimen/elevation"
+        app:layout_constraintBottom_toTopOf="@id/cl_user_profile"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/cl_user_profile"
+        app:solid_color="@color/white" />
+
+    <include
+        android:id="@+id/changeLanguage"
+        layout="@layout/item_rv_expandable_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_10"
+        app:layout_constraintTop_toBottomOf="@id/cl_user_profile" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
