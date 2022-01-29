@@ -10,10 +10,10 @@
         android:id="@+id/llTaskCategory"
         android:layout_width="match_parent"
         android:layout_height="@dimen/std_height"
-        android:layout_margin="@dimen/_dimen_3"
+        android:layout_margin="@dimen/dp_3"
         android:background="@drawable/bg_rounded_ripple"
         android:gravity="center"
-        android:paddingHorizontal="@dimen/_dimen_10">
+        android:paddingHorizontal="@dimen/dp_10">
 
         <TextView
             android:id="@+id/tvTaskCategory"

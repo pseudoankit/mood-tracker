@@ -10,7 +10,7 @@
     <lostankit7.droid.CustomTextView
         android:id="@+id/tvSelectedIcon"
         style="@style/moodIconStyle"
-        android:layout_marginStart="@dimen/_dimen_10"
+        android:layout_marginStart="@dimen/dp_10"
         android:text="@string/far_circle"
         android:textColor="@color/sec_icon_color"
         app:layout_constraintBottom_toBottomOf="@id/edtSelectedName"
@@ -20,7 +20,7 @@
     <EditText
         android:id="@+id/edtSelectedName"
         style="@style/defEdtStyle"
-        android:layout_marginHorizontal="@dimen/_dimen_10"
+        android:layout_marginHorizontal="@dimen/dp_10"
         android:gravity="center_vertical"
         android:hint="@string/enter_mood_name"
         android:textColor="@color/sec_icon_color"
@@ -32,7 +32,7 @@
         android:id="@+id/rvSuggestedNames"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginVertical="@dimen/_dimen_15"
+        android:layout_marginVertical="@dimen/dp_15"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/barrier" />
 

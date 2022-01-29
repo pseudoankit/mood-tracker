@@ -117,5 +117,6 @@
     <string name="text_cancel">Cancel</string>
     <string name="text_edit">Edit</string>
     <string name="text_delete">Delete</string>
+    <string name="text_edit_moods">Edit Moods</string>
 
 </resources>

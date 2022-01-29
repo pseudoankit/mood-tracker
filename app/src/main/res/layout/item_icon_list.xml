@@ -4,13 +4,15 @@
     android:layout_width="match_parent"
     android:layout_height="@dimen/std_height"
     android:layout_marginTop="@dimen/padding_screen"
-    android:background="@drawable/bg_white_stroke_n_ripple">
+    android:paddingHorizontal="@dimen/dp_10"
+    android:background="@drawable/bg_rounded_white_stroke_gray">
 
     <lostankit7.droid.CustomTextView
         android:id="@+id/faIcon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/fas_save"
+        android:layout_centerVertical="true"
         android:textColor="@color/sec_icon_color"
         android:textSize="@dimen/small_icon_size"
         app:fa_regular="true" />
@@ -20,7 +22,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
-        android:layout_marginHorizontal="@dimen/_dimen_10"
+        android:layout_marginHorizontal="@dimen/dp_10"
         android:layout_toStartOf="@id/optionMenu"
         android:layout_toEndOf="@id/faIcon"
         android:textAlignment="textStart"

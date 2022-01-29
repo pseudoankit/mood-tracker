@@ -32,14 +32,16 @@
 
     <!-- common -->
     <dimen name="elevation">3dp</dimen>
-    <dimen name="_dimen_3">3dp</dimen>
-    <dimen name="_dimen_6">6dp</dimen>
-    <dimen name="_dimen_7">7dp</dimen>
-    <dimen name="_dimen_5">5dp</dimen>
-    <dimen name="_dimen_10">10dp</dimen>
-    <dimen name="_dimen_15">15dp</dimen>
-    <dimen name="_dimen_30">30dp</dimen>
-    <dimen name="_dimen_50">50dp</dimen>
-    <dimen name="_dimen_1">1dp</dimen>
+    <dimen name="dp_1">1dp</dimen>
+    <dimen name="dp_2">2dp</dimen>
+    <dimen name="dp_3">3dp</dimen>
+    <dimen name="dp_4">4dp</dimen>
+    <dimen name="dp_5">5dp</dimen>
+    <dimen name="dp_7">7dp</dimen>
+    <dimen name="dp_10">10dp</dimen>
+    <dimen name="dp_15">15dp</dimen>
+    <dimen name="dp_30">30dp</dimen>
+    <dimen name="dp_35">35dp</dimen>
+    <dimen name="dp_50">50dp</dimen>
 
 </resources>

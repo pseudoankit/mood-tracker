@@ -19,7 +19,7 @@ class CalendarFragment : BaseFragment<FragmentCalendarBinding>() {
     override fun initListeners() {
         super.initListeners()
 
-        binding.calendar.setOnDateChangeListener { calendar, year, month, date ->
+        binding.calendar.setOnDateChangeListener { _, year, month, date ->
             onDateSelected(formatDate(date, month + 1, year))
         }
     }
@@ -33,6 +33,5 @@ class CalendarFragment : BaseFragment<FragmentCalendarBinding>() {
 
     override fun inflateLayout(layoutInflater: LayoutInflater) =
         FragmentCalendarBinding.inflate(layoutInflater)
-
 
 }

@@ -28,7 +28,7 @@
         android:id="@+id/btnCancel"
         style="@style/defButtonStyle"
         android:layout_width="wrap_content"
-        android:layout_marginEnd="@dimen/_dimen_10"
+        android:layout_marginEnd="@dimen/dp_10"
         android:text="@string/text_cancel"
         app:layout_constraintBottom_toBottomOf="@id/btnOkay"
         app:layout_constraintEnd_toStartOf="@id/btnOkay"
