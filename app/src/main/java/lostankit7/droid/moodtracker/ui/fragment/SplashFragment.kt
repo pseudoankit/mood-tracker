@@ -1,0 +1,47 @@
+package lostankit7.droid.moodtracker.ui.fragment
+
+import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import androidx.lifecycle.lifecycleScope
+import kotlinx.coroutines.delay
+import lostankit7.droid.moodtracker.base.fragment.BaseDaggerFragment
+import lostankit7.droid.moodtracker.R
+import lostankit7.droid.moodtracker.databinding.FragmentSplashBinding
+import lostankit7.droid.moodtracker.di.AppComponent
+import lostankit7.droid.moodtracker.utils.constant.SplashFragmentDefaultValues
+import lostankit7.droid.moodtracker.ui.viewmodel.SplashViewModel
+
+class SplashFragment : BaseDaggerFragment<FragmentSplashBinding, SplashViewModel>() {
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        viewModel.saveDefaultIcons(
+            SplashFragmentDefaultValues.moodIcons(requireContext()),
+            SplashFragmentDefaultValues.suggestedMoodIcons(),
+            SplashFragmentDefaultValues.taskCategories(requireContext()),
+            SplashFragmentDefaultValues.taskIcons(requireContext()),
+            SplashFragmentDefaultValues.suggestedTaskIcons(),
+            SplashFragmentDefaultValues.suggestedMoodNames(requireContext()),
+            SplashFragmentDefaultValues.suggestedTaskNames(requireContext())
+        )
+
+        lifecycleScope.launchWhenCreated {
+            delay(1500)
+            navigateTo(R.id.action_splashFragment_to_allUserEntriesFragment)
+        }
+
+    }
+
+    override fun inflateLayout(layoutInflater: LayoutInflater) =
+        FragmentSplashBinding.inflate(layoutInflater)
+
+    override fun injectFragment(appComponent: AppComponent) {
+        appComponent.inject(this)
+    }
+
+    companion object {
+
+    }
+}

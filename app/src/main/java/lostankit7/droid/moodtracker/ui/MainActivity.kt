@@ -12,11 +12,11 @@ import lostankit7.droid.helper.hide
 import lostankit7.droid.helper.show
 import lostankit7.droid.moodtracker.R
 import lostankit7.droid.moodtracker.databinding.ActivityMainBinding
-import lostankit7.droid.moodtracker.helper.ANIMATE_TOP_BOTTOM
-import lostankit7.droid.moodtracker.helper.navOptions
-import lostankit7.droid.moodtracker.ui.entry.mood.editMood.UpsertMoodIconFragment
-import lostankit7.droid.moodtracker.ui.entry.task.addTask.TaskEntryFragment
-import lostankit7.droid.moodtracker.ui.entry.task.editTask.UpsertTaskIconFragment
+import lostankit7.droid.moodtracker.utils.ANIMATE_TOP_BOTTOM
+import lostankit7.droid.moodtracker.utils.navOptions
+import lostankit7.droid.moodtracker.ui.fragment.upsert.UpsertMoodIconFragment
+import lostankit7.droid.moodtracker.ui.fragment.addentry.AddTaskEntryFragment
+import lostankit7.droid.moodtracker.ui.fragment.upsert.UpsertTaskIconFragment
 
 
 class MainActivity : AppCompatActivity() {
@@ -55,7 +55,7 @@ class MainActivity : AppCompatActivity() {
     private fun onSaveClicked() {
         when (val fragment =
             supportFragmentManager.findFragmentById(R.id.fragment_container)?.childFragmentManager?.primaryNavigationFragment) {
-            is TaskEntryFragment -> fragment.saveEntry()
+            is AddTaskEntryFragment -> fragment.saveEntry()
             is UpsertMoodIconFragment -> fragment.saveMoodIcon()
             is UpsertTaskIconFragment -> fragment.saveTaskIcon()
         }

@@ -2,15 +2,14 @@ package lostankit7.droid.moodtracker.ui.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.core.content.ContextCompat
 import lostankit7.droid.CustomTextView
 import lostankit7.droid.moodtracker.R
-import lostankit7.droid.moodtracker.base.BaseDiffRvAdapter
+import lostankit7.droid.moodtracker.base.adapter.BaseDiffRvAdapter
 import lostankit7.droid.moodtracker.data.database.entities.Icon
 import lostankit7.droid.moodtracker.data.database.entities.TaskIcon
 import lostankit7.droid.moodtracker.databinding.ItemRvTaskIconBinding
-import lostankit7.droid.moodtracker.helper.invert
+import lostankit7.droid.moodtracker.utils.invert
 
 class TaskIconRvAdapter(
     private val taskSelected: (Icon) -> Unit, private val isMultiSelect: Boolean

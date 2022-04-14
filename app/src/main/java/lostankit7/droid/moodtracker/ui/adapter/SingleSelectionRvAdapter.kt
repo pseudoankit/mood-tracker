@@ -3,9 +3,8 @@ package lostankit7.droid.moodtracker.ui.adapter
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.core.content.ContextCompat
 import lostankit7.droid.moodtracker.R
-import lostankit7.droid.moodtracker.base.BaseDiffRvAdapter
+import lostankit7.droid.moodtracker.base.adapter.BaseDiffRvAdapter
 import lostankit7.droid.moodtracker.databinding.ItemRvSingleSelectionBinding
 import lostankit7.droid.moodtracker.model.SingleSelectionModel
 
