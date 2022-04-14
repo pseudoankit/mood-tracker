@@ -2,6 +2,7 @@ package lostankit7.droid.moodtracker.ui.fragment.displayentry
 
 import android.view.LayoutInflater
 import android.view.MenuItem
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import lostankit7.droid.moodtracker.R
 import lostankit7.droid.moodtracker.base.fragment.BaseDaggerFragment
@@ -40,4 +41,7 @@ abstract class UserEntriesBaseFragment : BaseDaggerFragment<FragmentUserEntriesB
     override fun injectFragment(appComponent: AppComponent) {
         appComponent.inject(this)
     }
+
+    override fun initiateViewModel(viewModelProvider: ViewModelProvider) =
+        viewModelProvider[UserEntriesViewModel::class.java]
 }

@@ -3,6 +3,7 @@ package lostankit7.droid.moodtracker.ui.fragment.addentry
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import lostankit7.droid.moodtracker.base.fragment.BaseDaggerFragment
 import lostankit7.droid.moodtracker.R
@@ -83,6 +84,9 @@ class AddTaskEntryFragment : BaseDaggerFragment<FragmentTaskEntryBinding, TaskEn
     override fun inflateLayout(layoutInflater: LayoutInflater) =
         FragmentTaskEntryBinding.inflate(layoutInflater)
 
+
+    override fun initiateViewModel(viewModelProvider: ViewModelProvider) =
+        viewModelProvider[TaskEntryViewModel::class.java]
 
     override fun injectFragment(appComponent: AppComponent) {
         appComponent.inject(this)

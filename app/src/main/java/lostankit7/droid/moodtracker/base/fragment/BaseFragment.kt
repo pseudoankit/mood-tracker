@@ -14,7 +14,6 @@ import lostankit7.droid.databinding.DialogProgressBinding
 import lostankit7.droid.moodtracker.utils.DialogHelper
 import lostankit7.droid.moodtracker.utils.showSnackBar
 import lostankit7.droid.moodtracker.utils.showToast
-import lostankit7.droid.moodtracker.model.Status
 import lostankit7.droid.moodtracker.ui.MainActivity
 
 abstract class BaseFragment<VB : ViewBinding> : Fragment() {
@@ -25,20 +24,17 @@ abstract class BaseFragment<VB : ViewBinding> : Fragment() {
     val actionBar by lazy { (requireActivity() as? MainActivity)?.mActionBar }
     val mActivity by lazy { (requireActivity() as? MainActivity) }
 
-    private val progressBinding by lazy { DialogProgressBinding.inflate(layoutInflater) }
-    private val progressDialog by lazy { DialogHelper.showDialog(requireActivity(), progressBinding) }
-
-    var TAG = "Activity"
+    val TAG by lazy { javaClass.simpleName }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View? {
         binding = inflateLayout(layoutInflater)
-        TAG = javaClass.simpleName
         onCreateView()
         return binding.root
     }
 
+    abstract fun inflateLayout(layoutInflater: LayoutInflater): VB
     open fun onCreateView() {}
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -57,35 +53,6 @@ abstract class BaseFragment<VB : ViewBinding> : Fragment() {
     open suspend fun registerObservers() {}
     open fun initListeners() {}
 
-    abstract fun inflateLayout(layoutInflater: LayoutInflater): VB
-
-    fun handleUIState(value: Status) {
-        when (value) {
-            is Status.Success -> {
-                hideProgressDialog()
-                if (value.message?.trim()?.isNotEmpty() == true)
-                    requireContext().showToast(value.message)
-            }
-            is Status.Error -> {
-                hideProgressDialog()
-                if (value.message?.trim()?.isNotEmpty() == true)
-                    requireActivity().showSnackBar(value.message)
-            }
-            is Status.Loading -> showProgressDialog()
-            else -> ""
-        }
-    }
-
-    fun showProgressDialog(text: String = "Loading...") {
-        progressBinding.tvProgressText.text = text
-        progressDialog.show()
-    }
-
-    fun hideProgressDialog() {
-        if (progressDialog.isShowing)
-            progressDialog.dismiss()
-    }
-
     protected fun navigateTo(id: Int) {
         navController.navigate(id)
     }
@@ -94,7 +61,7 @@ abstract class BaseFragment<VB : ViewBinding> : Fragment() {
         navController.navigate(id, bundle)
     }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
+    /*override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         Log.d(TAG, "onCreate: ")
     }
@@ -127,6 +94,5 @@ abstract class BaseFragment<VB : ViewBinding> : Fragment() {
     override fun onDestroy() {
         super.onDestroy()
         Log.d(TAG, "onDestroy: ")
-    }
-
+    }*/
 }

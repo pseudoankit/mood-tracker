@@ -1,6 +1,7 @@
 package lostankit7.droid.moodtracker.ui.fragment.upsert
 
 import android.view.LayoutInflater
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -96,6 +97,9 @@ class UpsertTaskIconFragment :
     override fun injectFragment(appComponent: AppComponent) {
         appComponent.inject(this)
     }
+
+    override fun initiateViewModel(viewModelProvider: ViewModelProvider) =
+        viewModelProvider[TaskEntryViewModel::class.java]
 
     override fun inflateLayout(layoutInflater: LayoutInflater) =
         FragmentUpsertMoodIconBinding.inflate(layoutInflater)

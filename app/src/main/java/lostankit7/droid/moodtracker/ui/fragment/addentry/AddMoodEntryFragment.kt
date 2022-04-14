@@ -2,6 +2,7 @@ package lostankit7.droid.moodtracker.ui.fragment.addentry
 
 import android.view.LayoutInflater
 import androidx.core.os.bundleOf
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import lostankit7.droid.moodtracker.R
 import lostankit7.droid.moodtracker.base.fragment.BaseDaggerFragment
@@ -70,6 +71,9 @@ class AddMoodEntryFragment : BaseDaggerFragment<FragmentMoodEntryBinding, MoodEn
         binding.layoutDate.tvText.text = getCurrentDate()
         binding.layoutTime.tvText.text = getCurrentTime()
     }
+
+    override fun initiateViewModel(viewModelProvider: ViewModelProvider) =
+        viewModelProvider[MoodEntryViewModel::class.java]
 
     override fun inflateLayout(layoutInflater: LayoutInflater) =
         FragmentMoodEntryBinding.inflate(layoutInflater)
