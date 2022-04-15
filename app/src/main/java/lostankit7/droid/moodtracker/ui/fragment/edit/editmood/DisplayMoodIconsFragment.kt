@@ -1,38 +1,20 @@
-package lostankit7.droid.moodtracker.ui.fragment.upsert
+package lostankit7.droid.moodtracker.ui.fragment.edit.editmood
 
-import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.MenuItem
-import android.view.View
-import androidx.core.os.bundleOf
 import androidx.lifecycle.ViewModelProvider
-import androidx.recyclerview.widget.LinearLayoutManager
 import lostankit7.droid.moodtracker.R
 import lostankit7.droid.moodtracker.base.fragment.BaseDaggerFragment
 import lostankit7.droid.moodtracker.data.database.entities.Icon
 import lostankit7.droid.moodtracker.data.database.entities.MoodIcon
-import lostankit7.droid.moodtracker.databinding.FragmentShowListBinding
+import lostankit7.droid.moodtracker.databinding.FragmentDisplayListBinding
 import lostankit7.droid.moodtracker.di.AppComponent
-import lostankit7.droid.moodtracker.ui.viewmodel.MoodEntryViewModel
 import lostankit7.droid.moodtracker.ui.adapter.IconListRvAdapter
+import lostankit7.droid.moodtracker.ui.viewmodel.MoodEntryViewModel
 
-class MoodIconsFragment : BaseDaggerFragment<FragmentShowListBinding, MoodEntryViewModel>() {
+class DisplayMoodIconsFragment : BaseDaggerFragment<FragmentDisplayListBinding, MoodEntryViewModel>() {
 
-    private val adapter by lazy {
-        IconListRvAdapter.newInstance(::editMoodIcon, ::rvOptionsSelected)
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-    }
-
-    private fun editMoodIcon(item: Icon) {
-        navigateTo(
-            R.id.action_editMoodFragment_to_upsertMoodIconFragment,
-            bundleOf(resources.getString(R.string.arg_to_upsertMoodFrag) to item)
-        )
-    }
+    private val adapter = IconListRvAdapter(::editMoodIcon, ::rvOptionsSelected)
 
     private fun rvOptionsSelected(menuItem: MenuItem, item: Icon): Boolean {
         return when (menuItem.itemId) {
@@ -48,6 +30,12 @@ class MoodIconsFragment : BaseDaggerFragment<FragmentShowListBinding, MoodEntryV
         }
     }
 
+    private fun editMoodIcon(item: Icon) {
+        navigateTo(
+            DisplayMoodIconsFragmentDirections.actionDisplayMoodIconsFragmentToUpsertMoodIconFragment(item)
+        )
+    }
+
     override suspend fun registerObservers() {
         super.registerObservers()
 
@@ -57,19 +45,20 @@ class MoodIconsFragment : BaseDaggerFragment<FragmentShowListBinding, MoodEntryV
     }
 
     override fun initListeners() {
-        binding.btnAddNew.setOnClickListener {
-            navigateTo(R.id.action_editMoodFragment_to_upsertMoodIconFragment)
+        binding.button.setOnClickListener {
+            navigateTo(
+                DisplayMoodIconsFragmentDirections.actionDisplayMoodIconsFragmentToUpsertMoodIconFragment(null)
+            )
         }
     }
 
     override fun initRecyclerView() {
         super.initRecyclerView()
-        binding.recyclerView.layoutManager = LinearLayoutManager(requireContext())
         binding.recyclerView.adapter = adapter
     }
 
     override fun inflateLayout(layoutInflater: LayoutInflater) =
-        FragmentShowListBinding.inflate(layoutInflater)
+        FragmentDisplayListBinding.inflate(layoutInflater)
 
     override fun injectFragment(appComponent: AppComponent) {
         appComponent.inject(this)

@@ -9,6 +9,7 @@ object Constants {
     const val AM = "AM"
     const val PM = "PM"
     const val SPLASH_TIME = 1500L
+    const val SPAN_COUNT_TASK_RV = 5
 }
 
 

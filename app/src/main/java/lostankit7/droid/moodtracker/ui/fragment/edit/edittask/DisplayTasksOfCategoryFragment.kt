@@ -1,38 +1,28 @@
-package lostankit7.droid.moodtracker.ui.fragment.upsert
+package lostankit7.droid.moodtracker.ui.fragment.edit.edittask
 
-import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.MenuItem
-import android.view.View
-import androidx.core.os.bundleOf
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import lostankit7.droid.moodtracker.R
 import lostankit7.droid.moodtracker.base.fragment.BaseDaggerFragment
 import lostankit7.droid.moodtracker.data.database.entities.Icon
 import lostankit7.droid.moodtracker.data.database.entities.TaskIcon
-import lostankit7.droid.moodtracker.databinding.FragmentShowListBinding
+import lostankit7.droid.moodtracker.databinding.FragmentDisplayListBinding
 import lostankit7.droid.moodtracker.di.AppComponent
 import lostankit7.droid.moodtracker.ui.adapter.IconListRvAdapter
 import lostankit7.droid.moodtracker.ui.viewmodel.TaskEntryViewModel
 
-class TaskItemsFragment : BaseDaggerFragment<FragmentShowListBinding, TaskEntryViewModel>() {
+class DisplayTasksOfCategoryFragment : BaseDaggerFragment<FragmentDisplayListBinding, TaskEntryViewModel>() {
 
-    private var category: String? = null
-    private val adapter by lazy {
-        IconListRvAdapter.newInstance(::upsertTaskIcon, ::rvOptionsSelected)
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-
-    }
+    private val args: DisplayTasksOfCategoryFragmentArgs by navArgs()
+    private val adapter = IconListRvAdapter(::upsertTaskIcon, ::rvOptionsSelected)
 
     override fun initListeners() {
         super.initListeners()
 
-        binding.btnAddNew.setOnClickListener {
+        binding.button.setOnClickListener {
             upsertTaskIcon(null)
         }
     }
@@ -52,19 +42,13 @@ class TaskItemsFragment : BaseDaggerFragment<FragmentShowListBinding, TaskEntryV
     }
 
     private fun upsertTaskIcon(item: Icon?) {
-        navigateTo(
-            R.id.action_taskItemsFragment_to_upsertTaskIconFragment,
-            bundleOf(
-                resources.getString(R.string.taskIcon_to_upsertTaskFrag) to item,
-                resources.getString(R.string.category_to_upsertTaskFrag) to category
-            )
-        )
+
     }
 
     override suspend fun registerObservers() {
         super.registerObservers()
 
-        viewModel.getTaskIcons(category!!).observe(viewLifecycleOwner) {
+        viewModel.getTaskIcons(args.categoryName).observe(viewLifecycleOwner) {
             adapter.submitList(it)
         }
     }
@@ -77,19 +61,7 @@ class TaskItemsFragment : BaseDaggerFragment<FragmentShowListBinding, TaskEntryV
 
     override fun init() {
         super.init()
-        binding.btnAddNew.text = resources.getString(R.string.text_add_new_task)
-        category = arguments?.getString(resources.getString(R.string.arg_to_taskItemsFrag))
-        if (category.isNullOrBlank()) navController.popBackStack()
-    }
-
-    override fun onResume() {
-        super.onResume()
-        actionBar?.tvTitle?.text = category
-    }
-
-    override fun onPause() {
-        super.onPause()
-        actionBar?.tvTitle?.text = ""
+        binding.button.text = resources.getString(R.string.text_add_new_task)
     }
 
     override fun injectFragment(appComponent: AppComponent) {
@@ -97,7 +69,8 @@ class TaskItemsFragment : BaseDaggerFragment<FragmentShowListBinding, TaskEntryV
     }
 
     override fun inflateLayout(layoutInflater: LayoutInflater) =
-        FragmentShowListBinding.inflate(layoutInflater)
+        FragmentDisplayListBinding.inflate(layoutInflater)
+
     override fun initiateViewModel(viewModelProvider: ViewModelProvider) =
         viewModelProvider[TaskEntryViewModel::class.java]
 }

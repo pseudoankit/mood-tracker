@@ -10,6 +10,7 @@ import lostankit7.droid.moodtracker.data.database.entities.Icon
 import lostankit7.droid.moodtracker.data.database.entities.TaskCategory
 import lostankit7.droid.moodtracker.databinding.ItemRvExpandableViewBinding
 import lostankit7.droid.moodtracker.ui.fragment.addentry.AddTaskEntryFragment
+import lostankit7.droid.moodtracker.utils.constant.Constants
 import lostankit7.droid.moodtracker.utils.hide
 import lostankit7.droid.moodtracker.utils.show
 
@@ -19,9 +20,7 @@ class RvTaskAdapter(
 ) : BaseDiffRvAdapter<ItemRvExpandableViewBinding, TaskCategory>() {
 
     override fun bindViewHolder(
-        item: TaskCategory,
-        position: Int,
-        binding: ItemRvExpandableViewBinding
+        item: TaskCategory, position: Int, binding: ItemRvExpandableViewBinding
     ) {
 
         binding.txtTitle.text = item.name
@@ -48,7 +47,7 @@ class RvTaskAdapter(
     }
 
     private fun RecyclerView.setUpRecyclerView(category: String) {
-        layoutManager = GridLayoutManager(context, AddTaskEntryFragment.taskSpan)
+        layoutManager = GridLayoutManager(context, Constants.SPAN_COUNT_TASK_RV)
 
         val mAdapter = TaskIconRvAdapter.newInstance(taskSelected, true)
         adapter = mAdapter
@@ -59,12 +58,5 @@ class RvTaskAdapter(
     override fun inflateLayout(
         layoutInflater: LayoutInflater, parent: ViewGroup, attachToParent: Boolean
     ) = ItemRvExpandableViewBinding.inflate(layoutInflater, parent, attachToParent)
-
-    companion object {
-        fun createInstance(
-            getTaskIcons: (String, TaskIconRvAdapter) -> Unit,
-            taskSelected: (Icon) -> Unit
-        ) = RvTaskAdapter(getTaskIcons, taskSelected)
-    }
 }
 

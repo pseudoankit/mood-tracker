@@ -56,13 +56,4 @@ abstract class BaseFragment<VB : ViewBinding> : Fragment() {
     fun navigateTo(directions: NavDirections) {
         findNavController().navigate(directions)
     }
-
-    protected fun navigateTo(id: Int) {
-        navController.navigate(id)
-    }
-
-    protected fun navigateTo(id: Int, bundle: Bundle) {
-        navController.navigate(id, bundle)
-    }
-
 }

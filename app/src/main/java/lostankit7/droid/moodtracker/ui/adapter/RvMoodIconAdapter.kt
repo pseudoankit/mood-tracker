@@ -8,7 +8,7 @@ import lostankit7.droid.moodtracker.databinding.ItemRvMoodIconBinding
 import lostankit7.droid.moodtracker.data.database.entities.MoodIcon
 
 class RvMoodIconAdapter(
-    private val context: Context,
+    private val context: Context?,
     private val iconSelected: (MoodIcon) -> Unit
 ) : BaseDiffRvAdapter<ItemRvMoodIconBinding, MoodIcon>() {
 
@@ -25,9 +25,4 @@ class RvMoodIconAdapter(
         layoutInflater: LayoutInflater, parent: ViewGroup, attachToParent: Boolean
     ) = ItemRvMoodIconBinding.inflate(layoutInflater, parent, attachToParent)
 
-    companion object {
-
-        fun newInstance(context: Context, iconSelected: (MoodIcon) -> Unit) =
-            RvMoodIconAdapter(context, iconSelected)
-    }
 }

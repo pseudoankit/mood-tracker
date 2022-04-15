@@ -3,18 +3,21 @@ package lostankit7.droid.moodtracker.ui.fragment.displayentry
 import android.view.LayoutInflater
 import android.view.MenuItem
 import androidx.lifecycle.ViewModelProvider
-import androidx.recyclerview.widget.LinearLayoutManager
 import lostankit7.droid.moodtracker.R
 import lostankit7.droid.moodtracker.base.fragment.BaseDaggerFragment
 import lostankit7.droid.moodtracker.data.database.entities.UserEntry
-import lostankit7.droid.moodtracker.databinding.FragmentUserEntriesBinding
+import lostankit7.droid.moodtracker.databinding.FragmentDisplayUserEntriesBinding
 import lostankit7.droid.moodtracker.di.AppComponent
 import lostankit7.droid.moodtracker.ui.adapter.RvUserEntriesAdapter
 import lostankit7.droid.moodtracker.ui.viewmodel.UserEntriesViewModel
 
-abstract class UserEntriesBaseFragment : BaseDaggerFragment<FragmentUserEntriesBinding, UserEntriesViewModel>() {
+abstract class DisplayUserEntriesBaseFragment : BaseDaggerFragment<FragmentDisplayUserEntriesBinding, UserEntriesViewModel>() {
 
-    val adapter by lazy { RvUserEntriesAdapter(::onItemClicked) }
+    protected val adapter = RvUserEntriesAdapter(::onItemClicked)
+
+    override fun initRecyclerView() {
+        binding.rvUserEntries.adapter = adapter
+    }
 
     private fun onItemClicked(menuItem: MenuItem, userEntry: UserEntry): Boolean {
         return when (menuItem.itemId) {
@@ -30,13 +33,8 @@ abstract class UserEntriesBaseFragment : BaseDaggerFragment<FragmentUserEntriesB
         }
     }
 
-    override fun init() {
-        binding.rvUserEntries.layoutManager = LinearLayoutManager(requireContext())
-        binding.rvUserEntries.adapter = adapter
-    }
-
     override fun inflateLayout(layoutInflater: LayoutInflater) =
-        FragmentUserEntriesBinding.inflate(layoutInflater)
+        FragmentDisplayUserEntriesBinding.inflate(layoutInflater)
 
     override fun injectFragment(appComponent: AppComponent) {
         appComponent.inject(this)

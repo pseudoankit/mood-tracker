@@ -5,17 +5,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingHorizontal="@dimen/padding_screen"
-    tools:context=".ui.fragment.upsert.MoodIconsFragment">
+    tools:context=".ui.fragment.edit.editmood.DisplayMoodIconsFragment">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@id/btnAddNew"
+        app:layout_constraintBottom_toTopOf="@id/button"
         app:layout_constraintTop_toTopOf="parent" />
 
     <lostankit7.droid.CustomButton
-        android:id="@+id/btnAddNew"
+        android:id="@+id/button"
         style="@style/defButtonStyle"
         android:layout_width="match_parent"
         android:layout_marginHorizontal="@dimen/dp_10"

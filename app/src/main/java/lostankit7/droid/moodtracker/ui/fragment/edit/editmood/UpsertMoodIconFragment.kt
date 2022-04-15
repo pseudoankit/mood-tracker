@@ -1,7 +1,8 @@
-package lostankit7.droid.moodtracker.ui.fragment.upsert
+package lostankit7.droid.moodtracker.ui.fragment.edit.editmood
 
 import android.view.LayoutInflater
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -10,20 +11,20 @@ import lostankit7.droid.moodtracker.base.fragment.BaseDaggerFragment
 import lostankit7.droid.moodtracker.data.database.entities.Icon
 import lostankit7.droid.moodtracker.data.database.entities.MoodIcon
 import lostankit7.droid.moodtracker.data.database.entities.Suggestion
-import lostankit7.droid.moodtracker.databinding.FragmentUpsertMoodIconBinding
+import lostankit7.droid.moodtracker.databinding.FragmentUpsertMoodTaskIconBinding
 import lostankit7.droid.moodtracker.di.AppComponent
-import lostankit7.droid.moodtracker.utils.hideKeyBoard
-import lostankit7.droid.moodtracker.utils.showToast
 import lostankit7.droid.moodtracker.ui.adapter.MoodIconRvAdapter
 import lostankit7.droid.moodtracker.ui.adapter.TextRvAdapter
 import lostankit7.droid.moodtracker.ui.viewmodel.MoodEntryViewModel
+import lostankit7.droid.moodtracker.utils.hideKeyBoard
+import lostankit7.droid.moodtracker.utils.showToast
 
 class UpsertMoodIconFragment :
-    BaseDaggerFragment<FragmentUpsertMoodIconBinding, MoodEntryViewModel>() {
+    BaseDaggerFragment<FragmentUpsertMoodTaskIconBinding, MoodEntryViewModel>() {
 
-    private var editMoodIcon: MoodIcon? = null
-    private val adapter by lazy { MoodIconRvAdapter.newInstance(::onMoodIconSelected) }
-    private val suggestedNamesAdapter by lazy { TextRvAdapter.createInstance(::suggestedNameTap) }
+    private val args: UpsertMoodIconFragmentArgs by navArgs()
+    private val adapter = MoodIconRvAdapter(::onMoodIconSelected)
+    private val suggestedNamesAdapter = TextRvAdapter.createInstance(::applySuggestedName)
 
     override suspend fun registerObservers() {
         super.registerObservers()
@@ -36,7 +37,7 @@ class UpsertMoodIconFragment :
         }
     }
 
-    private fun suggestedNameTap(it: Suggestion) {
+    private fun applySuggestedName(it: Suggestion) {
         binding.edtSelectedName.setText(it.name)
     }
 
@@ -46,9 +47,9 @@ class UpsertMoodIconFragment :
         binding.rvDisplayIcons.layoutManager = GridLayoutManager(requireContext(), spanCount)
         binding.rvDisplayIcons.adapter = adapter
 
-        binding.rvSuggestedNames.adapter = suggestedNamesAdapter
         binding.rvSuggestedNames.layoutManager =
             LinearLayoutManager(requireContext(), RecyclerView.HORIZONTAL, false)
+        binding.rvSuggestedNames.adapter = suggestedNamesAdapter
     }
 
     private fun onMoodIconSelected(icon: Icon) {
@@ -66,12 +67,11 @@ class UpsertMoodIconFragment :
                     binding.edtSelectedName.text.toString()
                 )
 
-                if (editMoodIcon == null) {
-                    viewModel.insertMoodIcon(icon)
-                } else {
-                    icon.id = editMoodIcon!!.id
+                args.icon?.let {
+                    icon.id = it.id
                     viewModel.updateMoodIcon(icon)
-                }
+                } ?: viewModel.insertMoodIcon(icon)
+
                 navController.popBackStack()
                 requireActivity().hideKeyBoard()
             }
@@ -79,11 +79,10 @@ class UpsertMoodIconFragment :
     }
 
     override fun init() {
-        editMoodIcon = arguments?.getParcelable(resources.getString(R.string.arg_to_upsertMoodFrag))
-        if (editMoodIcon == null) return
-
-        binding.tvSelectedIcon.text = editMoodIcon!!.icon
-        binding.edtSelectedName.setText(editMoodIcon!!.name)
+        args.icon?.let {
+            binding.tvSelectedIcon.text = it.icon
+            binding.edtSelectedName.setText(it.name)
+        }
     }
 
     override fun injectFragment(appComponent: AppComponent) {
@@ -94,7 +93,7 @@ class UpsertMoodIconFragment :
         viewModelProvider[MoodEntryViewModel::class.java]
 
     override fun inflateLayout(layoutInflater: LayoutInflater) =
-        FragmentUpsertMoodIconBinding.inflate(layoutInflater)
+        FragmentUpsertMoodTaskIconBinding.inflate(layoutInflater)
 
     companion object {
         private const val spanCount = 6
