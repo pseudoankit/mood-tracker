@@ -16,16 +16,15 @@
         android:padding="5dp">
 
         <lostankit7.droid.CustomTextView
-            android:id="@+id/leftIcon1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/fas_circular_back"
+            android:text="@string/fas_back"
             android:textColor="@color/theme_color"
             android:textSize="@dimen/icon_size_action_bar"
             app:fa_solid="true" />
 
         <lostankit7.droid.CustomTextView
-            android:id="@+id/leftIcon2"
+            android:id="@+id/moodIcon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/dp_3"
@@ -35,7 +34,7 @@
     </LinearLayout>
 
     <TextView
-        android:id="@+id/tvTitle"
+        android:id="@+id/moodName"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
@@ -53,7 +52,6 @@
         android:padding="5dp">
 
         <lostankit7.droid.CustomTextView
-            android:id="@+id/rightIcon1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/fas_circular_tick"
@@ -62,7 +60,6 @@
             app:fa_solid="true" />
 
         <lostankit7.droid.CustomTextView
-            android:id="@+id/rightIcon2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/dp_3"

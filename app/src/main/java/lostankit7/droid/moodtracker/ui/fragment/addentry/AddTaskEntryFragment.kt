@@ -2,6 +2,7 @@ package lostankit7.droid.moodtracker.ui.fragment.addentry
 
 import android.view.LayoutInflater
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import lostankit7.droid.moodtracker.base.fragment.BaseDaggerFragment
 import lostankit7.droid.moodtracker.data.database.entities.Icon
@@ -27,6 +28,10 @@ class AddTaskEntryFragment : BaseDaggerFragment<FragmentAddTaskEntryBinding, Tas
 
     override fun initListeners() {
         super.initListeners()
+
+        binding.actionBar.btnSave.setOnClickListener { saveEntry() }
+
+        binding.actionBar.btnBack.setOnClickListener { findNavController().popBackStack() }
 
         binding.btnEditTask.setOnClickListener {
             navigateTo(
@@ -55,11 +60,21 @@ class AddTaskEntryFragment : BaseDaggerFragment<FragmentAddTaskEntryBinding, Tas
         binding.rvTask.adapter = adapter
     }
 
-    fun saveEntry() {
-        requireActivity().hideKeyBoard()
+    private fun saveEntry() {
+        activity?.hideKeyBoard()
         viewModel.saveEntry(args.moodEntry, selectedTasksMap, binding.etNote.text.toString())
-
+        navigateTo(
+            AddTaskEntryFragmentDirections.actionAddTaskEntryFragmentToDisplayAllUserEntriesFragment()
+        )
     }
+
+    override fun init() {
+        binding.actionBar.apply {
+            moodIcon.text = args.moodEntry.moodIcon.icon
+            moodName.text = args.moodEntry.moodIcon.name
+        }
+    }
+
 
     override fun inflateLayout(layoutInflater: LayoutInflater) =
         FragmentAddTaskEntryBinding.inflate(layoutInflater)

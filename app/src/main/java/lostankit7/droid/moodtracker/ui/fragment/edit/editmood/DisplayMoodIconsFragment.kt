@@ -12,14 +12,15 @@ import lostankit7.droid.moodtracker.di.AppComponent
 import lostankit7.droid.moodtracker.ui.adapter.IconListRvAdapter
 import lostankit7.droid.moodtracker.ui.viewmodel.MoodEntryViewModel
 
-class DisplayMoodIconsFragment : BaseDaggerFragment<FragmentDisplayListBinding, MoodEntryViewModel>() {
+class DisplayMoodIconsFragment :
+    BaseDaggerFragment<FragmentDisplayListBinding, MoodEntryViewModel>() {
 
-    private val adapter = IconListRvAdapter(::editMoodIcon, ::rvOptionsSelected)
+    private val adapter = IconListRvAdapter(::upsertMoodIcon, ::rvOptionsSelected)
 
     private fun rvOptionsSelected(menuItem: MenuItem, item: Icon): Boolean {
         return when (menuItem.itemId) {
             R.id.edit -> {
-                editMoodIcon(item)
+                upsertMoodIcon(item)
                 true
             }
             R.id.delete -> {
@@ -30,10 +31,13 @@ class DisplayMoodIconsFragment : BaseDaggerFragment<FragmentDisplayListBinding, 
         }
     }
 
-    private fun editMoodIcon(item: Icon) {
-//        navigateTo(
-//            DisplayMoodIconsFragmentDirections.actionDisplayMoodIconsFragmentToUpsertMoodIconFragment(item)
-//        )
+    private fun upsertMoodIcon(item: Icon?) {
+        val _item = item as? MoodIcon
+        navigateTo(
+            DisplayMoodIconsFragmentDirections.actionDisplayMoodIconsFragmentToUpsertMoodIconFragment(
+                _item
+            )
+        )
     }
 
     override suspend fun registerObservers() {
@@ -46,9 +50,7 @@ class DisplayMoodIconsFragment : BaseDaggerFragment<FragmentDisplayListBinding, 
 
     override fun initListeners() {
         binding.button.setOnClickListener {
-//            navigateTo(
-//                DisplayMoodIconsFragmentDirections.actionDisplayMoodIconsFragmentToUpsertMoodIconFragment(null)
-//            )
+            upsertMoodIcon(null)
         }
     }
 

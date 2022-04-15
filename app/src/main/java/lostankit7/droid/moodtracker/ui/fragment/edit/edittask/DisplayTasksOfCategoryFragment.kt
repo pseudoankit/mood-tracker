@@ -14,7 +14,8 @@ import lostankit7.droid.moodtracker.di.AppComponent
 import lostankit7.droid.moodtracker.ui.adapter.IconListRvAdapter
 import lostankit7.droid.moodtracker.ui.viewmodel.TaskEntryViewModel
 
-class DisplayTasksOfCategoryFragment : BaseDaggerFragment<FragmentDisplayListBinding, TaskEntryViewModel>() {
+class DisplayTasksOfCategoryFragment :
+    BaseDaggerFragment<FragmentDisplayListBinding, TaskEntryViewModel>() {
 
     private val args: DisplayTasksOfCategoryFragmentArgs by navArgs()
     private val adapter = IconListRvAdapter(::upsertTaskIcon, ::rvOptionsSelected)
@@ -42,7 +43,12 @@ class DisplayTasksOfCategoryFragment : BaseDaggerFragment<FragmentDisplayListBin
     }
 
     private fun upsertTaskIcon(item: Icon?) {
-
+        val _item = item as? TaskIcon
+            navigateTo(
+                DisplayTasksOfCategoryFragmentDirections.actionDisplayTasksOfCategoryFragmentToUpsertTaskIconFragment(
+                    _item, args.categoryName
+                )
+            )
     }
 
     override suspend fun registerObservers() {

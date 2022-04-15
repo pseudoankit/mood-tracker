@@ -2,6 +2,7 @@ package lostankit7.droid.moodtracker.ui.fragment.addentry
 
 import android.view.LayoutInflater
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import lostankit7.droid.moodtracker.base.fragment.BaseDaggerFragment
 import lostankit7.droid.moodtracker.data.database.entities.MoodIcon
 import lostankit7.droid.moodtracker.databinding.FragmentAddMoodEntryBinding
@@ -16,9 +17,7 @@ import lostankit7.droid.moodtracker.utils.getSelectedTime
 
 class AddMoodEntryFragment : BaseDaggerFragment<FragmentAddMoodEntryBinding, MoodEntryViewModel>() {
 
-    private val moodIconAdapter by lazy {
-        RvMoodIconAdapter(context, ::onMoodIconSelected)
-    }
+    private val moodIconAdapter = RvMoodIconAdapter(context, ::onMoodIconSelected)
 
     override suspend fun registerObservers() {
         super.registerObservers()
@@ -33,11 +32,16 @@ class AddMoodEntryFragment : BaseDaggerFragment<FragmentAddMoodEntryBinding, Moo
             binding.layoutTime.tvText.text.toString()
         )
         navigateTo(
-            AddMoodEntryFragmentDirections.actionAddMoodEntryFragmentToAddTaskEntryFragment(moodEntry)
+            AddMoodEntryFragmentDirections.actionAddMoodEntryFragmentToAddTaskEntryFragment(
+                moodEntry
+            )
         )
     }
 
     override fun initListeners() {
+
+        binding.btnBack.setOnClickListener { findNavController().popBackStack() }
+
         binding.btnEditMood.setOnClickListener {
             navigateTo(
                 AddMoodEntryFragmentDirections.actionAddMoodEntryFragmentToDisplayMoodIconsFragment()

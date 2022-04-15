@@ -22,7 +22,7 @@ import lostankit7.droid.moodtracker.utils.showToast
 class UpsertMoodIconFragment :
     BaseDaggerFragment<FragmentUpsertMoodTaskIconBinding, MoodEntryViewModel>() {
 
-//    private val args: UpsertMoodIconFragmentArgs by navArgs()
+    private val args: UpsertMoodIconFragmentArgs by navArgs()
     private val adapter = MoodIconRvAdapter(::onMoodIconSelected)
     private val suggestedNamesAdapter = TextRvAdapter.createInstance(::applySuggestedName)
 
@@ -67,10 +67,10 @@ class UpsertMoodIconFragment :
                     binding.edtSelectedName.text.toString()
                 )
 
-//                args.icon?.let {
-//                    icon.id = it.id
-//                    viewModel.updateMoodIcon(icon)
-//                } ?: viewModel.insertMoodIcon(icon)
+                args.icon?.let {
+                    icon.id = it.id
+                    viewModel.updateMoodIcon(icon)
+                } ?: viewModel.insertMoodIcon(icon)
 
                 navController.popBackStack()
                 requireActivity().hideKeyBoard()
@@ -79,10 +79,10 @@ class UpsertMoodIconFragment :
     }
 
     override fun init() {
-//        args.icon?.let {
-//            binding.tvSelectedIcon.text = it.icon
-//            binding.edtSelectedName.setText(it.name)
-//        }
+        args.icon?.let {
+            binding.tvSelectedIcon.text = it.icon
+            binding.edtSelectedName.setText(it.name)
+        }
     }
 
     override fun injectFragment(appComponent: AppComponent) {
