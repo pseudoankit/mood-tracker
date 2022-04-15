@@ -48,6 +48,12 @@
         <entry key="..\:/Users/kumar/AndroidStudioProjects/MoodTracker/app/src/main/res/layout/item_rv_user_entrie.xml" value="0.33" />
         <entry key="..\:/Users/kumar/AndroidStudioProjects/MoodTracker/app/src/main/res/layout/item_rv_user_entries.xml" value="0.33" />
         <entry key="..\:/Users/kumar/AndroidStudioProjects/MoodTracker/app/src/main/res/menu/menu_options.xml" value="0.22395833333333334" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.29791666666666666" />
+        <entry key="app/src/main/res/layout/fragment_calendar.xml" value="0.159375" />
+        <entry key="app/src/main/res/layout/fragment_display_list.xml" value="0.29791666666666666" />
+        <entry key="app/src/main/res/layout/fragment_home_bottom_navigation.xml" value="0.25" />
+        <entry key="app/src/main/res/menu/menu_bottom_navigation.xml" value="0.29791666666666666" />
+        <entry key="app/src/main/res/menu/menu_options.xml" value="0.29791666666666666" />
       </map>
     </option>
   </component>

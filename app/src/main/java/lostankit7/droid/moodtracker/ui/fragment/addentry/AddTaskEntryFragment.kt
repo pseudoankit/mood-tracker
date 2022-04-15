@@ -58,9 +58,7 @@ class AddTaskEntryFragment : BaseDaggerFragment<FragmentAddTaskEntryBinding, Tas
     fun saveEntry() {
         requireActivity().hideKeyBoard()
         viewModel.saveEntry(args.moodEntry, selectedTasksMap, binding.etNote.text.toString())
-        navigateTo(
-            AddTaskEntryFragmentDirections.actionAddTaskEntryFragmentToHomeBottomNavigationFragment()
-        )
+
     }
 
     override fun inflateLayout(layoutInflater: LayoutInflater) =

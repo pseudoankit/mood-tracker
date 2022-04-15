@@ -31,9 +31,9 @@ class DisplayMoodIconsFragment : BaseDaggerFragment<FragmentDisplayListBinding, 
     }
 
     private fun editMoodIcon(item: Icon) {
-        navigateTo(
-            DisplayMoodIconsFragmentDirections.actionDisplayMoodIconsFragmentToUpsertMoodIconFragment(item)
-        )
+//        navigateTo(
+//            DisplayMoodIconsFragmentDirections.actionDisplayMoodIconsFragmentToUpsertMoodIconFragment(item)
+//        )
     }
 
     override suspend fun registerObservers() {
@@ -46,9 +46,9 @@ class DisplayMoodIconsFragment : BaseDaggerFragment<FragmentDisplayListBinding, 
 
     override fun initListeners() {
         binding.button.setOnClickListener {
-            navigateTo(
-                DisplayMoodIconsFragmentDirections.actionDisplayMoodIconsFragmentToUpsertMoodIconFragment(null)
-            )
+//            navigateTo(
+//                DisplayMoodIconsFragmentDirections.actionDisplayMoodIconsFragmentToUpsertMoodIconFragment(null)
+//            )
         }
     }
 

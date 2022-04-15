@@ -33,7 +33,7 @@ class SplashFragment : BaseDaggerFragment<FragmentSplashBinding, SplashViewModel
         lifecycleScope.launchWhenCreated {
             delay(Constants.SPLASH_TIME)
             navigateTo(
-                SplashFragmentDirections.actionSplashFragmentToHomeBottomNavigationFragment()
+                SplashFragmentDirections.actionSplashFragmentToDisplayAllUserEntriesFragment()
             )
         }
 
