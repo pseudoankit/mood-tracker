@@ -10,9 +10,4 @@ class AllUserEntriesFragment : UserEntriesBaseFragment() {
         })
     }
 
-    override fun init() {
-        super.init()
-        mActivity?.hideActionBar()
-        mActivity?.showBottomNav()
-    }
 }

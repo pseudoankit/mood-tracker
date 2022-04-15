@@ -8,7 +8,9 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.NavController
+import androidx.navigation.NavDirections
 import androidx.navigation.Navigation
+import androidx.navigation.fragment.findNavController
 import androidx.viewbinding.ViewBinding
 import lostankit7.droid.databinding.DialogProgressBinding
 import lostankit7.droid.moodtracker.utils.DialogHelper
@@ -21,8 +23,6 @@ abstract class BaseFragment<VB : ViewBinding> : Fragment() {
     lateinit var binding: VB
 
     lateinit var navController: NavController
-    val actionBar by lazy { (requireActivity() as? MainActivity)?.mActionBar }
-    val mActivity by lazy { (requireActivity() as? MainActivity) }
 
     val TAG by lazy { javaClass.simpleName }
 
@@ -53,6 +53,10 @@ abstract class BaseFragment<VB : ViewBinding> : Fragment() {
     open suspend fun registerObservers() {}
     open fun initListeners() {}
 
+    fun navigateTo(directions: NavDirections) {
+        findNavController().navigate(directions)
+    }
+
     protected fun navigateTo(id: Int) {
         navController.navigate(id)
     }
@@ -61,38 +65,4 @@ abstract class BaseFragment<VB : ViewBinding> : Fragment() {
         navController.navigate(id, bundle)
     }
 
-    /*override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        Log.d(TAG, "onCreate: ")
-    }
-
-    override fun onStart() {
-        super.onStart()
-        Log.d(TAG, "onStart: ")
-    }
-
-    override fun onResume() {
-        super.onResume()
-        Log.d(TAG, "onResume: ")
-    }
-
-    override fun onPause() {
-        super.onPause()
-        Log.d(TAG, "onPause: ")
-    }
-
-    override fun onStop() {
-        super.onStop()
-        Log.d(TAG, "onStop: ")
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        Log.d(TAG, "onDestroyView: ")
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        Log.d(TAG, "onDestroy: ")
-    }*/
 }

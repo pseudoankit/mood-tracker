@@ -13,6 +13,7 @@ import lostankit7.droid.moodtracker.di.AppComponent
 import lostankit7.droid.moodtracker.ui.viewmodel.MoodEntryViewModel
 import lostankit7.droid.moodtracker.utils.constant.SplashFragmentDefaultValues
 import lostankit7.droid.moodtracker.ui.viewmodel.SplashViewModel
+import lostankit7.droid.moodtracker.utils.constant.Constants
 
 class SplashFragment : BaseDaggerFragment<FragmentSplashBinding, SplashViewModel>() {
 
@@ -30,8 +31,10 @@ class SplashFragment : BaseDaggerFragment<FragmentSplashBinding, SplashViewModel
         )
 
         lifecycleScope.launchWhenCreated {
-            delay(1500)
-            navigateTo(R.id.action_splashFragment_to_allUserEntriesFragment)
+            delay(Constants.SPLASH_TIME)
+            navigateTo(
+                SplashFragmentDirections.actionSplashFragmentToHomeBottomNavigationFragment()
+            )
         }
 
     }

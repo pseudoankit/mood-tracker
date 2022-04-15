@@ -45,5 +45,7 @@
     <dimen name="dp_50">50dp</dimen>
     <dimen name="profile_image_dimen">70dp</dimen>
     <dimen name="dp_20">20dp</dimen>
+    <dimen name="dp_100">100dp</dimen>
+    <dimen name="dp_16">16dp</dimen>
 
 </resources>
