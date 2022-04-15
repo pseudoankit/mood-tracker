@@ -75,7 +75,6 @@ class AddTaskEntryFragment : BaseDaggerFragment<FragmentAddTaskEntryBinding, Tas
         }
     }
 
-
     override fun inflateLayout(layoutInflater: LayoutInflater) =
         FragmentAddTaskEntryBinding.inflate(layoutInflater)
 
