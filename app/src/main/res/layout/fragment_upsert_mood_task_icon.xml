@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="@dimen/padding_screen"
-    tools:context=".ui.fragment.upsert.UpsertMoodIconFragment">
+    tools:context=".ui.fragment.edit.editmood.UpsertMoodIconFragment">
 
     <lostankit7.droid.CustomTextView
         android:id="@+id/tvSelectedIcon"
@@ -26,7 +26,9 @@
         android:textColor="@color/sec_icon_color"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/tvSelectedIcon"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:autofillHints="name"
+        android:inputType="text" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvSuggestedNames"

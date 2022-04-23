@@ -9,9 +9,9 @@ class UserEntriesViewModel @Inject constructor(
     private val repository: UserEntriesRepository
 ) : BaseViewModel() {
 
-    val userEntries = repository.userEntries
+    val allEntriesLiveData = repository.userEntries
 
-    fun userEntries(date: String) = repository.userEntries(date)
+    fun singleDateUserEntries(date: String) = repository.userEntries(date)
 
     fun deleteUserEntry(userEntry: UserEntry) = launchIo{ repository.deleteUserEntry(userEntry) }
 

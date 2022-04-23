@@ -19,7 +19,7 @@
             android:id="@+id/leftIcon1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/fas_circular_back"
+            android:text="@string/fas_back"
             android:textColor="@color/theme_color"
             android:textSize="@dimen/icon_size_action_bar"
             app:fa_solid="true" />
@@ -35,7 +35,7 @@
     </LinearLayout>
 
     <TextView
-        android:id="@+id/tvTitle"
+        android:id="@+id/title"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
@@ -43,14 +43,14 @@
         tools:text="okay" />
 
     <LinearLayout
-        android:id="@+id/btn_save"
+        android:id="@+id/btnSave"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_centerVertical="true"
         android:background="@drawable/bg_rounded_ripple"
         android:gravity="center"
-        android:padding="5dp">
+        android:padding="@dimen/dp_5">
 
         <lostankit7.droid.CustomTextView
             android:id="@+id/rightIcon1"

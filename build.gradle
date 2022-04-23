@@ -12,7 +12,7 @@ buildscript {
         classpath "com.google.gms:google-services:4.3.10"
 
         //nav implementation for safe args i.e., it ensures type safety
-        classpath "androidx.navigation:navigation-safe-args-gradle-plugin:2.3.5"
+        classpath "androidx.navigation:navigation-safe-args-gradle-plugin:2.4.2"
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
@@ -24,9 +24,9 @@ task clean(type: Delete) {
 }
 
 ext {
-    navVersion = '2.3.5'
+    navVersion = '2.4.2'
     //using 2.4.0-beta,don't update while using in m1 chip
     roomVersion = '2.4.0-beta01'
-    lifecycleVersion = '2.4.0'
+    lifecycleVersion = '2.4.1'
     daggerVersion = "2.40"
 }

@@ -1,10 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="@dimen/padding_screen">
+    android:padding="@dimen/padding_screen"
+    tools:context=".ui.fragment.addentry.AddMoodEntryFragment">
+
+    <lostankit7.droid.CustomTextView
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_marginStart="@dimen/dp_10"
+        android:id="@+id/btn_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/far_cross"
+        android:textColor="@color/theme_color"
+        android:textSize="@dimen/icon_size_action_bar"
+        app:fa_regular="true" />
 
     <TextView
         style="@style/HeaderTextView"
@@ -49,7 +62,9 @@
             android:id="@+id/rvMoodIcon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true" />
+            android:layout_centerInParent="true"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:spanCount="5" />
 
         <LinearLayout
             android:layout_width="wrap_content"

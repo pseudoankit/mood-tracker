@@ -5,10 +5,10 @@ import android.app.TimePickerDialog
 import android.content.Context
 import lostankit7.droid.moodtracker.utils.constant.Constants.AM
 import lostankit7.droid.moodtracker.utils.constant.Constants.PM
-import lostankit7.droid.moodtracker.utils.constant.Constants.dateFormat
-import lostankit7.droid.moodtracker.utils.constant.Constants.dateSeparator
-import lostankit7.droid.moodtracker.utils.constant.Constants.timeFormat
-import lostankit7.droid.moodtracker.utils.constant.Constants.timeSeparator
+import lostankit7.droid.moodtracker.utils.constant.Constants.DATE_FORMAT
+import lostankit7.droid.moodtracker.utils.constant.Constants.DATE_SEPARATOR
+import lostankit7.droid.moodtracker.utils.constant.Constants.TIME_FORMAT
+import lostankit7.droid.moodtracker.utils.constant.Constants.TIME_SEPARATOR
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -29,7 +29,7 @@ fun formatTime(h: Int, m: Int, ap: String): String {
     } else {
         m.toString()
     }
-    return "$hour$timeSeparator$minute $ap"
+    return "$hour$TIME_SEPARATOR$minute $ap"
 }
 
 fun timeToTwelveHour(hourOfDay: Int): Int {
@@ -51,22 +51,22 @@ fun formatDate(date: Int, month: Int, year: Int): String {
     } else {
         month.toString()
     }
-    return "$dateS$dateSeparator$monthS$dateSeparator$year"
+    return "$dateS$DATE_SEPARATOR$monthS$DATE_SEPARATOR$year"
 }
 
 fun getCurrentTime(): String {
-    val time = SimpleDateFormat(timeFormat, Locale.getDefault()).format(Date())
+    val time = SimpleDateFormat(TIME_FORMAT, Locale.getDefault()).format(Date())
     if (time.substring(0, 2) == "00")
         return "12" + time.substring(2)
     return time
 }
 
 fun getCurrentDate(): String {
-    return SimpleDateFormat(dateFormat, Locale.getDefault()).format(Date())
+    return SimpleDateFormat(DATE_FORMAT, Locale.getDefault()).format(Date())
 }
 
 fun Context.getSelectedDate(date: String, listener: (date: String) -> Unit) {
-    val dateArr = date.split(dateSeparator)
+    val dateArr = date.split(DATE_SEPARATOR)
     val mDay = dateArr[0].toInt()
     val mMonth = dateArr[1].toInt() - 1
     val mYear = dateArr[2].toInt()
@@ -82,7 +82,7 @@ fun Context.getSelectedDate(date: String, listener: (date: String) -> Unit) {
 }
 
 fun Context.getSelectedTime(time: String, listener: (time: String) -> Unit) {
-    val timeArr = time.substring(0, time.length - 3).split(timeSeparator)
+    val timeArr = time.substring(0, time.length - 3).split(TIME_SEPARATOR)
     var cHour = timeArr[0].toInt()
     if (cHour != 12 && time.substring(time.length - 2) == PM) cHour += 12
     val cMin = timeArr[1].toInt()

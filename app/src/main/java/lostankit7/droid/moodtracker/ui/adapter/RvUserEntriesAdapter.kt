@@ -11,7 +11,7 @@ import lostankit7.droid.moodtracker.base.adapter.BaseDiffRvAdapter
 import lostankit7.droid.moodtracker.data.database.entities.UserEntry
 import lostankit7.droid.moodtracker.databinding.ItemRvUserEntriesBinding
 import lostankit7.droid.moodtracker.utils.DialogHelper
-import lostankit7.droid.moodtracker.utils.constant.Constants.dbEntrySeparator
+import lostankit7.droid.moodtracker.utils.constant.Constants.DB_ENTRY_SEPARATOR
 import lostankit7.droid.moodtracker.utils.hide
 
 class RvUserEntriesAdapter(
@@ -38,8 +38,8 @@ class RvUserEntriesAdapter(
 
     override fun bindViewHolder(item: UserEntry, position: Int, binding: ItemRvUserEntriesBinding) {
         val tasks = SpannableStringBuilder()
-        val icons = item.taskIcons.split(dbEntrySeparator)
-        val names = item.taskNames.split(dbEntrySeparator)
+        val icons = item.taskIcons.split(DB_ENTRY_SEPARATOR)
+        val names = item.taskNames.split(DB_ENTRY_SEPARATOR)
         for (i in icons.indices) {
             tasks.append("  |  ${icons[i]} ${names[i]}")
         }

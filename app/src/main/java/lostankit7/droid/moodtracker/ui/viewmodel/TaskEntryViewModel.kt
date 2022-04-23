@@ -5,7 +5,7 @@ import lostankit7.droid.moodtracker.data.database.entities.TaskCategory
 import lostankit7.droid.moodtracker.data.database.entities.TaskIcon
 import lostankit7.droid.moodtracker.data.database.entities.UserEntry
 import lostankit7.droid.moodtracker.data.repository.*
-import lostankit7.droid.moodtracker.utils.constant.Constants.dbEntrySeparator
+import lostankit7.droid.moodtracker.utils.constant.Constants.DB_ENTRY_SEPARATOR
 import lostankit7.droid.moodtracker.model.MoodEntry
 import javax.inject.Inject
 
@@ -47,11 +47,11 @@ class TaskEntryViewModel @Inject constructor(
         val taskNames = StringBuffer("")
 
         for ((_, icon) in tasksMap) {
-            taskIcons.append("${dbEntrySeparator}${icon.icon}")
-            taskNames.append("${dbEntrySeparator}${icon.name}")
+            taskIcons.append("${DB_ENTRY_SEPARATOR}${icon.icon}")
+            taskNames.append("${DB_ENTRY_SEPARATOR}${icon.name}")
         }
-        if (taskIcons.isEmpty()) taskIcons.append(dbEntrySeparator)
-        if (taskNames.isEmpty()) taskNames.append(dbEntrySeparator)
+        if (taskIcons.isEmpty()) taskIcons.append(DB_ENTRY_SEPARATOR)
+        if (taskNames.isEmpty()) taskNames.append(DB_ENTRY_SEPARATOR)
 
         return UserEntry(
             moodEntry.date,

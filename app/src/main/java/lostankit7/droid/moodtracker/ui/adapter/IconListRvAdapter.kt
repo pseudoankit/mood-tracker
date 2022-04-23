@@ -50,8 +50,4 @@ class IconListRvAdapter(
         layoutInflater: LayoutInflater, parent: ViewGroup, attachToParent: Boolean
     ) = ItemIconListBinding.inflate(layoutInflater, parent, attachToParent)
 
-    companion object {
-        fun newInstance(onClick: (Icon) -> Unit, optionsSelected: (MenuItem, Icon) -> Boolean) =
-            IconListRvAdapter(onClick, optionsSelected)
-    }
 }

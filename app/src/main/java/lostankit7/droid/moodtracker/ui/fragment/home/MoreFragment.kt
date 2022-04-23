@@ -1,4 +1,4 @@
-package lostankit7.droid.moodtracker.ui.fragment
+package lostankit7.droid.moodtracker.ui.fragment.home
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -52,13 +52,11 @@ class MoreFragment : BaseFragment<FragmentMoreBinding>() {
 
         disableEditProfile()
         binding.changeLanguage.txtTitle.text = resources.getString(R.string.text_change_language)
-
     }
 
     override fun initRecyclerView() {
         super.initRecyclerView()
 
-        binding.changeLanguage.rvItems.layoutManager = LinearLayoutManager(requireContext())
         binding.changeLanguage.rvItems.adapter = adapter
 
         val list = resources.getStringArray(R.array.languages).map {
