@@ -1,7 +1,6 @@
 package lostankit7.droid.moodtracker.base.fragment
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,22 +11,20 @@ import androidx.navigation.NavDirections
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import androidx.viewbinding.ViewBinding
-import lostankit7.droid.databinding.DialogProgressBinding
-import lostankit7.droid.moodtracker.utils.DialogHelper
-import lostankit7.droid.moodtracker.utils.showSnackBar
-import lostankit7.droid.moodtracker.utils.showToast
+import lostankit7.droid.moodtracker.R
+import lostankit7.droid.moodtracker.databinding.TaskEntryActionBarBinding
 import lostankit7.droid.moodtracker.ui.MainActivity
+import lostankit7.droid.moodtracker.utils.hide
 
 abstract class BaseFragment<VB : ViewBinding> : Fragment() {
 
     lateinit var binding: VB
-
     lateinit var navController: NavController
 
     val TAG by lazy { javaClass.simpleName }
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?,
     ): View? {
         binding = inflateLayout(layoutInflater)
         onCreateView()
@@ -39,8 +36,10 @@ abstract class BaseFragment<VB : ViewBinding> : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        Log.d(TAG, "onViewCreated: ")
         navController = Navigation.findNavController(view)
+        (activity as? MainActivity)?.actionBar()?.let {
+            updateActionBar(it)
+        }
 
         init()
         initRecyclerView()
@@ -52,6 +51,11 @@ abstract class BaseFragment<VB : ViewBinding> : Fragment() {
     open fun initRecyclerView() {}
     open suspend fun registerObservers() {}
     open fun initListeners() {}
+
+    open fun updateActionBar(actionBar: TaskEntryActionBarBinding) {
+        actionBar.leftIcon1.text = resources.getString(R.string.fas_circular_back)
+        actionBar.root.hide()
+    }
 
     fun navigateTo(directions: NavDirections) {
         findNavController().navigate(directions)

@@ -4,15 +4,20 @@ import android.view.LayoutInflater
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
+import lostankit7.droid.moodtracker.R
 import lostankit7.droid.moodtracker.base.fragment.BaseDaggerFragment
 import lostankit7.droid.moodtracker.data.database.entities.Icon
 import lostankit7.droid.moodtracker.data.database.entities.TaskIcon
 import lostankit7.droid.moodtracker.databinding.FragmentAddTaskEntryBinding
+import lostankit7.droid.moodtracker.databinding.TaskEntryActionBarBinding
 import lostankit7.droid.moodtracker.di.AppComponent
 import lostankit7.droid.moodtracker.ui.adapter.RvTaskAdapter
 import lostankit7.droid.moodtracker.ui.adapter.TaskIconRvAdapter
 import lostankit7.droid.moodtracker.ui.viewmodel.TaskEntryViewModel
+import lostankit7.droid.moodtracker.utils.hide
 import lostankit7.droid.moodtracker.utils.hideKeyBoard
+import lostankit7.droid.moodtracker.utils.show
+import lostankit7.droid.moodtracker.utils.showBackAndSaveButton
 
 class AddTaskEntryFragment : BaseDaggerFragment<FragmentAddTaskEntryBinding, TaskEntryViewModel>() {
 
@@ -28,10 +33,6 @@ class AddTaskEntryFragment : BaseDaggerFragment<FragmentAddTaskEntryBinding, Tas
 
     override fun initListeners() {
         super.initListeners()
-
-        binding.actionBar.btnSave.setOnClickListener { saveEntry() }
-
-        binding.actionBar.btnBack.setOnClickListener { findNavController().popBackStack() }
 
         binding.btnEditTask.setOnClickListener {
             navigateTo(
@@ -60,7 +61,7 @@ class AddTaskEntryFragment : BaseDaggerFragment<FragmentAddTaskEntryBinding, Tas
         binding.rvTask.adapter = adapter
     }
 
-    private fun saveEntry() {
+    fun saveEntry() {
         activity?.hideKeyBoard()
         viewModel.saveEntry(args.moodEntry, selectedTasksMap, binding.etNote.text.toString())
         navigateTo(
@@ -68,16 +69,19 @@ class AddTaskEntryFragment : BaseDaggerFragment<FragmentAddTaskEntryBinding, Tas
         )
     }
 
-    override fun init() {
-        binding.actionBar.apply {
-            moodIcon.text = args.moodEntry.moodIcon.icon
-            moodName.text = args.moodEntry.moodIcon.name
+    override fun updateActionBar(actionBar: TaskEntryActionBarBinding) = with(actionBar){
+        super.updateActionBar(actionBar)
+        showBackAndSaveButton()
+        leftIcon1.text = resources.getString(R.string.fas_back)
+        leftIcon2.apply {
+            show()
+            text = args.moodEntry.moodIcon.icon
         }
+        title.text = args.moodEntry.moodIcon.name
     }
 
     override fun inflateLayout(layoutInflater: LayoutInflater) =
         FragmentAddTaskEntryBinding.inflate(layoutInflater)
-
 
     override fun initiateViewModel(viewModelProvider: ViewModelProvider) =
         viewModelProvider[TaskEntryViewModel::class.java]

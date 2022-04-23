@@ -10,10 +10,12 @@ import lostankit7.droid.moodtracker.data.database.entities.Icon
 import lostankit7.droid.moodtracker.data.database.entities.TaskCategory
 import lostankit7.droid.moodtracker.databinding.DialogTextEntryBinding
 import lostankit7.droid.moodtracker.databinding.FragmentDisplayListBinding
+import lostankit7.droid.moodtracker.databinding.TaskEntryActionBarBinding
 import lostankit7.droid.moodtracker.di.AppComponent
 import lostankit7.droid.moodtracker.ui.adapter.IconListRvAdapter
 import lostankit7.droid.moodtracker.ui.viewmodel.TaskEntryViewModel
 import lostankit7.droid.moodtracker.utils.DialogHelper
+import lostankit7.droid.moodtracker.utils.showBackButton
 
 class DisplayTaskCategoriesFragment : BaseDaggerFragment<FragmentDisplayListBinding, TaskEntryViewModel>() {
 
@@ -83,6 +85,11 @@ class DisplayTaskCategoriesFragment : BaseDaggerFragment<FragmentDisplayListBind
                 dialog.dismiss()
             }
         }.show()
+    }
+
+   override fun updateActionBar(actionBar: TaskEntryActionBarBinding) = with(actionBar){
+        super.updateActionBar(actionBar)
+        showBackButton()
     }
 
     override fun inflateLayout(layoutInflater: LayoutInflater) =

@@ -12,11 +12,13 @@ import lostankit7.droid.moodtracker.data.database.entities.Icon
 import lostankit7.droid.moodtracker.data.database.entities.MoodIcon
 import lostankit7.droid.moodtracker.data.database.entities.Suggestion
 import lostankit7.droid.moodtracker.databinding.FragmentUpsertMoodTaskIconBinding
+import lostankit7.droid.moodtracker.databinding.TaskEntryActionBarBinding
 import lostankit7.droid.moodtracker.di.AppComponent
 import lostankit7.droid.moodtracker.ui.adapter.MoodIconRvAdapter
 import lostankit7.droid.moodtracker.ui.adapter.TextRvAdapter
 import lostankit7.droid.moodtracker.ui.viewmodel.MoodEntryViewModel
 import lostankit7.droid.moodtracker.utils.hideKeyBoard
+import lostankit7.droid.moodtracker.utils.showBackAndSaveButton
 import lostankit7.droid.moodtracker.utils.showToast
 
 class UpsertMoodIconFragment :
@@ -83,6 +85,11 @@ class UpsertMoodIconFragment :
             binding.tvSelectedIcon.text = it.icon
             binding.edtSelectedName.setText(it.name)
         }
+    }
+
+   override fun updateActionBar(actionBar: TaskEntryActionBarBinding) = with(actionBar){
+        super.updateActionBar(actionBar)
+        showBackAndSaveButton()
     }
 
     override fun injectFragment(appComponent: AppComponent) {

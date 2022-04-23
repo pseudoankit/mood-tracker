@@ -8,9 +8,11 @@ import lostankit7.droid.moodtracker.base.fragment.BaseDaggerFragment
 import lostankit7.droid.moodtracker.data.database.entities.Icon
 import lostankit7.droid.moodtracker.data.database.entities.MoodIcon
 import lostankit7.droid.moodtracker.databinding.FragmentDisplayListBinding
+import lostankit7.droid.moodtracker.databinding.TaskEntryActionBarBinding
 import lostankit7.droid.moodtracker.di.AppComponent
 import lostankit7.droid.moodtracker.ui.adapter.IconListRvAdapter
 import lostankit7.droid.moodtracker.ui.viewmodel.MoodEntryViewModel
+import lostankit7.droid.moodtracker.utils.showBackButton
 
 class DisplayMoodIconsFragment :
     BaseDaggerFragment<FragmentDisplayListBinding, MoodEntryViewModel>() {
@@ -46,6 +48,11 @@ class DisplayMoodIconsFragment :
         viewModel.moodIcons.observe(viewLifecycleOwner) {
             adapter.submitList(it)
         }
+    }
+
+    override fun updateActionBar(actionBar: TaskEntryActionBarBinding) = with(actionBar) {
+        super.updateActionBar(actionBar)
+        showBackButton()
     }
 
     override fun initListeners() {

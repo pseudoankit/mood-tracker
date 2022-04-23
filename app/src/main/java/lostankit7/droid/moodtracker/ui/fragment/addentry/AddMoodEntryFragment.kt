@@ -6,14 +6,12 @@ import androidx.navigation.fragment.findNavController
 import lostankit7.droid.moodtracker.base.fragment.BaseDaggerFragment
 import lostankit7.droid.moodtracker.data.database.entities.MoodIcon
 import lostankit7.droid.moodtracker.databinding.FragmentAddMoodEntryBinding
+import lostankit7.droid.moodtracker.databinding.TaskEntryActionBarBinding
 import lostankit7.droid.moodtracker.di.AppComponent
 import lostankit7.droid.moodtracker.model.MoodEntry
 import lostankit7.droid.moodtracker.ui.adapter.RvMoodIconAdapter
 import lostankit7.droid.moodtracker.ui.viewmodel.MoodEntryViewModel
-import lostankit7.droid.moodtracker.utils.getCurrentDate
-import lostankit7.droid.moodtracker.utils.getCurrentTime
-import lostankit7.droid.moodtracker.utils.getSelectedDate
-import lostankit7.droid.moodtracker.utils.getSelectedTime
+import lostankit7.droid.moodtracker.utils.*
 
 class AddMoodEntryFragment : BaseDaggerFragment<FragmentAddMoodEntryBinding, MoodEntryViewModel>() {
 

@@ -4,15 +4,15 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.NavDestination
-import androidx.navigation.Navigation
 import androidx.navigation.findNavController
-import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.setupWithNavController
 import lostankit7.droid.moodtracker.R
 import lostankit7.droid.moodtracker.databinding.ActivityMainBinding
-import lostankit7.droid.moodtracker.utils.ANIMATE_TOP_BOTTOM
+import lostankit7.droid.moodtracker.databinding.TaskEntryActionBarBinding
+import lostankit7.droid.moodtracker.ui.fragment.addentry.AddTaskEntryFragment
+import lostankit7.droid.moodtracker.ui.fragment.edit.editmood.UpsertMoodIconFragment
+import lostankit7.droid.moodtracker.ui.fragment.edit.edittask.UpsertTaskIconFragment
 import lostankit7.droid.moodtracker.utils.hide
-import lostankit7.droid.moodtracker.utils.navOptions
 import lostankit7.droid.moodtracker.utils.show
 
 
@@ -35,6 +35,17 @@ class MainActivity : AppCompatActivity() {
 
     private fun initListener() {
         binding.fabAddUserEntry.setOnClickListener { addEntryButtonClicked() }
+        binding.actionBar.btnBack.setOnClickListener {
+            navController.popBackStack()
+        }
+        binding.actionBar.btnSave.setOnClickListener {
+            when (val fragment =
+                supportFragmentManager.findFragmentById(R.id.fragment_container)?.childFragmentManager?.primaryNavigationFragment) {
+                is AddTaskEntryFragment -> fragment.saveEntry()
+                is UpsertMoodIconFragment -> fragment.saveMoodIcon()
+                is UpsertTaskIconFragment -> fragment.saveTaskIcon()
+            }
+        }
     }
 
     private fun addEntryButtonClicked() {
@@ -45,7 +56,7 @@ class MainActivity : AppCompatActivity() {
         navController: NavController, destination: NavDestination, bundle: Bundle?,
     ) {
         when (destination.id) {
-            R.id.calendarFragment , R.id.moreFragment , R.id.displayAllUserEntriesFragment -> {
+            R.id.calendarFragment, R.id.moreFragment, R.id.displayAllUserEntriesFragment -> {
                 showBottomNav()
             }
             else -> hideBottomNav()
@@ -60,13 +71,18 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun showBottomNav() {
+    private fun showBottomNav() {
         binding.bottomLayout.show()
         binding.fragmentBottomGuide.show()
     }
 
-    fun hideBottomNav() {
+    private fun hideBottomNav() {
         binding.bottomLayout.hide()
         binding.fragmentBottomGuide.hide()
+    }
+
+    fun actionBar(): TaskEntryActionBarBinding? {
+        return if (!::binding.isInitialized) null
+        else binding.actionBar
     }
 }
