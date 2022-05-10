@@ -3,67 +3,46 @@ package lostankit7.droid.moodtracker.ui.fragment.home
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
-import androidx.core.content.ContextCompat
-import androidx.recyclerview.widget.LinearLayoutManager
 import lostankit7.droid.moodtracker.R
 import lostankit7.droid.moodtracker.base.fragment.BaseFragment
 import lostankit7.droid.moodtracker.databinding.FragmentMoreBinding
-import lostankit7.droid.moodtracker.model.SingleSelectionModel
-import lostankit7.droid.moodtracker.ui.adapter.SingleSelectionRvAdapter
+import lostankit7.droid.moodtracker.utils.hide
+import lostankit7.droid.moodtracker.utils.show
 
 class MoreFragment : BaseFragment<FragmentMoreBinding>() {
 
     private var isEditEnabled = false
-    private val adapter by lazy { SingleSelectionRvAdapter.createInstance(requireContext()) }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-
     }
 
     override fun initListeners() {
-        super.initListeners()
-
-        binding.btnEditProfile.setOnClickListener {
-            if (isEditEnabled) disableEditProfile() else enableEditProfile()
+        binding.layoutProfile.btnEditProfile.setOnClickListener {
+            if (isEditEnabled) saveAndDisableProfileEdit() else enableProfileEdit()
         }
     }
 
-    private fun enableEditProfile() {
+    private fun enableProfileEdit() = with(binding.layoutProfile) {
         isEditEnabled = true
-        binding.btnEditProfile.text = resources.getString(R.string.fas_tick)
-        binding.userImage.isClickable = true
-        binding.edtUserName.isEnabled = true
-        binding.edtUserName.background =
-            ContextCompat.getDrawable(requireContext(), R.drawable.bg_rounded_white_stroke_gray)
-    }
-
-    private fun disableEditProfile() {
-        isEditEnabled = false
-        binding.btnEditProfile.text = resources.getString(R.string.fas_edit)
-        binding.userImage.isClickable = false
-        binding.edtUserName.isEnabled = false
-        binding.edtUserName.background = null
-    }
-
-    override fun init() {
-        super.init()
-
-        disableEditProfile()
-        binding.changeLanguage.txtTitle.text = resources.getString(R.string.text_change_language)
-    }
-
-    override fun initRecyclerView() {
-        super.initRecyclerView()
-
-        binding.changeLanguage.rvItems.adapter = adapter
-
-        val list = resources.getStringArray(R.array.languages).map {
-            SingleSelectionModel(it)
+        btnEditProfile.text = resources.getString(R.string.fas_tick)
+        rootLayout.apply {
+            isClickable = true
+            txtUserName.hide()
+            edtUserName.show()
         }
+    }
 
-        adapter.submitList(list)
+    private fun saveAndDisableProfileEdit() = with(binding.layoutProfile) {
+        //save profile name to pref
+        isEditEnabled = false
+        btnEditProfile.text = resources.getString(R.string.fas_edit)
+        rootLayout.apply {
+            isClickable = false
+            txtUserName.show()
+            edtUserName.hide()
+        }
     }
 
     override fun inflateLayout(layoutInflater: LayoutInflater) =

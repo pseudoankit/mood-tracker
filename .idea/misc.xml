@@ -48,6 +48,9 @@
         <entry key="..\:/Users/kumar/AndroidStudioProjects/MoodTracker/app/src/main/res/layout/item_rv_user_entrie.xml" value="0.33" />
         <entry key="..\:/Users/kumar/AndroidStudioProjects/MoodTracker/app/src/main/res/layout/item_rv_user_entries.xml" value="0.33" />
         <entry key="..\:/Users/kumar/AndroidStudioProjects/MoodTracker/app/src/main/res/menu/menu_options.xml" value="0.22395833333333334" />
+        <entry key="app/src/main/res/drawable/bg_circle.xml" value="0.22037037037037038" />
+        <entry key="app/src/main/res/drawable/bg_rounded_white.xml" value="0.22037037037037038" />
+        <entry key="app/src/main/res/drawable/circular_view.xml" value="0.22037037037037038" />
         <entry key="app/src/main/res/layout/action_bar.xml" value="0.29791666666666666" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.29791666666666666" />
         <entry key="app/src/main/res/layout/fragment_add_mood_entry.xml" value="0.29791666666666666" />
@@ -55,7 +58,9 @@
         <entry key="app/src/main/res/layout/fragment_calendar.xml" value="0.159375" />
         <entry key="app/src/main/res/layout/fragment_display_list.xml" value="0.29791666666666666" />
         <entry key="app/src/main/res/layout/fragment_home_bottom_navigation.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_more.xml" value="0.29791666666666666" />
         <entry key="app/src/main/res/layout/fragment_upsert_mood_task_icon.xml" value="0.29791666666666666" />
+        <entry key="app/src/main/res/layout/partial_layout_profile_section.xml" value="0.25" />
         <entry key="app/src/main/res/layout/task_entry_action_bar.xml" value="0.29791666666666666" />
         <entry key="app/src/main/res/menu/menu_bottom_navigation.xml" value="0.29791666666666666" />
         <entry key="app/src/main/res/menu/menu_options.xml" value="0.29791666666666666" />
