@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="@dimen/padding_screen"
-    tools:context=".ui.fragment.edit.editmood.UpsertMoodIconFragment">
+    tools:context=".presentation.fragment.edit.editmood.UpsertMoodIconFragment">
 
     <lostankit7.droid.CustomTextView
         android:id="@+id/tvSelectedIcon"

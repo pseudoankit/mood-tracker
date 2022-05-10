@@ -10,13 +10,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/dp_20"
+        android:background="@drawable/bg_rounded_white_stroke_gray"
         android:clickable="false"
-        android:background="@drawable/bg_rounded_white"
         android:elevation="@dimen/elevation"
         android:padding="@dimen/padding_screen"
         app:layout_constraintTop_toTopOf="parent">
 
-        <ImageView
+        <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/ivUserProfile"
             android:layout_width="@dimen/profile_image_dimen"
             android:layout_height="@dimen/profile_image_dimen"
@@ -24,7 +24,8 @@
             android:src="@drawable/ic_launcher_background"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/roundedImageView" />
 
         <View
             android:id="@+id/guideName"
@@ -45,7 +46,7 @@
             app:layout_constraintTop_toTopOf="parent"
             tools:text="Ankit" />
 
-        <androidx.appcompat.widget.AppCompatEditText
+        <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edtUserName"
             style="@style/defEdtStyle"
             android:layout_marginEnd="@dimen/dp_20"

@@ -6,7 +6,7 @@
     android:layout_height="wrap_content"
     android:layout_marginTop="8dp"
     android:animateLayoutChanges="true"
-    android:background="@drawable/bg_rounded_white_stroke_gray">
+    android:background="@drawable/bg_rounded_white_stroke_gray_ripple">
 
     <LinearLayout
         android:id="@+id/llTaskCategory"

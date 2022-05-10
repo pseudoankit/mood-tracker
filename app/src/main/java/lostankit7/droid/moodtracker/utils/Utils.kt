@@ -25,6 +25,6 @@ fun Context.showToast(message: String) {
     Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
 }
 
-fun TextView.asTextDimen(id: Int) {
+fun TextView.updateTextSize(id: Int) {
     setTextSize(TypedValue.COMPLEX_UNIT_PX, resources.getDimension(id))
 }

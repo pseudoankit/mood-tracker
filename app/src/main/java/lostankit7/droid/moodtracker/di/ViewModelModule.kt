@@ -4,11 +4,10 @@ import androidx.lifecycle.ViewModel
 import dagger.Binds
 import dagger.Module
 import dagger.multibindings.IntoMap
-import lostankit7.droid.moodtracker.ui.viewmodel.MoodEntryViewModel
-import lostankit7.droid.moodtracker.ui.viewmodel.SplashViewModel
-import lostankit7.droid.moodtracker.ui.viewmodel.TaskEntryViewModel
-import lostankit7.droid.moodtracker.ui.viewmodel.UserEntriesViewModel
-import javax.inject.Singleton
+import lostankit7.droid.moodtracker.presentation.viewmodel.MoodEntryViewModel
+import lostankit7.droid.moodtracker.presentation.viewmodel.SplashViewModel
+import lostankit7.droid.moodtracker.presentation.viewmodel.TaskEntryViewModel
+import lostankit7.droid.moodtracker.presentation.viewmodel.UserEntriesViewModel
 
 @Module
 abstract class ViewModelModule {
