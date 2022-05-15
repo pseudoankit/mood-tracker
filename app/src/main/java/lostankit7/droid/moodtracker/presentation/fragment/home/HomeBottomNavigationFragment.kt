@@ -2,7 +2,7 @@ package lostankit7.droid.moodtracker.presentation.fragment.home
 
 import android.view.LayoutInflater
 import androidx.navigation.ui.NavigationUI
-import lostankit7.droid.moodtracker.base.fragment.BaseFragment
+import lostankit7.droid.moodtracker.core_presentation.fragment.BaseFragment
 import lostankit7.droid.moodtracker.databinding.FragmentHomeBottomNavigationBinding
 
 class HomeBottomNavigationFragment : BaseFragment<FragmentHomeBottomNavigationBinding>() {

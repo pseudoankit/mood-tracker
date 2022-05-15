@@ -8,7 +8,7 @@
 
     <include
         android:id="@+id/action_bar"
-        layout="@layout/task_entry_action_bar"
+        layout="@layout/common_action_bar"
         android:visibility="gone" />
 
     <fragment

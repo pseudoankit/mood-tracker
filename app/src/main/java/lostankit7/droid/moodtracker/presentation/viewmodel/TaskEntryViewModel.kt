@@ -1,12 +1,10 @@
 package lostankit7.droid.moodtracker.presentation.viewmodel
 
-import lostankit7.droid.moodtracker.base.viewmodel.BaseViewModel
+import lostankit7.droid.moodtracker.core_presentation.viewmodel.BaseViewModel
 import lostankit7.droid.moodtracker.data.database.entities.TaskCategory
 import lostankit7.droid.moodtracker.data.database.entities.TaskIcon
-import lostankit7.droid.moodtracker.data.database.entities.UserEntry
 import lostankit7.droid.moodtracker.data.repository.*
 import lostankit7.droid.moodtracker.domain.Mapper
-import lostankit7.droid.moodtracker.presentation.fragment.splash.Constants.DB_ENTRY_SEPARATOR
 import lostankit7.droid.moodtracker.model.MoodEntry
 import javax.inject.Inject
 

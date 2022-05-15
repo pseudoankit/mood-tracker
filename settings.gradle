@@ -4,8 +4,19 @@ dependencyResolutionManagement {
         google()
         mavenCentral()
         maven { url 'https://jitpack.io' }
-        jcenter() // Warning: this repository is going to shut down soon
     }
 }
 rootProject.name = "Mood Tracker"
 include ':app'
+include ':entry'
+include ':entry:entry_data'
+include ':entry:entry_domain'
+include ':entry:entry_presentation'
+include ':home'
+include ':home:home_display_entries'
+include ':home:home_calendar'
+include ':home:home_more'
+include ':core'
+include ':core:core_presentation'
+include ':core:core_domain_data'
+include ':core:common'

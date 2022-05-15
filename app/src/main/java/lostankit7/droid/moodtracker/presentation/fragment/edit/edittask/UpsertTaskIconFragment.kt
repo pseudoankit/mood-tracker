@@ -8,16 +8,19 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import lostankit7.droid.moodtracker.R
 import lostankit7.droid.moodtracker.base.fragment.BaseDaggerFragment
+import lostankit7.droid.moodtracker.core_presentation.databinding.CommonActionBarBinding
+import lostankit7.droid.moodtracker.core_presentation.utils.hideKeyBoard
+import lostankit7.droid.moodtracker.core_presentation.utils.showBackAndSaveButton
+import lostankit7.droid.moodtracker.core_presentation.utils.showToast
+import lostankit7.droid.moodtracker.core_presentation.utils.updateTextSize
 import lostankit7.droid.moodtracker.data.database.entities.Icon
 import lostankit7.droid.moodtracker.data.database.entities.Suggestion
 import lostankit7.droid.moodtracker.data.database.entities.TaskIcon
 import lostankit7.droid.moodtracker.databinding.FragmentUpsertMoodTaskIconBinding
-import lostankit7.droid.moodtracker.databinding.TaskEntryActionBarBinding
 import lostankit7.droid.moodtracker.di.AppComponent
 import lostankit7.droid.moodtracker.presentation.adapter.TaskIconRvAdapter
 import lostankit7.droid.moodtracker.presentation.adapter.TextRvAdapter
 import lostankit7.droid.moodtracker.presentation.viewmodel.TaskEntryViewModel
-import lostankit7.droid.moodtracker.utils.*
 
 class UpsertTaskIconFragment :
     BaseDaggerFragment<FragmentUpsertMoodTaskIconBinding, TaskEntryViewModel>() {
@@ -88,7 +91,7 @@ class UpsertTaskIconFragment :
         }
     }
 
-   override fun updateActionBar(actionBar: TaskEntryActionBarBinding) = with(actionBar){
+   override fun updateActionBar(actionBar: CommonActionBarBinding) = with(actionBar){
         super.updateActionBar(actionBar)
         showBackAndSaveButton()
     }

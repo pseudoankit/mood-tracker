@@ -3,7 +3,7 @@ package lostankit7.droid.moodtracker.presentation.adapter
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import lostankit7.droid.moodtracker.base.adapter.BaseDiffRvAdapter
+import lostankit7.droid.moodtracker.core_presentation.adapter.BaseDiffRvAdapter
 import lostankit7.droid.moodtracker.databinding.ItemRvMoodIconBinding
 import lostankit7.droid.moodtracker.data.database.entities.MoodIcon
 

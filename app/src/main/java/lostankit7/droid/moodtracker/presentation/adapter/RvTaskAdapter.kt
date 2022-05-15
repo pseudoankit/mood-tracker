@@ -5,13 +5,13 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import lostankit7.droid.moodtracker.R
-import lostankit7.droid.moodtracker.base.adapter.BaseDiffRvAdapter
+import lostankit7.droid.moodtracker.core_presentation.adapter.BaseDiffRvAdapter
 import lostankit7.droid.moodtracker.data.database.entities.Icon
 import lostankit7.droid.moodtracker.data.database.entities.TaskCategory
 import lostankit7.droid.moodtracker.databinding.ItemRvExpandableViewBinding
-import lostankit7.droid.moodtracker.presentation.fragment.splash.Constants
-import lostankit7.droid.moodtracker.utils.hide
-import lostankit7.droid.moodtracker.utils.show
+import lostankit7.droid.moodtracker.core_presentation.utils.Constants
+import lostankit7.droid.moodtracker.core_presentation.utils.hide
+import lostankit7.droid.moodtracker.core_presentation.utils.show
 
 class RvTaskAdapter(
     private val getTaskIcons: (String, TaskIconRvAdapter) -> Unit,

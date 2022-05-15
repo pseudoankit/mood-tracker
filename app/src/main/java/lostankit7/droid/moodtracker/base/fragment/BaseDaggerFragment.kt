@@ -5,7 +5,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.viewbinding.ViewBinding
 import lostankit7.droid.moodtracker.MyApplication
-import lostankit7.droid.moodtracker.base.factory.ViewModelFactory
+import lostankit7.droid.moodtracker.core_presentation.di.viewmodel.ViewModelFactory
 import lostankit7.droid.moodtracker.di.AppComponent
 import javax.inject.Inject
 
