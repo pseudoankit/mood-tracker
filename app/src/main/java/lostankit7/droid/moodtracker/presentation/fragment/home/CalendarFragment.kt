@@ -1,7 +1,7 @@
 package lostankit7.droid.moodtracker.presentation.fragment.home
 
 import android.view.LayoutInflater
-import lostankit7.droid.moodtracker.base.fragment.BaseFragment
+import lostankit7.droid.moodtracker.core_presentation.fragment.BaseFragment
 import lostankit7.droid.moodtracker.databinding.FragmentCalendarBinding
 import lostankit7.droid.moodtracker.core.utils.formatDate
 

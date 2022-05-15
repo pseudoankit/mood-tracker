@@ -3,7 +3,7 @@ package lostankit7.droid.moodtracker.presentation.viewmodel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import lostankit7.droid.moodtracker.R
-import lostankit7.droid.moodtracker.base.viewmodel.BaseViewModel
+import lostankit7.droid.moodtracker.core_presentation.viewmodel.BaseViewModel
 import lostankit7.droid.moodtracker.data.database.entities.MoodIcon
 import lostankit7.droid.moodtracker.data.repository.MoodIconRepository
 import lostankit7.droid.moodtracker.data.repository.SuggestedMoodIconRepository

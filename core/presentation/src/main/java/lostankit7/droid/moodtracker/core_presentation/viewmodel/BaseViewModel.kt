@@ -1,4 +1,4 @@
-package lostankit7.droid.moodtracker.base.viewmodel
+package lostankit7.droid.moodtracker.core_presentation.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope

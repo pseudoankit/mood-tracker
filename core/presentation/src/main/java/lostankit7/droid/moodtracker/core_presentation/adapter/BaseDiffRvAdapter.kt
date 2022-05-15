@@ -1,4 +1,4 @@
-package lostankit7.droid.moodtracker.base.adapter
+package lostankit7.droid.moodtracker.core_presentation.adapter
 
 import android.view.LayoutInflater
 import android.view.View
@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewbinding.ViewBinding
-import lostankit7.droid.moodtracker.base.adapter.BaseDiffRvAdapter.Companion.ViewHolder
+import lostankit7.droid.moodtracker.core_presentation.adapter.BaseDiffRvAdapter.Companion.ViewHolder
 
 abstract class BaseDiffRvAdapter<VB : ViewBinding, T : Any>(
     areItemsSame: (oldItem: T, newItem: T) -> Boolean = { old, new -> old === new },

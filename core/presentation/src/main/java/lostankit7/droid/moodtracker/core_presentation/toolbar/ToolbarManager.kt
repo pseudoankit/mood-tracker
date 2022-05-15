@@ -1,4 +1,4 @@
-package lostankit7.droid.moodtracker.base.toolbar
+package lostankit7.droid.moodtracker.core_presentation.toolbar
 
 import android.view.MenuItem
 import android.view.View

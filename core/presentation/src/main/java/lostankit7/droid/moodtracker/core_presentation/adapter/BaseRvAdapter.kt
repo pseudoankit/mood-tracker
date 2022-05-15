@@ -1,4 +1,4 @@
-package lostankit7.droid.moodtracker.base.adapter
+package lostankit7.droid.moodtracker.core_presentation.adapter
 
 import android.content.Context
 import android.view.LayoutInflater

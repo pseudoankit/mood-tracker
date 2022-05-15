@@ -68,6 +68,10 @@
         <entry key="app/src/main/res/layout/task_entry_action_bar.xml" value="0.29791666666666666" />
         <entry key="app/src/main/res/menu/menu_bottom_navigation.xml" value="0.29791666666666666" />
         <entry key="app/src/main/res/menu/menu_options.xml" value="0.29791666666666666" />
+        <entry key="core/presentation/src/main/res/drawable/bg_rounded_white.xml" value="0.1925925925925926" />
+        <entry key="core/presentation/src/main/res/drawable/bg_rounded_white_ripple.xml" value="0.1925925925925926" />
+        <entry key="core/presentation/src/main/res/drawable/bg_rounded_white_stroke_gray.xml" value="0.1925925925925926" />
+        <entry key="core/presentation/src/main/res/drawable/bg_rounded_white_stroke_gray_ripple.xml" value="0.1925925925925926" />
       </map>
     </option>
   </component>

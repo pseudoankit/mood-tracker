@@ -1,4 +1,4 @@
-package lostankit7.droid.moodtracker.core.di.viewmodel
+package lostankit7.droid.moodtracker.core_presentation.di.viewmodel
 
 import androidx.lifecycle.ViewModel
 import dagger.MapKey

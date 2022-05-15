@@ -1,6 +1,6 @@
 package lostankit7.droid.moodtracker.presentation.viewmodel
 
-import lostankit7.droid.moodtracker.base.viewmodel.BaseViewModel
+import lostankit7.droid.moodtracker.core_presentation.viewmodel.BaseViewModel
 import lostankit7.droid.moodtracker.data.database.entities.*
 import lostankit7.droid.moodtracker.data.repository.*
 import javax.inject.Inject
