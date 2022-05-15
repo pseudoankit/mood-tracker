@@ -1,7 +1,7 @@
-package lostankit7.droid.moodtracker.utils
+package lostankit7.droid.moodtracker.core_presentation.utils
 
 import androidx.navigation.NavOptions
-import lostankit7.droid.moodtracker.R
+import lostankit7.droid.moodtracker.core_presentation.R
 
 const val NO_ANIMATION = -1
 const val ANIMATE_TOP_BOTTOM = 1

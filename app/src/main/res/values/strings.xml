@@ -116,19 +116,11 @@
     <string name="text_add_new_task">Add New Task</string>
     <string name="text_enter_category">Enter Category</string>
 
-
-    <string name="text_save">Save</string>
-    <string name="text_add">Add</string>
-    <string name="text_cancel">Cancel</string>
-    <string name="text_edit">Edit</string>
-    <string name="text_delete">Delete</string>
     <string name="text_edit_moods">Edit Moods</string>
     <string name="edt_hint_enter_your_name">Enter your name</string>
     <string name="text_change_language">Change Language</string>
     <string name="hindi">Hindi</string>
     <string name="english">English</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="edit_tasks">Edit Tasks</string>
     <string name="user_profile_image">User Profile Image</string>
 

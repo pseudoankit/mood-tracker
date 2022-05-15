@@ -10,8 +10,8 @@ import lostankit7.droid.moodtracker.data.database.entities.Icon
 import lostankit7.droid.moodtracker.data.database.entities.TaskCategory
 import lostankit7.droid.moodtracker.databinding.ItemRvExpandableViewBinding
 import lostankit7.droid.moodtracker.core.utils.Constants
-import lostankit7.droid.moodtracker.utils.hide
-import lostankit7.droid.moodtracker.utils.show
+import lostankit7.droid.moodtracker.core_presentation.utils.hide
+import lostankit7.droid.moodtracker.core_presentation.utils.show
 
 class RvTaskAdapter(
     private val getTaskIcons: (String, TaskIconRvAdapter) -> Unit,

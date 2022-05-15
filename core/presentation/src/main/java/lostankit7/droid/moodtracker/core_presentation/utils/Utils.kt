@@ -1,4 +1,4 @@
-package lostankit7.droid.moodtracker.utils
+package lostankit7.droid.moodtracker.core_presentation.utils
 
 import android.app.Activity
 import android.content.Context
@@ -8,7 +8,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.core.content.ContextCompat
 import com.google.android.material.snackbar.Snackbar
-import lostankit7.droid.moodtracker.R
+import lostankit7.droid.moodtracker.core_presentation.R
 
 fun Activity.hideKeyBoard() {
     (getSystemService(Context.INPUT_METHOD_SERVICE) as? InputMethodManager)

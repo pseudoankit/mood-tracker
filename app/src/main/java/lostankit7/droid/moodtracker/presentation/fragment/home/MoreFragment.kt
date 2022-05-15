@@ -9,9 +9,9 @@ import lostankit7.droid.moodtracker.base.fragment.BaseDaggerFragment
 import lostankit7.droid.moodtracker.databinding.FragmentMoreBinding
 import lostankit7.droid.moodtracker.di.AppComponent
 import lostankit7.droid.moodtracker.presentation.viewmodel.MoreViewModel
-import lostankit7.droid.moodtracker.utils.hide
-import lostankit7.droid.moodtracker.utils.hideKeyBoard
-import lostankit7.droid.moodtracker.utils.show
+import lostankit7.droid.moodtracker.core_presentation.utils.hide
+import lostankit7.droid.moodtracker.core_presentation.utils.hideKeyBoard
+import lostankit7.droid.moodtracker.core_presentation.utils.show
 
 class MoreFragment : BaseDaggerFragment<FragmentMoreBinding, MoreViewModel>() {
 

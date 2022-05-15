@@ -4,7 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import lostankit7.droid.moodtracker.core_presentation.adapter.BaseDiffRvAdapter
 import lostankit7.droid.moodtracker.data.database.entities.Suggestion
-import lostankit7.droid.moodtracker.databinding.ItemTextChipsBinding
+import lostankit7.droid.moodtracker.core_presentation.databinding.ItemTextChipsBinding
 
 class TextRvAdapter(private val itemClick: (Suggestion) -> Unit) :
     BaseDiffRvAdapter<ItemTextChipsBinding, Suggestion>() {

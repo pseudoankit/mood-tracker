@@ -7,10 +7,10 @@ import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import lostankit7.droid.moodtracker.R
 import lostankit7.droid.moodtracker.base.fragment.BaseDaggerFragment
+import lostankit7.droid.moodtracker.core_presentation.databinding.CommonActionBarBinding
 import lostankit7.droid.moodtracker.data.database.entities.Icon
 import lostankit7.droid.moodtracker.data.database.entities.TaskIcon
 import lostankit7.droid.moodtracker.databinding.FragmentDisplayListBinding
-import lostankit7.droid.moodtracker.databinding.TaskEntryActionBarBinding
 import lostankit7.droid.moodtracker.di.AppComponent
 import lostankit7.droid.moodtracker.presentation.adapter.IconListRvAdapter
 import lostankit7.droid.moodtracker.presentation.viewmodel.TaskEntryViewModel
@@ -72,7 +72,7 @@ class DisplayTasksOfCategoryFragment :
         binding.button.text = resources.getString(R.string.text_add_new_task)
     }
 
-   override fun updateActionBar(actionBar: TaskEntryActionBarBinding) = with(actionBar){
+   override fun updateActionBar(actionBar: CommonActionBarBinding) = with(actionBar){
         super.updateActionBar(actionBar)
         showBackButton()
     }

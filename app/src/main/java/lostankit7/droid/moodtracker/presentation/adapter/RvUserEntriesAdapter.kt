@@ -10,9 +10,9 @@ import lostankit7.droid.moodtracker.R
 import lostankit7.droid.moodtracker.core_presentation.adapter.BaseDiffRvAdapter
 import lostankit7.droid.moodtracker.data.database.entities.UserEntry
 import lostankit7.droid.moodtracker.databinding.ItemRvUserEntriesBinding
-import lostankit7.droid.moodtracker.utils.DialogHelper
+import lostankit7.droid.moodtracker.core_presentation.utils.DialogHelper
 import lostankit7.droid.moodtracker.core.utils.Constants.DB_ENTRY_SEPARATOR
-import lostankit7.droid.moodtracker.utils.hide
+import lostankit7.droid.moodtracker.core_presentation.utils.hide
 
 class RvUserEntriesAdapter(
     private val itemClicked: (MenuItem, UserEntry) -> Boolean,

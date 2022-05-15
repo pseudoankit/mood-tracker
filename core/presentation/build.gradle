@@ -36,7 +36,8 @@ android {
 }
 
 dependencies {
-    //di
+    implementation(Dependencies.customViews)
+
     implementation(Dependencies.dagger)
     kapt(Dependencies.daggerCompiler)
 

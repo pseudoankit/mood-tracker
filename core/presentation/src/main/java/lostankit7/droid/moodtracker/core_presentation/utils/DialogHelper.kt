@@ -1,4 +1,4 @@
-package lostankit7.droid.moodtracker.utils
+package lostankit7.droid.moodtracker.core_presentation.utils
 
 import android.app.Activity
 import android.app.Dialog

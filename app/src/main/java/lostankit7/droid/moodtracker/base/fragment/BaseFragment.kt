@@ -12,9 +12,9 @@ import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import androidx.viewbinding.ViewBinding
 import lostankit7.droid.moodtracker.R
-import lostankit7.droid.moodtracker.databinding.TaskEntryActionBarBinding
+import lostankit7.droid.moodtracker.core_presentation.databinding.CommonActionBarBinding
+import lostankit7.droid.moodtracker.core_presentation.utils.hide
 import lostankit7.droid.moodtracker.presentation.MainActivity
-import lostankit7.droid.moodtracker.utils.hide
 
 abstract class BaseFragment<VB : ViewBinding> : Fragment() {
 
@@ -52,7 +52,7 @@ abstract class BaseFragment<VB : ViewBinding> : Fragment() {
     open suspend fun registerObservers() {}
     open fun initListeners() {}
 
-    open fun updateActionBar(actionBar: TaskEntryActionBarBinding) {
+    open fun updateActionBar(actionBar: CommonActionBarBinding) {
         actionBar.leftIcon1.text = resources.getString(R.string.fas_circular_back)
         actionBar.root.hide()
     }

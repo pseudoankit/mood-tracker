@@ -5,16 +5,16 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.navArgs
 import lostankit7.droid.moodtracker.R
 import lostankit7.droid.moodtracker.base.fragment.BaseDaggerFragment
+import lostankit7.droid.moodtracker.core_presentation.databinding.CommonActionBarBinding
 import lostankit7.droid.moodtracker.data.database.entities.Icon
 import lostankit7.droid.moodtracker.data.database.entities.TaskIcon
 import lostankit7.droid.moodtracker.databinding.FragmentAddTaskEntryBinding
-import lostankit7.droid.moodtracker.databinding.TaskEntryActionBarBinding
 import lostankit7.droid.moodtracker.di.AppComponent
 import lostankit7.droid.moodtracker.presentation.adapter.RvTaskAdapter
 import lostankit7.droid.moodtracker.presentation.adapter.TaskIconRvAdapter
 import lostankit7.droid.moodtracker.presentation.viewmodel.TaskEntryViewModel
-import lostankit7.droid.moodtracker.utils.hideKeyBoard
-import lostankit7.droid.moodtracker.utils.show
+import lostankit7.droid.moodtracker.core_presentation.utils.hideKeyBoard
+import lostankit7.droid.moodtracker.core_presentation.utils.show
 import lostankit7.droid.moodtracker.utils.showBackAndSaveButton
 
 class AddTaskEntryFragment : BaseDaggerFragment<FragmentAddTaskEntryBinding, TaskEntryViewModel>() {
@@ -66,7 +66,7 @@ class AddTaskEntryFragment : BaseDaggerFragment<FragmentAddTaskEntryBinding, Tas
         )
     }
 
-    override fun updateActionBar(actionBar: TaskEntryActionBarBinding) = with(actionBar){
+    override fun updateActionBar(actionBar: CommonActionBarBinding) = with(actionBar){
         super.updateActionBar(actionBar)
         showBackAndSaveButton()
         leftIcon1.text = resources.getString(R.string.fas_back)

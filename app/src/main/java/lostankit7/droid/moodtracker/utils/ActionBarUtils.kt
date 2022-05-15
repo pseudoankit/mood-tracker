@@ -1,8 +1,10 @@
 package lostankit7.droid.moodtracker.utils
 
-import lostankit7.droid.moodtracker.databinding.TaskEntryActionBarBinding
+import lostankit7.droid.moodtracker.core_presentation.databinding.CommonActionBarBinding
+import lostankit7.droid.moodtracker.core_presentation.utils.hide
+import lostankit7.droid.moodtracker.core_presentation.utils.show
 
-fun TaskEntryActionBarBinding.showBackButton() {
+fun CommonActionBarBinding.showBackButton() {
     root.show()
     leftIcon1.show()
     leftIcon2.hide()
@@ -10,7 +12,7 @@ fun TaskEntryActionBarBinding.showBackButton() {
     btnSave.hide()
 }
 
-fun TaskEntryActionBarBinding.showBackAndSaveButton() {
+fun CommonActionBarBinding.showBackAndSaveButton() {
     root.show()
     leftIcon1.show()
     leftIcon2.hide()

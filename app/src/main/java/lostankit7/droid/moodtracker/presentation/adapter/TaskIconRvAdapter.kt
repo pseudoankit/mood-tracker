@@ -9,7 +9,7 @@ import lostankit7.droid.moodtracker.core_presentation.adapter.BaseDiffRvAdapter
 import lostankit7.droid.moodtracker.data.database.entities.Icon
 import lostankit7.droid.moodtracker.data.database.entities.TaskIcon
 import lostankit7.droid.moodtracker.databinding.ItemRvTaskIconBinding
-import lostankit7.droid.moodtracker.utils.invert
+import lostankit7.droid.moodtracker.core_presentation.utils.invert
 
 class TaskIconRvAdapter(
     private val taskSelected: (Icon) -> Unit, private val isMultiSelect: Boolean
