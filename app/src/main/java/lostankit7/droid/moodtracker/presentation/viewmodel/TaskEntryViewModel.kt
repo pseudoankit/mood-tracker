@@ -5,7 +5,7 @@ import lostankit7.droid.moodtracker.data_layer.database.entities.TaskCategory
 import lostankit7.droid.moodtracker.data_layer.database.entities.TaskIcon
 import lostankit7.droid.moodtracker.data_layer.repository.*
 import lostankit7.droid.moodtracker.domain.Mapper
-import lostankit7.droid.moodtracker.model.MoodEntry
+import lostankit7.droid.moodtracker.domain.model.MoodEntry
 import javax.inject.Inject
 
 class TaskEntryViewModel @Inject constructor(

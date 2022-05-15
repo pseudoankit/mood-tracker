@@ -3,14 +3,17 @@ package lostankit7.droid.moodtracker.presentation.fragment.addentry
 import android.view.LayoutInflater
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
+import lostankit7.droid.moodtracker.MyApplication
 import lostankit7.droid.moodtracker.base.fragment.BaseDaggerFragment
+import lostankit7.droid.moodtracker.common.di.utils.InjectUtils
 import lostankit7.droid.moodtracker.common.utils.getCurrentDate
 import lostankit7.droid.moodtracker.common.utils.getCurrentTime
 import lostankit7.droid.moodtracker.common.utils.getSelectedDate
 import lostankit7.droid.moodtracker.common.utils.getSelectedTime
 import lostankit7.droid.moodtracker.data_layer.database.entities.MoodIcon
 import lostankit7.droid.moodtracker.databinding.FragmentAddMoodEntryBinding
-import lostankit7.droid.moodtracker.model.MoodEntry
+import lostankit7.droid.moodtracker.di.AppComponent
+import lostankit7.droid.moodtracker.domain.model.MoodEntry
 import lostankit7.droid.moodtracker.presentation.adapter.RvMoodIconAdapter
 import lostankit7.droid.moodtracker.presentation.viewmodel.MoodEntryViewModel
 
@@ -77,9 +80,13 @@ class AddMoodEntryFragment : BaseDaggerFragment<FragmentAddMoodEntryBinding, Moo
     override fun inflateLayout(layoutInflater: LayoutInflater) =
         FragmentAddMoodEntryBinding.inflate(layoutInflater)
 
-
     override fun injectFragment() {
-
+        DaggerAppComponent
+            .builder()
+            .baseComponent(InjectUtils.provideBaseComponent(
+                activity?.applicationContext ?: error(""))
+            ).build()
+            .inject(this)
     }
 
 }

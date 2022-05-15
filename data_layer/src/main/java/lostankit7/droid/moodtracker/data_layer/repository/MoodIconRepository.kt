@@ -2,10 +2,11 @@ package lostankit7.droid.moodtracker.data_layer.repository
 
 import lostankit7.droid.moodtracker.data_layer.database.dao.MoodIconDao
 import lostankit7.droid.moodtracker.data_layer.database.entities.MoodIcon
+import javax.inject.Inject
 import javax.inject.Singleton
 
 @Singleton
-class MoodIconRepository(private val moodIconDao: MoodIconDao) {
+class MoodIconRepository @Inject constructor(private val moodIconDao: MoodIconDao) {
 
     val moodIcons = moodIconDao.getMoodIcons()
 

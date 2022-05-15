@@ -5,9 +5,9 @@ import android.view.MenuItem
 import androidx.lifecycle.ViewModelProvider
 import lostankit7.droid.moodtracker.R
 import lostankit7.droid.moodtracker.base.fragment.BaseDaggerFragment
+import lostankit7.droid.moodtracker.common.di.utils.InjectUtils
 import lostankit7.droid.moodtracker.data_layer.database.entities.UserEntry
 import lostankit7.droid.moodtracker.databinding.FragmentDisplayUserEntriesBinding
-import lostankit7.droid.moodtracker.di.AppComponent
 import lostankit7.droid.moodtracker.presentation.adapter.RvUserEntriesAdapter
 import lostankit7.droid.moodtracker.presentation.viewmodel.UserEntriesViewModel
 
@@ -36,8 +36,13 @@ abstract class DisplayUserEntriesBaseFragment : BaseDaggerFragment<FragmentDispl
     override fun inflateLayout(layoutInflater: LayoutInflater) =
         FragmentDisplayUserEntriesBinding.inflate(layoutInflater)
 
-    override fun injectFragment(appComponent: AppComponent) {
-        appComponent.inject(this)
+    override fun injectFragment() {
+        DaggerAppComponent
+            .builder()
+            .baseComponent(InjectUtils.provideBaseComponent(
+                activity?.applicationContext ?: error(""))
+            ).build()
+            .inject(this)
     }
 
     override fun initiateViewModel(viewModelProvider: ViewModelProvider) =

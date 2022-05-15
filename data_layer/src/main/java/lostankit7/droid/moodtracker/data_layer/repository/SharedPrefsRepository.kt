@@ -2,13 +2,14 @@ package lostankit7.droid.moodtracker.data_layer.repository
 
 import android.content.Context
 import android.content.SharedPreferences
+import lostankit7.droid.moodtracker.common.di.scope.AppContext
 import lostankit7.droid.moodtracker.data_layer.repository.SharedPrefsRepository.SharedPrefs.get
 import lostankit7.droid.moodtracker.data_layer.repository.SharedPrefsRepository.SharedPrefs.set
 import javax.inject.Inject
 import javax.inject.Singleton
 
 @Singleton
-class SharedPrefsRepository @Inject constructor(context: Context) {
+class SharedPrefsRepository @Inject constructor(@AppContext context: Context) {
     private val prefs = context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
 
     fun isInitialLaunch(value: Boolean) {

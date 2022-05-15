@@ -4,6 +4,7 @@ import androidx.lifecycle.ViewModel
 import dagger.Binds
 import dagger.Module
 import dagger.multibindings.IntoMap
+import lostankit7.droid.moodtracker.base.viewmodel.ViewModelKey
 import lostankit7.droid.moodtracker.presentation.viewmodel.MoodEntryViewModel
 import lostankit7.droid.moodtracker.presentation.viewmodel.SplashViewModel
 import lostankit7.droid.moodtracker.presentation.viewmodel.TaskEntryViewModel

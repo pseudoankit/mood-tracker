@@ -7,7 +7,6 @@ import androidx.lifecycle.ViewModelProvider
 import lostankit7.droid.moodtracker.R
 import lostankit7.droid.moodtracker.base.fragment.BaseDaggerFragment
 import lostankit7.droid.moodtracker.databinding.FragmentMoreBinding
-import lostankit7.droid.moodtracker.di.AppComponent
 import lostankit7.droid.moodtracker.presentation.viewmodel.MoreViewModel
 import lostankit7.droid.moodtracker.common.utils.hide
 import lostankit7.droid.moodtracker.common.utils.hideKeyBoard
@@ -56,8 +55,13 @@ class MoreFragment : BaseDaggerFragment<FragmentMoreBinding, MoreViewModel>() {
     override fun initiateViewModel(viewModelProvider: ViewModelProvider) =
         viewModelProvider[MoreViewModel::class.java]
 
-    override fun injectFragment(appComponent: AppComponent) {
-        appComponent.inject(this)
+    override fun injectFragment() {
+        DaggerAppComponent
+            .builder()
+            .baseComponent(InjectUtils.provideBaseComponent(
+                activity?.applicationContext ?: error(""))
+            ).build()
+            .inject(this)
     }
 
 }

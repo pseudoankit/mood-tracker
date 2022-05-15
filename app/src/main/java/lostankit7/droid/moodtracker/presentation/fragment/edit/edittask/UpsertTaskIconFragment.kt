@@ -16,7 +16,6 @@ import lostankit7.droid.moodtracker.data_layer.database.entities.Suggestion
 import lostankit7.droid.moodtracker.data_layer.database.entities.TaskIcon
 import lostankit7.droid.moodtracker.databinding.FragmentUpsertMoodTaskIconBinding
 import lostankit7.droid.moodtracker.databinding.TaskEntryActionBarBinding
-import lostankit7.droid.moodtracker.di.AppComponent
 import lostankit7.droid.moodtracker.presentation.adapter.TaskIconRvAdapter
 import lostankit7.droid.moodtracker.presentation.adapter.TextRvAdapter
 import lostankit7.droid.moodtracker.presentation.viewmodel.TaskEntryViewModel
@@ -96,8 +95,13 @@ class UpsertTaskIconFragment :
         showBackAndSaveButton()
     }
 
-    override fun injectFragment(appComponent: AppComponent) {
-        appComponent.inject(this)
+    override fun injectFragment() {
+        DaggerAppComponent
+            .builder()
+            .baseComponent(InjectUtils.provideBaseComponent(
+                activity?.applicationContext ?: error(""))
+            ).build()
+            .inject(this)
     }
 
     override fun initiateViewModel(viewModelProvider: ViewModelProvider) =

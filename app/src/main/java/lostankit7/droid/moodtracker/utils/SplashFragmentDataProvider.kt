@@ -1,4 +1,4 @@
-package lostankit7.droid.moodtracker.utils.constant
+package lostankit7.droid.moodtracker.utils
 
 import android.content.Context
 import lostankit7.droid.moodtracker.R

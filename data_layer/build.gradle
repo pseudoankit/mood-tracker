@@ -42,3 +42,7 @@ android {
         implementation "androidx.lifecycle:lifecycle-livedata-ktx:$rootProject.lifecycleVersion"
     }
 }
+
+dependencies {
+    implementation project(path: ':common')
+}

@@ -11,7 +11,6 @@ import lostankit7.droid.moodtracker.data_layer.database.entities.Icon
 import lostankit7.droid.moodtracker.data_layer.database.entities.TaskIcon
 import lostankit7.droid.moodtracker.databinding.FragmentDisplayListBinding
 import lostankit7.droid.moodtracker.databinding.TaskEntryActionBarBinding
-import lostankit7.droid.moodtracker.di.AppComponent
 import lostankit7.droid.moodtracker.presentation.adapter.IconListRvAdapter
 import lostankit7.droid.moodtracker.presentation.viewmodel.TaskEntryViewModel
 
@@ -76,8 +75,13 @@ class DisplayTasksOfCategoryFragment :
         showBackButton()
     }
 
-    override fun injectFragment(appComponent: AppComponent) {
-        appComponent.inject(this)
+    override fun injectFragment() {
+        DaggerAppComponent
+            .builder()
+            .baseComponent(InjectUtils.provideBaseComponent(
+                activity?.applicationContext ?: error(""))
+            ).build()
+            .inject(this)
     }
 
     override fun inflateLayout(layoutInflater: LayoutInflater) =

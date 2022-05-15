@@ -8,7 +8,6 @@ import lostankit7.droid.moodtracker.data_layer.database.entities.Icon
 import lostankit7.droid.moodtracker.data_layer.database.entities.TaskIcon
 import lostankit7.droid.moodtracker.databinding.FragmentAddTaskEntryBinding
 import lostankit7.droid.moodtracker.databinding.TaskEntryActionBarBinding
-import lostankit7.droid.moodtracker.di.AppComponent
 import lostankit7.droid.moodtracker.presentation.adapter.RvTaskAdapter
 import lostankit7.droid.moodtracker.presentation.adapter.TaskIconRvAdapter
 import lostankit7.droid.moodtracker.presentation.viewmodel.TaskEntryViewModel
@@ -80,8 +79,13 @@ class AddTaskEntryFragment : BaseDaggerFragment<FragmentAddTaskEntryBinding, Tas
     override fun initiateViewModel(viewModelProvider: ViewModelProvider) =
         viewModelProvider[TaskEntryViewModel::class.java]
 
-    override fun injectFragment(appComponent: AppComponent) {
-        appComponent.inject(this)
+    override fun injectFragment() {
+        DaggerAppComponent
+            .builder()
+            .baseComponent(InjectUtils.provideBaseComponent(
+                activity?.applicationContext ?: error(""))
+            ).build()
+            .inject(this)
     }
 
 }

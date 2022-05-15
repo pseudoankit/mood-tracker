@@ -1,9 +1,7 @@
 package lostankit7.droid.moodtracker.di
 
-import android.content.Context
-import dagger.BindsInstance
 import dagger.Component
-import lostankit7.droid.moodtracker.presentation.fragment.splash.SplashFragment
+import lostankit7.droid.moodtracker.data_layer.di.module.DataBaseModule
 import lostankit7.droid.moodtracker.presentation.fragment.addentry.AddMoodEntryFragment
 import lostankit7.droid.moodtracker.presentation.fragment.addentry.AddTaskEntryFragment
 import lostankit7.droid.moodtracker.presentation.fragment.displayentry.DisplayUserEntriesBaseFragment
@@ -13,17 +11,12 @@ import lostankit7.droid.moodtracker.presentation.fragment.edit.edittask.DisplayT
 import lostankit7.droid.moodtracker.presentation.fragment.edit.edittask.DisplayTasksOfCategoryFragment
 import lostankit7.droid.moodtracker.presentation.fragment.edit.edittask.UpsertTaskIconFragment
 import lostankit7.droid.moodtracker.presentation.fragment.home.MoreFragment
+import lostankit7.droid.moodtracker.presentation.fragment.splash.SplashFragment
 import javax.inject.Singleton
 
 @Singleton
 @Component(modules = [DataBaseModule::class, ViewModelModule::class])
 interface AppComponent {
-
-    @Component.Factory
-    interface Factory {
-        fun create(@BindsInstance context: Context): AppComponent
-    }
-
     fun inject(frag: SplashFragment)
     fun inject(frag: DisplayUserEntriesBaseFragment)
     fun inject(frag: AddMoodEntryFragment)

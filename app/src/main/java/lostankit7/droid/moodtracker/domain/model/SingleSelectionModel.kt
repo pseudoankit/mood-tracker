@@ -1,4 +1,4 @@
-package lostankit7.droid.moodtracker.model
+package lostankit7.droid.moodtracker.domain.model
 
 data class SingleSelectionModel(
     val title: String,

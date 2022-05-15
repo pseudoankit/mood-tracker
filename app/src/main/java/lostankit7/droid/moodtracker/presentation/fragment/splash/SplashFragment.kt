@@ -1,4 +1,4 @@
-package lostankit7.droid.moodtracker.presentation
+package lostankit7.droid.moodtracker.presentation.fragment.splash
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,10 +7,10 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import kotlinx.coroutines.delay
 import lostankit7.droid.moodtracker.base.fragment.BaseDaggerFragment
+import lostankit7.droid.moodtracker.common.di.utils.InjectUtils
 import lostankit7.droid.moodtracker.databinding.FragmentSplashBinding
-import lostankit7.droid.moodtracker.presentation.fragment.splash.SplashFragmentDirections
 import lostankit7.droid.moodtracker.presentation.viewmodel.SplashViewModel
-import lostankit7.droid.moodtracker.utils.constant.SplashFragmentDataProvider
+import lostankit7.droid.moodtracker.utils.SplashFragmentDataProvider
 
 private const val SPLASH_TIME = 1500L
 
@@ -42,7 +42,12 @@ class SplashFragment : BaseDaggerFragment<FragmentSplashBinding, SplashViewModel
         FragmentSplashBinding.inflate(layoutInflater)
 
     override fun injectFragment() {
-
+        DaggerAppComponent
+            .builder()
+            .baseComponent(InjectUtils.provideBaseComponent(
+                activity?.applicationContext ?: error(""))
+            ).build()
+            .inject(this)
     }
 
     override fun initiateViewModel(viewModelProvider: ViewModelProvider) =
