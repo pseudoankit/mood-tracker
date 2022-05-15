@@ -1,14 +1,14 @@
-package lostankit7.droid.moodtracker.utils
+package lostankit7.droid.moodtracker.core.utils
 
 import android.app.DatePickerDialog
 import android.app.TimePickerDialog
 import android.content.Context
-import lostankit7.droid.moodtracker.presentation.fragment.splash.Constants.AM
-import lostankit7.droid.moodtracker.presentation.fragment.splash.Constants.PM
-import lostankit7.droid.moodtracker.presentation.fragment.splash.Constants.DATE_FORMAT
-import lostankit7.droid.moodtracker.presentation.fragment.splash.Constants.DATE_SEPARATOR
-import lostankit7.droid.moodtracker.presentation.fragment.splash.Constants.TIME_FORMAT
-import lostankit7.droid.moodtracker.presentation.fragment.splash.Constants.TIME_SEPARATOR
+import lostankit7.droid.moodtracker.core.utils.Constants.AM
+import lostankit7.droid.moodtracker.core.utils.Constants.DATE_FORMAT
+import lostankit7.droid.moodtracker.core.utils.Constants.DATE_SEPARATOR
+import lostankit7.droid.moodtracker.core.utils.Constants.PM
+import lostankit7.droid.moodtracker.core.utils.Constants.TIME_FORMAT
+import lostankit7.droid.moodtracker.core.utils.Constants.TIME_SEPARATOR
 import java.text.SimpleDateFormat
 import java.util.*
 

@@ -40,6 +40,8 @@ android {
 }
 
 dependencies {
+    implementation(project(Modules.core))
+
     //custom views
     implementation(Dependencies.customViews)
 

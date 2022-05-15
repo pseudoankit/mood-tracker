@@ -11,7 +11,7 @@ import lostankit7.droid.moodtracker.base.adapter.BaseDiffRvAdapter
 import lostankit7.droid.moodtracker.data.database.entities.UserEntry
 import lostankit7.droid.moodtracker.databinding.ItemRvUserEntriesBinding
 import lostankit7.droid.moodtracker.utils.DialogHelper
-import lostankit7.droid.moodtracker.presentation.fragment.splash.Constants.DB_ENTRY_SEPARATOR
+import lostankit7.droid.moodtracker.core.utils.Constants.DB_ENTRY_SEPARATOR
 import lostankit7.droid.moodtracker.utils.hide
 
 class RvUserEntriesAdapter(

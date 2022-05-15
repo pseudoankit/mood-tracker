@@ -1,4 +1,4 @@
-package lostankit7.droid.moodtracker.base.factory
+package lostankit7.droid.moodtracker.core.di.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider

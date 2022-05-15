@@ -1,15 +1,15 @@
-package lostankit7.droid.moodtracker.base.entity
+package lostankit7.droid.moodtracker.core.utils.entity
 
 import android.content.Context
 import androidx.annotation.StringRes
 
-sealed class StringHandler {
+sealed class UiText {
 
-        data class NormalString(val string: String) : StringHandler()
+        data class NormalString(val string: String) : UiText()
 
         class ResourceString(
             @StringRes val stringId: Int, vararg val arguments: Any
-        ) : StringHandler()
+        ) : UiText()
 
         fun asString(context: Context): String {
             return when (this) {
