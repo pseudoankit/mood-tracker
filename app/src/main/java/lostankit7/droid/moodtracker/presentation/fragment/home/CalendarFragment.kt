@@ -3,7 +3,7 @@ package lostankit7.droid.moodtracker.presentation.fragment.home
 import android.view.LayoutInflater
 import lostankit7.droid.moodtracker.base.fragment.BaseFragment
 import lostankit7.droid.moodtracker.databinding.FragmentCalendarBinding
-import lostankit7.droid.moodtracker.utils.formatDate
+import lostankit7.droid.moodtracker.common.utils.formatDate
 
 class CalendarFragment : BaseFragment<FragmentCalendarBinding>() {
 

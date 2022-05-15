@@ -8,6 +8,9 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import lostankit7.droid.moodtracker.R
 import lostankit7.droid.moodtracker.base.fragment.BaseDaggerFragment
+import lostankit7.droid.moodtracker.common.utils.hideKeyBoard
+import lostankit7.droid.moodtracker.common.utils.showToast
+import lostankit7.droid.moodtracker.common.utils.updateTextSize
 import lostankit7.droid.moodtracker.data.database.entities.Icon
 import lostankit7.droid.moodtracker.data.database.entities.Suggestion
 import lostankit7.droid.moodtracker.data.database.entities.TaskIcon

@@ -4,13 +4,15 @@ import android.view.LayoutInflater
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import lostankit7.droid.moodtracker.base.fragment.BaseDaggerFragment
+import lostankit7.droid.moodtracker.common.utils.getCurrentDate
+import lostankit7.droid.moodtracker.common.utils.getCurrentTime
+import lostankit7.droid.moodtracker.common.utils.getSelectedDate
+import lostankit7.droid.moodtracker.common.utils.getSelectedTime
 import lostankit7.droid.moodtracker.data.database.entities.MoodIcon
 import lostankit7.droid.moodtracker.databinding.FragmentAddMoodEntryBinding
-import lostankit7.droid.moodtracker.di.AppComponent
 import lostankit7.droid.moodtracker.model.MoodEntry
 import lostankit7.droid.moodtracker.presentation.adapter.RvMoodIconAdapter
 import lostankit7.droid.moodtracker.presentation.viewmodel.MoodEntryViewModel
-import lostankit7.droid.moodtracker.utils.*
 
 class AddMoodEntryFragment : BaseDaggerFragment<FragmentAddMoodEntryBinding, MoodEntryViewModel>() {
 
@@ -76,8 +78,8 @@ class AddMoodEntryFragment : BaseDaggerFragment<FragmentAddMoodEntryBinding, Moo
         FragmentAddMoodEntryBinding.inflate(layoutInflater)
 
 
-    override fun injectFragment(appComponent: AppComponent) {
-        appComponent.inject(this)
+    override fun injectFragment() {
+
     }
 
 }

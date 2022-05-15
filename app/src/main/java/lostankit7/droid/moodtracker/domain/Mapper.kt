@@ -1,9 +1,9 @@
 package lostankit7.droid.moodtracker.domain
 
+import lostankit7.droid.moodtracker.common.utils.Constants
 import lostankit7.droid.moodtracker.data.database.entities.TaskIcon
 import lostankit7.droid.moodtracker.data.database.entities.UserEntry
 import lostankit7.droid.moodtracker.model.MoodEntry
-import lostankit7.droid.moodtracker.presentation.fragment.splash.Constants
 
 object Mapper {
     fun mapDataToUserEntry(

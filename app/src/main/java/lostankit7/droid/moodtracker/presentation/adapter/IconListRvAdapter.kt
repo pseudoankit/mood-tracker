@@ -9,7 +9,7 @@ import lostankit7.droid.moodtracker.data.database.entities.Icon
 import lostankit7.droid.moodtracker.data.database.entities.MoodIcon
 import lostankit7.droid.moodtracker.data.database.entities.TaskIcon
 import lostankit7.droid.moodtracker.databinding.ItemIconListBinding
-import lostankit7.droid.moodtracker.utils.DialogHelper
+import lostankit7.droid.moodtracker.common.utils.DialogHelper
 
 class IconListRvAdapter(
     private val itemClick: (Icon) -> Unit,

@@ -8,11 +8,11 @@ import android.view.ViewGroup
 import android.widget.TextView
 import lostankit7.droid.moodtracker.R
 import lostankit7.droid.moodtracker.base.adapter.BaseDiffRvAdapter
+import lostankit7.droid.moodtracker.common.utils.Constants
 import lostankit7.droid.moodtracker.data.database.entities.UserEntry
 import lostankit7.droid.moodtracker.databinding.ItemRvUserEntriesBinding
-import lostankit7.droid.moodtracker.utils.DialogHelper
-import lostankit7.droid.moodtracker.presentation.fragment.splash.Constants.DB_ENTRY_SEPARATOR
-import lostankit7.droid.moodtracker.utils.hide
+import lostankit7.droid.moodtracker.common.utils.DialogHelper
+import lostankit7.droid.moodtracker.common.utils.hide
 
 class RvUserEntriesAdapter(
     private val itemClicked: (MenuItem, UserEntry) -> Boolean,
@@ -38,8 +38,8 @@ class RvUserEntriesAdapter(
 
     override fun bindViewHolder(item: UserEntry, position: Int, binding: ItemRvUserEntriesBinding) {
         val tasks = SpannableStringBuilder()
-        val icons = item.taskIcons.split(DB_ENTRY_SEPARATOR)
-        val names = item.taskNames.split(DB_ENTRY_SEPARATOR)
+        val icons = item.taskIcons.split(Constants.DB_ENTRY_SEPARATOR)
+        val names = item.taskNames.split(Constants.DB_ENTRY_SEPARATOR)
         for (i in icons.indices) {
             tasks.append("  |  ${icons[i]} ${names[i]}")
         }

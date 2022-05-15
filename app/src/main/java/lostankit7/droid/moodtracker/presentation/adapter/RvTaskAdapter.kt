@@ -9,10 +9,9 @@ import lostankit7.droid.moodtracker.base.adapter.BaseDiffRvAdapter
 import lostankit7.droid.moodtracker.data.database.entities.Icon
 import lostankit7.droid.moodtracker.data.database.entities.TaskCategory
 import lostankit7.droid.moodtracker.databinding.ItemRvExpandableViewBinding
-import lostankit7.droid.moodtracker.presentation.fragment.splash.Constants
-import lostankit7.droid.moodtracker.utils.hide
-import lostankit7.droid.moodtracker.utils.show
-
+import lostankit7.droid.moodtracker.common.utils.hide
+import lostankit7.droid.moodtracker.common.utils.show
+const val SPAN_COUNT_TASK_RV = 5
 class RvTaskAdapter(
     private val getTaskIcons: (String, TaskIconRvAdapter) -> Unit,
     private val taskSelected: (Icon) -> Unit
@@ -46,7 +45,7 @@ class RvTaskAdapter(
     }
 
     private fun RecyclerView.setUpRecyclerView(category: String) {
-        layoutManager = GridLayoutManager(context, Constants.SPAN_COUNT_TASK_RV)
+        layoutManager = GridLayoutManager(context, SPAN_COUNT_TASK_RV)
 
         val mAdapter = TaskIconRvAdapter.newInstance(taskSelected, true)
         adapter = mAdapter

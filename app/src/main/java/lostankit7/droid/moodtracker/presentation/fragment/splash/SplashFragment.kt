@@ -11,7 +11,7 @@ import lostankit7.droid.moodtracker.databinding.FragmentSplashBinding
 import lostankit7.droid.moodtracker.di.AppComponent
 import lostankit7.droid.moodtracker.utils.constant.SplashFragmentDataProvider
 import lostankit7.droid.moodtracker.presentation.viewmodel.SplashViewModel
-
+const val SPLASH_TIME = 1500L
 class SplashFragment : BaseDaggerFragment<FragmentSplashBinding, SplashViewModel>() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -28,7 +28,7 @@ class SplashFragment : BaseDaggerFragment<FragmentSplashBinding, SplashViewModel
         )
 
         lifecycleScope.launchWhenCreated {
-            delay(Constants.SPLASH_TIME)
+            delay(SPLASH_TIME)
             navigateTo(
                 SplashFragmentDirections.actionSplashFragmentToDisplayAllUserEntriesFragment()
             )

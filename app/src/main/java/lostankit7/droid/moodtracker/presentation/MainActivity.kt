@@ -7,13 +7,13 @@ import androidx.navigation.NavDestination
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import lostankit7.droid.moodtracker.R
+import lostankit7.droid.moodtracker.common.databinding.TaskEntryActionBarBinding
+import lostankit7.droid.moodtracker.common.utils.hide
+import lostankit7.droid.moodtracker.common.utils.show
 import lostankit7.droid.moodtracker.databinding.ActivityMainBinding
-import lostankit7.droid.moodtracker.databinding.TaskEntryActionBarBinding
 import lostankit7.droid.moodtracker.presentation.fragment.addentry.AddTaskEntryFragment
 import lostankit7.droid.moodtracker.presentation.fragment.edit.editmood.UpsertMoodIconFragment
 import lostankit7.droid.moodtracker.presentation.fragment.edit.edittask.UpsertTaskIconFragment
-import lostankit7.droid.moodtracker.utils.hide
-import lostankit7.droid.moodtracker.utils.show
 
 
 class MainActivity : AppCompatActivity() {

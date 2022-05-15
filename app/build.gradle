@@ -41,6 +41,9 @@ android {
 
 dependencies {
 
+    //mm
+    implementation project(path: ':common')
+
     //custom views
     implementation 'com.github.lostankit7:AndroidCustomViews:1.2'
 
