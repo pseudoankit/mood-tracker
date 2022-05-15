@@ -1,4 +1,4 @@
-package lostankit7.droid.moodtracker.core_data
+package lostankit7.droid.moodtracker.core
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
@@ -19,6 +19,6 @@ class ExampleInstrumentedTest {
     fun useAppContext() {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getInstrumentation().targetContext
-        assertEquals("lostankit7.droid.moodtracker.core_data.test", appContext.packageName)
+        assertEquals("lostankit7.droid.moodtracker.common.test", appContext.packageName)
     }
 }

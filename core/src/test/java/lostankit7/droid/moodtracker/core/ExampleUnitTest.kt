@@ -1,4 +1,4 @@
-package lostankit7.droid.moodtracker.core_domain
+package lostankit7.droid.moodtracker.core
 
 import org.junit.Test
 
