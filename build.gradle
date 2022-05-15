@@ -5,28 +5,12 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath "com.android.tools.build:gradle:7.0.4"
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.20"
-
-        //for firebase
-        classpath "com.google.gms:google-services:4.3.10"
-
-        //nav implementation for safe args i.e., it ensures type safety
-        classpath "androidx.navigation:navigation-safe-args-gradle-plugin:2.4.2"
-
-        // NOTE: Do not place your application dependencies here; they belong
-        // in the individual module build.gradle files
+        classpath(Build.androidBuildTools)
+        classpath(Build.kotlinGradlePlugin)
+        classpath(Build.navigationSafeArgs)
     }
 }
 
 task clean(type: Delete) {
     delete rootProject.buildDir
-}
-
-ext {
-    navVersion = '2.4.2'
-    //using 2.4.0-beta,don't update while using in m1 chip
-    roomVersion = '2.4.0-beta01'
-    lifecycleVersion = '2.4.1'
-    daggerVersion = "2.40"
 }
