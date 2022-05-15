@@ -4,8 +4,8 @@ import android.view.LayoutInflater
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.navArgs
 import lostankit7.droid.moodtracker.base.fragment.BaseDaggerFragment
-import lostankit7.droid.moodtracker.data.database.entities.Icon
-import lostankit7.droid.moodtracker.data.database.entities.TaskIcon
+import lostankit7.droid.moodtracker.data_layer.database.entities.Icon
+import lostankit7.droid.moodtracker.data_layer.database.entities.TaskIcon
 import lostankit7.droid.moodtracker.databinding.FragmentAddTaskEntryBinding
 import lostankit7.droid.moodtracker.databinding.TaskEntryActionBarBinding
 import lostankit7.droid.moodtracker.di.AppComponent

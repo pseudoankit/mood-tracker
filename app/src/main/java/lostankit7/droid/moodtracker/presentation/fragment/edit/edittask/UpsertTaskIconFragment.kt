@@ -11,9 +11,9 @@ import lostankit7.droid.moodtracker.base.fragment.BaseDaggerFragment
 import lostankit7.droid.moodtracker.common.utils.hideKeyBoard
 import lostankit7.droid.moodtracker.common.utils.showToast
 import lostankit7.droid.moodtracker.common.utils.updateTextSize
-import lostankit7.droid.moodtracker.data.database.entities.Icon
-import lostankit7.droid.moodtracker.data.database.entities.Suggestion
-import lostankit7.droid.moodtracker.data.database.entities.TaskIcon
+import lostankit7.droid.moodtracker.data_layer.database.entities.Icon
+import lostankit7.droid.moodtracker.data_layer.database.entities.Suggestion
+import lostankit7.droid.moodtracker.data_layer.database.entities.TaskIcon
 import lostankit7.droid.moodtracker.databinding.FragmentUpsertMoodTaskIconBinding
 import lostankit7.droid.moodtracker.databinding.TaskEntryActionBarBinding
 import lostankit7.droid.moodtracker.di.AppComponent

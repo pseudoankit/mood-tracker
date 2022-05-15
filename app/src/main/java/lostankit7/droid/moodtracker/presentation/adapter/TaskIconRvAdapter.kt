@@ -6,8 +6,8 @@ import androidx.core.content.ContextCompat
 import lostankit7.droid.CustomTextView
 import lostankit7.droid.moodtracker.R
 import lostankit7.droid.moodtracker.base.adapter.BaseDiffRvAdapter
-import lostankit7.droid.moodtracker.data.database.entities.Icon
-import lostankit7.droid.moodtracker.data.database.entities.TaskIcon
+import lostankit7.droid.moodtracker.data_layer.database.entities.Icon
+import lostankit7.droid.moodtracker.data_layer.database.entities.TaskIcon
 import lostankit7.droid.moodtracker.databinding.ItemRvTaskIconBinding
 import lostankit7.droid.moodtracker.common.utils.invert
 

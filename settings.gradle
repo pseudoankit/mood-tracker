@@ -9,6 +9,6 @@ dependencyResolutionManagement {
 }
 rootProject.name = "Mood Tracker"
 include ':app'
-include ':more_section'
 include ':common'
 include ':home'
+include ':data_layer'

@@ -1,8 +1,8 @@
 package lostankit7.droid.moodtracker.presentation.viewmodel
 
 import lostankit7.droid.moodtracker.base.viewmodel.BaseViewModel
-import lostankit7.droid.moodtracker.data.database.entities.*
-import lostankit7.droid.moodtracker.data.repository.*
+import lostankit7.droid.moodtracker.data_layer.database.entities.*
+import lostankit7.droid.moodtracker.data_layer.repository.*
 import javax.inject.Inject
 
 class SplashViewModel @Inject constructor(

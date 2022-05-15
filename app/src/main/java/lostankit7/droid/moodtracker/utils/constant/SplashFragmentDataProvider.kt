@@ -2,7 +2,7 @@ package lostankit7.droid.moodtracker.utils.constant
 
 import android.content.Context
 import lostankit7.droid.moodtracker.R
-import lostankit7.droid.moodtracker.data.database.entities.*
+import lostankit7.droid.moodtracker.data_layer.database.entities.*
 
 object SplashFragmentDataProvider {
 

@@ -43,13 +43,10 @@ dependencies {
 
     //mm
     implementation project(path: ':common')
+    implementation project(path: ':data_layer')
 
     //custom views
     implementation 'com.github.lostankit7:AndroidCustomViews:1.2'
-
-    // Room components
-    implementation "androidx.room:room-ktx:$rootProject.roomVersion"
-    kapt "androidx.room:room-compiler:$rootProject.roomVersion"
 
     //live data , view model
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$rootProject.lifecycleVersion"

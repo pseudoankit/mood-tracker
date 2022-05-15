@@ -8,7 +8,7 @@ import lostankit7.droid.moodtracker.common.utils.getCurrentDate
 import lostankit7.droid.moodtracker.common.utils.getCurrentTime
 import lostankit7.droid.moodtracker.common.utils.getSelectedDate
 import lostankit7.droid.moodtracker.common.utils.getSelectedTime
-import lostankit7.droid.moodtracker.data.database.entities.MoodIcon
+import lostankit7.droid.moodtracker.data_layer.database.entities.MoodIcon
 import lostankit7.droid.moodtracker.databinding.FragmentAddMoodEntryBinding
 import lostankit7.droid.moodtracker.model.MoodEntry
 import lostankit7.droid.moodtracker.presentation.adapter.RvMoodIconAdapter

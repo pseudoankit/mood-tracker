@@ -6,8 +6,8 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import lostankit7.droid.moodtracker.R
 import lostankit7.droid.moodtracker.base.fragment.BaseDaggerFragment
-import lostankit7.droid.moodtracker.data.database.entities.Icon
-import lostankit7.droid.moodtracker.data.database.entities.TaskCategory
+import lostankit7.droid.moodtracker.data_layer.database.entities.Icon
+import lostankit7.droid.moodtracker.data_layer.database.entities.TaskCategory
 import lostankit7.droid.moodtracker.databinding.DialogTextEntryBinding
 import lostankit7.droid.moodtracker.databinding.FragmentDisplayListBinding
 import lostankit7.droid.moodtracker.databinding.TaskEntryActionBarBinding

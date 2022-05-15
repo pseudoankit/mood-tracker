@@ -5,7 +5,7 @@ import android.view.MenuItem
 import androidx.lifecycle.ViewModelProvider
 import lostankit7.droid.moodtracker.R
 import lostankit7.droid.moodtracker.base.fragment.BaseDaggerFragment
-import lostankit7.droid.moodtracker.data.database.entities.UserEntry
+import lostankit7.droid.moodtracker.data_layer.database.entities.UserEntry
 import lostankit7.droid.moodtracker.databinding.FragmentDisplayUserEntriesBinding
 import lostankit7.droid.moodtracker.di.AppComponent
 import lostankit7.droid.moodtracker.presentation.adapter.RvUserEntriesAdapter

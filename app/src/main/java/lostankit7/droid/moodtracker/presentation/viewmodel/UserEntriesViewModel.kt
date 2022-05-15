@@ -1,8 +1,8 @@
 package lostankit7.droid.moodtracker.presentation.viewmodel
 
 import lostankit7.droid.moodtracker.base.viewmodel.BaseViewModel
-import lostankit7.droid.moodtracker.data.database.entities.UserEntry
-import lostankit7.droid.moodtracker.data.repository.UserEntriesRepository
+import lostankit7.droid.moodtracker.data_layer.database.entities.UserEntry
+import lostankit7.droid.moodtracker.data_layer.repository.UserEntriesRepository
 import javax.inject.Inject
 
 class UserEntriesViewModel @Inject constructor(

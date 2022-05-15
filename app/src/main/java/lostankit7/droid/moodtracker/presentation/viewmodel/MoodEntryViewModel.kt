@@ -5,10 +5,10 @@ import androidx.lifecycle.MutableLiveData
 import lostankit7.droid.moodtracker.R
 import lostankit7.droid.moodtracker.base.entity.StringHandler
 import lostankit7.droid.moodtracker.base.viewmodel.BaseViewModel
-import lostankit7.droid.moodtracker.data.database.entities.MoodIcon
-import lostankit7.droid.moodtracker.data.repository.MoodIconRepository
-import lostankit7.droid.moodtracker.data.repository.SuggestedMoodIconRepository
-import lostankit7.droid.moodtracker.data.repository.SuggestedMoodNameRepository
+import lostankit7.droid.moodtracker.data_layer.database.entities.MoodIcon
+import lostankit7.droid.moodtracker.data_layer.repository.MoodIconRepository
+import lostankit7.droid.moodtracker.data_layer.repository.SuggestedMoodIconRepository
+import lostankit7.droid.moodtracker.data_layer.repository.SuggestedMoodNameRepository
 import javax.inject.Inject
 
 class MoodEntryViewModel @Inject constructor(

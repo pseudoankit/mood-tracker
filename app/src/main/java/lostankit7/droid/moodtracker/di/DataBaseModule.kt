@@ -4,8 +4,8 @@ import android.content.Context
 import androidx.room.Room
 import dagger.Module
 import dagger.Provides
-import lostankit7.droid.moodtracker.data.database.AppDatabase
-import lostankit7.droid.moodtracker.data.database.dao.*
+import lostankit7.droid.moodtracker.data_layer.database.AppDatabase
+import lostankit7.droid.moodtracker.data_layer.database.dao.*
 import javax.inject.Singleton
 
 @Module

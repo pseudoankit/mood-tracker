@@ -5,8 +5,8 @@ import android.view.MenuItem
 import androidx.lifecycle.ViewModelProvider
 import lostankit7.droid.moodtracker.R
 import lostankit7.droid.moodtracker.base.fragment.BaseDaggerFragment
-import lostankit7.droid.moodtracker.data.database.entities.Icon
-import lostankit7.droid.moodtracker.data.database.entities.MoodIcon
+import lostankit7.droid.moodtracker.data_layer.database.entities.Icon
+import lostankit7.droid.moodtracker.data_layer.database.entities.MoodIcon
 import lostankit7.droid.moodtracker.databinding.FragmentDisplayListBinding
 import lostankit7.droid.moodtracker.databinding.TaskEntryActionBarBinding
 import lostankit7.droid.moodtracker.di.AppComponent

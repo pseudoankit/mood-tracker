@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import lostankit7.droid.moodtracker.base.adapter.BaseDiffRvAdapter
 import lostankit7.droid.moodtracker.databinding.ItemRvMoodIconBinding
-import lostankit7.droid.moodtracker.data.database.entities.MoodIcon
+import lostankit7.droid.moodtracker.data_layer.database.entities.MoodIcon
 
 class RvMoodIconAdapter(
     private val context: Context?,

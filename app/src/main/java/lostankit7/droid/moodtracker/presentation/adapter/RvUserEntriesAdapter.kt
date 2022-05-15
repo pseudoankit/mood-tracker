@@ -9,7 +9,7 @@ import android.widget.TextView
 import lostankit7.droid.moodtracker.R
 import lostankit7.droid.moodtracker.base.adapter.BaseDiffRvAdapter
 import lostankit7.droid.moodtracker.common.utils.Constants
-import lostankit7.droid.moodtracker.data.database.entities.UserEntry
+import lostankit7.droid.moodtracker.data_layer.database.entities.UserEntry
 import lostankit7.droid.moodtracker.databinding.ItemRvUserEntriesBinding
 import lostankit7.droid.moodtracker.common.utils.DialogHelper
 import lostankit7.droid.moodtracker.common.utils.hide
