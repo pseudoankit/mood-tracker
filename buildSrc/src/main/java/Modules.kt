@@ -11,7 +11,8 @@ object Modules {
     const val homeMore = ":home:home_more"
 
     //common
-    const val core = ":core"
+    const val common = ":core:common"
     const val corePresentation = ":core:core_presentation"
-    const val coreDomain = ":core:core_domain_data"
+    const val coreDataDomain = ":core:core_domain_data"
+
 }

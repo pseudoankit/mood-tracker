@@ -33,11 +33,6 @@ android {
 }
 
 dependencies {
-    implementation(project(Modules.common))
-
     implementation(Dependencies.dagger)
     kapt(Dependencies.daggerCompiler)
-
-    implementation(Dependencies.roomKtx)
-    kapt(Dependencies.roomCompiler)
 }

@@ -4,6 +4,7 @@ import android.content.Context
 import androidx.room.Room
 import dagger.Module
 import dagger.Provides
+import lostankit7.droid.moodtracker.common.di.scope.ApplicationContext
 import lostankit7.droid.moodtracker.data.database.AppDatabase
 import lostankit7.droid.moodtracker.data.database.dao.*
 import javax.inject.Singleton
@@ -13,12 +14,11 @@ class DataBaseModule {
 
     @Singleton
     @Provides
-    fun provideRoomDB(context: Context) = Room.databaseBuilder(
+    fun provideRoomDB(@ApplicationContext context: Context) = Room.databaseBuilder(
         context.applicationContext,
         AppDatabase::class.java,
         AppDatabase.DB_NAME
     ).build()
-
 
     @Singleton
     @Provides
