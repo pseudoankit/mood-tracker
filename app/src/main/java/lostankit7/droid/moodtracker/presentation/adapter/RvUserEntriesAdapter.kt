@@ -8,15 +8,15 @@ import android.view.ViewGroup
 import android.widget.TextView
 import lostankit7.droid.moodtracker.R
 import lostankit7.droid.moodtracker.core_presentation.adapter.BaseDiffRvAdapter
-import lostankit7.droid.moodtracker.data.database.entities.UserEntry
+import lostankit7.android.entry_data.database.entities.UserEntry
 import lostankit7.droid.moodtracker.databinding.ItemRvUserEntriesBinding
 import lostankit7.droid.moodtracker.core_presentation.utils.DialogHelper
 import lostankit7.droid.moodtracker.core_presentation.utils.Constants.DB_ENTRY_SEPARATOR
 import lostankit7.droid.moodtracker.core_presentation.utils.hide
 
 class RvUserEntriesAdapter(
-    private val itemClicked: (MenuItem, UserEntry) -> Boolean,
-) : BaseDiffRvAdapter<ItemRvUserEntriesBinding, UserEntry>() {
+    private val itemClicked: (MenuItem, lostankit7.android.entry_data.database.entities.UserEntry) -> Boolean,
+) : BaseDiffRvAdapter<ItemRvUserEntriesBinding, lostankit7.android.entry_data.database.entities.UserEntry>() {
 
     override fun onCreateHolder(
         holder: BaseDiffRvAdapter.Companion.ViewHolder<ItemRvUserEntriesBinding>,
@@ -36,7 +36,7 @@ class RvUserEntriesAdapter(
         holder.binding.root.setOnClickListener { showOptionDialog() }
     }
 
-    override fun bindViewHolder(item: UserEntry, position: Int, binding: ItemRvUserEntriesBinding) {
+    override fun bindViewHolder(item: lostankit7.android.entry_data.database.entities.UserEntry, position: Int, binding: ItemRvUserEntriesBinding) {
         val tasks = SpannableStringBuilder()
         val icons = item.taskIcons.split(DB_ENTRY_SEPARATOR)
         val names = item.taskNames.split(DB_ENTRY_SEPARATOR)
@@ -64,7 +64,7 @@ class RvUserEntriesAdapter(
     ) = ItemRvUserEntriesBinding.inflate(layoutInflater, parent, false)
 
     companion object {
-        fun newInstance(itemClicked: (MenuItem, UserEntry) -> Boolean) =
+        fun newInstance(itemClicked: (MenuItem, lostankit7.android.entry_data.database.entities.UserEntry) -> Boolean) =
             RvUserEntriesAdapter(itemClicked)
     }
 }

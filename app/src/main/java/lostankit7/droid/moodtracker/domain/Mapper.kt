@@ -1,16 +1,16 @@
 package lostankit7.droid.moodtracker.domain
 
-import lostankit7.droid.moodtracker.data.database.entities.TaskIcon
-import lostankit7.droid.moodtracker.data.database.entities.UserEntry
+import lostankit7.android.entry_data.database.entities.TaskIcon
+import lostankit7.android.entry_data.database.entities.UserEntry
 import lostankit7.droid.moodtracker.model.MoodEntry
 import lostankit7.droid.moodtracker.core_presentation.utils.Constants
 
 object Mapper {
     fun mapDataToUserEntry(
         moodEntry: MoodEntry,
-        tasksMap: MutableMap<Int, TaskIcon>,
+        tasksMap: MutableMap<Int, lostankit7.android.entry_data.database.entities.TaskIcon>,
         note: String,
-    ): UserEntry {
+    ): lostankit7.android.entry_data.database.entities.UserEntry {
         val taskIcons = StringBuilder("")
         val taskNames = StringBuffer("")
 
@@ -21,7 +21,7 @@ object Mapper {
         if (taskIcons.isEmpty()) taskIcons.append(Constants.DB_ENTRY_SEPARATOR)
         if (taskNames.isEmpty()) taskNames.append(Constants.DB_ENTRY_SEPARATOR)
 
-        return UserEntry(
+        return lostankit7.android.entry_data.database.entities.UserEntry(
             moodEntry.date,
             moodEntry.time,
             moodEntry.moodIcon.icon,

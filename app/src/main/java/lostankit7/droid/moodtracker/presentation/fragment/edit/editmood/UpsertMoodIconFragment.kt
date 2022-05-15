@@ -8,8 +8,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import lostankit7.droid.moodtracker.base.fragment.BaseDaggerFragment
 import lostankit7.droid.moodtracker.core_presentation.databinding.CommonActionBarBinding
-import lostankit7.droid.moodtracker.data.database.entities.Icon
-import lostankit7.droid.moodtracker.data.database.entities.Suggestion
+import lostankit7.android.entry_data.database.entities.Icon
+import lostankit7.android.entry_data.database.entities.Suggestion
 import lostankit7.droid.moodtracker.databinding.FragmentUpsertMoodTaskIconBinding
 import lostankit7.droid.moodtracker.di.AppComponent
 import lostankit7.droid.moodtracker.presentation.adapter.MoodIconRvAdapter
@@ -38,7 +38,7 @@ class UpsertMoodIconFragment :
         }
     }
 
-    private fun applySuggestedName(it: Suggestion) {
+    private fun applySuggestedName(it: lostankit7.android.entry_data.database.entities.Suggestion) {
         binding.edtSelectedName.setText(it.name)
     }
 
@@ -53,7 +53,7 @@ class UpsertMoodIconFragment :
         binding.rvSuggestedNames.adapter = suggestedNamesAdapter
     }
 
-    private fun onMoodIconSelected(icon: Icon) {
+    private fun onMoodIconSelected(icon: lostankit7.android.entry_data.database.entities.Icon) {
         binding.tvSelectedIcon.text = icon.icon
     }
 

@@ -3,11 +3,11 @@ package lostankit7.droid.moodtracker.presentation.adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import lostankit7.droid.moodtracker.core_presentation.adapter.BaseDiffRvAdapter
-import lostankit7.droid.moodtracker.data.database.entities.Suggestion
+import lostankit7.android.entry_data.database.entities.Suggestion
 import lostankit7.droid.moodtracker.core_presentation.databinding.ItemTextChipsBinding
 
-class TextRvAdapter(private val itemClick: (Suggestion) -> Unit) :
-    BaseDiffRvAdapter<ItemTextChipsBinding, Suggestion>() {
+class TextRvAdapter(private val itemClick: (lostankit7.android.entry_data.database.entities.Suggestion) -> Unit) :
+    BaseDiffRvAdapter<ItemTextChipsBinding, lostankit7.android.entry_data.database.entities.Suggestion>() {
 
     override fun onCreateHolder(
         holder: BaseDiffRvAdapter.Companion.ViewHolder<ItemTextChipsBinding>,
@@ -17,7 +17,7 @@ class TextRvAdapter(private val itemClick: (Suggestion) -> Unit) :
         holder.binding.root.setOnClickListener { itemClick(getItem(holder.adapterPosition)) }
     }
 
-    override fun bindViewHolder(item: Suggestion, position: Int, binding: ItemTextChipsBinding) {
+    override fun bindViewHolder(item: lostankit7.android.entry_data.database.entities.Suggestion, position: Int, binding: ItemTextChipsBinding) {
         binding.tvName.text = item.name
     }
 
@@ -26,6 +26,6 @@ class TextRvAdapter(private val itemClick: (Suggestion) -> Unit) :
     ) = ItemTextChipsBinding.inflate(layoutInflater,parent, attachToParent)
 
     companion object {
-        fun createInstance(itemClick: (Suggestion) -> Unit) = TextRvAdapter(itemClick)
+        fun createInstance(itemClick: (lostankit7.android.entry_data.database.entities.Suggestion) -> Unit) = TextRvAdapter(itemClick)
     }
 }

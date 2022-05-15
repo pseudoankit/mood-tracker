@@ -8,7 +8,7 @@ import lostankit7.droid.moodtracker.core_presentation.utils.getCurrentDate
 import lostankit7.droid.moodtracker.core_presentation.utils.getCurrentTime
 import lostankit7.droid.moodtracker.core_presentation.utils.getSelectedDate
 import lostankit7.droid.moodtracker.core_presentation.utils.getSelectedTime
-import lostankit7.droid.moodtracker.data.database.entities.MoodIcon
+import lostankit7.android.entry_data.database.entities.MoodIcon
 import lostankit7.droid.moodtracker.databinding.FragmentAddMoodEntryBinding
 import lostankit7.droid.moodtracker.di.AppComponent
 import lostankit7.droid.moodtracker.model.MoodEntry
@@ -26,7 +26,7 @@ class AddMoodEntryFragment : BaseDaggerFragment<FragmentAddMoodEntryBinding, Moo
         }
     }
 
-    private fun onMoodIconSelected(icon: MoodIcon) {
+    private fun onMoodIconSelected(icon: lostankit7.android.entry_data.database.entities.MoodIcon) {
         val moodEntry = MoodEntry(
             icon, binding.layoutDate.tvText.text.toString(),
             binding.layoutTime.tvText.text.toString()

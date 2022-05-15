@@ -13,9 +13,9 @@ import lostankit7.droid.moodtracker.core_presentation.utils.hideKeyBoard
 import lostankit7.droid.moodtracker.core_presentation.utils.showBackAndSaveButton
 import lostankit7.droid.moodtracker.core_presentation.utils.showToast
 import lostankit7.droid.moodtracker.core_presentation.utils.updateTextSize
-import lostankit7.droid.moodtracker.data.database.entities.Icon
-import lostankit7.droid.moodtracker.data.database.entities.Suggestion
-import lostankit7.droid.moodtracker.data.database.entities.TaskIcon
+import lostankit7.android.entry_data.database.entities.Icon
+import lostankit7.android.entry_data.database.entities.Suggestion
+import lostankit7.android.entry_data.database.entities.TaskIcon
 import lostankit7.droid.moodtracker.databinding.FragmentUpsertMoodTaskIconBinding
 import lostankit7.droid.moodtracker.di.AppComponent
 import lostankit7.droid.moodtracker.presentation.adapter.TaskIconRvAdapter
@@ -40,7 +40,7 @@ class UpsertTaskIconFragment :
         }
     }
 
-    private fun applySuggestedName(it: Suggestion) {
+    private fun applySuggestedName(it: lostankit7.android.entry_data.database.entities.Suggestion) {
         binding.edtSelectedName.setText(it.name)
     }
 
@@ -54,7 +54,7 @@ class UpsertTaskIconFragment :
             LinearLayoutManager(requireContext(), RecyclerView.HORIZONTAL, false)
     }
 
-    private fun onTaskIconSelected(icon: Icon) {
+    private fun onTaskIconSelected(icon: lostankit7.android.entry_data.database.entities.Icon) {
         binding.tvSelectedIcon.text = icon.icon
     }
 
@@ -64,7 +64,7 @@ class UpsertTaskIconFragment :
                 requireContext().showToast(resources.getString(R.string.enter_mood_name))
             }
             else -> {
-                val icon = TaskIcon(
+                val icon = lostankit7.android.entry_data.database.entities.TaskIcon(
                     binding.tvSelectedIcon.text.toString(),
                     binding.edtSelectedName.text.toString(),
                     args.category
