@@ -2,6 +2,21 @@ object Dependencies {
 
     const val customViews = "com.github.lostankit7:AndroidCustomViews:1.2"
 
+    //lifecycle
+    private const val lifeCycleVersion = "2.4.1"
+    const val viewModel = "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifeCycleVersion"
+    const val liveData = "androidx.lifecycle:lifecycle-livedata-ktx:$lifeCycleVersion"
+    const val lifeCycleCommon = "androidx.lifecycle:lifecycle-common-java8:$lifeCycleVersion"
+
+
+    //navigation component
+    //navigation component dep. for navigating fragments w.r.t. to id in menu and graph
+    private const val navVersion = "2.4.2"
+    const val navigationFragment = "androidx.navigation:navigation-fragment-ktx:$navVersion"
+    const val navigationUI = "androidx.navigation:navigation-ui-ktx:$navVersion"
+
+
+    //google material
     private const val materialVersion = "1.6.0"
     const val material = "com.google.android.material:material:$materialVersion"
 
