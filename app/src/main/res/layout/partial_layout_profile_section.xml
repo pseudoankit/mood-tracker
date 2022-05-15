@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/root_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_20"
+        android:background="@drawable/bg_rounded_white_stroke_gray"
+        android:clickable="false"
+        android:elevation="@dimen/elevation"
+        android:padding="@dimen/padding_screen"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/ivUserProfile"
+            android:layout_width="@dimen/profile_image_dimen"
+            android:layout_height="@dimen/profile_image_dimen"
+            android:contentDescription="@string/user_profile_image"
+            android:src="@drawable/ic_launcher_background"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/roundedImageView" />
+
+        <View
+            android:id="@+id/guideName"
+            android:layout_width="1dp"
+            android:layout_height="1dp"
+            android:layout_marginStart="@dimen/dp_20"
+            android:orientation="vertical"
+            app:layout_constraintStart_toEndOf="@id/ivUserProfile"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txtUserName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/text_18"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/guideName"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Ankit" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edtUserName"
+            style="@style/defEdtStyle"
+            android:layout_marginEnd="@dimen/dp_20"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/guideName"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="ankit" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <lostankit7.droid.CustomTextView
+        android:id="@+id/btnEditProfile"
+        style="@style/editButtonStyle"
+        android:elevation="@dimen/elevation"
+        android:hint="@string/edt_hint_enter_your_name"
+        app:layout_constraintBottom_toTopOf="@id/root_layout"
+        app:layout_constraintEnd_toEndOf="@id/root_layout"
+        app:layout_constraintTop_toTopOf="@id/root_layout"
+        app:solid_color="@color/white" />
+</androidx.constraintlayout.widget.ConstraintLayout>

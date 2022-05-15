@@ -13,7 +13,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.viewbinding.ViewBinding
 import lostankit7.droid.moodtracker.R
 import lostankit7.droid.moodtracker.databinding.TaskEntryActionBarBinding
-import lostankit7.droid.moodtracker.ui.MainActivity
+import lostankit7.droid.moodtracker.presentation.MainActivity
 import lostankit7.droid.moodtracker.utils.hide
 
 abstract class BaseFragment<VB : ViewBinding> : Fragment() {

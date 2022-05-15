@@ -9,5 +9,4 @@
             <corners android:radius="@dimen/corner_radius" />
         </shape>
     </item>
-
 </ripple>
