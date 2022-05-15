@@ -4,10 +4,10 @@ import android.view.LayoutInflater
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import lostankit7.droid.moodtracker.base.fragment.BaseDaggerFragment
-import lostankit7.droid.moodtracker.core.utils.getCurrentDate
-import lostankit7.droid.moodtracker.core.utils.getCurrentTime
-import lostankit7.droid.moodtracker.core.utils.getSelectedDate
-import lostankit7.droid.moodtracker.core.utils.getSelectedTime
+import lostankit7.droid.moodtracker.core_presentation.utils.getCurrentDate
+import lostankit7.droid.moodtracker.core_presentation.utils.getCurrentTime
+import lostankit7.droid.moodtracker.core_presentation.utils.getSelectedDate
+import lostankit7.droid.moodtracker.core_presentation.utils.getSelectedTime
 import lostankit7.droid.moodtracker.data.database.entities.MoodIcon
 import lostankit7.droid.moodtracker.databinding.FragmentAddMoodEntryBinding
 import lostankit7.droid.moodtracker.di.AppComponent

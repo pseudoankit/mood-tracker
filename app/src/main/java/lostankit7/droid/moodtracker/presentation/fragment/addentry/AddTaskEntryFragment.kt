@@ -15,7 +15,7 @@ import lostankit7.droid.moodtracker.presentation.adapter.TaskIconRvAdapter
 import lostankit7.droid.moodtracker.presentation.viewmodel.TaskEntryViewModel
 import lostankit7.droid.moodtracker.core_presentation.utils.hideKeyBoard
 import lostankit7.droid.moodtracker.core_presentation.utils.show
-import lostankit7.droid.moodtracker.utils.showBackAndSaveButton
+import lostankit7.droid.moodtracker.core_presentation.utils.showBackAndSaveButton
 
 class AddTaskEntryFragment : BaseDaggerFragment<FragmentAddTaskEntryBinding, TaskEntryViewModel>() {
 

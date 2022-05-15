@@ -12,5 +12,6 @@ object Modules {
 
     //common
     const val core = ":core"
-    const val corePresentation = ":core:presentation"
+    const val corePresentation = ":core:core_presentation"
+    const val coreDomain = ":core:core_domain_data"
 }

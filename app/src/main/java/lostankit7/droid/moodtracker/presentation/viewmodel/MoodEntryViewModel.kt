@@ -3,6 +3,7 @@ package lostankit7.droid.moodtracker.presentation.viewmodel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import lostankit7.droid.moodtracker.R
+import lostankit7.droid.moodtracker.core_presentation.utils.entity.UiText
 import lostankit7.droid.moodtracker.core_presentation.viewmodel.BaseViewModel
 import lostankit7.droid.moodtracker.data.database.entities.MoodIcon
 import lostankit7.droid.moodtracker.data.repository.MoodIconRepository
@@ -16,8 +17,8 @@ class MoodEntryViewModel @Inject constructor(
     private val suggestedMoodNameRepository: SuggestedMoodNameRepository,
 ) : BaseViewModel() {
 
-    private val _errorMessageLiveData = MutableLiveData<lostankit7.droid.moodtracker.core.utils.entity.UiText>()
-    val errorMessageLiveData: LiveData<lostankit7.droid.moodtracker.core.utils.entity.UiText> get() = _errorMessageLiveData
+    private val _errorMessageLiveData = MutableLiveData<UiText>()
+    val errorMessageLiveData: LiveData<UiText> get() = _errorMessageLiveData
 
     val suggestedMoodNamesLiveData get() = suggestedMoodNameRepository.suggestedMoodNames
     val moodIconsLiveData: LiveData<List<MoodIcon>> get() = moodRepository.moodIcons
@@ -26,7 +27,7 @@ class MoodEntryViewModel @Inject constructor(
     fun saveMoodIcon(moodName: String, moodIcon: String, iconId: Int?) {
         when {
             moodName.isBlank() -> {
-                _errorMessageLiveData.value = lostankit7.droid.moodtracker.core.utils.entity.UiText.ResourceString(R.string.enter_mood_name)
+                _errorMessageLiveData.value = UiText.ResourceString(R.string.enter_mood_name)
             }
             else -> {
                 val icon = MoodIcon(moodIcon, moodName)

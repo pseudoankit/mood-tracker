@@ -15,7 +15,7 @@ import lostankit7.droid.moodtracker.di.AppComponent
 import lostankit7.droid.moodtracker.presentation.adapter.IconListRvAdapter
 import lostankit7.droid.moodtracker.presentation.viewmodel.TaskEntryViewModel
 import lostankit7.droid.moodtracker.core_presentation.utils.DialogHelper
-import lostankit7.droid.moodtracker.utils.showBackButton
+import lostankit7.droid.moodtracker.core_presentation.utils.showBackButton
 
 class DisplayTaskCategoriesFragment :
     BaseDaggerFragment<FragmentDisplayListBinding, TaskEntryViewModel>() {

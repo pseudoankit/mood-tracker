@@ -10,6 +10,7 @@ import lostankit7.droid.moodtracker.R
 import lostankit7.droid.moodtracker.base.fragment.BaseDaggerFragment
 import lostankit7.droid.moodtracker.core_presentation.databinding.CommonActionBarBinding
 import lostankit7.droid.moodtracker.core_presentation.utils.hideKeyBoard
+import lostankit7.droid.moodtracker.core_presentation.utils.showBackAndSaveButton
 import lostankit7.droid.moodtracker.core_presentation.utils.showToast
 import lostankit7.droid.moodtracker.core_presentation.utils.updateTextSize
 import lostankit7.droid.moodtracker.data.database.entities.Icon
@@ -20,7 +21,6 @@ import lostankit7.droid.moodtracker.di.AppComponent
 import lostankit7.droid.moodtracker.presentation.adapter.TaskIconRvAdapter
 import lostankit7.droid.moodtracker.presentation.adapter.TextRvAdapter
 import lostankit7.droid.moodtracker.presentation.viewmodel.TaskEntryViewModel
-import lostankit7.droid.moodtracker.utils.*
 
 class UpsertTaskIconFragment :
     BaseDaggerFragment<FragmentUpsertMoodTaskIconBinding, TaskEntryViewModel>() {
