@@ -16,10 +16,10 @@ import lostankit7.droid.moodtracker.core_presentation.utils.updateTextSize
 import lostankit7.android.entry_domain.entities.Icon
 import lostankit7.android.entry_domain.entities.Suggestion
 import lostankit7.android.entry_domain.entities.TaskIcon
-import lostankit7.droid.moodtracker.databinding.FragmentUpsertMoodTaskIconBinding
 import lostankit7.droid.moodtracker.di.AppComponent
-import lostankit7.droid.moodtracker.presentation.adapter.TaskIconRvAdapter
-import lostankit7.droid.moodtracker.presentation.adapter.TextRvAdapter
+import lostankit7.android.entry_presentation.adapter.TaskIconRvAdapter
+import lostankit7.android.entry_presentation.databinding.FragmentUpsertMoodTaskIconBinding
+import lostankit7.droid.moodtracker.presentation.ChipsRvAdapter
 import lostankit7.droid.moodtracker.presentation.viewmodel.TaskEntryViewModel
 
 class UpsertTaskIconFragment :
@@ -27,7 +27,7 @@ class UpsertTaskIconFragment :
 
     private val args: UpsertTaskIconFragmentArgs by navArgs()
     private val adapter = TaskIconRvAdapter(::onTaskIconSelected, false)
-    private val suggestedNamesAdapter = TextRvAdapter(::applySuggestedName)
+    private val suggestedNamesAdapter = ChipsRvAdapter(::applySuggestedName)
 
     override suspend fun registerObservers() {
         super.registerObservers()

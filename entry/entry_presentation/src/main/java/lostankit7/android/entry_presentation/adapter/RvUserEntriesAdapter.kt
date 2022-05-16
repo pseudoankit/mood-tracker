@@ -1,4 +1,4 @@
-package lostankit7.droid.moodtracker.presentation.adapter
+package lostankit7.android.entry_presentation.adapter
 
 import android.text.SpannableStringBuilder
 import android.view.Gravity
@@ -6,12 +6,11 @@ import android.view.LayoutInflater
 import android.view.MenuItem
 import android.view.ViewGroup
 import android.widget.TextView
-import lostankit7.droid.moodtracker.R
-import lostankit7.droid.moodtracker.core_presentation.adapter.BaseDiffRvAdapter
 import lostankit7.android.entry_domain.entities.UserEntry
-import lostankit7.droid.moodtracker.databinding.ItemRvUserEntriesBinding
+import lostankit7.android.entry_presentation.R
+import lostankit7.android.entry_presentation.databinding.ItemRvUserEntriesBinding
+import lostankit7.droid.moodtracker.core_presentation.adapter.BaseDiffRvAdapter
 import lostankit7.droid.moodtracker.core_presentation.utils.DialogHelper
-import lostankit7.droid.moodtracker.common.utils.Constants.DB_ENTRY_SEPARATOR
 import lostankit7.droid.moodtracker.core_presentation.utils.hide
 
 class RvUserEntriesAdapter(
@@ -38,10 +37,9 @@ class RvUserEntriesAdapter(
 
     override fun bindViewHolder(item: UserEntry, position: Int, binding: ItemRvUserEntriesBinding) {
         val tasks = SpannableStringBuilder()
-        val icons = item.taskIcons.split(DB_ENTRY_SEPARATOR)
-        val names = item.taskNames.split(DB_ENTRY_SEPARATOR)
+        val icons = item.taskIcons
         for (i in icons.indices) {
-            tasks.append("  |  ${icons[i]} ${names[i]}")
+            tasks.append("  |  ${icons[i].icon} ${icons[i].name}")
         }
         binding.apply {
             tvTasks.gravity = Gravity.START

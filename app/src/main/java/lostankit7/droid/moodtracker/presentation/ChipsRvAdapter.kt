@@ -1,4 +1,4 @@
-package lostankit7.droid.moodtracker.presentation.adapter
+package lostankit7.droid.moodtracker.presentation
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -6,7 +6,7 @@ import lostankit7.droid.moodtracker.core_presentation.adapter.BaseDiffRvAdapter
 import lostankit7.android.entry_domain.entities.Suggestion
 import lostankit7.droid.moodtracker.core_presentation.databinding.ItemTextChipsBinding
 
-class TextRvAdapter(private val itemClick: (Suggestion) -> Unit) :
+class ChipsRvAdapter(private val itemClick: (Suggestion) -> Unit) :
     BaseDiffRvAdapter<ItemTextChipsBinding, Suggestion>() {
 
     override fun onCreateHolder(
@@ -26,6 +26,6 @@ class TextRvAdapter(private val itemClick: (Suggestion) -> Unit) :
     ) = ItemTextChipsBinding.inflate(layoutInflater,parent, attachToParent)
 
     companion object {
-        fun createInstance(itemClick: (Suggestion) -> Unit) = TextRvAdapter(itemClick)
+        fun createInstance(itemClick: (Suggestion) -> Unit) = ChipsRvAdapter(itemClick)
     }
 }

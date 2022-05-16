@@ -1,12 +1,12 @@
-package lostankit7.droid.moodtracker.presentation.adapter
+package lostankit7.droid.moodtracker.presentation
 
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import lostankit7.droid.moodtracker.R
-import lostankit7.droid.moodtracker.core_presentation.adapter.BaseDiffRvAdapter
 import lostankit7.droid.moodtracker.databinding.ItemRvSingleSelectionBinding
 import lostankit7.droid.moodtracker.common.domain.entities.SingleSelectionModel
+import lostankit7.droid.moodtracker.core_presentation.adapter.BaseDiffRvAdapter
 
 class SingleSelectionRvAdapter(private val context: Context) :
     BaseDiffRvAdapter<ItemRvSingleSelectionBinding, SingleSelectionModel>() {

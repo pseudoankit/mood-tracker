@@ -1,14 +1,14 @@
-package lostankit7.droid.moodtracker.presentation.adapter
+package lostankit7.android.entry_presentation.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import lostankit7.droid.CustomTextView
-import lostankit7.droid.moodtracker.R
 import lostankit7.droid.moodtracker.core_presentation.adapter.BaseDiffRvAdapter
 import lostankit7.android.entry_domain.entities.Icon
 import lostankit7.android.entry_domain.entities.TaskIcon
-import lostankit7.droid.moodtracker.databinding.ItemRvTaskIconBinding
+import lostankit7.android.entry_presentation.R
+import lostankit7.android.entry_presentation.databinding.ItemRvTaskIconBinding
 import lostankit7.droid.moodtracker.core_presentation.utils.invert
 
 class TaskIconRvAdapter(

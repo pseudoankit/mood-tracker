@@ -1,23 +1,23 @@
-package lostankit7.droid.moodtracker.presentation.adapter
+package lostankit7.android.entry_presentation.adapter
 
 import android.view.LayoutInflater
 import android.view.MenuItem
 import android.view.ViewGroup
-import lostankit7.droid.moodtracker.R
-import lostankit7.droid.moodtracker.core_presentation.adapter.BaseDiffRvAdapter
 import lostankit7.android.entry_domain.entities.Icon
 import lostankit7.android.entry_domain.entities.MoodIcon
 import lostankit7.android.entry_domain.entities.TaskIcon
-import lostankit7.droid.moodtracker.databinding.ItemIconListBinding
+import lostankit7.android.entry_presentation.R
+import lostankit7.android.entry_presentation.databinding.ItemIconWithTextListBinding
+import lostankit7.droid.moodtracker.core_presentation.adapter.BaseDiffRvAdapter
 import lostankit7.droid.moodtracker.core_presentation.utils.DialogHelper
 
 class IconListRvAdapter(
     private val itemClick: (Icon) -> Unit,
     private val optionsSelected: (MenuItem, Icon) -> Boolean
-) : BaseDiffRvAdapter<ItemIconListBinding, Icon>() {
+) : BaseDiffRvAdapter<ItemIconWithTextListBinding, Icon>() {
 
     override fun onCreateHolder(
-        holder: BaseDiffRvAdapter.Companion.ViewHolder<ItemIconListBinding>,
+        holder: BaseDiffRvAdapter.Companion.ViewHolder<ItemIconWithTextListBinding>,
         parent: ViewGroup, viewType: Int
     ) {
         super.onCreateHolder(holder, parent, viewType)
@@ -30,7 +30,7 @@ class IconListRvAdapter(
         }
     }
 
-    override fun bindViewHolder(item: Icon, position: Int, binding: ItemIconListBinding) {
+    override fun bindViewHolder(item: Icon, position: Int, binding: ItemIconWithTextListBinding) {
 
         if (item.isSolid) binding.faIcon.isSolidIcon() else binding.faIcon.isRegularIcon()
         binding.tvName.text = item.name
@@ -48,6 +48,6 @@ class IconListRvAdapter(
 
     override fun inflateLayout(
         layoutInflater: LayoutInflater, parent: ViewGroup, attachToParent: Boolean
-    ) = ItemIconListBinding.inflate(layoutInflater, parent, attachToParent)
+    ) = ItemIconWithTextListBinding.inflate(layoutInflater, parent, attachToParent)
 
 }

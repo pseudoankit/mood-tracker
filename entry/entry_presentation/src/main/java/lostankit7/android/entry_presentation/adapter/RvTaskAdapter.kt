@@ -1,15 +1,14 @@
-package lostankit7.droid.moodtracker.presentation.adapter
+package lostankit7.android.entry_presentation.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import lostankit7.droid.moodtracker.R
-import lostankit7.droid.moodtracker.core_presentation.adapter.BaseDiffRvAdapter
 import lostankit7.android.entry_domain.entities.Icon
 import lostankit7.android.entry_domain.entities.TaskCategory
-import lostankit7.droid.moodtracker.databinding.ItemRvExpandableViewBinding
-import lostankit7.droid.moodtracker.common.utils.Constants
+import lostankit7.android.entry_presentation.R
+import lostankit7.android.entry_presentation.databinding.ItemRvExpandableViewBinding
+import lostankit7.droid.moodtracker.core_presentation.adapter.BaseDiffRvAdapter
 import lostankit7.droid.moodtracker.core_presentation.utils.hide
 import lostankit7.droid.moodtracker.core_presentation.utils.show
 
@@ -46,7 +45,7 @@ class RvTaskAdapter(
     }
 
     private fun RecyclerView.setUpRecyclerView(category: String) {
-        layoutManager = GridLayoutManager(context, Constants.SPAN_COUNT_TASK_RV)
+        layoutManager = GridLayoutManager(context, SPAN_COUNT_TASK_RV)
 
         val mAdapter = TaskIconRvAdapter.newInstance(taskSelected, true)
         adapter = mAdapter
@@ -57,5 +56,9 @@ class RvTaskAdapter(
     override fun inflateLayout(
         layoutInflater: LayoutInflater, parent: ViewGroup, attachToParent: Boolean
     ) = ItemRvExpandableViewBinding.inflate(layoutInflater, parent, attachToParent)
+
+    private companion object {
+        const val SPAN_COUNT_TASK_RV = 5
+    }
 }
 

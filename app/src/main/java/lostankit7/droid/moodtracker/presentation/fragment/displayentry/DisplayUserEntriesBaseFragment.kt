@@ -8,7 +8,7 @@ import lostankit7.droid.moodtracker.base.fragment.BaseDaggerFragment
 import lostankit7.android.entry_domain.entities.UserEntry
 import lostankit7.droid.moodtracker.databinding.FragmentDisplayUserEntriesBinding
 import lostankit7.droid.moodtracker.di.AppComponent
-import lostankit7.droid.moodtracker.presentation.adapter.RvUserEntriesAdapter
+import lostankit7.android.entry_presentation.adapter.RvUserEntriesAdapter
 import lostankit7.droid.moodtracker.presentation.viewmodel.UserEntriesViewModel
 
 abstract class DisplayUserEntriesBaseFragment : BaseDaggerFragment<FragmentDisplayUserEntriesBinding, UserEntriesViewModel>() {

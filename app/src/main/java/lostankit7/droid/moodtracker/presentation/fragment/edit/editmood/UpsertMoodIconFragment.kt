@@ -10,10 +10,10 @@ import lostankit7.droid.moodtracker.base.fragment.BaseDaggerFragment
 import lostankit7.droid.moodtracker.core_presentation.databinding.CommonActionBarBinding
 import lostankit7.android.entry_domain.entities.Icon
 import lostankit7.android.entry_domain.entities.Suggestion
-import lostankit7.droid.moodtracker.databinding.FragmentUpsertMoodTaskIconBinding
 import lostankit7.droid.moodtracker.di.AppComponent
-import lostankit7.droid.moodtracker.presentation.adapter.MoodIconRvAdapter
-import lostankit7.droid.moodtracker.presentation.adapter.TextRvAdapter
+import lostankit7.android.entry_presentation.adapter.MoodIconRvAdapter
+import lostankit7.android.entry_presentation.databinding.FragmentUpsertMoodTaskIconBinding
+import lostankit7.droid.moodtracker.presentation.ChipsRvAdapter
 import lostankit7.droid.moodtracker.presentation.viewmodel.MoodEntryViewModel
 import lostankit7.droid.moodtracker.core_presentation.utils.hideKeyBoard
 import lostankit7.droid.moodtracker.core_presentation.utils.showBackAndSaveButton
@@ -23,7 +23,7 @@ class UpsertMoodIconFragment :
 
     private val args: UpsertMoodIconFragmentArgs by navArgs()
     private val adapter = MoodIconRvAdapter(::onMoodIconSelected)
-    private val suggestedNamesAdapter = TextRvAdapter.createInstance(::applySuggestedName)
+    private val suggestedNamesAdapter = ChipsRvAdapter.createInstance(::applySuggestedName)
 
     override suspend fun registerObservers() {
         viewModel.errorMessageLiveData.observe(viewLifecycleOwner) { message ->

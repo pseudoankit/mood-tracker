@@ -10,7 +10,7 @@ import lostankit7.droid.moodtracker.base.fragment.BaseDaggerFragment
 import lostankit7.droid.moodtracker.common.utils.Constants
 import lostankit7.droid.moodtracker.databinding.FragmentSplashBinding
 import lostankit7.droid.moodtracker.di.AppComponent
-import lostankit7.droid.moodtracker.utils.constant.SplashFragmentDataProvider
+import lostankit7.android.entry_presentation.utils.SplashFragmentDataProvider
 import lostankit7.droid.moodtracker.presentation.viewmodel.SplashViewModel
 
 class SplashFragment : BaseDaggerFragment<FragmentSplashBinding, SplashViewModel>() {

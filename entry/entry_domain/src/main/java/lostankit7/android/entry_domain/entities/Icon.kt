@@ -5,6 +5,11 @@ sealed class Icon {
     open var name: String = ""
     open var icon: String = ""
     open var isSolid: Boolean = true
+
+    data class Icon(override var name: String, override var icon: String) :
+        lostankit7.android.entry_domain.entities.Icon() {
+
+    }
 }
 
 

@@ -5,8 +5,7 @@ data class UserEntry(
     var time: String,
     var moodIcon : String,
     var moodName: String,
-    var taskIcons : String,
-    var taskNames: String,
+    var taskIcons : List<Icon.Icon>,
     var note: String,
     var id: Int = 0
 )

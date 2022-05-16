@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="suggested_task_names">
+        <item>@string/cycling</item>
+        <item>@string/baseball</item>
+        <item>@string/basketball</item>
+        <item>@string/bath</item>
+        <item>@string/books</item>
+        <item>@string/puzzle</item>
+        <item>@string/business</item>
+        <item>@string/meeting</item>
+        <item>@string/hockey</item>
+        <item>@string/teaching</item>
+        <item>@string/chess</item>
+        <item>@string/nothing</item>
+        <item>@string/coffee</item>
+        <item>@string/cubes</item>
+        <item>@string/pizza</item>
+        <item>@string/tractor</item>
+    </string-array>
+
+    <string-array name="suggested_mood_names">
+        <item>@string/confuse</item>
+        <item>@string/tired</item>
+        <item>@string/surprise</item>
+        <item>@string/tear</item>
+        <item>@string/silent</item>
+        <item>@string/bad</item>
+        <item>@string/jolly</item>
+        <item>@string/romantic</item>
+        <item>@string/naughty</item>
+        <item>@string/okay</item>
+    </string-array>
+
+    <!-- Task Categories -->
+    <string name="other">Other</string>
+    <string name="entertainment">Entertainment</string>
+    <string name="work">Work</string>
+    <string name="health">Health</string>
+
+    <!-- Mood Names -->
+    <string name="happy">happy</string>
+    <string name="sad">sad</string>
+    <string name="meh">meh</string>
+    <string name="confuse">confused</string>
+    <string name="awful">awful</string>
+    <string name="tired">tired</string>
+    <string name="surprise">surprised</string>
+    <string name="cool">cool</string>
+    <string name="tear">tear</string>
+    <string name="jolly">jolly</string>
+    <string name="romantic">romantic</string>
+    <string name="naughty">naughty</string>
+    <string name="okay">okay</string>
+    <string name="silent">silent</string>
+    <string name="bad">bad</string>
+
+    <!-- Task Names  -->
+    <string name="movies">movies</string>
+    <string name="family">family</string>
+    <string name="friends">friends</string>
+    <string name="food">food</string>
+    <string name="drive">drive</string>
+    <string name="shopping">shopping</string>
+    <string name="cycling">cycling</string>
+    <string name="gym">gym</string>
+    <string name="yoga">yoga</string>
+    <string name="books">books</string>
+    <string name="code">code</string>
+    <string name="bug">bug</string>
+    <string name="gaming">gaming</string>
+    <string name="cookies">cookies</string>
+    <string name="pray">pray</string>
+    <string name="party">party</string>
+    <string name="football">football</string>
+    <string name="cricket">cricket</string>
+    <string name="sports">sports</string>
+    <string name="baseball">baseball</string>
+    <string name="basketball">basketball</string>
+    <string name="bath">bath</string>
+    <string name="puzzle">puzzle</string>
+    <string name="business">business</string>
+    <string name="meeting">meeting</string>
+    <string name="hockey">hockey</string>
+    <string name="teaching">teaching</string>
+    <string name="chess">chess</string>
+    <string name="nothing">nothing</string>
+    <string name="coffee">coffee</string>
+    <string name="cubes">cubes</string>
+    <string name="pizza">pizza</string>
+    <string name="tractor">tractor</string>
+</resources>

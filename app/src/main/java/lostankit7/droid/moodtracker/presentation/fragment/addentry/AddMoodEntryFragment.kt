@@ -9,10 +9,10 @@ import lostankit7.droid.moodtracker.core_presentation.utils.getCurrentTime
 import lostankit7.droid.moodtracker.core_presentation.utils.getSelectedDate
 import lostankit7.droid.moodtracker.core_presentation.utils.getSelectedTime
 import lostankit7.android.entry_domain.entities.MoodIcon
-import lostankit7.droid.moodtracker.databinding.FragmentAddMoodEntryBinding
 import lostankit7.droid.moodtracker.di.AppComponent
 import lostankit7.android.entry_domain.entities.MoodEntry
-import lostankit7.droid.moodtracker.presentation.adapter.RvMoodIconAdapter
+import lostankit7.android.entry_presentation.adapter.RvMoodIconAdapter
+import lostankit7.android.entry_presentation.databinding.FragmentAddMoodEntryBinding
 import lostankit7.droid.moodtracker.presentation.viewmodel.MoodEntryViewModel
 
 class AddMoodEntryFragment : BaseDaggerFragment<FragmentAddMoodEntryBinding, MoodEntryViewModel>() {

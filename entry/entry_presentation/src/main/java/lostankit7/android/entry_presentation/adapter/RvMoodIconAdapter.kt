@@ -1,11 +1,11 @@
-package lostankit7.droid.moodtracker.presentation.adapter
+package lostankit7.android.entry_presentation.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import lostankit7.droid.moodtracker.core_presentation.adapter.BaseDiffRvAdapter
-import lostankit7.droid.moodtracker.databinding.ItemRvMoodIconBinding
 import lostankit7.android.entry_domain.entities.MoodIcon
+import lostankit7.android.entry_presentation.databinding.ItemRvMoodIconBinding
 
 class RvMoodIconAdapter(
     private val context: Context?,

@@ -8,9 +8,9 @@ import lostankit7.droid.moodtracker.base.fragment.BaseDaggerFragment
 import lostankit7.droid.moodtracker.core_presentation.databinding.CommonActionBarBinding
 import lostankit7.android.entry_domain.entities.Icon
 import lostankit7.android.entry_domain.entities.MoodIcon
-import lostankit7.droid.moodtracker.databinding.FragmentDisplayListBinding
 import lostankit7.droid.moodtracker.di.AppComponent
-import lostankit7.droid.moodtracker.presentation.adapter.IconListRvAdapter
+import lostankit7.android.entry_presentation.adapter.IconListRvAdapter
+import lostankit7.android.entry_presentation.databinding.FragmentDisplayListBinding
 import lostankit7.droid.moodtracker.presentation.viewmodel.MoodEntryViewModel
 import lostankit7.droid.moodtracker.core_presentation.utils.showBackButton
 
