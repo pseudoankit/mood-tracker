@@ -6,7 +6,7 @@ import dagger.Module
 import dagger.Provides
 import lostankit7.android.entry_data.local.EntryDatabase
 import lostankit7.android.entry_data.local.dao.*
-import lostankit7.droid.moodtracker.common.di.scope.ApplicationContext
+import lostankit7.droid.moodtracker.core.di.scope.ApplicationContext
 import javax.inject.Singleton
 
 @Module

@@ -39,7 +39,6 @@ android {
 dependencies {
     implementation(project(Modules.entryDomain))
     implementation(project(Modules.entryData))
-    implementation(project(Modules.corePresentation))
     implementation(Dependencies.customViews)
     implementation(Dependencies.viewModel)
     implementation(Dependencies.liveData)

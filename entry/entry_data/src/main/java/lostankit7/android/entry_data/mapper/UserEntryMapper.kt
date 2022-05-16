@@ -3,7 +3,7 @@ package lostankit7.android.entry_data.mapper
 import lostankit7.android.entry_data.local.entities.LocalUserEntry
 import lostankit7.android.entry_domain.entities.Icon
 import lostankit7.android.entry_domain.entities.UserEntry
-import lostankit7.droid.moodtracker.common.utils.Constants.DB_ENTRY_SEPARATOR
+import lostankit7.droid.moodtracker.core.utils.Constants.DB_ENTRY_SEPARATOR
 
 object UserEntryMapper {
 
