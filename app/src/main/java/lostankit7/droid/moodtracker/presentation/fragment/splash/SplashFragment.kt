@@ -7,7 +7,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import kotlinx.coroutines.delay
 import lostankit7.droid.moodtracker.base.fragment.BaseDaggerFragment
-import lostankit7.droid.moodtracker.core_presentation.utils.Constants
+import lostankit7.droid.moodtracker.common.utils.Constants
 import lostankit7.droid.moodtracker.databinding.FragmentSplashBinding
 import lostankit7.droid.moodtracker.di.AppComponent
 import lostankit7.droid.moodtracker.utils.constant.SplashFragmentDataProvider

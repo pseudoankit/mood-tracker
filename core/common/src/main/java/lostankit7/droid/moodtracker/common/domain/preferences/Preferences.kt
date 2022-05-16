@@ -1,4 +1,4 @@
-package lostankit7.droid.moodtracker.domain.preferences
+package lostankit7.droid.moodtracker.common.domain.preferences
 
 interface Preferences {
     fun isInitialLaunch(value: Boolean)

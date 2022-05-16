@@ -35,6 +35,5 @@ android {
 
 dependencies {
     implementation(Dependencies.liveData)
-    implementation(project(Modules.coreDataDomain))
     implementation(project(Modules.common))
 }

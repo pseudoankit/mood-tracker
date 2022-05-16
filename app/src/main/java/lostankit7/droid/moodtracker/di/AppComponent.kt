@@ -6,7 +6,7 @@ import dagger.Component
 import lostankit7.android.entry_data.di.EntryDatabaseModule
 import lostankit7.android.entry_data.di.LocalDbModule
 import lostankit7.droid.moodtracker.common.di.scope.ApplicationContext
-import lostankit7.droid.moodtracker.di.component.BaseDataModule
+import lostankit7.droid.moodtracker.common.di.component.BaseDataModule
 import lostankit7.droid.moodtracker.presentation.fragment.splash.SplashFragment
 import lostankit7.droid.moodtracker.presentation.fragment.addentry.AddMoodEntryFragment
 import lostankit7.droid.moodtracker.presentation.fragment.addentry.AddTaskEntryFragment

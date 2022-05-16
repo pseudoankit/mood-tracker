@@ -1,4 +1,4 @@
-package lostankit7.droid.moodtracker.utils
+package lostankit7.droid.moodtracker.common.utils
 
 import android.content.SharedPreferences
 

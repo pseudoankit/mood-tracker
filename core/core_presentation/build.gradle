@@ -36,6 +36,7 @@ android {
 }
 
 dependencies {
+    implementation(project(Modules.common))
     implementation(Dependencies.customViews)
 
     implementation(Dependencies.dagger)

@@ -1,4 +1,4 @@
-package lostankit7.droid.moodtracker.core_presentation.utils
+package lostankit7.droid.moodtracker.common.utils
 
 object Constants {
     const val DB_ENTRY_SEPARATOR = "*"

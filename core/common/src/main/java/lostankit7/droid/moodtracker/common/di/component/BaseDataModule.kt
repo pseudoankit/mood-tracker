@@ -1,15 +1,13 @@
-package lostankit7.droid.moodtracker.di.component
+package lostankit7.droid.moodtracker.common.di.component
 
 import android.content.Context
 import android.content.SharedPreferences
-import androidx.room.Room
 import dagger.Module
 import dagger.Provides
 import lostankit7.droid.moodtracker.common.di.scope.ApplicationContext
 import lostankit7.droid.moodtracker.common.di.scope.ApplicationScope
-import lostankit7.droid.moodtracker.data.preferences.DefaultPreferences
-import lostankit7.droid.moodtracker.domain.preferences.Preferences
-import javax.inject.Singleton
+import lostankit7.droid.moodtracker.common.data.preferences.DefaultPreferences
+import lostankit7.droid.moodtracker.common.domain.preferences.Preferences
 
 @Module
 class BaseDataModule {

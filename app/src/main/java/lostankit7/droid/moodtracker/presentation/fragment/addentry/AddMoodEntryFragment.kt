@@ -11,7 +11,7 @@ import lostankit7.droid.moodtracker.core_presentation.utils.getSelectedTime
 import lostankit7.android.entry_domain.entities.MoodIcon
 import lostankit7.droid.moodtracker.databinding.FragmentAddMoodEntryBinding
 import lostankit7.droid.moodtracker.di.AppComponent
-import lostankit7.droid.moodtracker.model.MoodEntry
+import lostankit7.android.entry_domain.entities.MoodEntry
 import lostankit7.droid.moodtracker.presentation.adapter.RvMoodIconAdapter
 import lostankit7.droid.moodtracker.presentation.viewmodel.MoodEntryViewModel
 

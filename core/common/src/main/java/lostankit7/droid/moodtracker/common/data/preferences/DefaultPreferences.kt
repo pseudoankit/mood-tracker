@@ -1,9 +1,9 @@
-package lostankit7.droid.moodtracker.data.preferences
+package lostankit7.droid.moodtracker.common.data.preferences
 
 import android.content.SharedPreferences
-import lostankit7.droid.moodtracker.domain.preferences.Preferences
-import lostankit7.droid.moodtracker.utils.SharedPrefs.set
-import lostankit7.droid.moodtracker.utils.SharedPrefs.get
+import lostankit7.droid.moodtracker.common.domain.preferences.Preferences
+import lostankit7.droid.moodtracker.common.utils.SharedPrefs.get
+import lostankit7.droid.moodtracker.common.utils.SharedPrefs.set
 
 class DefaultPreferences(
     private val prefs: SharedPreferences,

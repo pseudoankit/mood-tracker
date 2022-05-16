@@ -51,7 +51,7 @@
             app:destination="@id/displayTaskCategoriesFragment" />
         <argument
             android:name="moodEntry"
-            app:argType="lostankit7.droid.moodtracker.model.MoodEntry" />
+            app:argType="lostankit7.android.entry_domain.entities.MoodEntry" />
         <action
             android:id="@+id/action_addTaskEntryFragment_to_displayAllUserEntriesFragment"
             app:popUpTo="@id/displayAllUserEntriesFragment"
