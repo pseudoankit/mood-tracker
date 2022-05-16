@@ -42,6 +42,6 @@ dependencies {
 
     implementation(Dependencies.liveData)
     implementation(Dependencies.roomKtx)
-    implementation(Dependencies.roomRuntime)
+    api(Dependencies.roomRuntime)
     kapt(Dependencies.roomCompiler)
 }

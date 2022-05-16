@@ -9,9 +9,10 @@ import androidx.navigation.ui.setupWithNavController
 import lostankit7.droid.moodtracker.R
 import lostankit7.droid.moodtracker.core_presentation.databinding.CommonActionBarBinding
 import lostankit7.droid.moodtracker.databinding.ActivityMainBinding
-import lostankit7.droid.moodtracker.presentation.fragment.addentry.AddTaskEntryFragment
-import lostankit7.droid.moodtracker.presentation.fragment.edit.editmood.UpsertMoodIconFragment
-import lostankit7.droid.moodtracker.presentation.fragment.edit.edittask.UpsertTaskIconFragment
+import lostankit7.android.entry_presentation.fragment.addEntry.AddTaskEntryFragment
+import lostankit7.android.entry_presentation.fragment.editEntry.editmood.UpsertMoodIconFragment
+import lostankit7.android.entry_presentation.fragment.editEntry.edittask.UpsertTaskIconFragment
+import lostankit7.droid.moodtracker.MyApplication
 import lostankit7.droid.moodtracker.core_presentation.utils.hide
 import lostankit7.droid.moodtracker.core_presentation.utils.show
 
@@ -27,7 +28,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         navController = findNavController(R.id.fragment_container)
-        navController.addOnDestinationChangedListener(::onNavControllerDestinationChanged)
 
         initListener()
         setUpBottomNavigation()
@@ -35,32 +35,10 @@ class MainActivity : AppCompatActivity() {
 
     private fun initListener() {
         binding.fabAddUserEntry.setOnClickListener { addEntryButtonClicked() }
-        binding.actionBar.btnBack.setOnClickListener {
-            navController.popBackStack()
-        }
-        binding.actionBar.btnSave.setOnClickListener {
-            when (val fragment =
-                supportFragmentManager.findFragmentById(R.id.fragment_container)?.childFragmentManager?.primaryNavigationFragment) {
-                is AddTaskEntryFragment -> fragment.saveEntry()
-                is UpsertMoodIconFragment -> fragment.saveMoodIcon()
-                is UpsertTaskIconFragment -> fragment.saveTaskIcon()
-            }
-        }
     }
 
     private fun addEntryButtonClicked() {
-        navController.navigate(R.id.addMoodEntryFragment)
-    }
 
-    private fun onNavControllerDestinationChanged(
-        navController: NavController, destination: NavDestination, bundle: Bundle?,
-    ) {
-        when (destination.id) {
-            R.id.calendarFragment, R.id.moreFragment, R.id.displayAllUserEntriesFragment -> {
-                showBottomNav()
-            }
-            else -> hideBottomNav()
-        }
     }
 
     private fun setUpBottomNavigation() {

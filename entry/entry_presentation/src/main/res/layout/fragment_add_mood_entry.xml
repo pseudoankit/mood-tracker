@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="@dimen/padding_screen"
-    tools:context=".presentation.fragment.addentry.AddMoodEntryFragment">
+    tools:context=".fragment.addEntry.AddMoodEntryFragment">
 
     <lostankit7.droid.CustomTextView
         android:layout_marginTop="@dimen/dp_10"

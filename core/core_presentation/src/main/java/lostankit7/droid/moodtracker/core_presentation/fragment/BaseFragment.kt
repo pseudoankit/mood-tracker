@@ -45,9 +45,7 @@ abstract class BaseFragment<VB : ViewBinding> : Fragment() {
     open suspend fun registerObservers() {}
     open fun initListeners() {}
 
-    open fun updateActionBar() {
-
-    }
+    open fun updateActionBar() {}
 
     fun navigateTo(directions: NavDirections) {
         findNavController().navigate(directions)

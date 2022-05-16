@@ -4,12 +4,13 @@ import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.viewbinding.ViewBinding
+import lostankit7.droid.moodtracker.core_presentation.di.viewmodel.ViewModelFactory
 import javax.inject.Inject
 
 abstract class BaseDaggerFragment<VB : ViewBinding, VM : ViewModel> : BaseFragment<VB>() {
 
     @Inject
-    lateinit var viewModelFactory: lostankit7.droid.moodtracker.core_presentation.di.viewmodel.ViewModelFactory
+    lateinit var viewModelFactory: ViewModelFactory
 
     val viewModel: VM by lazy { initiateViewModel(ViewModelProvider(this, viewModelFactory)) }
 
