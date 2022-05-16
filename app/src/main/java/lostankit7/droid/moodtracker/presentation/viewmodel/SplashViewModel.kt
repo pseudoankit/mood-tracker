@@ -1,30 +1,30 @@
 package lostankit7.droid.moodtracker.presentation.viewmodel
 
+import lostankit7.android.entry_domain.entities.*
+import lostankit7.android.entry_domain.repository.*
 import lostankit7.droid.moodtracker.core_presentation.viewmodel.BaseViewModel
-import lostankit7.droid.moodtracker.data.database.entities.*
-import lostankit7.droid.moodtracker.data.repository.*
 import lostankit7.droid.moodtracker.domain.preferences.Preferences
 import javax.inject.Inject
 
 class SplashViewModel @Inject constructor(
     private val prefs: Preferences,
-    private val moodIconRepo: lostankit7.android.entry_data.repository.MoodIconRepository,
-    private val suggestedMoodIconRepo: lostankit7.android.entry_data.repository.SuggestedMoodIconRepository,
-    private val suggestedTaskIconRepository: lostankit7.android.entry_data.repository.SuggestedTaskIconRepository,
-    private val taskCategoryRepo: lostankit7.android.entry_data.repository.TaskCategoryRepository,
-    private val taskIconRepo: lostankit7.android.entry_data.repository.TaskIconRepository,
-    private val suggestedMoodNameRep: lostankit7.android.entry_data.repository.SuggestedMoodNameRepository,
-    private val suggestedTaskNameRepository: lostankit7.android.entry_data.repository.SuggestedTaskNameRepository
+    private val moodIconRepo: MoodIconRepository,
+    private val suggestedMoodIconRepo: SuggestedMoodIconRepository,
+    private val suggestedTaskIconRepository: SuggestedTaskIconRepository,
+    private val taskCategoryRepo: TaskCategoryRepository,
+    private val taskIconRepo: TaskIconRepository,
+    private val suggestedMoodNameRep: SuggestedMoodNameRepository,
+    private val suggestedTaskNameRepository: SuggestedTaskNameRepository
 ) : BaseViewModel() {
 
     fun saveDefaultIcons(
-        moodIcons: List<lostankit7.android.entry_data.database.entities.MoodIcon>,
-        suggestedMoodIcons: List<lostankit7.android.entry_data.database.entities.SuggestedMoodIcon>,
-        taskCategories: List<lostankit7.android.entry_data.database.entities.TaskCategory>,
-        taskIcons: List<lostankit7.android.entry_data.database.entities.TaskIcon>,
-        suggestedTaskIcons: List<lostankit7.android.entry_data.database.entities.SuggestedTaskIcon>,
-        suggestedMoodNames: List<lostankit7.android.entry_data.database.entities.SuggestedMoodName>,
-        suggestedTaskNames: List<lostankit7.android.entry_data.database.entities.SuggestedTaskName>
+        moodIcons: List<MoodIcon>,
+        suggestedMoodIcons: List<SuggestedMoodIcon>,
+        taskCategories: List<TaskCategory>,
+        taskIcons: List<TaskIcon>,
+        suggestedTaskIcons: List<SuggestedTaskIcon>,
+        suggestedMoodNames: List<SuggestedMoodName>,
+        suggestedTaskNames: List<SuggestedTaskName>
     ) {
         if (!prefs.isInitialLaunch()) return
 

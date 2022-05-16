@@ -6,8 +6,8 @@ import androidx.navigation.fragment.navArgs
 import lostankit7.droid.moodtracker.R
 import lostankit7.droid.moodtracker.base.fragment.BaseDaggerFragment
 import lostankit7.droid.moodtracker.core_presentation.databinding.CommonActionBarBinding
-import lostankit7.android.entry_data.database.entities.Icon
-import lostankit7.android.entry_data.database.entities.TaskIcon
+import lostankit7.android.entry_domain.entities.Icon
+import lostankit7.android.entry_domain.entities.TaskIcon
 import lostankit7.droid.moodtracker.databinding.FragmentAddTaskEntryBinding
 import lostankit7.droid.moodtracker.di.AppComponent
 import lostankit7.droid.moodtracker.presentation.adapter.RvTaskAdapter
@@ -46,11 +46,11 @@ class AddTaskEntryFragment : BaseDaggerFragment<FragmentAddTaskEntryBinding, Tas
         }
     }
 
-    private fun onTaskSelected(task: lostankit7.android.entry_data.database.entities.Icon) = with(viewModel){
+    private fun onTaskSelected(task: Icon) = with(viewModel){
         if (selectedTasksMap.containsKey(task.hashCode()))
             selectedTasksMap.remove(task.hashCode())
         else
-            selectedTasksMap[task.hashCode()] = task as lostankit7.android.entry_data.database.entities.TaskIcon
+            selectedTasksMap[task.hashCode()] = task as TaskIcon
     }
 
     override fun initRecyclerView() {

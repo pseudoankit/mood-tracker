@@ -1,5 +1,6 @@
 package lostankit7.android.entry_data.local.dao
 
+import androidx.lifecycle.LiveData
 import androidx.room.*
 import kotlinx.coroutines.flow.Flow
 import lostankit7.android.entry_data.local.entities.LocalUserEntry
@@ -8,10 +9,10 @@ import lostankit7.android.entry_data.local.entities.LocalUserEntry
 interface UserEntryDao {
 
     @Query("SELECT * FROM LocalUserEntry")
-    fun userEntries(): Flow<List<LocalUserEntry>>
+    fun userEntries(): LiveData<List<LocalUserEntry>>
 
     @Query("SELECT * FROM LocalUserEntry WHERE date = :date")
-    fun userEntries(date: String): Flow<List<LocalUserEntry>>
+    fun userEntries(date: String): LiveData<List<LocalUserEntry>>
 
     @Insert
     suspend fun saveUserEntry(userEntry: LocalUserEntry)

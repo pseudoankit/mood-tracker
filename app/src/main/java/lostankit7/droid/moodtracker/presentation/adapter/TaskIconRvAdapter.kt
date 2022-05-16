@@ -6,19 +6,19 @@ import androidx.core.content.ContextCompat
 import lostankit7.droid.CustomTextView
 import lostankit7.droid.moodtracker.R
 import lostankit7.droid.moodtracker.core_presentation.adapter.BaseDiffRvAdapter
-import lostankit7.android.entry_data.database.entities.Icon
-import lostankit7.android.entry_data.database.entities.TaskIcon
+import lostankit7.android.entry_domain.entities.Icon
+import lostankit7.android.entry_domain.entities.TaskIcon
 import lostankit7.droid.moodtracker.databinding.ItemRvTaskIconBinding
 import lostankit7.droid.moodtracker.core_presentation.utils.invert
 
 class TaskIconRvAdapter(
-    private val taskSelected: (lostankit7.android.entry_data.database.entities.Icon) -> Unit, private val isMultiSelect: Boolean
-) : BaseDiffRvAdapter<ItemRvTaskIconBinding, lostankit7.android.entry_data.database.entities.Icon>() {
+    private val taskSelected: (Icon) -> Unit, private val isMultiSelect: Boolean
+) : BaseDiffRvAdapter<ItemRvTaskIconBinding, Icon>() {
 
-    override fun bindViewHolder(item: lostankit7.android.entry_data.database.entities.Icon, position: Int, binding: ItemRvTaskIconBinding) {
+    override fun bindViewHolder(item: Icon, position: Int, binding: ItemRvTaskIconBinding) {
 
         if (item.isSolid) binding.tvIcon.isSolidIcon() else binding.tvIcon.isRegularIcon()
-        binding.tvName.invert(item is lostankit7.android.entry_data.database.entities.TaskIcon)
+        binding.tvName.invert(item is TaskIcon)
         binding.tvIcon
             .setTextColor(ContextCompat.getColor(binding.tvIcon.context, R.color.sec_icon_color))
         binding.tvName
@@ -26,14 +26,14 @@ class TaskIconRvAdapter(
 
         binding.tvName.text = item.name
         binding.tvIcon.text = item.icon
-        if (isMultiSelect && item is lostankit7.android.entry_data.database.entities.TaskIcon) {
+        if (isMultiSelect && item is TaskIcon) {
             binding.tvIcon.updateSelection(item.isSelected)
         }
 
         binding.root.setOnClickListener {
             taskSelected.invoke(item)
 
-            if (isMultiSelect && item is lostankit7.android.entry_data.database.entities.TaskIcon) {
+            if (isMultiSelect && item is TaskIcon) {
                 item.isSelected = !item.isSelected
                 binding.tvIcon.updateSelection(item.isSelected)
             }
@@ -55,7 +55,7 @@ class TaskIconRvAdapter(
     ) = ItemRvTaskIconBinding.inflate(layoutInflater, parent, attachToParent)
 
     companion object {
-        fun newInstance(taskSelected: (lostankit7.android.entry_data.database.entities.Icon) -> Unit, isMultiSelect: Boolean) =
+        fun newInstance(taskSelected: (Icon) -> Unit, isMultiSelect: Boolean) =
             TaskIconRvAdapter(taskSelected, isMultiSelect)
     }
 }

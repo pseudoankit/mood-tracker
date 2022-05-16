@@ -5,16 +5,16 @@ import android.view.MenuItem
 import android.view.ViewGroup
 import lostankit7.droid.moodtracker.R
 import lostankit7.droid.moodtracker.core_presentation.adapter.BaseDiffRvAdapter
-import lostankit7.android.entry_data.database.entities.Icon
-import lostankit7.android.entry_data.database.entities.MoodIcon
-import lostankit7.android.entry_data.database.entities.TaskIcon
+import lostankit7.android.entry_domain.entities.Icon
+import lostankit7.android.entry_domain.entities.MoodIcon
+import lostankit7.android.entry_domain.entities.TaskIcon
 import lostankit7.droid.moodtracker.databinding.ItemIconListBinding
 import lostankit7.droid.moodtracker.core_presentation.utils.DialogHelper
 
 class IconListRvAdapter(
-    private val itemClick: (lostankit7.android.entry_data.database.entities.Icon) -> Unit,
-    private val optionsSelected: (MenuItem, lostankit7.android.entry_data.database.entities.Icon) -> Boolean
-) : BaseDiffRvAdapter<ItemIconListBinding, lostankit7.android.entry_data.database.entities.Icon>() {
+    private val itemClick: (Icon) -> Unit,
+    private val optionsSelected: (MenuItem, Icon) -> Boolean
+) : BaseDiffRvAdapter<ItemIconListBinding, Icon>() {
 
     override fun onCreateHolder(
         holder: BaseDiffRvAdapter.Companion.ViewHolder<ItemIconListBinding>,
@@ -30,17 +30,17 @@ class IconListRvAdapter(
         }
     }
 
-    override fun bindViewHolder(item: lostankit7.android.entry_data.database.entities.Icon, position: Int, binding: ItemIconListBinding) {
+    override fun bindViewHolder(item: Icon, position: Int, binding: ItemIconListBinding) {
 
         if (item.isSolid) binding.faIcon.isSolidIcon() else binding.faIcon.isRegularIcon()
         binding.tvName.text = item.name
         binding.faIcon.text = item.icon
 
         when (item) {
-            is lostankit7.android.entry_data.database.entities.MoodIcon -> {
+            is MoodIcon -> {
                 binding.faIcon.isRegularIcon()
             }
-            is lostankit7.android.entry_data.database.entities.TaskIcon -> {
+            is TaskIcon -> {
                 binding.faIcon.isSolidIcon()
             }
         }

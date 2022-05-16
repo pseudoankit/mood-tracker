@@ -5,7 +5,7 @@ import android.view.MenuItem
 import androidx.lifecycle.ViewModelProvider
 import lostankit7.droid.moodtracker.R
 import lostankit7.droid.moodtracker.base.fragment.BaseDaggerFragment
-import lostankit7.android.entry_data.database.entities.UserEntry
+import lostankit7.android.entry_domain.entities.UserEntry
 import lostankit7.droid.moodtracker.databinding.FragmentDisplayUserEntriesBinding
 import lostankit7.droid.moodtracker.di.AppComponent
 import lostankit7.droid.moodtracker.presentation.adapter.RvUserEntriesAdapter
@@ -19,7 +19,7 @@ abstract class DisplayUserEntriesBaseFragment : BaseDaggerFragment<FragmentDispl
         binding.rvUserEntries.adapter = adapter
     }
 
-    private fun onItemClicked(menuItem: MenuItem, userEntry: lostankit7.android.entry_data.database.entities.UserEntry): Boolean {
+    private fun onItemClicked(menuItem: MenuItem, userEntry: UserEntry): Boolean {
         return when (menuItem.itemId) {
             R.id.edit -> {
                 //todo edit

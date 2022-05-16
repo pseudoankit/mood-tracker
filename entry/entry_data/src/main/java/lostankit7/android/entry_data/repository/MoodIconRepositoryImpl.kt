@@ -1,5 +1,7 @@
 package lostankit7.android.entry_data.repository
 
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.map
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 import lostankit7.android.entry_data.local.dao.MoodIconDao
@@ -12,7 +14,7 @@ import lostankit7.android.entry_domain.repository.MoodIconRepository
 
 class MoodIconRepositoryImpl(private val moodIconDao: MoodIconDao) : MoodIconRepository {
 
-    override val moodIcons: Flow<List<MoodIcon>> =
+    override val moodIcons: LiveData<List<MoodIcon>> =
         moodIconDao.getMoodIcons().map { it.toMoodIcon() }
 
     override suspend fun insertMoodIcons(icons: List<MoodIcon>) {

@@ -6,8 +6,8 @@ import androidx.lifecycle.ViewModelProvider
 import lostankit7.droid.moodtracker.R
 import lostankit7.droid.moodtracker.base.fragment.BaseDaggerFragment
 import lostankit7.droid.moodtracker.core_presentation.databinding.CommonActionBarBinding
-import lostankit7.android.entry_data.database.entities.Icon
-import lostankit7.android.entry_data.database.entities.MoodIcon
+import lostankit7.android.entry_domain.entities.Icon
+import lostankit7.android.entry_domain.entities.MoodIcon
 import lostankit7.droid.moodtracker.databinding.FragmentDisplayListBinding
 import lostankit7.droid.moodtracker.di.AppComponent
 import lostankit7.droid.moodtracker.presentation.adapter.IconListRvAdapter
@@ -19,24 +19,24 @@ class DisplayMoodIconsFragment :
 
     private val adapter = IconListRvAdapter(::upsertMoodIcon, ::rvOptionsSelected)
 
-    private fun rvOptionsSelected(menuItem: MenuItem, item: lostankit7.android.entry_data.database.entities.Icon): Boolean {
+    private fun rvOptionsSelected(menuItem: MenuItem, item: Icon): Boolean {
         return when (menuItem.itemId) {
             R.id.edit -> {
                 upsertMoodIcon(item)
                 true
             }
             R.id.delete -> {
-                viewModel.deleteMoodIcon(item as lostankit7.android.entry_data.database.entities.MoodIcon)
+                viewModel.deleteMoodIcon(item as MoodIcon)
                 true
             }
             else -> false
         }
     }
 
-    private fun upsertMoodIcon(item: lostankit7.android.entry_data.database.entities.Icon?) {
+    private fun upsertMoodIcon(item: Icon?) {
         navigateTo(
             DisplayMoodIconsFragmentDirections.actionDisplayMoodIconsFragmentToUpsertMoodIconFragment(
-                item as? lostankit7.android.entry_data.database.entities.MoodIcon
+                item as? MoodIcon
             )
         )
     }

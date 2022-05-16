@@ -1,5 +1,6 @@
 package lostankit7.android.entry_data.repository
 
+import androidx.lifecycle.map
 import kotlinx.coroutines.flow.map
 import lostankit7.android.entry_data.local.dao.SuggestedTaskIconDao
 import lostankit7.android.entry_data.mapper.SuggestedTaskIconMapper.toLocalSuggestedTaskIconInsert

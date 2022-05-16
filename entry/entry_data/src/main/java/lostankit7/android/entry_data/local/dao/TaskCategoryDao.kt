@@ -1,5 +1,6 @@
 package lostankit7.android.entry_data.local.dao
 
+import androidx.lifecycle.LiveData
 import androidx.room.*
 import kotlinx.coroutines.flow.Flow
 import lostankit7.android.entry_data.local.entities.LocalTaskCategory
@@ -8,7 +9,7 @@ import lostankit7.android.entry_data.local.entities.LocalTaskCategory
 interface TaskCategoryDao {
 
     @Query("SELECT * FROM LocalTaskCategory")
-    fun getTaskCategories() : Flow<List<LocalTaskCategory>>
+    fun getTaskCategories() : LiveData<List<LocalTaskCategory>>
 
     @Insert
     suspend fun insertTaskCategories(list: List<LocalTaskCategory>)

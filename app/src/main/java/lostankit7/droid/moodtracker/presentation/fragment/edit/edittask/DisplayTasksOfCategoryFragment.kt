@@ -8,8 +8,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import lostankit7.droid.moodtracker.R
 import lostankit7.droid.moodtracker.base.fragment.BaseDaggerFragment
 import lostankit7.droid.moodtracker.core_presentation.databinding.CommonActionBarBinding
-import lostankit7.android.entry_data.database.entities.Icon
-import lostankit7.android.entry_data.database.entities.TaskIcon
+import lostankit7.android.entry_domain.entities.Icon
+import lostankit7.android.entry_domain.entities.TaskIcon
 import lostankit7.droid.moodtracker.databinding.FragmentDisplayListBinding
 import lostankit7.droid.moodtracker.di.AppComponent
 import lostankit7.droid.moodtracker.presentation.adapter.IconListRvAdapter
@@ -30,22 +30,22 @@ class DisplayTasksOfCategoryFragment :
         }
     }
 
-    private fun rvOptionsSelected(menuItem: MenuItem, item: lostankit7.android.entry_data.database.entities.Icon): Boolean {
+    private fun rvOptionsSelected(menuItem: MenuItem, item: Icon): Boolean {
         return when (menuItem.itemId) {
             R.id.edit -> {
                 upsertTaskIcon(item)
                 true
             }
             R.id.delete -> {
-                viewModel.deleteTask(item as lostankit7.android.entry_data.database.entities.TaskIcon)
+                viewModel.deleteTask(item as TaskIcon)
                 true
             }
             else -> false
         }
     }
 
-    private fun upsertTaskIcon(item: lostankit7.android.entry_data.database.entities.Icon?) {
-        val _item = item as? lostankit7.android.entry_data.database.entities.TaskIcon
+    private fun upsertTaskIcon(item: Icon?) {
+        val _item = item as? TaskIcon
             navigateTo(
                 DisplayTasksOfCategoryFragmentDirections.actionDisplayTasksOfCategoryFragmentToUpsertTaskIconFragment(
                     _item, args.categoryName

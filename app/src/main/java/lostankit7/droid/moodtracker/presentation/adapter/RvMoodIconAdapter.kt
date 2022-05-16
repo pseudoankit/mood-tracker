@@ -5,14 +5,14 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import lostankit7.droid.moodtracker.core_presentation.adapter.BaseDiffRvAdapter
 import lostankit7.droid.moodtracker.databinding.ItemRvMoodIconBinding
-import lostankit7.android.entry_data.database.entities.MoodIcon
+import lostankit7.android.entry_domain.entities.MoodIcon
 
 class RvMoodIconAdapter(
     private val context: Context?,
-    private val iconSelected: (lostankit7.android.entry_data.database.entities.MoodIcon) -> Unit
-) : BaseDiffRvAdapter<ItemRvMoodIconBinding, lostankit7.android.entry_data.database.entities.MoodIcon>() {
+    private val iconSelected: (MoodIcon) -> Unit
+) : BaseDiffRvAdapter<ItemRvMoodIconBinding, MoodIcon>() {
 
-    override fun bindViewHolder(item: lostankit7.android.entry_data.database.entities.MoodIcon, position: Int, binding: ItemRvMoodIconBinding) {
+    override fun bindViewHolder(item: MoodIcon, position: Int, binding: ItemRvMoodIconBinding) {
         binding.tvName.text = item.name
         binding.tvIcon.text = item.icon
 

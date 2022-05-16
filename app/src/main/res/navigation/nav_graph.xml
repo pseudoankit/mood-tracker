@@ -83,7 +83,7 @@
         android:label="UpsertTaskIconFragment">
         <argument
             android:name="editTaskIcon"
-            app:argType="lostankit7.droid.moodtracker.data.database.entities.TaskIcon"
+            app:argType="lostankit7.android.entry_domain.entities.TaskIcon"
             app:nullable="true" />
         <argument
             android:name="category"
@@ -117,7 +117,7 @@
         tools:layout="@layout/fragment_upsert_mood_task_icon">
         <argument
             android:name="icon"
-            app:argType="lostankit7.droid.moodtracker.data.database.entities.MoodIcon"
+            app:argType="lostankit7.android.entry_domain.entities.MoodIcon"
             app:nullable="true" />
     </fragment>
 

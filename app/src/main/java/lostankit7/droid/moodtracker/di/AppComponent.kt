@@ -3,6 +3,8 @@ package lostankit7.droid.moodtracker.di
 import android.content.Context
 import dagger.BindsInstance
 import dagger.Component
+import lostankit7.android.entry_data.di.EntryDatabaseModule
+import lostankit7.android.entry_data.di.LocalDbModule
 import lostankit7.droid.moodtracker.common.di.scope.ApplicationContext
 import lostankit7.droid.moodtracker.di.component.BaseDataModule
 import lostankit7.droid.moodtracker.presentation.fragment.splash.SplashFragment
@@ -18,7 +20,11 @@ import lostankit7.droid.moodtracker.presentation.fragment.home.MoreFragment
 import javax.inject.Singleton
 
 @Singleton
-@Component(modules = [DataBaseModule::class, ViewModelModule::class, BaseDataModule::class])
+@Component(modules = [
+    ViewModelModule::class,
+    BaseDataModule::class,
+    EntryDatabaseModule::class, LocalDbModule::class
+])
 interface AppComponent {
 
     @Component.Factory

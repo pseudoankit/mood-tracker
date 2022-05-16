@@ -1,5 +1,7 @@
 package lostankit7.android.entry_data.repository
 
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.map
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 import lostankit7.android.entry_data.local.dao.TaskCategoryDao
@@ -11,7 +13,7 @@ import lostankit7.android.entry_domain.repository.TaskCategoryRepository
 
 class TaskCategoryRepositoryImpl(private val dao: TaskCategoryDao) : TaskCategoryRepository {
 
-    override val taskCategories: Flow<List<TaskCategory>> =
+    override val taskCategories: LiveData<List<TaskCategory>> =
         dao.getTaskCategories().map { it.toTaskCategory }
 
     override suspend fun insertTaskCategories(list: List<TaskCategory>) =

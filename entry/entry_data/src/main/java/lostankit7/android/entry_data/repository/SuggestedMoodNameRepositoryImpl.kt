@@ -1,5 +1,7 @@
 package lostankit7.android.entry_data.repository
 
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.map
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 import lostankit7.android.entry_data.local.dao.SuggestedMoodNameDao
@@ -11,7 +13,7 @@ import lostankit7.android.entry_domain.repository.SuggestedMoodNameRepository
 class SuggestedMoodNameRepositoryImpl(private val dao: SuggestedMoodNameDao) :
     SuggestedMoodNameRepository {
 
-    override val suggestedMoodNames: Flow<List<SuggestedMoodName>> =
+    override val suggestedMoodNames: LiveData<List<SuggestedMoodName>> =
         dao.getSuggestions().map { it.toSuggestedMoodName() }
 
     override suspend fun insertSuggestions(list: List<SuggestedMoodName>) {

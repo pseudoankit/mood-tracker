@@ -1,5 +1,6 @@
 package lostankit7.android.entry_data.local.dao
 
+import androidx.lifecycle.LiveData
 import androidx.room.*
 import kotlinx.coroutines.flow.Flow
 import lostankit7.android.entry_data.local.entities.LocalTaskIcon
@@ -8,7 +9,7 @@ import lostankit7.android.entry_data.local.entities.LocalTaskIcon
 interface TaskIconDao {
 
     @Query("SELECT * FROM LocalTaskIcon where category = :category")
-    fun getTaskIcons(category: String): Flow<List<LocalTaskIcon>>
+    fun getTaskIcons(category: String): LiveData<List<LocalTaskIcon>>
 
     @Insert
     suspend fun insertTaskIcons(list: List<LocalTaskIcon>)

@@ -1,5 +1,6 @@
 package lostankit7.android.entry_data.local.dao
 
+import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Insert
@@ -11,7 +12,7 @@ import lostankit7.android.entry_data.local.entities.LocalSuggestedTaskName
 interface SuggestedTaskNameDao {
 
     @Query("SELECT * FROM LocalSuggestedTaskName")
-    fun getSuggestions() : Flow<List<LocalSuggestedTaskName>>
+    fun getSuggestions() : LiveData<List<LocalSuggestedTaskName>>
 
     @Insert
     suspend fun insertSuggestions(list: List<LocalSuggestedTaskName>)

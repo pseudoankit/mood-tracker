@@ -7,8 +7,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import lostankit7.droid.moodtracker.R
 import lostankit7.droid.moodtracker.base.fragment.BaseDaggerFragment
 import lostankit7.droid.moodtracker.core_presentation.databinding.CommonActionBarBinding
-import lostankit7.android.entry_data.database.entities.Icon
-import lostankit7.android.entry_data.database.entities.TaskCategory
+import lostankit7.android.entry_domain.entities.Icon
+import lostankit7.android.entry_domain.entities.TaskCategory
 import lostankit7.droid.moodtracker.databinding.DialogTextEntryBinding
 import lostankit7.droid.moodtracker.databinding.FragmentDisplayListBinding
 import lostankit7.droid.moodtracker.di.AppComponent
@@ -30,8 +30,8 @@ class DisplayTaskCategoriesFragment :
         }
     }
 
-    private fun rvOptionsSelected(menuItem: MenuItem, item: lostankit7.android.entry_data.database.entities.Icon): Boolean {
-        val it = item as lostankit7.android.entry_data.database.entities.TaskCategory
+    private fun rvOptionsSelected(menuItem: MenuItem, item: Icon): Boolean {
+        val it = item as TaskCategory
         val oldText = it.name
         return when (menuItem.itemId) {
             R.id.edit -> {
@@ -49,7 +49,7 @@ class DisplayTaskCategoriesFragment :
         }
     }
 
-    private fun categorySelected(item: lostankit7.android.entry_data.database.entities.Icon) {
+    private fun categorySelected(item: Icon) {
         navigateTo(
             DisplayTaskCategoriesFragmentDirections.actionDisplayTaskCategoriesFragmentToDisplayTasksOfCategoryFragment(
                 item.name
@@ -67,7 +67,7 @@ class DisplayTaskCategoriesFragment :
 
         binding.button.setOnClickListener {
             showEdtDialog {
-                viewModel.addCategory(lostankit7.android.entry_data.database.entities.TaskCategory(
+                viewModel.addCategory(TaskCategory(
                     it))
             }
         }

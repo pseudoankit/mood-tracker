@@ -1,10 +1,11 @@
 package lostankit7.android.entry_domain.repository
 
-import kotlinx.coroutines.flow.Flow
+
+import androidx.lifecycle.LiveData
 import lostankit7.android.entry_domain.entities.MoodIcon
 
 interface MoodIconRepository {
-    val moodIcons: Flow<List<MoodIcon>>
+    val moodIcons: LiveData<List<MoodIcon>>
     suspend fun insertMoodIcons(icons: List<MoodIcon>)
     suspend fun insertMoodIcon(icon: MoodIcon)
     fun updateMoodIcon(icon: MoodIcon)

@@ -6,8 +6,8 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import lostankit7.droid.moodtracker.R
 import lostankit7.droid.moodtracker.core_presentation.adapter.BaseDiffRvAdapter
-import lostankit7.android.entry_data.database.entities.Icon
-import lostankit7.android.entry_data.database.entities.TaskCategory
+import lostankit7.android.entry_domain.entities.Icon
+import lostankit7.android.entry_domain.entities.TaskCategory
 import lostankit7.droid.moodtracker.databinding.ItemRvExpandableViewBinding
 import lostankit7.droid.moodtracker.core_presentation.utils.Constants
 import lostankit7.droid.moodtracker.core_presentation.utils.hide
@@ -15,11 +15,11 @@ import lostankit7.droid.moodtracker.core_presentation.utils.show
 
 class RvTaskAdapter(
     private val getTaskIcons: (String, TaskIconRvAdapter) -> Unit,
-    private val taskSelected: (lostankit7.android.entry_data.database.entities.Icon) -> Unit
-) : BaseDiffRvAdapter<ItemRvExpandableViewBinding, lostankit7.android.entry_data.database.entities.TaskCategory>() {
+    private val taskSelected: (Icon) -> Unit
+) : BaseDiffRvAdapter<ItemRvExpandableViewBinding, TaskCategory>() {
 
     override fun bindViewHolder(
-        item: lostankit7.android.entry_data.database.entities.TaskCategory, position: Int, binding: ItemRvExpandableViewBinding
+        item: TaskCategory, position: Int, binding: ItemRvExpandableViewBinding
     ) {
 
         binding.txtTitle.text = item.name
@@ -32,7 +32,7 @@ class RvTaskAdapter(
     }
 
     private fun ItemRvExpandableViewBinding.toggleTaskCategory(
-        item: lostankit7.android.entry_data.database.entities.TaskCategory,
+        item: TaskCategory,
         isInitial: Boolean = false
     ) {
         if (!isInitial) item.isExpanded = !item.isExpanded

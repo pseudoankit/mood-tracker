@@ -1,5 +1,6 @@
 package lostankit7.android.entry_data.local.dao
 
+import androidx.lifecycle.LiveData
 import androidx.room.*
 import kotlinx.coroutines.flow.Flow
 import lostankit7.android.entry_data.local.entities.LocalMoodIcon
@@ -8,7 +9,7 @@ import lostankit7.android.entry_data.local.entities.LocalMoodIcon
 interface MoodIconDao {
 
     @Query("SELECT * FROM LocalMoodIcon")
-    fun getMoodIcons(): Flow<List<LocalMoodIcon>>
+    fun getMoodIcons(): LiveData<List<LocalMoodIcon>>
 
     @Insert
     suspend fun insertMoodIcon(icon: LocalMoodIcon)

@@ -40,9 +40,15 @@ android {
 }
 
 dependencies {
+    implementation(project(Modules.entryData))
+    implementation(project(Modules.entryDomain))
+    implementation(project(Modules.entryPresentation))
+    implementation(project(Modules.homeDisplay_entries))
+    implementation(project(Modules.homeCalendar))
+    implementation(project(Modules.homeMore))
+    implementation(project(Modules.common))
     implementation(project(Modules.corePresentation))
     implementation(project(Modules.coreDataDomain))
-    implementation(project(Modules.common))
 
     //custom views
     implementation(Dependencies.customViews)
