@@ -1,14 +1,19 @@
 package lostankit7.android.entry_presentation.fragment.addEntry
 
 import android.view.LayoutInflater
+import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import lostankit7.android.entry_domain.entities.MoodEntry
 import lostankit7.android.entry_domain.entities.MoodIcon
+import lostankit7.android.entry_presentation.AddUserEntryActivity
 import lostankit7.android.entry_presentation.adapter.RvMoodIconAdapter
 import lostankit7.android.entry_presentation.databinding.FragmentAddMoodEntryBinding
-import lostankit7.android.entry_presentation.utils.DIUtils.entryComponent
+import lostankit7.android.entry_presentation.utils.Utils.entryComponent
+import lostankit7.android.entry_presentation.utils.Utils.mActionBar
 import lostankit7.android.entry_presentation.viewmodel.MoodEntryViewModel
+import lostankit7.droid.helper.hide
+import lostankit7.droid.moodtracker.core.databinding.CommonActionBarBinding
 import lostankit7.droid.moodtracker.core.presentation.utils.DateTimeUtils.getCurrentDate
 import lostankit7.droid.moodtracker.core.presentation.utils.DateTimeUtils.getCurrentTime
 import lostankit7.droid.moodtracker.core.presentation.utils.DateTimeUtils.getSelectedDate
@@ -19,7 +24,7 @@ class AddMoodEntryFragment : BaseDaggerFragment<FragmentAddMoodEntryBinding, Moo
 
     private val moodIconAdapter = RvMoodIconAdapter(context, ::onMoodIconSelected)
 
-    override suspend fun registerObservers() {
+    override fun registerObservers() {
         super.registerObservers()
         viewModel.moodIconsLiveData.observe(viewLifecycleOwner) {
             moodIconAdapter.submitList(it)
@@ -70,6 +75,10 @@ class AddMoodEntryFragment : BaseDaggerFragment<FragmentAddMoodEntryBinding, Moo
     override fun initRecyclerView() {
         super.initRecyclerView()
         binding.rvMoodIcon.adapter = moodIconAdapter
+    }
+
+    override fun updateActionBar() {
+        activity?.mActionBar?.root?.hide()
     }
 
     override fun initiateViewModel(viewModelProvider: ViewModelProvider) =

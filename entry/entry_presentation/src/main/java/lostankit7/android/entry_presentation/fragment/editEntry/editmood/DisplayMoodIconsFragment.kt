@@ -5,11 +5,11 @@ import android.view.MenuItem
 import androidx.lifecycle.ViewModelProvider
 import lostankit7.android.entry_domain.entities.Icon
 import lostankit7.android.entry_domain.entities.MoodIcon
-import lostankit7.android.entry_presentation.AddUserEntryActivity
 import lostankit7.android.entry_presentation.R
 import lostankit7.android.entry_presentation.adapter.IconListRvAdapter
 import lostankit7.android.entry_presentation.databinding.FragmentDisplayListBinding
-import lostankit7.android.entry_presentation.utils.DIUtils.entryComponent
+import lostankit7.android.entry_presentation.utils.Utils.entryComponent
+import lostankit7.android.entry_presentation.utils.Utils.mActionBar
 import lostankit7.android.entry_presentation.viewmodel.MoodEntryViewModel
 import lostankit7.droid.moodtracker.core.presentation.fragment.BaseDaggerFragment
 import lostankit7.droid.moodtracker.core.presentation.utils.ActionBarUtils.applyDefault
@@ -41,17 +41,11 @@ class DisplayMoodIconsFragment :
         )
     }
 
-    override suspend fun registerObservers() {
+    override fun registerObservers() {
         super.registerObservers()
 
         viewModel.moodIconsLiveData.observe(viewLifecycleOwner) {
             adapter.submitList(it)
-        }
-    }
-
-    override fun updateActionBar() {
-        (activity as? AddUserEntryActivity)?.actionBar?.apply {
-            applyDefault()
         }
     }
 

@@ -9,7 +9,8 @@ import lostankit7.android.entry_presentation.AddUserEntryActivity
 import lostankit7.android.entry_presentation.adapter.RvTaskAdapter
 import lostankit7.android.entry_presentation.adapter.TaskIconRvAdapter
 import lostankit7.android.entry_presentation.databinding.FragmentAddTaskEntryBinding
-import lostankit7.android.entry_presentation.utils.DIUtils.entryComponent
+import lostankit7.android.entry_presentation.utils.Utils.entryComponent
+import lostankit7.android.entry_presentation.utils.Utils.mActionBar
 import lostankit7.android.entry_presentation.viewmodel.TaskEntryViewModel
 import lostankit7.droid.moodtracker.core.presentation.fragment.BaseDaggerFragment
 import lostankit7.droid.moodtracker.core.presentation.utils.ActionBarUtils.applyDefault
@@ -39,7 +40,7 @@ class AddTaskEntryFragment : BaseDaggerFragment<FragmentAddTaskEntryBinding, Tas
         }
     }
 
-    override suspend fun registerObservers() {
+    override fun registerObservers() {
         super.registerObservers()
 
         viewModel.taskCategoriesLiveData.observe(viewLifecycleOwner) {
@@ -66,8 +67,7 @@ class AddTaskEntryFragment : BaseDaggerFragment<FragmentAddTaskEntryBinding, Tas
     }
 
     override fun updateActionBar() {
-        (activity as? AddUserEntryActivity)?.actionBar?.apply {
-            applyDefault()
+        activity?.mActionBar?.apply {
             showBackButtonWithIcon(args.moodEntry.moodIcon.icon)
             updateTitle(args.moodEntry.moodIcon.name)
             showSaveButton()

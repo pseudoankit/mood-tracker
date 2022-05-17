@@ -11,7 +11,7 @@ import lostankit7.android.entry_presentation.R
 import lostankit7.android.entry_presentation.adapter.IconListRvAdapter
 import lostankit7.android.entry_presentation.databinding.DialogTextEntryBinding
 import lostankit7.android.entry_presentation.databinding.FragmentDisplayListBinding
-import lostankit7.android.entry_presentation.utils.DIUtils.entryComponent
+import lostankit7.android.entry_presentation.utils.Utils.entryComponent
 import lostankit7.android.entry_presentation.viewmodel.TaskEntryViewModel
 import lostankit7.droid.moodtracker.core.presentation.fragment.BaseDaggerFragment
 import lostankit7.droid.moodtracker.core.presentation.utils.ActionBarUtils.applyDefault
@@ -22,7 +22,7 @@ class DisplayTaskCategoriesFragment :
 
     private val adapter = IconListRvAdapter(::categorySelected, ::rvOptionsSelected)
 
-    override suspend fun registerObservers() {
+    override fun registerObservers() {
         super.registerObservers()
 
         viewModel.taskCategoriesLiveData.observe(viewLifecycleOwner) {
@@ -89,12 +89,6 @@ class DisplayTaskCategoriesFragment :
                 dialog.dismiss()
             }
         }.show()
-    }
-
-    override fun updateActionBar() {
-        (activity as? AddUserEntryActivity)?.actionBar?.apply {
-            applyDefault()
-        }
     }
 
     override fun injectFragment() {

@@ -9,6 +9,7 @@ object ActionBarUtils {
 
     fun CommonActionBarBinding.applyDefault() {
         leftIcon1.text = root.context.resources.getString(R.string.fas_circular_back)
+        root.show()
         btnBack.show()
         leftIcon1.show()
         leftIcon2.hide()
@@ -17,6 +18,9 @@ object ActionBarUtils {
     }
 
     fun CommonActionBarBinding.showBackButtonWithIcon(icon: String) {
+        leftIcon1.apply {
+            text =  resources.getString(R.string.fas_back)
+        }
         leftIcon2.apply {
             show()
             text = icon

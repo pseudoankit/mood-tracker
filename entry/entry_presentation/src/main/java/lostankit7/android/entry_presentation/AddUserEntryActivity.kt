@@ -5,14 +5,14 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import lostankit7.android.entry_presentation.databinding.ActivityAddUserEntryBinding
-import lostankit7.android.entry_presentation.utils.DIUtils.entryComponent
+import lostankit7.android.entry_presentation.utils.Utils.entryComponent
 import lostankit7.android.entry_presentation.di.EntryComponent
 import lostankit7.android.entry_presentation.fragment.addEntry.AddTaskEntryFragment
 import lostankit7.android.entry_presentation.fragment.editEntry.editmood.UpsertMoodIconFragment
 import lostankit7.android.entry_presentation.fragment.editEntry.edittask.UpsertTaskIconFragment
 import lostankit7.droid.moodtracker.core.databinding.CommonActionBarBinding
+import lostankit7.droid.moodtracker.core.presentation.utils.ActionBarUtils.applyDefault
 
-//todo create entry layer to add
 class AddUserEntryActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityAddUserEntryBinding
@@ -32,6 +32,7 @@ class AddUserEntryActivity : AppCompatActivity() {
         binding.actionBar.btnBack.setOnClickListener {
             navController.popBackStack()
         }
+
         binding.actionBar.btnSave.setOnClickListener {
             when (val fragment =
                 supportFragmentManager.findFragmentById(R.id.fragment_container)?.childFragmentManager?.primaryNavigationFragment) {
@@ -39,6 +40,10 @@ class AddUserEntryActivity : AppCompatActivity() {
                 is UpsertMoodIconFragment -> fragment.saveMoodIcon()
                 is UpsertTaskIconFragment -> fragment.saveTaskIcon()
             }
+        }
+
+        navController.addOnDestinationChangedListener { _, _, _ ->
+            binding.actionBar.applyDefault()
         }
     }
 

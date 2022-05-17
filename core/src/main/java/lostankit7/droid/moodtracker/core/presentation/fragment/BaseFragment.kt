@@ -34,18 +34,18 @@ abstract class BaseFragment<VB : ViewBinding> : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         navController = Navigation.findNavController(view)
 
+        updateActionBar()
         init()
         initRecyclerView()
         initListeners()
-        lifecycleScope.launchWhenStarted { registerObservers() }
+        registerObservers()
     }
 
+    open fun updateActionBar() {}
     open fun init() {}
     open fun initRecyclerView() {}
-    open suspend fun registerObservers() {}
+    open fun registerObservers() {}
     open fun initListeners() {}
-
-    open fun updateActionBar() {}
 
     fun navigateTo(directions: NavDirections) {
         findNavController().navigate(directions)

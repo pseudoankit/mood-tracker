@@ -12,7 +12,8 @@ import lostankit7.android.entry_presentation.AddUserEntryActivity
 import lostankit7.android.entry_presentation.adapter.ChipsRvAdapter
 import lostankit7.android.entry_presentation.adapter.MoodIconRvAdapter
 import lostankit7.android.entry_presentation.databinding.FragmentUpsertMoodTaskIconBinding
-import lostankit7.android.entry_presentation.utils.DIUtils.entryComponent
+import lostankit7.android.entry_presentation.utils.Utils.entryComponent
+import lostankit7.android.entry_presentation.utils.Utils.mActionBar
 import lostankit7.android.entry_presentation.viewmodel.MoodEntryViewModel
 import lostankit7.droid.moodtracker.core.presentation.fragment.BaseDaggerFragment
 import lostankit7.droid.moodtracker.core.presentation.utils.ActionBarUtils.applyDefault
@@ -26,7 +27,7 @@ class UpsertMoodIconFragment :
     private val adapter = MoodIconRvAdapter(::onMoodIconSelected)
     private val suggestedNamesAdapter = ChipsRvAdapter.createInstance(::applySuggestedName)
 
-    override suspend fun registerObservers() {
+    override fun registerObservers() {
         viewModel.errorMessageLiveData.observe(viewLifecycleOwner) { message ->
             context?.let { context -> message.asString(context) }
         }
@@ -76,8 +77,7 @@ class UpsertMoodIconFragment :
     }
 
     override fun updateActionBar() {
-        (activity as? AddUserEntryActivity)?.actionBar?.apply {
-            applyDefault()
+        activity?.mActionBar?.apply {
             showSaveButton()
         }
     }

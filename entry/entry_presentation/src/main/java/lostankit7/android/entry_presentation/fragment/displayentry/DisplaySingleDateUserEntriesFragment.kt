@@ -6,7 +6,7 @@ class DisplaySingleDateUserEntriesFragment : DisplayUserEntriesBaseFragment() {
 
     private val args: DisplaySingleDateUserEntriesFragmentArgs by navArgs()
 
-    override suspend fun registerObservers() {
+    override fun registerObservers() {
         super.registerObservers()
 
         viewModel.singleDateUserEntries(args.date).observe(viewLifecycleOwner) {

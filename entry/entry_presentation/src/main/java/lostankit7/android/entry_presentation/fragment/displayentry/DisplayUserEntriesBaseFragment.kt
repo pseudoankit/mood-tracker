@@ -7,10 +7,10 @@ import lostankit7.android.entry_domain.entities.UserEntry
 import lostankit7.android.entry_presentation.R
 import lostankit7.android.entry_presentation.adapter.RvUserEntriesAdapter
 import lostankit7.android.entry_presentation.databinding.FragmentDisplayUserEntriesBinding
-import lostankit7.android.entry_presentation.utils.DIUtils.entryComponent
+import lostankit7.android.entry_presentation.utils.Utils.entryComponent
 import lostankit7.android.entry_presentation.viewmodel.UserEntriesViewModel
 import lostankit7.droid.moodtracker.core.presentation.fragment.BaseDaggerFragment
-
+//todo check to use it
 abstract class DisplayUserEntriesBaseFragment : BaseDaggerFragment<FragmentDisplayUserEntriesBinding, UserEntriesViewModel>() {
 
     protected val adapter = RvUserEntriesAdapter(::onItemClicked)

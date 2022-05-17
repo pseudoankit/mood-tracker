@@ -2,7 +2,7 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/nav_graph"
+    android:id="@+id/nav_graph_entry"
     app:startDestination="@id/addMoodEntryFragment">
 
     <fragment
@@ -84,4 +84,8 @@
             android:name="date"
             app:argType="string" />
     </fragment>
+    <fragment
+        android:id="@+id/addUserEntryBaseFragment"
+        android:name="lostankit7.android.entry_presentation.AddUserEntryBaseFragment"
+        android:label="AddUserEntryBaseFragment" />
 </navigation>

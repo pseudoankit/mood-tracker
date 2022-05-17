@@ -14,10 +14,12 @@ import lostankit7.android.entry_presentation.R
 import lostankit7.android.entry_presentation.adapter.ChipsRvAdapter
 import lostankit7.android.entry_presentation.adapter.TaskIconRvAdapter
 import lostankit7.android.entry_presentation.databinding.FragmentUpsertMoodTaskIconBinding
-import lostankit7.android.entry_presentation.utils.DIUtils.entryComponent
+import lostankit7.android.entry_presentation.utils.Utils.entryComponent
+import lostankit7.android.entry_presentation.utils.Utils.mActionBar
 import lostankit7.android.entry_presentation.viewmodel.TaskEntryViewModel
 import lostankit7.droid.moodtracker.core.presentation.fragment.BaseDaggerFragment
 import lostankit7.droid.moodtracker.core.presentation.utils.ActionBarUtils.applyDefault
+import lostankit7.droid.moodtracker.core.presentation.utils.ActionBarUtils.showSaveButton
 import lostankit7.droid.moodtracker.core.presentation.utils.UiUtils.hideKeyBoard
 import lostankit7.droid.moodtracker.core.presentation.utils.UiUtils.showToast
 import lostankit7.droid.moodtracker.core.presentation.utils.UiUtils.updateTextSize
@@ -29,7 +31,7 @@ class UpsertTaskIconFragment :
     private val adapter = TaskIconRvAdapter(::onTaskIconSelected, false)
     private val suggestedNamesAdapter = ChipsRvAdapter(::applySuggestedName)
 
-    override suspend fun registerObservers() {
+    override fun registerObservers() {
         super.registerObservers()
 
         viewModel.suggestedTaskNamesLiveData.observe(viewLifecycleOwner) {
@@ -92,8 +94,8 @@ class UpsertTaskIconFragment :
     }
 
     override fun updateActionBar() {
-        (activity as? AddUserEntryActivity)?.actionBar?.apply {
-            applyDefault()
+        activity?.mActionBar?.apply {
+            showSaveButton()
         }
     }
 

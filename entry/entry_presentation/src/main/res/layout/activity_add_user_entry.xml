@@ -8,8 +8,7 @@
 
     <include
         android:id="@+id/action_bar"
-        layout="@layout/common_action_bar"
-        android:visibility="gone" />
+        layout="@layout/common_action_bar" />
 
     <fragment
         android:id="@+id/fragment_container"
@@ -19,5 +18,5 @@
         app:defaultNavHost="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@id/action_bar"
-        app:navGraph="@navigation/nav_graph" />
+        app:navGraph="@navigation/nav_graph_entry" />
 </androidx.constraintlayout.widget.ConstraintLayout>
