@@ -1,16 +1,16 @@
-package lostankit7.droid.moodtracker.core.di.component
+package lostankit7.droid.moodtracker.core.di.module
 
 import android.content.Context
 import android.content.SharedPreferences
 import dagger.Module
 import dagger.Provides
 import lostankit7.droid.moodtracker.core.di.scope.ApplicationContext
-import lostankit7.droid.moodtracker.core.di.scope.ApplicationScope
 import lostankit7.droid.moodtracker.core.data.preferences.DefaultPreferences
 import lostankit7.droid.moodtracker.core.domain.preferences.Preferences
+import lostankit7.droid.moodtracker.core.di.scope.ApplicationScope
 
 @Module
-class BaseDataModule {
+class CoreDataModule {
 
     @ApplicationScope
     @Provides

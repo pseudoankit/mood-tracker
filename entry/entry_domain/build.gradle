@@ -34,5 +34,6 @@ android {
 }
 
 dependencies {
+    implementation(project(Modules.core))
     implementation(Dependencies.liveData)
 }

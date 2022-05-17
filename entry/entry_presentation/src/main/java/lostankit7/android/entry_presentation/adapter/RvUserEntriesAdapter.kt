@@ -9,9 +9,9 @@ import android.widget.TextView
 import lostankit7.android.entry_domain.entities.UserEntry
 import lostankit7.android.entry_presentation.R
 import lostankit7.android.entry_presentation.databinding.ItemRvUserEntriesBinding
-import lostankit7.droid.moodtracker.core_presentation.adapter.BaseDiffRvAdapter
-import lostankit7.droid.moodtracker.core_presentation.utils.DialogHelper
-import lostankit7.droid.moodtracker.core_presentation.utils.hide
+import lostankit7.droid.moodtracker.core.presentation.adapter.BaseDiffRvAdapter
+import lostankit7.droid.moodtracker.core.presentation.utils.DialogHelper
+import lostankit7.droid.moodtracker.core.presentation.utils.UiUtils.hide
 
 class RvUserEntriesAdapter(
     private val itemClicked: (MenuItem, UserEntry) -> Boolean,

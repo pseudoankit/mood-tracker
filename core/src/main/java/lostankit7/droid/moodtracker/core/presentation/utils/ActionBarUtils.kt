@@ -2,8 +2,8 @@ package lostankit7.droid.moodtracker.core.presentation.utils
 
 import lostankit7.droid.moodtracker.core.R
 import lostankit7.droid.moodtracker.core.databinding.CommonActionBarBinding
-import lostankit7.droid.moodtracker.core_presentation.utils.hide
-import lostankit7.droid.moodtracker.core_presentation.utils.show
+import lostankit7.droid.moodtracker.core.presentation.utils.UiUtils.hide
+import lostankit7.droid.moodtracker.core.presentation.utils.UiUtils.show
 
 object ActionBarUtils {
 

@@ -5,25 +5,24 @@ import dagger.BindsInstance
 import dagger.Component
 import lostankit7.android.entry_data.di.EntryDatabaseModule
 import lostankit7.android.entry_data.di.LocalDbModule
+import lostankit7.droid.moodtracker.core.di.component.CoreAppComponent
 import lostankit7.droid.moodtracker.core.di.scope.ApplicationContext
-import lostankit7.droid.moodtracker.core.di.component.BaseDataModule
+import lostankit7.droid.moodtracker.core.di.module.CoreDataModule
 import lostankit7.droid.moodtracker.presentation.splash.SplashFragment
 import lostankit7.droid.moodtracker.di.module.ViewModelModule
 import lostankit7.droid.moodtracker.presentation.MainActivity
-import javax.inject.Singleton
+import lostankit7.droid.moodtracker.core.di.scope.ApplicationScope
 
-@Singleton
+@ApplicationScope
 @Component(modules = [
     ViewModelModule::class,
-    BaseDataModule::class,
+    CoreDataModule::class,
     EntryDatabaseModule::class, LocalDbModule::class
-])
+], dependencies = [CoreAppComponent::class])
 interface AppComponent {
 
-    @Component.Factory
-    interface Factory {
-        fun create(@BindsInstance @ApplicationContext context: Context): AppComponent
-    }
+    @ApplicationContext
+    fun provideContext() : Context
 
     fun inject(frag: SplashFragment)
     fun inject(activity: MainActivity)

@@ -7,49 +7,49 @@ import dagger.Provides
 import lostankit7.android.entry_data.local.EntryDatabase
 import lostankit7.android.entry_data.local.dao.*
 import lostankit7.droid.moodtracker.core.di.scope.ApplicationContext
-import javax.inject.Singleton
+import lostankit7.droid.moodtracker.core.di.scope.ApplicationScope
 
 @Module
 class EntryDatabaseModule {
-    @Singleton
+    @ApplicationScope
     @Provides
-    fun provideRoomDB(@ApplicationContext context: Context) = Room.databaseBuilder(
+    fun provideRoomDB(@ApplicationContext context: Context) : EntryDatabase = Room.databaseBuilder(
         context.applicationContext,
         EntryDatabase::class.java,
         EntryDatabase.DB_NAME
     ).build()
 
-    @Singleton
+    @ApplicationScope
     @Provides
     fun provideUserDao(db: EntryDatabase): UserEntryDao = db.userEntryDao()
 
-    @Singleton
+    @ApplicationScope
     @Provides
     fun provideMoodIconDao(db: EntryDatabase): MoodIconDao = db.moodIconDao()
 
-    @Singleton
+    @ApplicationScope
     @Provides
     fun provideSuggestedMoodDao(db: EntryDatabase): SuggestedMoodIconDao = db.suggestedMoodDao()
 
-    @Singleton
+    @ApplicationScope
     @Provides
     fun provideTaskCategoryDao(db: EntryDatabase): TaskCategoryDao = db.taskCategoryDao()
 
-    @Singleton
+    @ApplicationScope
     @Provides
     fun provideTaskIconDao(db: EntryDatabase): TaskIconDao = db.taskIconDao()
 
-    @Singleton
+    @ApplicationScope
     @Provides
     fun provideSuggestedTaskIconDao(db: EntryDatabase): SuggestedTaskIconDao =
         db.suggestedTaskIcon()
 
-    @Singleton
+    @ApplicationScope
     @Provides
     fun provideSuggestedTaskNameDao(db: EntryDatabase): SuggestedTaskNameDao =
         db.suggestedTaskName()
 
-    @Singleton
+    @ApplicationScope
     @Provides
     fun provideSuggestedMoodNameDao(db: EntryDatabase): SuggestedMoodNameDao =
         db.suggestedMoodName()

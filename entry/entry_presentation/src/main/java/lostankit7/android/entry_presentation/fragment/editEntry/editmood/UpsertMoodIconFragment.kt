@@ -12,11 +12,12 @@ import lostankit7.android.entry_presentation.AddUserEntryActivity
 import lostankit7.android.entry_presentation.adapter.ChipsRvAdapter
 import lostankit7.android.entry_presentation.adapter.MoodIconRvAdapter
 import lostankit7.android.entry_presentation.databinding.FragmentUpsertMoodTaskIconBinding
+import lostankit7.android.entry_presentation.utils.DIUtils.entryComponent
 import lostankit7.android.entry_presentation.viewmodel.MoodEntryViewModel
-import lostankit7.droid.moodtracker.core_presentation.fragment.BaseDaggerFragment
-import lostankit7.droid.moodtracker.core_presentation.utils.applyDefault
-import lostankit7.droid.moodtracker.core_presentation.utils.hideKeyBoard
-import lostankit7.droid.moodtracker.core_presentation.utils.showSaveButton
+import lostankit7.droid.moodtracker.core.presentation.fragment.BaseDaggerFragment
+import lostankit7.droid.moodtracker.core.presentation.utils.ActionBarUtils.applyDefault
+import lostankit7.droid.moodtracker.core.presentation.utils.ActionBarUtils.showSaveButton
+import lostankit7.droid.moodtracker.core.presentation.utils.UiUtils.hideKeyBoard
 
 class UpsertMoodIconFragment :
     BaseDaggerFragment<FragmentUpsertMoodTaskIconBinding, MoodEntryViewModel>() {
@@ -82,7 +83,7 @@ class UpsertMoodIconFragment :
     }
 
     override fun injectFragment() {
-        (activity as? AddUserEntryActivity)?.entryComponent?.inject(this)
+        activity?.entryComponent?.inject(this)
     }
 
     override fun initiateViewModel(viewModelProvider: ViewModelProvider) =

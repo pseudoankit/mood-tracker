@@ -5,10 +5,10 @@ import android.view.LayoutInflater
 import android.view.View
 import androidx.lifecycle.ViewModelProvider
 import lostankit7.droid.moodtracker.R
-import lostankit7.droid.moodtracker.core_presentation.fragment.BaseDaggerFragment
-import lostankit7.droid.moodtracker.core_presentation.utils.hide
-import lostankit7.droid.moodtracker.core_presentation.utils.hideKeyBoard
-import lostankit7.droid.moodtracker.core_presentation.utils.show
+import lostankit7.droid.moodtracker.core.presentation.fragment.BaseDaggerFragment
+import lostankit7.droid.moodtracker.core.presentation.utils.UiUtils.hide
+import lostankit7.droid.moodtracker.core.presentation.utils.UiUtils.hideKeyBoard
+import lostankit7.droid.moodtracker.core.presentation.utils.UiUtils.show
 import lostankit7.droid.moodtracker.databinding.FragmentMoreBinding
 import lostankit7.droid.moodtracker.presentation.viewmodel.MoreViewModel
 

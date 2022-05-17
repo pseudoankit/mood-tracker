@@ -3,18 +3,13 @@ package lostankit7.droid.moodtracker.presentation
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
-import androidx.navigation.NavDestination
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import lostankit7.droid.moodtracker.R
-import lostankit7.droid.moodtracker.core_presentation.databinding.CommonActionBarBinding
+import lostankit7.droid.moodtracker.core.databinding.CommonActionBarBinding
+import lostankit7.droid.moodtracker.core.presentation.utils.UiUtils.hide
+import lostankit7.droid.moodtracker.core.presentation.utils.UiUtils.show
 import lostankit7.droid.moodtracker.databinding.ActivityMainBinding
-import lostankit7.android.entry_presentation.fragment.addEntry.AddTaskEntryFragment
-import lostankit7.android.entry_presentation.fragment.editEntry.editmood.UpsertMoodIconFragment
-import lostankit7.android.entry_presentation.fragment.editEntry.edittask.UpsertTaskIconFragment
-import lostankit7.droid.moodtracker.MyApplication
-import lostankit7.droid.moodtracker.core_presentation.utils.hide
-import lostankit7.droid.moodtracker.core_presentation.utils.show
 
 
 class MainActivity : AppCompatActivity() {

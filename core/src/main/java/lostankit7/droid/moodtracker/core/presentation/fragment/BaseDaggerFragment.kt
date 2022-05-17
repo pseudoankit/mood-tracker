@@ -1,10 +1,11 @@
-package lostankit7.droid.moodtracker.core_presentation.fragment
+package lostankit7.droid.moodtracker.core.presentation.fragment
 
 import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.viewbinding.ViewBinding
-import lostankit7.droid.moodtracker.core_presentation.di.viewmodel.ViewModelFactory
+import lostankit7.droid.moodtracker.core.MyApplication
+import lostankit7.droid.moodtracker.core.di.viewmodel.ViewModelFactory
 import javax.inject.Inject
 
 abstract class BaseDaggerFragment<VB : ViewBinding, VM : ViewModel> : BaseFragment<VB>() {
@@ -12,7 +13,9 @@ abstract class BaseDaggerFragment<VB : ViewBinding, VM : ViewModel> : BaseFragme
     @Inject
     lateinit var viewModelFactory: ViewModelFactory
 
-    val viewModel: VM by lazy { initiateViewModel(ViewModelProvider(this, viewModelFactory)) }
+    val viewModel: VM by lazy(LazyThreadSafetyMode.NONE) { initiateViewModel(ViewModelProvider(this, viewModelFactory)) }
+
+    val coreAppComponent by lazy(LazyThreadSafetyMode.NONE) { (activity?.application as MyApplication).coreAppComponent }
 
     override fun onAttach(context: Context) {
         super.onAttach(context)

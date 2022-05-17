@@ -9,9 +9,14 @@ import lostankit7.android.entry_presentation.AddUserEntryActivity
 import lostankit7.android.entry_presentation.adapter.RvTaskAdapter
 import lostankit7.android.entry_presentation.adapter.TaskIconRvAdapter
 import lostankit7.android.entry_presentation.databinding.FragmentAddTaskEntryBinding
+import lostankit7.android.entry_presentation.utils.DIUtils.entryComponent
 import lostankit7.android.entry_presentation.viewmodel.TaskEntryViewModel
-import lostankit7.droid.moodtracker.core_presentation.fragment.BaseDaggerFragment
-import lostankit7.droid.moodtracker.core_presentation.utils.*
+import lostankit7.droid.moodtracker.core.presentation.fragment.BaseDaggerFragment
+import lostankit7.droid.moodtracker.core.presentation.utils.ActionBarUtils.applyDefault
+import lostankit7.droid.moodtracker.core.presentation.utils.ActionBarUtils.showBackButtonWithIcon
+import lostankit7.droid.moodtracker.core.presentation.utils.ActionBarUtils.showSaveButton
+import lostankit7.droid.moodtracker.core.presentation.utils.ActionBarUtils.updateTitle
+import lostankit7.droid.moodtracker.core.presentation.utils.UiUtils.hideKeyBoard
 
 class AddTaskEntryFragment : BaseDaggerFragment<FragmentAddTaskEntryBinding, TaskEntryViewModel>() {
 
@@ -76,7 +81,7 @@ class AddTaskEntryFragment : BaseDaggerFragment<FragmentAddTaskEntryBinding, Tas
         viewModelProvider[TaskEntryViewModel::class.java]
 
     override fun injectFragment() {
-        (activity as? AddUserEntryActivity)?.entryComponent?.inject(this)
+        activity?.entryComponent?.inject(this)
     }
 
 }

@@ -7,8 +7,8 @@ import lostankit7.android.entry_domain.repository.MoodIconRepository
 import lostankit7.android.entry_domain.repository.SuggestedMoodIconRepository
 import lostankit7.android.entry_domain.repository.SuggestedMoodNameRepository
 import lostankit7.android.entry_presentation.R
-import lostankit7.droid.moodtracker.core_presentation.utils.entity.UiText
-import lostankit7.droid.moodtracker.core_presentation.viewmodel.BaseViewModel
+import lostankit7.droid.moodtracker.core.domain.entities.UiText
+import lostankit7.droid.moodtracker.core.presentation.viewmodel.BaseViewModel
 import javax.inject.Inject
 
 class MoodEntryViewModel @Inject constructor(

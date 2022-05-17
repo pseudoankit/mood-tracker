@@ -11,10 +11,11 @@ import lostankit7.android.entry_presentation.R
 import lostankit7.android.entry_presentation.adapter.IconListRvAdapter
 import lostankit7.android.entry_presentation.databinding.DialogTextEntryBinding
 import lostankit7.android.entry_presentation.databinding.FragmentDisplayListBinding
+import lostankit7.android.entry_presentation.utils.DIUtils.entryComponent
 import lostankit7.android.entry_presentation.viewmodel.TaskEntryViewModel
-import lostankit7.droid.moodtracker.core_presentation.fragment.BaseDaggerFragment
-import lostankit7.droid.moodtracker.core_presentation.utils.DialogHelper
-import lostankit7.droid.moodtracker.core_presentation.utils.applyDefault
+import lostankit7.droid.moodtracker.core.presentation.fragment.BaseDaggerFragment
+import lostankit7.droid.moodtracker.core.presentation.utils.ActionBarUtils.applyDefault
+import lostankit7.droid.moodtracker.core.presentation.utils.DialogHelper
 
 class DisplayTaskCategoriesFragment :
     BaseDaggerFragment<FragmentDisplayListBinding, TaskEntryViewModel>() {
@@ -97,7 +98,7 @@ class DisplayTaskCategoriesFragment :
     }
 
     override fun injectFragment() {
-        (activity as? AddUserEntryActivity)?.entryComponent?.inject(this)
+        activity?.entryComponent?.inject(this)
     }
 
     override fun inflateLayout(layoutInflater: LayoutInflater) =

@@ -9,9 +9,10 @@ import lostankit7.android.entry_presentation.AddUserEntryActivity
 import lostankit7.android.entry_presentation.R
 import lostankit7.android.entry_presentation.adapter.IconListRvAdapter
 import lostankit7.android.entry_presentation.databinding.FragmentDisplayListBinding
+import lostankit7.android.entry_presentation.utils.DIUtils.entryComponent
 import lostankit7.android.entry_presentation.viewmodel.MoodEntryViewModel
-import lostankit7.droid.moodtracker.core_presentation.fragment.BaseDaggerFragment
-import lostankit7.droid.moodtracker.core_presentation.utils.applyDefault
+import lostankit7.droid.moodtracker.core.presentation.fragment.BaseDaggerFragment
+import lostankit7.droid.moodtracker.core.presentation.utils.ActionBarUtils.applyDefault
 
 class DisplayMoodIconsFragment :
     BaseDaggerFragment<FragmentDisplayListBinding, MoodEntryViewModel>() {
@@ -69,7 +70,7 @@ class DisplayMoodIconsFragment :
         FragmentDisplayListBinding.inflate(layoutInflater)
 
     override fun injectFragment() {
-        (activity as? AddUserEntryActivity)?.entryComponent?.inject(this)
+        activity?.entryComponent?.inject(this)
     }
 
     override fun initiateViewModel(viewModelProvider: ViewModelProvider) =

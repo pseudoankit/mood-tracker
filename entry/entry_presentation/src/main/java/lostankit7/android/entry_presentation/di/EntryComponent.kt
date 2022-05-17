@@ -14,19 +14,18 @@ import lostankit7.android.entry_presentation.fragment.editEntry.editmood.UpsertM
 import lostankit7.android.entry_presentation.fragment.editEntry.edittask.DisplayTaskCategoriesFragment
 import lostankit7.android.entry_presentation.fragment.editEntry.edittask.DisplayTasksOfCategoryFragment
 import lostankit7.android.entry_presentation.fragment.editEntry.edittask.UpsertTaskIconFragment
-import javax.inject.Singleton
+import lostankit7.droid.moodtracker.core.di.component.CoreAppComponent
+import lostankit7.droid.moodtracker.core.di.scope.ApplicationContext
+import lostankit7.droid.moodtracker.core.di.scope.ApplicationScope
 
-@Singleton
 @Component(modules = [
     ViewModelModule::class,
     EntryDatabaseModule::class, LocalDbModule::class
-])
+], dependencies = [CoreAppComponent::class])
 interface EntryComponent {
 
-    @Component.Factory
-    interface Factory {
-        fun create(@BindsInstance context: Context): EntryComponent
-    }
+    @ApplicationContext
+    fun provideContext() : Context
 
     fun inject(frag: DisplayUserEntriesBaseFragment)
     fun inject(frag: AddMoodEntryFragment)

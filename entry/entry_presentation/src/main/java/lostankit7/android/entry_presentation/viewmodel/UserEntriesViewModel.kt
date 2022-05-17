@@ -1,6 +1,6 @@
 package lostankit7.android.entry_presentation.viewmodel
 
-import lostankit7.droid.moodtracker.core_presentation.viewmodel.BaseViewModel
+import lostankit7.droid.moodtracker.core.presentation.viewmodel.BaseViewModel
 import lostankit7.android.entry_domain.entities.UserEntry
 import lostankit7.android.entry_domain.repository.UserEntriesRepository
 import javax.inject.Inject
