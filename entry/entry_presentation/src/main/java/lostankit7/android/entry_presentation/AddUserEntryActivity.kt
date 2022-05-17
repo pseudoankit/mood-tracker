@@ -12,6 +12,7 @@ import lostankit7.android.entry_presentation.fragment.editEntry.editmood.UpsertM
 import lostankit7.android.entry_presentation.fragment.editEntry.edittask.UpsertTaskIconFragment
 import lostankit7.droid.moodtracker.core.databinding.CommonActionBarBinding
 
+//todo create entry layer to add
 class AddUserEntryActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityAddUserEntryBinding

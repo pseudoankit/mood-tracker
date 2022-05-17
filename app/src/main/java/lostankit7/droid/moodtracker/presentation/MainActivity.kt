@@ -1,10 +1,12 @@
 package lostankit7.droid.moodtracker.presentation
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
+import lostankit7.android.entry_presentation.AddUserEntryActivity
 import lostankit7.droid.moodtracker.R
 import lostankit7.droid.moodtracker.core.databinding.CommonActionBarBinding
 import lostankit7.droid.moodtracker.core.presentation.utils.UiUtils.hide
@@ -33,7 +35,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun addEntryButtonClicked() {
-
+        startActivity(Intent(this, AddUserEntryActivity::class.java))
     }
 
     private fun setUpBottomNavigation() {
