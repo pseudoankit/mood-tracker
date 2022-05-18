@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="text_add_entry">Add Entry</string>
+    <string name="text_calendar">Calendar</string>
+    <string name="text_entries">Entries</string>
+    <string name="text_more">More</string>
+    <string name="text_stats">Stats</string>
+</resources>

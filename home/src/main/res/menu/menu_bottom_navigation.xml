@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/displayAllUserEntriesFragment"
+        android:icon="@drawable/bottom_nav_entries"
+        android:title="@string/text_entries" />
+    <item
+        android:id="@+id/calendarFragment"
+        android:icon="@drawable/icon_calendar"
+        android:title="@string/text_calendar" />
+    <item
+        android:title="" />
+    <item
+        android:id="@+id/bottom_navigation_stats"
+        android:icon="@drawable/bottom_nav_stats"
+        android:title="@string/text_stats" />
+    <item
+        android:id="@+id/moreFragment"
+        android:icon="@drawable/bottom_nav_more"
+        android:title="@string/text_more" />
+</menu>

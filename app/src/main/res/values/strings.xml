@@ -6,7 +6,7 @@
         <item>@string/english</item>
     </string-array>
 
-    <!-- Bottom navigation text -->
+    <!-- Bottom navigation text  todo remove it-->
     <string name="text_entries">Entries</string>
     <string name="text_calendar">Calendar</string>
     <string name="text_add_entry">Add Entry</string>

@@ -1,0 +1,21 @@
+R_DEF: Internal format may change without notice
+local
+id bottomLayout
+id bottomNavBar
+id bottom_app_bar
+id bottom_navigation_stats
+id calendarFragment
+id displayAllUserEntriesFragment
+id fab_add_user_entry
+id fragmentBottomGuide
+id fragment_container
+id moreFragment
+id nav_graph_home
+layout activity_home
+menu menu_bottom_navigation
+navigation nav_graph_home
+string text_add_entry
+string text_calendar
+string text_entries
+string text_more
+string text_stats

@@ -56,7 +56,7 @@
             android:layout_height="wrap_content"
             android:backgroundTint="@color/theme_color"
             android:contentDescription="@string/text_add_entry"
-            android:src="@drawable/bottom_nav_add_entry"
+            android:src="@drawable/icon_add"
             app:layout_anchor="@id/bottom_app_bar" />
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 

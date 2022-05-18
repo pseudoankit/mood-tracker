@@ -8,6 +8,7 @@ import lostankit7.android.entry_data.di.LocalDbModule
 import lostankit7.droid.moodtracker.core.di.component.CoreAppComponent
 import lostankit7.droid.moodtracker.core.di.scope.ApplicationContext
 import lostankit7.droid.moodtracker.core.di.module.CoreDataModule
+import lostankit7.droid.moodtracker.core.di.module.CoreModule
 import lostankit7.droid.moodtracker.presentation.splash.SplashFragment
 import lostankit7.droid.moodtracker.di.module.ViewModelModule
 import lostankit7.droid.moodtracker.presentation.MainActivity
@@ -20,9 +21,6 @@ import lostankit7.droid.moodtracker.core.di.scope.ApplicationScope
     EntryDatabaseModule::class, LocalDbModule::class
 ], dependencies = [CoreAppComponent::class])
 interface AppComponent {
-
-    @ApplicationContext
-    fun provideContext() : Context
 
     fun inject(frag: SplashFragment)
     fun inject(activity: MainActivity)

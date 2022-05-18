@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="lostankit7.droid.moodtracker.home" >
+
+    <uses-sdk
+        android:minSdkVersion="21"
+        android:targetSdkVersion="31" />
+
+    <application>
+        <activity
+            android:name="lostankit7.droid.moodtracker.home.HomeActivity"
+            android:exported="true" />
+    </application>
+
+</manifest>

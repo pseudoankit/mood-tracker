@@ -6,7 +6,8 @@ object Modules {
     const val entryPresentation = ":entry:entry_presentation"
 
     //homepage
-    const val homeDisplay_entries = ":home:home_display_entries"
+    const val home = ":home"
+    const val homeUserEntries = ":home:home_user_entries"
     const val homeCalendar = ":home:home_calendar"
     const val homeMore = ":home:home_more"
 

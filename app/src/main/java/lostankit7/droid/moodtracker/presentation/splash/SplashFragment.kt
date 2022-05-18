@@ -1,5 +1,6 @@
 package lostankit7.droid.moodtracker.presentation.splash
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -12,6 +13,7 @@ import lostankit7.droid.moodtracker.core.presentation.fragment.BaseDaggerFragmen
 import lostankit7.droid.moodtracker.core.utils.Constants
 import lostankit7.droid.moodtracker.databinding.FragmentSplashBinding
 import lostankit7.droid.moodtracker.di.component.DaggerAppComponent
+import lostankit7.droid.moodtracker.home.HomeActivity
 
 class SplashFragment : BaseDaggerFragment<FragmentSplashBinding, SplashViewModel>() {
 
@@ -30,11 +32,16 @@ class SplashFragment : BaseDaggerFragment<FragmentSplashBinding, SplashViewModel
 
         lifecycleScope.launchWhenCreated {
             delay(Constants.SPLASH_TIME)
-            navigateTo(
-                SplashFragmentDirections.actionSplashFragmentToDisplayAllUserEntriesFragment()
-            )
+            navigateAfterSplash()
         }
 
+    }
+
+    private fun navigateAfterSplash() {
+//        navigateTo(
+//            SplashFragmentDirections.actionSplashFragmentToDisplayAllUserEntriesFragment()
+//        )
+        startActivity(Intent(context, HomeActivity::class.java))
     }
 
     override fun inflateLayout(layoutInflater: LayoutInflater) =

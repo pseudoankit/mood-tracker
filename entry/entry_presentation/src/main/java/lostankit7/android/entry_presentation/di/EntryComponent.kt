@@ -15,6 +15,7 @@ import lostankit7.android.entry_presentation.fragment.editEntry.edittask.Display
 import lostankit7.android.entry_presentation.fragment.editEntry.edittask.DisplayTasksOfCategoryFragment
 import lostankit7.android.entry_presentation.fragment.editEntry.edittask.UpsertTaskIconFragment
 import lostankit7.droid.moodtracker.core.di.component.CoreAppComponent
+import lostankit7.droid.moodtracker.core.di.module.CoreModule
 import lostankit7.droid.moodtracker.core.di.scope.ApplicationContext
 import lostankit7.droid.moodtracker.core.di.scope.ApplicationScope
 

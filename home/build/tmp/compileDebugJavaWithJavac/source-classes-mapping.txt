@@ -1,0 +1,4 @@
+lostankit7/droid/moodtracker/home/databinding/ActivityHomeBinding.java
+ lostankit7.droid.moodtracker.home.databinding.ActivityHomeBinding
+lostankit7/droid/moodtracker/home/BuildConfig.java
+ lostankit7.droid.moodtracker.home.BuildConfig
