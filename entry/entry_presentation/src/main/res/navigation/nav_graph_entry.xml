@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_entry"
+    app:startDestination="@id/addMoodEntryFragment">
+
+    <fragment
+        android:id="@+id/addMoodEntryFragment"
+        android:name="lostankit7.android.entry_presentation.fragment.addEntry.AddMoodEntryFragment"
+        android:label="fragment_add_mood_entry"
+        tools:layout="@layout/fragment_add_mood_entry">
+        <action
+            android:id="@+id/action_addMoodEntryFragment_to_addTaskEntryFragment"
+            app:destination="@id/addTaskEntryFragment" />
+        <action
+            android:id="@+id/action_addMoodEntryFragment_to_displayMoodIconsFragment"
+            app:destination="@id/displayMoodIconsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addTaskEntryFragment"
+        android:name="lostankit7.android.entry_presentation.fragment.addEntry.AddTaskEntryFragment"
+        android:label="AddTaskEntryFragment">
+        <action
+            android:id="@+id/action_addTaskEntryFragment_to_displayTaskCategoriesFragment"
+            app:destination="@id/displayTaskCategoriesFragment" />
+        <argument
+            android:name="moodEntry"
+            app:argType="lostankit7.android.entry_domain.entities.MoodEntry" />
+    </fragment>
+    <fragment
+        android:id="@+id/displayMoodIconsFragment"
+        android:name="lostankit7.android.entry_presentation.fragment.editEntry.editmood.DisplayMoodIconsFragment"
+        android:label="DisplayMoodIconsFragment">
+        <action
+            android:id="@+id/action_displayMoodIconsFragment_to_upsertMoodIconFragment"
+            app:destination="@id/upsertMoodIconFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/displayTaskCategoriesFragment"
+        android:name="lostankit7.android.entry_presentation.fragment.editEntry.edittask.DisplayTaskCategoriesFragment"
+        android:label="DisplayTaskCategoriesFragment">
+        <action
+            android:id="@+id/action_displayTaskCategoriesFragment_to_displayTasksOfCategoryFragment"
+            app:destination="@id/displayTasksOfCategoryFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/displayTasksOfCategoryFragment"
+        android:name="lostankit7.android.entry_presentation.fragment.editEntry.edittask.DisplayTasksOfCategoryFragment"
+        android:label="DisplayTasksOfCategoryFragment">
+        <argument
+            android:name="categoryName"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_displayTasksOfCategoryFragment_to_upsertTaskIconFragment"
+            app:destination="@id/upsertTaskIconFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/upsertTaskIconFragment"
+        android:name="lostankit7.android.entry_presentation.fragment.editEntry.edittask.UpsertTaskIconFragment"
+        android:label="UpsertTaskIconFragment">
+        <argument
+            android:name="editTaskIcon"
+            app:argType="lostankit7.android.entry_domain.entities.TaskIcon"
+            app:nullable="true" />
+        <argument
+            android:name="category"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/upsertMoodIconFragment"
+        android:name="lostankit7.android.entry_presentation.fragment.editEntry.editmood.UpsertMoodIconFragment"
+        android:label="UpsertMoodIconFragment">
+        <argument
+            android:name="icon"
+            app:argType="lostankit7.android.entry_domain.entities.MoodIcon"
+            app:nullable="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/displaySingleDateUserEntriesFragment"
+        android:name="lostankit7.android.entry_presentation.fragment.displayentry.DisplaySingleDateUserEntriesFragment"
+        android:label="DisplaySingleDateUserEntriesFragment">
+        <argument
+            android:name="date"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/addUserEntryBaseFragment"
+        android:name="lostankit7.android.entry_presentation.AddUserEntryBaseFragment"
+        android:label="AddUserEntryBaseFragment" />
+</navigation>
