@@ -3,16 +3,14 @@ package lostankit7.droid.moodtracker.home.presentation
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
-import androidx.lifecycle.ViewModelProvider
 import lostankit7.droid.helper.hide
 import lostankit7.droid.helper.show
-import lostankit7.droid.moodtracker.core.presentation.fragment.BaseDaggerFragment
+import lostankit7.droid.moodtracker.core.presentation.fragment.BaseFragment
 import lostankit7.droid.moodtracker.core.presentation.utils.UiUtils.hideKeyBoard
 import lostankit7.droid.moodtracker.home.R
 import lostankit7.droid.moodtracker.home.databinding.FragmentMoreBinding
-import lostankit7.droid.moodtracker.home.presentation.viewmodel.MoreViewModel
 
-class MoreFragment : BaseDaggerFragment<FragmentMoreBinding, MoreViewModel>() {
+class MoreFragment : BaseFragment<FragmentMoreBinding>() {
 
     private var isEditEnabled = false
 
@@ -51,12 +49,5 @@ class MoreFragment : BaseDaggerFragment<FragmentMoreBinding, MoreViewModel>() {
 
     override fun inflateLayout(layoutInflater: LayoutInflater) =
         FragmentMoreBinding.inflate(layoutInflater)
-
-    override fun initiateViewModel(viewModelProvider: ViewModelProvider) =
-        viewModelProvider[MoreViewModel::class.java]
-
-    override fun injectFragment() {
-
-    }
 
 }
