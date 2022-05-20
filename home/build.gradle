@@ -37,6 +37,7 @@ android {
 dependencies {
     implementation(project(Modules.core))
 
+    implementation(Dependencies.customViews)
     implementation(Dependencies.navigationFragment)
     implementation(Dependencies.navigationUI)
     implementation(Dependencies.coreKtx)

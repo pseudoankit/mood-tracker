@@ -55,6 +55,7 @@ dependencies {
     // Room components
     implementation(Dependencies.roomKtx)
     implementation(Dependencies.roomRuntime)
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     kapt(Dependencies.roomCompiler)
 
     //live data , view model

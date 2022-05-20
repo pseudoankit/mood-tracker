@@ -5,9 +5,9 @@ class DisplayAllUserEntriesFragment : DisplayUserEntriesBaseFragment() {
     override fun registerObservers() {
         super.registerObservers()
 
-        viewModel.allEntriesLiveData.observe(viewLifecycleOwner, {
+        viewModel.allEntriesLiveData.observe(viewLifecycleOwner) {
             adapter.submitList(it)
-        })
+        }
     }
 
 }

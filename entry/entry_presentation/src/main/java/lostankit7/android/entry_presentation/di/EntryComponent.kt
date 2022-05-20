@@ -1,7 +1,6 @@
 package lostankit7.android.entry_presentation.di
 
 import android.content.Context
-import dagger.BindsInstance
 import dagger.Component
 import lostankit7.android.entry_data.di.EntryDatabaseModule
 import lostankit7.android.entry_data.di.LocalDbModule
@@ -15,9 +14,7 @@ import lostankit7.android.entry_presentation.fragment.editEntry.edittask.Display
 import lostankit7.android.entry_presentation.fragment.editEntry.edittask.DisplayTasksOfCategoryFragment
 import lostankit7.android.entry_presentation.fragment.editEntry.edittask.UpsertTaskIconFragment
 import lostankit7.droid.moodtracker.core.di.component.CoreAppComponent
-import lostankit7.droid.moodtracker.core.di.module.CoreModule
 import lostankit7.droid.moodtracker.core.di.scope.ApplicationContext
-import lostankit7.droid.moodtracker.core.di.scope.ApplicationScope
 
 @Component(modules = [
     ViewModelModule::class,

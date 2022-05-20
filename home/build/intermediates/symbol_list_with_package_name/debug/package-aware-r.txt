@@ -2752,13 +2752,15 @@ id bestChoice
 id blocking
 id bottom
 id bottomLayout
-id bottomNavBar
 id bottom_app_bar
+id bottom_nav_view
 id bottom_navigation_stats
 id bounce
+id btnEditProfile
 id btnSave
 id btn_back
 id buttonPanel
+id calendar
 id calendarFragment
 id callMeasure
 id cancel_button
@@ -2826,6 +2828,7 @@ id east
 id edit_query
 id edittext_dropdown_editable
 id edittext_dropdown_noneditable
+id edtUserName
 id elastic
 id emptyView
 id end
@@ -2845,7 +2848,6 @@ id flip
 id floating
 id forever
 id fragmentBottomGuide
-id fragment_container
 id fragment_container_view_tag
 id frost
 id fullscreen_header
@@ -2853,9 +2855,11 @@ id ghost_view
 id ghost_view_holder
 id gone
 id group_divider
+id guideName
 id guideline
 id header_title
 id home
+id home_nav_host_fragment
 id honorRequest
 id horizontal_only
 id icon
@@ -2874,10 +2878,12 @@ id item2
 id item3
 id item4
 id item_touch_helper_previous_elevation
+id ivUserProfile
 id jumpToEnd
 id jumpToStart
 id labeled
 id layout
+id layoutProfile
 id left
 id leftIcon1
 id leftIcon2
@@ -2996,6 +3002,7 @@ id rightToLeft
 id right_icon
 id right_icon_selector_textview
 id right_side
+id root_layout
 id rounded
 id row_index_key
 id save_non_transition_alpha
@@ -3100,6 +3107,7 @@ id transition_transform
 id triangle
 id tvName
 id tvProgressText
+id txtUserName
 id unchecked
 id uniform
 id unlabeled
@@ -3213,7 +3221,6 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
-layout activity_home
 layout common_action_bar
 layout custom_dialog
 layout design_bottom_navigation_item
@@ -3232,6 +3239,9 @@ layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
 layout dialog_progress
+layout fragment_calendar
+layout fragment_home
+layout fragment_more
 layout item_rv_empy_state
 layout item_text_chips
 layout layout_selector_textview
@@ -3289,6 +3299,7 @@ layout notification_template_custom_big
 layout notification_template_icon_group
 layout notification_template_part_chronometer
 layout notification_template_part_time
+layout partial_layout_profile_section
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
@@ -3311,7 +3322,7 @@ layout text_view_with_theme_line_height
 layout text_view_without_line_height
 menu example_menu
 menu example_menu2
-menu menu_bottom_navigation
+menu home_bottom_nav_menu
 navigation nav_graph_home
 plurals mtrl_badge_content_description
 string abc_action_bar_home_description

@@ -2751,13 +2751,15 @@ int id bestChoice 0x0
 int id blocking 0x0
 int id bottom 0x0
 int id bottomLayout 0x0
-int id bottomNavBar 0x0
 int id bottom_app_bar 0x0
+int id bottom_nav_view 0x0
 int id bottom_navigation_stats 0x0
 int id bounce 0x0
+int id btnEditProfile 0x0
 int id btnSave 0x0
 int id btn_back 0x0
 int id buttonPanel 0x0
+int id calendar 0x0
 int id calendarFragment 0x0
 int id callMeasure 0x0
 int id cancel_button 0x0
@@ -2825,6 +2827,7 @@ int id east 0x0
 int id edit_query 0x0
 int id edittext_dropdown_editable 0x0
 int id edittext_dropdown_noneditable 0x0
+int id edtUserName 0x0
 int id elastic 0x0
 int id emptyView 0x0
 int id end 0x0
@@ -2844,7 +2847,6 @@ int id flip 0x0
 int id floating 0x0
 int id forever 0x0
 int id fragmentBottomGuide 0x0
-int id fragment_container 0x0
 int id fragment_container_view_tag 0x0
 int id frost 0x0
 int id fullscreen_header 0x0
@@ -2852,9 +2854,11 @@ int id ghost_view 0x0
 int id ghost_view_holder 0x0
 int id gone 0x0
 int id group_divider 0x0
+int id guideName 0x0
 int id guideline 0x0
 int id header_title 0x0
 int id home 0x0
+int id home_nav_host_fragment 0x0
 int id honorRequest 0x0
 int id horizontal_only 0x0
 int id icon 0x0
@@ -2873,10 +2877,12 @@ int id item2 0x0
 int id item3 0x0
 int id item4 0x0
 int id item_touch_helper_previous_elevation 0x0
+int id ivUserProfile 0x0
 int id jumpToEnd 0x0
 int id jumpToStart 0x0
 int id labeled 0x0
 int id layout 0x0
+int id layoutProfile 0x0
 int id left 0x0
 int id leftIcon1 0x0
 int id leftIcon2 0x0
@@ -2995,6 +3001,7 @@ int id rightToLeft 0x0
 int id right_icon 0x0
 int id right_icon_selector_textview 0x0
 int id right_side 0x0
+int id root_layout 0x0
 int id rounded 0x0
 int id row_index_key 0x0
 int id save_non_transition_alpha 0x0
@@ -3099,6 +3106,7 @@ int id transition_transform 0x0
 int id triangle 0x0
 int id tvName 0x0
 int id tvProgressText 0x0
+int id txtUserName 0x0
 int id unchecked 0x0
 int id uniform 0x0
 int id unlabeled 0x0
@@ -3212,7 +3220,6 @@ int layout abc_search_dropdown_item_icons_2line 0x0
 int layout abc_search_view 0x0
 int layout abc_select_dialog_material 0x0
 int layout abc_tooltip 0x0
-int layout activity_home 0x0
 int layout common_action_bar 0x0
 int layout custom_dialog 0x0
 int layout design_bottom_navigation_item 0x0
@@ -3231,6 +3238,9 @@ int layout design_navigation_menu_item 0x0
 int layout design_text_input_end_icon 0x0
 int layout design_text_input_start_icon 0x0
 int layout dialog_progress 0x0
+int layout fragment_calendar 0x0
+int layout fragment_home 0x0
+int layout fragment_more 0x0
 int layout item_rv_empy_state 0x0
 int layout item_text_chips 0x0
 int layout layout_selector_textview 0x0
@@ -3288,6 +3298,7 @@ int layout notification_template_custom_big 0x0
 int layout notification_template_icon_group 0x0
 int layout notification_template_part_chronometer 0x0
 int layout notification_template_part_time 0x0
+int layout partial_layout_profile_section 0x0
 int layout select_dialog_item_material 0x0
 int layout select_dialog_multichoice_material 0x0
 int layout select_dialog_singlechoice_material 0x0
@@ -3310,7 +3321,7 @@ int layout text_view_with_theme_line_height 0x0
 int layout text_view_without_line_height 0x0
 int menu example_menu 0x0
 int menu example_menu2 0x0
-int menu menu_bottom_navigation 0x0
+int menu home_bottom_nav_menu 0x0
 int navigation nav_graph_home 0x0
 int plurals mtrl_badge_content_description 0x0
 int string abc_action_bar_home_description 0x0
