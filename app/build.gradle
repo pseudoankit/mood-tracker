@@ -44,7 +44,7 @@ dependencies {
     implementation(project(Modules.entryData))
     implementation(project(Modules.entryDomain))
     implementation(project(Modules.entryPresentation))
-    implementation(project(Modules.homeBase))
+    implementation(project(Modules.homeHost))
     implementation(project(Modules.homeUserEntries))
     implementation(project(Modules.homeCalendar))
     implementation(project(Modules.homeMore))
