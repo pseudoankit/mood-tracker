@@ -4,7 +4,7 @@
 
     <application>
         <activity
-            android:name=".AddUserEntryActivity"
+            android:name=".AddUserEntryHostFragment"
             android:exported="true" />
     </application>
 

@@ -1,41 +1,30 @@
 package lostankit7.android.entry_presentation
 
-import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.NavController
-import androidx.navigation.findNavController
-import lostankit7.android.entry_presentation.databinding.ActivityAddUserEntryBinding
-import lostankit7.android.entry_presentation.utils.Utils.entryComponent
-import lostankit7.android.entry_presentation.di.EntryComponent
+import android.view.LayoutInflater
+import lostankit7.android.entry_presentation.databinding.FragmentAddUserEntryHostBinding
 import lostankit7.android.entry_presentation.fragment.addEntry.AddTaskEntryFragment
 import lostankit7.android.entry_presentation.fragment.editEntry.editmood.UpsertMoodIconFragment
 import lostankit7.android.entry_presentation.fragment.editEntry.edittask.UpsertTaskIconFragment
 import lostankit7.droid.moodtracker.core.databinding.CommonActionBarBinding
+import lostankit7.droid.moodtracker.core.presentation.fragment.BaseFragment
 import lostankit7.droid.moodtracker.core.presentation.utils.ActionBarUtils.applyDefault
+import lostankit7.droid.moodtracker.core.presentation.utils.findNavHost
 
-class AddUserEntryActivity : AppCompatActivity() {
+class AddUserEntryHostFragment : BaseFragment<FragmentAddUserEntryHostBinding>() {
 
-    private lateinit var binding: ActivityAddUserEntryBinding
-    private val navController: NavController by lazy(LazyThreadSafetyMode.NONE) {
-        findNavController(R.id.fragment_container)
+    override fun init() {
+        navController = findNavHost(R.id.entry_nav_host_fragment)
     }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        binding = ActivityAddUserEntryBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+    override fun initListeners() {
 
-        initListener()
-    }
-
-    private fun initListener() {
         binding.actionBar.btnBack.setOnClickListener {
             navController.popBackStack()
         }
 
         binding.actionBar.btnSave.setOnClickListener {
             when (val fragment =
-                supportFragmentManager.findFragmentById(R.id.fragment_container)?.childFragmentManager?.primaryNavigationFragment) {
+                childFragmentManager.findFragmentById(R.id.entry_nav_host_fragment)?.childFragmentManager?.primaryNavigationFragment) {
                 is AddTaskEntryFragment -> fragment.saveEntry()
                 is UpsertMoodIconFragment -> fragment.saveMoodIcon()
                 is UpsertTaskIconFragment -> fragment.saveTaskIcon()
@@ -47,8 +36,15 @@ class AddUserEntryActivity : AppCompatActivity() {
         }
     }
 
+    override fun inflateLayout(layoutInflater: LayoutInflater) =
+        FragmentAddUserEntryHostBinding.inflate(layoutInflater)
+
     val actionBar: CommonActionBarBinding?
         get() {
-            return if (!::binding.isInitialized) null else binding.actionBar
+            return try {
+                binding.actionBar
+            } catch (e: Exception) {
+                null
+            }
         }
 }

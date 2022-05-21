@@ -8,7 +8,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import lostankit7.android.entry_domain.entities.Icon
 import lostankit7.android.entry_domain.entities.Suggestion
-import lostankit7.android.entry_presentation.AddUserEntryActivity
 import lostankit7.android.entry_presentation.adapter.ChipsRvAdapter
 import lostankit7.android.entry_presentation.adapter.MoodIconRvAdapter
 import lostankit7.android.entry_presentation.databinding.FragmentUpsertMoodTaskIconBinding
@@ -16,7 +15,6 @@ import lostankit7.android.entry_presentation.utils.Utils.entryComponent
 import lostankit7.android.entry_presentation.utils.Utils.mActionBar
 import lostankit7.android.entry_presentation.viewmodel.MoodEntryViewModel
 import lostankit7.droid.moodtracker.core.presentation.fragment.BaseDaggerFragment
-import lostankit7.droid.moodtracker.core.presentation.utils.ActionBarUtils.applyDefault
 import lostankit7.droid.moodtracker.core.presentation.utils.ActionBarUtils.showSaveButton
 import lostankit7.droid.moodtracker.core.presentation.utils.UiUtils.hideKeyBoard
 

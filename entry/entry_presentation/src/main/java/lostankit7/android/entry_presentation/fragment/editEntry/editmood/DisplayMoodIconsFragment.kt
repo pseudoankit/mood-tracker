@@ -9,10 +9,8 @@ import lostankit7.android.entry_presentation.R
 import lostankit7.android.entry_presentation.adapter.IconListRvAdapter
 import lostankit7.android.entry_presentation.databinding.FragmentDisplayListBinding
 import lostankit7.android.entry_presentation.utils.Utils.entryComponent
-import lostankit7.android.entry_presentation.utils.Utils.mActionBar
 import lostankit7.android.entry_presentation.viewmodel.MoodEntryViewModel
 import lostankit7.droid.moodtracker.core.presentation.fragment.BaseDaggerFragment
-import lostankit7.droid.moodtracker.core.presentation.utils.ActionBarUtils.applyDefault
 
 class DisplayMoodIconsFragment :
     BaseDaggerFragment<FragmentDisplayListBinding, MoodEntryViewModel>() {

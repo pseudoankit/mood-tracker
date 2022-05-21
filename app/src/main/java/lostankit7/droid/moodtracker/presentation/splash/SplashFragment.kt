@@ -36,9 +36,7 @@ class SplashFragment : BaseDaggerFragment<FragmentSplashBinding, SplashViewModel
     }
 
     private fun navigateAfterSplash() {
-//        navigateTo(
-//            SplashFragmentDirections.actionSplashFragmentToDisplayAllUserEntriesFragment()
-//        )
+        //launch as single top
         navController.navigate(R.id.homeFragment)
     }
 

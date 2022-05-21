@@ -36,6 +36,7 @@ android {
 
 dependencies {
     implementation(project(Modules.core))
+    implementation(project(Modules.entryPresentation))
 
     implementation(Dependencies.customViews)
     implementation(Dependencies.navigationFragment)

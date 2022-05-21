@@ -76,16 +76,4 @@
             app:argType="lostankit7.android.entry_domain.entities.MoodIcon"
             app:nullable="true" />
     </fragment>
-    <fragment
-        android:id="@+id/displaySingleDateUserEntriesFragment"
-        android:name="lostankit7.android.entry_presentation.fragment.displayentry.DisplaySingleDateUserEntriesFragment"
-        android:label="DisplaySingleDateUserEntriesFragment">
-        <argument
-            android:name="date"
-            app:argType="string" />
-    </fragment>
-    <fragment
-        android:id="@+id/addUserEntryBaseFragment"
-        android:name="lostankit7.android.entry_presentation.AddUserEntryBaseFragment"
-        android:label="AddUserEntryBaseFragment" />
 </navigation>

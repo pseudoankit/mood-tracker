@@ -6,7 +6,6 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import lostankit7.android.entry_domain.entities.Icon
 import lostankit7.android.entry_domain.entities.TaskCategory
-import lostankit7.android.entry_presentation.AddUserEntryActivity
 import lostankit7.android.entry_presentation.R
 import lostankit7.android.entry_presentation.adapter.IconListRvAdapter
 import lostankit7.android.entry_presentation.databinding.DialogTextEntryBinding
@@ -14,7 +13,6 @@ import lostankit7.android.entry_presentation.databinding.FragmentDisplayListBind
 import lostankit7.android.entry_presentation.utils.Utils.entryComponent
 import lostankit7.android.entry_presentation.viewmodel.TaskEntryViewModel
 import lostankit7.droid.moodtracker.core.presentation.fragment.BaseDaggerFragment
-import lostankit7.droid.moodtracker.core.presentation.utils.ActionBarUtils.applyDefault
 import lostankit7.droid.moodtracker.core.presentation.utils.DialogHelper
 
 class DisplayTaskCategoriesFragment :
