@@ -6,14 +6,6 @@
         <item>@string/english</item>
     </string-array>
 
-    <!-- Bottom navigation text  todo remove it-->
-    <string name="text_entries">Entries</string>
-    <string name="text_calendar">Calendar</string>
-    <string name="text_add_entry">Add Entry</string>
-    <string name="text_stats">Stats</string>
-    <string name="text_more">More</string>
-
-
     <string name="text_change_language">Change Language</string>
     <string name="hindi">Hindi</string>
     <string name="english">English</string>

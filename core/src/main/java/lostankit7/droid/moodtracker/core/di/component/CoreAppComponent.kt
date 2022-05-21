@@ -21,5 +21,4 @@ interface CoreAppComponent {
     @ApplicationContext
     fun provideContext() : Context
 
-
 }

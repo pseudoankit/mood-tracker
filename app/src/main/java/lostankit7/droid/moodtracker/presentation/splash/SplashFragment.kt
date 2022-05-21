@@ -36,7 +36,7 @@ class SplashFragment : BaseDaggerFragment<FragmentSplashBinding, SplashViewModel
     }
 
     private fun navigateAfterSplash() {
-        //launch as single top
+        //todo launch as single top
         navController.navigate(R.id.homeFragment)
     }
 
