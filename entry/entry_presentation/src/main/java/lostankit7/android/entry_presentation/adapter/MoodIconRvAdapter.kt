@@ -2,7 +2,7 @@ package lostankit7.android.entry_presentation.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import lostankit7.droid.moodtracker.core.domain.entities.BaseIcon
+import lostankit7.droid.moodtracker.core.domain.entities.shared.BaseIcon
 import lostankit7.android.entry_presentation.databinding.ItemRvSuggestedMoodBinding
 import lostankit7.droid.moodtracker.core.presentation.adapter.BaseDiffRvAdapter
 

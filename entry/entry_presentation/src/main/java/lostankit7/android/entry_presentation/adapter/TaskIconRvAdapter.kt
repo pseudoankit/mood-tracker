@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import lostankit7.droid.CustomTextView
 import lostankit7.droid.moodtracker.core.presentation.adapter.BaseDiffRvAdapter
-import lostankit7.droid.moodtracker.core.domain.entities.BaseIcon
+import lostankit7.droid.moodtracker.core.domain.entities.shared.BaseIcon
 import lostankit7.android.entry_domain.entities.TaskIcon
 import lostankit7.android.entry_presentation.R
 import lostankit7.android.entry_presentation.databinding.ItemRvTaskIconBinding

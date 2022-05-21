@@ -1,4 +1,4 @@
-package lostankit7.droid.moodtracker.core.presentation.adapter
+package lostankit7.droid.moodtracker.core.presentation.adapter.shared
 
 import android.text.SpannableStringBuilder
 import android.view.Gravity
@@ -8,7 +8,8 @@ import android.view.ViewGroup
 import android.widget.TextView
 import lostankit7.droid.moodtracker.core.R
 import lostankit7.droid.moodtracker.core.databinding.ItemRvUserEntriesBinding
-import lostankit7.droid.moodtracker.core.domain.entities.UserEntry
+import lostankit7.droid.moodtracker.core.domain.entities.shared.UserEntry
+import lostankit7.droid.moodtracker.core.presentation.adapter.BaseDiffRvAdapter
 import lostankit7.droid.moodtracker.core.presentation.utils.DialogHelper
 import lostankit7.droid.moodtracker.core.presentation.utils.UiUtils.hide
 

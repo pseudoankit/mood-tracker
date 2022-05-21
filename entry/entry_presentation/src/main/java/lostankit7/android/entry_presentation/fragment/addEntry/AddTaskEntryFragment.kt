@@ -3,7 +3,7 @@ package lostankit7.android.entry_presentation.fragment.addEntry
 import android.view.LayoutInflater
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.navArgs
-import lostankit7.droid.moodtracker.core.domain.entities.BaseIcon
+import lostankit7.droid.moodtracker.core.domain.entities.shared.BaseIcon
 import lostankit7.android.entry_domain.entities.TaskIcon
 import lostankit7.android.entry_presentation.adapter.RvTaskAdapter
 import lostankit7.android.entry_presentation.adapter.TaskIconRvAdapter

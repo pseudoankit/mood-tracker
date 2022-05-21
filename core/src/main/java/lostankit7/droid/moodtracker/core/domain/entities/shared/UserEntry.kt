@@ -1,4 +1,4 @@
-package lostankit7.droid.moodtracker.core.domain.entities
+package lostankit7.droid.moodtracker.core.domain.entities.shared
 
 data class UserEntry(
     var date : String,

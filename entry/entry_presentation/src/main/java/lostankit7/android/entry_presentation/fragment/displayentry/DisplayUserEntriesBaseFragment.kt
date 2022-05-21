@@ -3,9 +3,9 @@ package lostankit7.android.entry_presentation.fragment.displayentry
 import android.view.LayoutInflater
 import android.view.MenuItem
 import androidx.lifecycle.ViewModelProvider
-import lostankit7.droid.moodtracker.core.domain.entities.UserEntry
+import lostankit7.droid.moodtracker.core.domain.entities.shared.UserEntry
 import lostankit7.android.entry_presentation.R
-import lostankit7.droid.moodtracker.core.presentation.adapter.RvUserEntriesAdapter
+import lostankit7.droid.moodtracker.core.presentation.adapter.shared.RvUserEntriesAdapter
 import lostankit7.android.entry_presentation.databinding.FragmentDisplayUserEntriesBinding
 import lostankit7.android.entry_presentation.utils.Utils.entryComponent
 import lostankit7.android.entry_presentation.viewmodel.UserEntriesViewModel
