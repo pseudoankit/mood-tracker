@@ -19,6 +19,7 @@
             <option value="$PROJECT_DIR$/entry/entry_domain" />
             <option value="$PROJECT_DIR$/entry/entry_presentation" />
             <option value="$PROJECT_DIR$/home" />
+            <option value="$PROJECT_DIR$/home/home_base" />
             <option value="$PROJECT_DIR$/home/home_calendar" />
             <option value="$PROJECT_DIR$/home/home_more" />
             <option value="$PROJECT_DIR$/home/home_user_entries" />

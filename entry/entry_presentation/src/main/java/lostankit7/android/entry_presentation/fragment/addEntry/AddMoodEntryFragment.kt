@@ -11,11 +11,11 @@ import lostankit7.android.entry_presentation.utils.Utils.entryComponent
 import lostankit7.android.entry_presentation.utils.Utils.mActionBar
 import lostankit7.android.entry_presentation.viewmodel.MoodEntryViewModel
 import lostankit7.droid.helper.hide
+import lostankit7.droid.moodtracker.core.presentation.fragment.BaseDaggerFragment
 import lostankit7.droid.moodtracker.core.presentation.utils.DateTimeUtils.getCurrentDate
 import lostankit7.droid.moodtracker.core.presentation.utils.DateTimeUtils.getCurrentTime
 import lostankit7.droid.moodtracker.core.presentation.utils.DateTimeUtils.getSelectedDate
 import lostankit7.droid.moodtracker.core.presentation.utils.DateTimeUtils.getSelectedTime
-import lostankit7.droid.moodtracker.core.presentation.fragment.BaseDaggerFragment
 
 class AddMoodEntryFragment : BaseDaggerFragment<FragmentAddMoodEntryBinding, MoodEntryViewModel>() {
 
@@ -75,7 +75,7 @@ class AddMoodEntryFragment : BaseDaggerFragment<FragmentAddMoodEntryBinding, Moo
     }
 
     override fun updateActionBar() {
-        activity?.mActionBar?.root?.hide()
+        mActionBar?.root?.hide()
     }
 
     override fun initiateViewModel(viewModelProvider: ViewModelProvider) =

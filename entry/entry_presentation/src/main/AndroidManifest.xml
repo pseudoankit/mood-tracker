@@ -1,11 +1,2 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="lostankit7.android.entry_presentation">
-
-    <application>
-        <activity
-            android:name=".AddUserEntryHostFragment"
-            android:exported="true" />
-    </application>
-
-</manifest>
+<manifest package="lostankit7.android.entry_presentation"></manifest>

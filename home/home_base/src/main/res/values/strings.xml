@@ -4,4 +4,5 @@
     <string name="text_add_entry">Add Entry</string>
     <string name="text_stats">Stats</string>
     <string name="text_more">More</string>
+    <string name="user_profile_image">User Profile Image</string>
 </resources>

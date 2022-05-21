@@ -3,7 +3,6 @@ package lostankit7.android.entry_presentation.fragment.addEntry
 import android.view.LayoutInflater
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.navArgs
-import lostankit7.droid.moodtracker.core.domain.entities.shared.BaseIcon
 import lostankit7.android.entry_domain.entities.TaskIcon
 import lostankit7.android.entry_presentation.adapter.RvTaskAdapter
 import lostankit7.android.entry_presentation.adapter.TaskIconRvAdapter
@@ -11,6 +10,7 @@ import lostankit7.android.entry_presentation.databinding.FragmentAddTaskEntryBin
 import lostankit7.android.entry_presentation.utils.Utils.entryComponent
 import lostankit7.android.entry_presentation.utils.Utils.mActionBar
 import lostankit7.android.entry_presentation.viewmodel.TaskEntryViewModel
+import lostankit7.droid.moodtracker.core.domain.entities.shared.BaseIcon
 import lostankit7.droid.moodtracker.core.presentation.fragment.BaseDaggerFragment
 import lostankit7.droid.moodtracker.core.presentation.utils.ActionBarUtils.showBackButtonWithIcon
 import lostankit7.droid.moodtracker.core.presentation.utils.ActionBarUtils.showSaveButton
@@ -65,7 +65,7 @@ class AddTaskEntryFragment : BaseDaggerFragment<FragmentAddTaskEntryBinding, Tas
     }
 
     override fun updateActionBar() {
-        activity?.mActionBar?.apply {
+        mActionBar?.apply {
             showBackButtonWithIcon(args.moodEntry.moodIcon.icon)
             updateTitle(args.moodEntry.moodIcon.name)
             showSaveButton()

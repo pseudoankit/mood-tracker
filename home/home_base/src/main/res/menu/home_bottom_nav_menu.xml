@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/displayAllUserEntriesFragment"
+        android:id="@+id/userEntriesFragment"
         android:icon="@drawable/bottom_nav_entries"
         android:title="@string/text_entries" />
     <item

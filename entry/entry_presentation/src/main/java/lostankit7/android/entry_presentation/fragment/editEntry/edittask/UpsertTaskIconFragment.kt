@@ -6,7 +6,6 @@ import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import lostankit7.droid.moodtracker.core.domain.entities.shared.BaseIcon
 import lostankit7.android.entry_domain.entities.Suggestion
 import lostankit7.android.entry_domain.entities.TaskIcon
 import lostankit7.android.entry_presentation.R
@@ -16,6 +15,7 @@ import lostankit7.android.entry_presentation.databinding.FragmentUpsertMoodTaskI
 import lostankit7.android.entry_presentation.utils.Utils.entryComponent
 import lostankit7.android.entry_presentation.utils.Utils.mActionBar
 import lostankit7.android.entry_presentation.viewmodel.TaskEntryViewModel
+import lostankit7.droid.moodtracker.core.domain.entities.shared.BaseIcon
 import lostankit7.droid.moodtracker.core.presentation.fragment.BaseDaggerFragment
 import lostankit7.droid.moodtracker.core.presentation.utils.ActionBarUtils.showSaveButton
 import lostankit7.droid.moodtracker.core.presentation.utils.UiUtils.hideKeyBoard
@@ -92,7 +92,7 @@ class UpsertTaskIconFragment :
     }
 
     override fun updateActionBar() {
-        activity?.mActionBar?.apply {
+        mActionBar?.apply {
             showSaveButton()
         }
     }

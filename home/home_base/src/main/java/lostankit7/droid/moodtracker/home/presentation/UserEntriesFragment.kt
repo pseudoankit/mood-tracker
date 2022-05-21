@@ -1,19 +1,18 @@
-package lostankit7.android.entry_presentation.fragment.displayentry
+package lostankit7.droid.moodtracker.home.presentation
 
 import android.view.LayoutInflater
 import android.view.MenuItem
 import androidx.lifecycle.ViewModelProvider
-import lostankit7.droid.moodtracker.core.domain.entities.shared.UserEntry
 import lostankit7.android.entry_presentation.R
-import lostankit7.droid.moodtracker.core.presentation.adapter.shared.RvUserEntriesAdapter
-import lostankit7.android.entry_presentation.databinding.FragmentDisplayUserEntriesBinding
-import lostankit7.android.entry_presentation.utils.Utils.entryComponent
 import lostankit7.android.entry_presentation.viewmodel.UserEntriesViewModel
+import lostankit7.droid.moodtracker.core.domain.entities.shared.UserEntry
+import lostankit7.droid.moodtracker.core.presentation.adapter.shared.RvUserEntriesAdapter
 import lostankit7.droid.moodtracker.core.presentation.fragment.BaseDaggerFragment
-//todo check to use it
-abstract class DisplayUserEntriesBaseFragment : BaseDaggerFragment<FragmentDisplayUserEntriesBinding, UserEntriesViewModel>() {
+import lostankit7.droid.moodtracker.home.databinding.FragmentUserEntriesBinding
 
-    protected val adapter = RvUserEntriesAdapter(::onItemClicked)
+class UserEntriesFragment : BaseDaggerFragment<FragmentUserEntriesBinding, UserEntriesViewModel>() {
+
+    val adapter = RvUserEntriesAdapter(::onItemClicked)
 
     override fun initRecyclerView() {
         binding.rvUserEntries.adapter = adapter
@@ -22,7 +21,6 @@ abstract class DisplayUserEntriesBaseFragment : BaseDaggerFragment<FragmentDispl
     private fun onItemClicked(menuItem: MenuItem, userEntry: UserEntry): Boolean {
         return when (menuItem.itemId) {
             R.id.edit -> {
-                //todo edit
                 true
             }
             R.id.delete -> {
@@ -33,12 +31,20 @@ abstract class DisplayUserEntriesBaseFragment : BaseDaggerFragment<FragmentDispl
         }
     }
 
+    override fun registerObservers() {
+        super.registerObservers()
+
+//        viewModel.allEntriesLiveData.observe(viewLifecycleOwner) {
+//            adapter.submitList(it)
+//        }
+    }
+
     override fun injectFragment() {
-        activity?.entryComponent?.inject(this)
+
     }
 
     override fun inflateLayout(layoutInflater: LayoutInflater) =
-        FragmentDisplayUserEntriesBinding.inflate(layoutInflater)
+        FragmentUserEntriesBinding.inflate(layoutInflater)
 
     override fun initiateViewModel(viewModelProvider: ViewModelProvider) =
         viewModelProvider[UserEntriesViewModel::class.java]
