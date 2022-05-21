@@ -5,17 +5,17 @@ import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import lostankit7.droid.CustomTextView
 import lostankit7.droid.moodtracker.core.presentation.adapter.BaseDiffRvAdapter
-import lostankit7.android.entry_domain.entities.Icon
+import lostankit7.droid.moodtracker.core.domain.entities.BaseIcon
 import lostankit7.android.entry_domain.entities.TaskIcon
 import lostankit7.android.entry_presentation.R
 import lostankit7.android.entry_presentation.databinding.ItemRvTaskIconBinding
 import lostankit7.droid.moodtracker.core.presentation.utils.UiUtils.invert
 
 class TaskIconRvAdapter(
-    private val taskSelected: (Icon) -> Unit, private val isMultiSelect: Boolean
-) : BaseDiffRvAdapter<ItemRvTaskIconBinding, Icon>() {
+    private val taskSelected: (BaseIcon) -> Unit, private val isMultiSelect: Boolean
+) : BaseDiffRvAdapter<ItemRvTaskIconBinding, BaseIcon>() {
 
-    override fun bindViewHolder(item: Icon, position: Int, binding: ItemRvTaskIconBinding) {
+    override fun bindViewHolder(item: BaseIcon, position: Int, binding: ItemRvTaskIconBinding) {
 
         if (item.isSolid) binding.tvIcon.isSolidIcon() else binding.tvIcon.isRegularIcon()
         binding.tvName.invert(item is TaskIcon)
@@ -55,7 +55,7 @@ class TaskIconRvAdapter(
     ) = ItemRvTaskIconBinding.inflate(layoutInflater, parent, attachToParent)
 
     companion object {
-        fun newInstance(taskSelected: (Icon) -> Unit, isMultiSelect: Boolean) =
+        fun newInstance(taskSelected: (BaseIcon) -> Unit, isMultiSelect: Boolean) =
             TaskIconRvAdapter(taskSelected, isMultiSelect)
     }
 }

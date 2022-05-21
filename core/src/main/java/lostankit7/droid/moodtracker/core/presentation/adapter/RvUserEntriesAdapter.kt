@@ -1,4 +1,4 @@
-package lostankit7.android.entry_presentation.adapter
+package lostankit7.droid.moodtracker.core.presentation.adapter
 
 import android.text.SpannableStringBuilder
 import android.view.Gravity
@@ -6,10 +6,9 @@ import android.view.LayoutInflater
 import android.view.MenuItem
 import android.view.ViewGroup
 import android.widget.TextView
-import lostankit7.android.entry_domain.entities.UserEntry
-import lostankit7.android.entry_presentation.R
-import lostankit7.android.entry_presentation.databinding.ItemRvUserEntriesBinding
-import lostankit7.droid.moodtracker.core.presentation.adapter.BaseDiffRvAdapter
+import lostankit7.droid.moodtracker.core.R
+import lostankit7.droid.moodtracker.core.databinding.ItemRvUserEntriesBinding
+import lostankit7.droid.moodtracker.core.domain.entities.UserEntry
 import lostankit7.droid.moodtracker.core.presentation.utils.DialogHelper
 import lostankit7.droid.moodtracker.core.presentation.utils.UiUtils.hide
 
@@ -26,7 +25,7 @@ class RvUserEntriesAdapter(
 
         fun showOptionDialog() {
             DialogHelper.showMenu(
-                parent.context, holder.binding.optionMenu, R.menu.menu_options
+                parent.context, holder.binding.optionMenu, R.menu.menu_options_item_user_entries
             ) {
                 itemClicked(it, getItem(holder.adapterPosition))
             }

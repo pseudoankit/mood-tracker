@@ -1,9 +1,9 @@
 package lostankit7.android.entry_domain.mapper
 
-import lostankit7.android.entry_domain.entities.Icon
 import lostankit7.android.entry_domain.entities.MoodEntry
 import lostankit7.android.entry_domain.entities.TaskIcon
-import lostankit7.android.entry_domain.entities.UserEntry
+import lostankit7.droid.moodtracker.core.domain.entities.Icon
+import lostankit7.droid.moodtracker.core.domain.entities.UserEntry
 
 object Mapper {
     fun mapDataToUserEntry(
@@ -11,7 +11,7 @@ object Mapper {
         tasksMap: MutableMap<Int, TaskIcon>,
         note: String,
     ): UserEntry {
-        val taskIcons = mutableListOf<Icon.Icon>()
+        val taskIcons = mutableListOf<Icon>()
 
         for ((_, taskIcon) in tasksMap) {
             taskIcons.add(taskIcon.toIcon)
@@ -27,5 +27,5 @@ object Mapper {
         )
     }
 
-    val TaskIcon.toIcon: Icon.Icon get() = Icon.Icon(name, icon)
+    val TaskIcon.toIcon: Icon get() = Icon(name, icon)
 }

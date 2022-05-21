@@ -4,7 +4,7 @@ import android.view.LayoutInflater
 import android.view.MenuItem
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import lostankit7.android.entry_domain.entities.Icon
+import lostankit7.droid.moodtracker.core.domain.entities.BaseIcon
 import lostankit7.android.entry_domain.entities.TaskCategory
 import lostankit7.android.entry_presentation.R
 import lostankit7.android.entry_presentation.adapter.IconListRvAdapter
@@ -28,7 +28,7 @@ class DisplayTaskCategoriesFragment :
         }
     }
 
-    private fun rvOptionsSelected(menuItem: MenuItem, item: Icon): Boolean {
+    private fun rvOptionsSelected(menuItem: MenuItem, item: BaseIcon): Boolean {
         val it = item as TaskCategory
         val oldText = it.name
         return when (menuItem.itemId) {
@@ -47,7 +47,7 @@ class DisplayTaskCategoriesFragment :
         }
     }
 
-    private fun categorySelected(item: Icon) {
+    private fun categorySelected(item: BaseIcon) {
         navigateTo(
             DisplayTaskCategoriesFragmentDirections.actionDisplayTaskCategoriesFragmentToDisplayTasksOfCategoryFragment(
                 item.name

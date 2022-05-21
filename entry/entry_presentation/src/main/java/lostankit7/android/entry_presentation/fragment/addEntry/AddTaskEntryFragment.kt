@@ -3,7 +3,7 @@ package lostankit7.android.entry_presentation.fragment.addEntry
 import android.view.LayoutInflater
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.navArgs
-import lostankit7.android.entry_domain.entities.Icon
+import lostankit7.droid.moodtracker.core.domain.entities.BaseIcon
 import lostankit7.android.entry_domain.entities.TaskIcon
 import lostankit7.android.entry_presentation.adapter.RvTaskAdapter
 import lostankit7.android.entry_presentation.adapter.TaskIconRvAdapter
@@ -46,7 +46,7 @@ class AddTaskEntryFragment : BaseDaggerFragment<FragmentAddTaskEntryBinding, Tas
         }
     }
 
-    private fun onTaskSelected(task: Icon) = with(viewModel){
+    private fun onTaskSelected(task: BaseIcon) = with(viewModel){
         if (selectedTasksMap.containsKey(task.hashCode()))
             selectedTasksMap.remove(task.hashCode())
         else

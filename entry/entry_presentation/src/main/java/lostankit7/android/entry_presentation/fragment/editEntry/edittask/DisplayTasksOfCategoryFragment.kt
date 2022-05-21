@@ -5,7 +5,7 @@ import android.view.MenuItem
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
-import lostankit7.android.entry_domain.entities.Icon
+import lostankit7.droid.moodtracker.core.domain.entities.BaseIcon
 import lostankit7.android.entry_domain.entities.TaskIcon
 import lostankit7.android.entry_presentation.R
 import lostankit7.android.entry_presentation.adapter.IconListRvAdapter
@@ -28,7 +28,7 @@ class DisplayTasksOfCategoryFragment :
         }
     }
 
-    private fun rvOptionsSelected(menuItem: MenuItem, item: Icon): Boolean {
+    private fun rvOptionsSelected(menuItem: MenuItem, item: BaseIcon): Boolean {
         return when (menuItem.itemId) {
             R.id.edit -> {
                 upsertTaskIcon(item)
@@ -42,7 +42,7 @@ class DisplayTasksOfCategoryFragment :
         }
     }
 
-    private fun upsertTaskIcon(item: Icon?) {
+    private fun upsertTaskIcon(item: BaseIcon?) {
         val _item = item as? TaskIcon
             navigateTo(
                 DisplayTasksOfCategoryFragmentDirections.actionDisplayTasksOfCategoryFragmentToUpsertTaskIconFragment(

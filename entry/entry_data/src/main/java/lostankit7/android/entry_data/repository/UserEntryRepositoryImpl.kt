@@ -2,13 +2,11 @@ package lostankit7.android.entry_data.repository
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.map
-import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.map
 import lostankit7.android.entry_data.local.dao.UserEntryDao
 import lostankit7.android.entry_data.mapper.UserEntryMapper.toLocalUserEntryInsert
 import lostankit7.android.entry_data.mapper.UserEntryMapper.toLocalUserEntryUpdate
 import lostankit7.android.entry_data.mapper.UserEntryMapper.toUserEntry
-import lostankit7.android.entry_domain.entities.UserEntry
+import lostankit7.droid.moodtracker.core.domain.entities.UserEntry
 import lostankit7.android.entry_domain.repository.UserEntriesRepository
 
 class UserEntryRepositoryImpl(private val dao: UserEntryDao) : UserEntriesRepository {

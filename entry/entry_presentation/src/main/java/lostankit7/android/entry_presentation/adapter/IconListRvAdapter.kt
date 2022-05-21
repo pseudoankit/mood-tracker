@@ -3,7 +3,7 @@ package lostankit7.android.entry_presentation.adapter
 import android.view.LayoutInflater
 import android.view.MenuItem
 import android.view.ViewGroup
-import lostankit7.android.entry_domain.entities.Icon
+import lostankit7.droid.moodtracker.core.domain.entities.BaseIcon
 import lostankit7.android.entry_domain.entities.MoodIcon
 import lostankit7.android.entry_domain.entities.TaskIcon
 import lostankit7.android.entry_presentation.R
@@ -12,9 +12,9 @@ import lostankit7.droid.moodtracker.core.presentation.adapter.BaseDiffRvAdapter
 import lostankit7.droid.moodtracker.core.presentation.utils.DialogHelper
 
 class IconListRvAdapter(
-    private val itemClick: (Icon) -> Unit,
-    private val optionsSelected: (MenuItem, Icon) -> Boolean
-) : BaseDiffRvAdapter<ItemIconWithTextListBinding, Icon>() {
+    private val itemClick: (BaseIcon) -> Unit,
+    private val optionsSelected: (MenuItem, BaseIcon) -> Boolean
+) : BaseDiffRvAdapter<ItemIconWithTextListBinding, BaseIcon>() {
 
     override fun onCreateHolder(
         holder: BaseDiffRvAdapter.Companion.ViewHolder<ItemIconWithTextListBinding>,
@@ -25,12 +25,12 @@ class IconListRvAdapter(
         holder.binding.root.setOnClickListener { itemClick(getItem(holder.adapterPosition)) }
         holder.binding.optionMenu.setOnClickListener {
             DialogHelper.showMenu(
-                parent.context, holder.binding.optionMenu, R.menu.menu_options
+                parent.context, holder.binding.optionMenu, R.menu.menu_options_item_user_entries
             ) { optionsSelected(it, getItem(holder.adapterPosition)) }
         }
     }
 
-    override fun bindViewHolder(item: Icon, position: Int, binding: ItemIconWithTextListBinding) {
+    override fun bindViewHolder(item: BaseIcon, position: Int, binding: ItemIconWithTextListBinding) {
 
         if (item.isSolid) binding.faIcon.isSolidIcon() else binding.faIcon.isRegularIcon()
         binding.tvName.text = item.name

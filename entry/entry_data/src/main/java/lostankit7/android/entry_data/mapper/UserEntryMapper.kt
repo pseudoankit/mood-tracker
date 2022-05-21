@@ -1,8 +1,9 @@
 package lostankit7.android.entry_data.mapper
 
 import lostankit7.android.entry_data.local.entities.LocalUserEntry
-import lostankit7.android.entry_domain.entities.Icon
-import lostankit7.android.entry_domain.entities.UserEntry
+import lostankit7.droid.moodtracker.core.domain.entities.BaseIcon
+import lostankit7.droid.moodtracker.core.domain.entities.Icon
+import lostankit7.droid.moodtracker.core.domain.entities.UserEntry
 import lostankit7.droid.moodtracker.core.utils.Constants.DB_ENTRY_SEPARATOR
 
 object UserEntryMapper {
@@ -30,13 +31,13 @@ object UserEntryMapper {
         get() = toLocalUserEntryInsert.also { it.id = id }
     val LocalUserEntry.toUserEntry: UserEntry
         get() {
-            val taskIcons = mutableListOf<Icon.Icon>()
+            val taskIcons = mutableListOf<Icon>()
 
             val icons = this.taskIcons.split(DB_ENTRY_SEPARATOR)
             val names = taskNames.split(DB_ENTRY_SEPARATOR)
 
             icons.forEachIndexed { i, _ ->
-                taskIcons.add(Icon.Icon(icon = icons[i], name = names[i]))
+                taskIcons.add(Icon(icon = icons[i], name = names[i]))
             }
 
             return UserEntry(date, time, moodIcon, moodName, taskIcons, note, id)

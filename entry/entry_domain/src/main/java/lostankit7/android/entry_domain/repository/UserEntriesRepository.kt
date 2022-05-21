@@ -1,7 +1,7 @@
 package lostankit7.android.entry_domain.repository
 
 import androidx.lifecycle.LiveData
-import lostankit7.android.entry_domain.entities.UserEntry
+import lostankit7.droid.moodtracker.core.domain.entities.UserEntry
 
 interface UserEntriesRepository {
     val userEntries: LiveData<List<UserEntry>>

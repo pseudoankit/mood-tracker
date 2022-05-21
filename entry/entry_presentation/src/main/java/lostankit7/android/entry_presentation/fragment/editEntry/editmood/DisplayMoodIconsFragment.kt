@@ -3,7 +3,7 @@ package lostankit7.android.entry_presentation.fragment.editEntry.editmood
 import android.view.LayoutInflater
 import android.view.MenuItem
 import androidx.lifecycle.ViewModelProvider
-import lostankit7.android.entry_domain.entities.Icon
+import lostankit7.droid.moodtracker.core.domain.entities.BaseIcon
 import lostankit7.android.entry_domain.entities.MoodIcon
 import lostankit7.android.entry_presentation.R
 import lostankit7.android.entry_presentation.adapter.IconListRvAdapter
@@ -17,7 +17,7 @@ class DisplayMoodIconsFragment :
 
     private val adapter = IconListRvAdapter(::upsertMoodIcon, ::rvOptionsSelected)
 
-    private fun rvOptionsSelected(menuItem: MenuItem, item: Icon): Boolean {
+    private fun rvOptionsSelected(menuItem: MenuItem, item: BaseIcon): Boolean {
         return when (menuItem.itemId) {
             R.id.edit -> {
                 upsertMoodIcon(item)
@@ -31,7 +31,7 @@ class DisplayMoodIconsFragment :
         }
     }
 
-    private fun upsertMoodIcon(item: Icon?) {
+    private fun upsertMoodIcon(item: BaseIcon?) {
         navigateTo(
             DisplayMoodIconsFragmentDirections.actionDisplayMoodIconsFragmentToUpsertMoodIconFragment(
                 item as? MoodIcon
