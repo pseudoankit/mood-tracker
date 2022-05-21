@@ -13,7 +13,8 @@ import lostankit7.droid.moodtracker.core.presentation.utils.findNavHost
 class AddUserEntryHostFragment : BaseFragment<FragmentAddUserEntryHostBinding>() {
 
     override fun init() {
-        navController = findNavHost(R.id.entry_nav_host_fragment)
+        //todo
+        navController = findNavHost(R.id.fragment_container_add_user_entry)
     }
 
     override fun initListeners() {
@@ -24,7 +25,7 @@ class AddUserEntryHostFragment : BaseFragment<FragmentAddUserEntryHostBinding>()
 
         binding.actionBar.btnSave.setOnClickListener {
             when (val fragment =
-                childFragmentManager.findFragmentById(R.id.entry_nav_host_fragment)?.childFragmentManager?.primaryNavigationFragment) {
+                childFragmentManager.findFragmentById(R.id.fragment_container_add_user_entry)?.childFragmentManager?.primaryNavigationFragment) {
                 is AddTaskEntryFragment -> fragment.saveEntry()
                 is UpsertMoodIconFragment -> fragment.saveMoodIcon()
                 is UpsertTaskIconFragment -> fragment.saveTaskIcon()

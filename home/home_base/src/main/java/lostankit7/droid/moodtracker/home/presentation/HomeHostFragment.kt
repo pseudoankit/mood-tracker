@@ -6,10 +6,10 @@ import lostankit7.droid.moodtracker.core.presentation.fragment.BaseFragment
 import lostankit7.droid.moodtracker.core.presentation.utils.findNavHost
 import lostankit7.droid.moodtracker.home.databinding.FragmentHomeBinding
 
-class HomeFragment : BaseFragment<FragmentHomeBinding>() {
+class HomeHostFragment : BaseFragment<FragmentHomeBinding>() {
 
     override fun init() {
-        navController = findNavHost(binding.homeNavHostFragment.id)
+        navController = findNavHost(binding.fragmentContainerHome.id)
 
         setUpBottomNavigation()
     }
