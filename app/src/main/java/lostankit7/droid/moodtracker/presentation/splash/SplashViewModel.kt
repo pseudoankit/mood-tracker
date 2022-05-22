@@ -2,8 +2,8 @@ package lostankit7.droid.moodtracker.presentation.splash
 
 import lostankit7.android.entry_domain.entities.*
 import lostankit7.android.entry_domain.repository.*
-import lostankit7.droid.moodtracker.core.presentation.viewmodel.BaseViewModel
 import lostankit7.droid.moodtracker.core.domain.preferences.Preferences
+import lostankit7.droid.moodtracker.core.presentation.base.viewmodel.BaseViewModel
 import javax.inject.Inject
 
 class SplashViewModel @Inject constructor(

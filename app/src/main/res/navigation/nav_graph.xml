@@ -5,13 +5,12 @@
     android:id="@+id/nav_graph"
     app:startDestination="@id/splashFragment">
 
+    <include app:graph="@navigation/nav_graph_add_user_entry_host" />
+    <include app:graph="@navigation/nav_graph_home_host" />
+
     <fragment
         android:id="@+id/splashFragment"
         android:name="lostankit7.droid.moodtracker.presentation.splash.SplashFragment"
         android:label="fragment_splash"
-        tools:layout="@layout/fragment_splash"/>
-    <fragment
-        android:id="@+id/homeFragment"
-        android:name="lostankit7.droid.moodtracker.home.presentation.HomeFragment"
-        android:label="HomeFragment" />
+        tools:layout="@layout/fragment_splash" />
 </navigation>

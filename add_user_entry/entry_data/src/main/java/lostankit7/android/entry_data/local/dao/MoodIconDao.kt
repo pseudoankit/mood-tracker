@@ -1,0 +1,26 @@
+package lostankit7.android.entry_data.local.dao
+
+import androidx.lifecycle.LiveData
+import androidx.room.*
+import lostankit7.android.entry_data.local.entities.LocalMoodIcon
+
+@Dao
+interface MoodIconDao {
+
+    @Query("SELECT * FROM LocalMoodIcon")
+    fun getMoodIcons(): LiveData<List<LocalMoodIcon>>
+
+    @Insert
+    suspend fun insertMoodIcon(icon: LocalMoodIcon)
+
+    @Delete
+    fun deleteMoodIcon(icon: LocalMoodIcon)
+
+    @Update
+    fun updateMoodIcon(icon: LocalMoodIcon)
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    @JvmSuppressWildcards
+    suspend fun insertMoodIcons(icons: List<LocalMoodIcon>): LongArray
+
+}
