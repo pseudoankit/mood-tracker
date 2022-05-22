@@ -1,6 +1,9 @@
 package lostankit7.android.entry_presentation
 
+import android.os.Bundle
 import android.view.LayoutInflater
+import androidx.navigation.NavController
+import androidx.navigation.NavDestination
 import lostankit7.android.entry_presentation.databinding.FragmentAddUserEntryHostBinding
 import lostankit7.android.entry_presentation.fragment.addEntry.AddTaskEntryFragment
 import lostankit7.android.entry_presentation.fragment.editEntry.editmood.UpsertMoodIconFragment
@@ -13,9 +16,16 @@ import lostankit7.droid.moodtracker.core.presentation.utils.findNavHost
 class AddUserEntryHostFragment : BaseFragment<FragmentAddUserEntryHostBinding>() {
 
     override fun init() {
-        //todo
         navController = findNavHost(binding.fragmentContainerAddUserEntry.id)
+        navController.addOnDestinationChangedListener(::destinationChangedListener)
+    }
 
+    private fun destinationChangedListener(
+        controller: NavController, destination: NavDestination, arguments: Bundle?,
+    ) {
+        when (destination.id) {
+
+        }
     }
 
     override fun initListeners() {
