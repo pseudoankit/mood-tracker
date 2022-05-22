@@ -5,6 +5,7 @@
     android:id="@+id/nav_graph"
     app:startDestination="@id/splashFragment">
 
+    <include app:graph="@navigation/nav_graph_add_user_entry_host" />
     <include app:graph="@navigation/nav_graph_home" />
 
     <fragment

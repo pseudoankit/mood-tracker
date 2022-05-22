@@ -14,7 +14,8 @@ class AddUserEntryHostFragment : BaseFragment<FragmentAddUserEntryHostBinding>()
 
     override fun init() {
         //todo
-        navController = findNavHost(R.id.fragment_container_add_user_entry)
+        navController = findNavHost(binding.fragmentContainerAddUserEntry.id)
+
     }
 
     override fun initListeners() {
@@ -25,7 +26,7 @@ class AddUserEntryHostFragment : BaseFragment<FragmentAddUserEntryHostBinding>()
 
         binding.actionBar.btnSave.setOnClickListener {
             when (val fragment =
-                childFragmentManager.findFragmentById(R.id.fragment_container_add_user_entry)?.childFragmentManager?.primaryNavigationFragment) {
+                childFragmentManager.findFragmentById(binding.fragmentContainerAddUserEntry.id)?.childFragmentManager?.primaryNavigationFragment) {
                 is AddTaskEntryFragment -> fragment.saveEntry()
                 is UpsertMoodIconFragment -> fragment.saveMoodIcon()
                 is UpsertTaskIconFragment -> fragment.saveTaskIcon()

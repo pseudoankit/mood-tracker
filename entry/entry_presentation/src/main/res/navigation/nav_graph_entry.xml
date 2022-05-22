@@ -3,11 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph_entry"
-    app:startDestination="@id/addUserEntryHostFragment">
-    <fragment
-        android:id="@+id/addUserEntryHostFragment"
-        android:name="lostankit7.android.entry_presentation.AddUserEntryHostFragment"
-        android:label="AddUserEntryHostFragment" />
+    app:startDestination="@id/addMoodEntryFragment">
     <fragment
         android:id="@+id/addMoodEntryFragment"
         android:name="lostankit7.android.entry_presentation.fragment.addEntry.AddMoodEntryFragment"
