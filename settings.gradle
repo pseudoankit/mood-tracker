@@ -9,13 +9,11 @@ dependencyResolutionManagement {
 rootProject.name = "Mood Tracker"
 include ':app'
 
-include ':core' //todo split
-include ':core:core_presentation'
-include ':core:core_data_domain'
+include ':core'
 
-include ':entry:entry_data'
-include ':entry:entry_domain'
-include ':entry:entry_presentation'
+include ':add_user_entry:entry_data'
+include ':add_user_entry:entry_domain'
+include ':add_user_entry:entry_presentation'
 
 include ':home:home_host'
 include ':home:home_user_entries'

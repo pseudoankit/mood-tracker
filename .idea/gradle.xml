@@ -11,15 +11,13 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/add_user_entry" />
+            <option value="$PROJECT_DIR$/add_user_entry/entry_data" />
+            <option value="$PROJECT_DIR$/add_user_entry/entry_domain" />
+            <option value="$PROJECT_DIR$/add_user_entry/entry_presentation" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/buildSrc" />
             <option value="$PROJECT_DIR$/core" />
-            <option value="$PROJECT_DIR$/core/core_data_domain" />
-            <option value="$PROJECT_DIR$/core/core_presentation" />
-            <option value="$PROJECT_DIR$/entry" />
-            <option value="$PROJECT_DIR$/entry/entry_data" />
-            <option value="$PROJECT_DIR$/entry/entry_domain" />
-            <option value="$PROJECT_DIR$/entry/entry_presentation" />
             <option value="$PROJECT_DIR$/home" />
             <option value="$PROJECT_DIR$/home/home_calendar" />
             <option value="$PROJECT_DIR$/home/home_host" />

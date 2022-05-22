@@ -1,9 +1,9 @@
 object Modules {
     const val app = "app"
 
-    const val entryData = ":entry:entry_data"
-    const val entryDomain = ":entry:entry_domain"
-    const val entryPresentation = ":entry:entry_presentation"
+    const val entryData = ":add_user_entry:entry_data"
+    const val entryDomain = ":add_user_entry:entry_domain"
+    const val entryPresentation = ":add_user_entry:entry_presentation"
 
     //homepage
     const val homeHost = ":home:home_host"
@@ -13,7 +13,4 @@ object Modules {
 
     //common
     const val core = ":core"
-    const val coreNavigation = ":core:core_navigation"
-    const val corePresentation = ":core:core_presentation"
-    const val coreDataDomain = ":core:core_data_domain"
 }

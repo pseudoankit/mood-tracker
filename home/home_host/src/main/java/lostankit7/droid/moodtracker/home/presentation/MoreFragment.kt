@@ -5,8 +5,8 @@ import android.view.LayoutInflater
 import android.view.View
 import lostankit7.droid.helper.hide
 import lostankit7.droid.helper.show
-import lostankit7.droid.moodtracker.core.presentation.fragment.BaseFragment
-import lostankit7.droid.moodtracker.core.presentation.utils.UiUtils.hideKeyBoard
+import lostankit7.droid.moodtracker.core.presentation.base.fragment.BaseFragment
+import lostankit7.droid.moodtracker.core.presentation.utils.ViewExt.hideKeyBoard
 import lostankit7.droid.moodtracker.home.R
 import lostankit7.droid.moodtracker.home.databinding.FragmentMoreBinding
 

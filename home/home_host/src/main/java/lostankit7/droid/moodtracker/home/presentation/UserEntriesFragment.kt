@@ -6,8 +6,8 @@ import androidx.lifecycle.ViewModelProvider
 import lostankit7.android.entry_presentation.R
 import lostankit7.android.entry_presentation.viewmodel.UserEntriesViewModel
 import lostankit7.droid.moodtracker.core.domain.entities.shared.UserEntry
-import lostankit7.droid.moodtracker.core.presentation.adapter.shared.RvUserEntriesAdapter
-import lostankit7.droid.moodtracker.core.presentation.fragment.BaseDaggerFragment
+import lostankit7.droid.moodtracker.core.presentation.base.fragment.BaseDaggerFragment
+import lostankit7.droid.moodtracker.core.presentation.shared.adapter.RvUserEntriesAdapter
 import lostankit7.droid.moodtracker.home.databinding.FragmentUserEntriesBinding
 
 class UserEntriesFragment : BaseDaggerFragment<FragmentUserEntriesBinding, UserEntriesViewModel>() {

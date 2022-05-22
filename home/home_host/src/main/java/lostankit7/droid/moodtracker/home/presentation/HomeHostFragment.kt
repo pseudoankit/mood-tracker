@@ -3,12 +3,12 @@ package lostankit7.droid.moodtracker.home.presentation
 import android.view.LayoutInflater
 import androidx.navigation.Navigation
 import androidx.navigation.ui.setupWithNavController
-import lostankit7.droid.moodtracker.core.presentation.fragment.BaseFragment
+import lostankit7.droid.moodtracker.core.presentation.base.fragment.BaseFragment
 import lostankit7.droid.moodtracker.core.presentation.utils.findNavHost
 import lostankit7.droid.moodtracker.home.R
-import lostankit7.droid.moodtracker.home.databinding.FragmentHomeBinding
+import lostankit7.droid.moodtracker.home.databinding.FragmentHomeHostBinding
 
-class HomeHostFragment : BaseFragment<FragmentHomeBinding>() {
+class HomeHostFragment : BaseFragment<FragmentHomeHostBinding>() {
 
     override fun init() {
         navController = findNavHost(binding.fragmentContainerHome.id)
@@ -41,5 +41,5 @@ class HomeHostFragment : BaseFragment<FragmentHomeBinding>() {
     }
 
     override fun inflateLayout(layoutInflater: LayoutInflater) =
-        FragmentHomeBinding.inflate(layoutInflater)
+        FragmentHomeHostBinding.inflate(layoutInflater)
 }
