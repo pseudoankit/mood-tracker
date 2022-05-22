@@ -37,7 +37,7 @@ class SplashFragment : BaseDaggerFragment<FragmentSplashBinding, SplashViewModel
 
     private fun navigateAfterSplash() {
         //todo launch as single top
-        navController.navigate(R.id.homeHostFragment)
+        navController.navigate(R.id.nav_graph_home)
     }
 
     override fun inflateLayout(layoutInflater: LayoutInflater) =

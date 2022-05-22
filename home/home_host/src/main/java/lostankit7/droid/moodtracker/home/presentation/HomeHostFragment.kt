@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import androidx.navigation.ui.setupWithNavController
 import lostankit7.droid.moodtracker.core.presentation.fragment.BaseFragment
 import lostankit7.droid.moodtracker.core.presentation.utils.findNavHost
+import lostankit7.droid.moodtracker.home.R
 import lostankit7.droid.moodtracker.home.databinding.FragmentHomeBinding
 
 class HomeHostFragment : BaseFragment<FragmentHomeBinding>() {
@@ -16,6 +17,7 @@ class HomeHostFragment : BaseFragment<FragmentHomeBinding>() {
 
     override fun initListeners() {
         binding.fabAddUserEntry.setOnClickListener {
+
 //            view?.let { view -> Navigation.findNavController(view).navigate(R.id.addUserEntryHostFragment) }
 //            activity?.let { activity ->
 //                navController.graph.parent?.startDestinationId?.let { it1 ->

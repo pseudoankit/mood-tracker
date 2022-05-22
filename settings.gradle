@@ -9,8 +9,7 @@ dependencyResolutionManagement {
 rootProject.name = "Mood Tracker"
 include ':app'
 
-include ':core' //todo remove it
-include ':core:core_navigation'
+include ':core' //todo split
 include ':core:core_presentation'
 include ':core:core_data_domain'
 
