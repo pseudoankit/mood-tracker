@@ -8,6 +8,6 @@ interface MoodIconRepository {
     val moodIcons: LiveData<List<MoodIcon>>
     suspend fun insertMoodIcons(icons: List<MoodIcon>)
     suspend fun insertMoodIcon(icon: MoodIcon)
-    fun updateMoodIcon(icon: MoodIcon)
-    fun deleteMoodIcon(icon: MoodIcon)
+    suspend fun updateMoodIcon(icon: MoodIcon)
+    suspend fun deleteMoodIcon(icon: MoodIcon)
 }

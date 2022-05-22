@@ -11,16 +11,15 @@ interface MoodIconDao {
     fun getMoodIcons(): LiveData<List<LocalMoodIcon>>
 
     @Insert
+    suspend fun insertMoodIcons(icons: List<LocalMoodIcon>)
+
+    @Insert
     suspend fun insertMoodIcon(icon: LocalMoodIcon)
 
     @Delete
-    fun deleteMoodIcon(icon: LocalMoodIcon)
+    suspend fun deleteMoodIcon(icon: LocalMoodIcon)
 
     @Update
-    fun updateMoodIcon(icon: LocalMoodIcon)
-
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
-    @JvmSuppressWildcards
-    suspend fun insertMoodIcons(icons: List<LocalMoodIcon>): LongArray
+    suspend fun updateMoodIcon(icon: LocalMoodIcon)
 
 }

@@ -30,8 +30,7 @@ class MoodEntryViewModel @Inject constructor(
                 _errorMessageLiveData.value = UiText.ResourceString(R.string.enter_mood_name)
             }
             else -> {
-                val icon =
-                    MoodIcon(moodIcon, moodName)
+                val icon = MoodIcon(moodIcon, moodName)
 
                 iconId?.let {
                     icon.id = it

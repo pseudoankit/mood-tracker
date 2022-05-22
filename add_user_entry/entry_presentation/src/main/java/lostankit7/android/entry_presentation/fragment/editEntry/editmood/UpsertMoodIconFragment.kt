@@ -10,9 +10,7 @@ import lostankit7.android.entry_domain.entities.Suggestion
 import lostankit7.android.entry_presentation.adapter.ChipsRvAdapter
 import lostankit7.android.entry_presentation.adapter.MoodIconRvAdapter
 import lostankit7.android.entry_presentation.databinding.FragmentUpsertMoodTaskIconBinding
-import lostankit7.android.entry_presentation.utils.ActionBarUtils.showSaveButton
 import lostankit7.android.entry_presentation.utils.Utils.entryComponent
-import lostankit7.android.entry_presentation.utils.Utils.mActionBar
 import lostankit7.android.entry_presentation.viewmodel.MoodEntryViewModel
 import lostankit7.droid.moodtracker.core.domain.entities.shared.BaseIcon
 import lostankit7.droid.moodtracker.core.presentation.base.fragment.BaseDaggerFragment
@@ -71,12 +69,6 @@ class UpsertMoodIconFragment :
         args.icon?.let {
             binding.tvSelectedIcon.text = it.icon
             binding.edtSelectedName.setText(it.name)
-        }
-    }
-
-    override fun updateActionBar() {
-        mActionBar?.apply {
-            showSaveButton()
         }
     }
 

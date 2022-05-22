@@ -22,11 +22,11 @@ class MoodIconRepositoryImpl(private val moodIconDao: MoodIconDao) : MoodIconRep
         moodIconDao.insertMoodIcon(icon.toLocalMoodIconInsert())
     }
 
-    override fun updateMoodIcon(icon: MoodIcon) {
+    override suspend fun updateMoodIcon(icon: MoodIcon) {
         moodIconDao.updateMoodIcon(icon.toLocalMoodIconUpdate())
     }
 
-    override fun deleteMoodIcon(icon: MoodIcon) {
+    override suspend fun deleteMoodIcon(icon: MoodIcon) {
         moodIconDao.deleteMoodIcon(icon.toLocalMoodIconUpdate())
     }
 }
