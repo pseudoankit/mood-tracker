@@ -10,7 +10,7 @@ import lostankit7.droid.moodtracker.core.presentation.utils.ViewExt.hideKeyBoard
 import lostankit7.droid.moodtracker.home_more.R
 import lostankit7.droid.moodtracker.home_more.databinding.FragmentMoreBinding
 
-internal class MoreFragment : BaseFragment<FragmentMoreBinding>() {
+class MoreFragment : BaseFragment<FragmentMoreBinding>() {
 
     private var isEditEnabled = false
 

@@ -21,6 +21,7 @@
         <entry key="home/home_base/src/main/res/layout/fragment_user_entries.xml" value="0.2833333333333333" />
         <entry key="home/home_base/src/main/res/layout/partial_layout_profile_section.xml" value="0.2833333333333333" />
         <entry key="home/home_base/src/main/res/menu/home_bottom_nav_menu.xml" value="0.2833333333333333" />
+        <entry key="home/home_calendar/src/main/res/layout/fragment_calendar.xml" value="0.29791666666666666" />
         <entry key="home/home_host/src/main/res/layout/fragment_home.xml" value="0.13240740740740742" />
         <entry key="home/home_host/src/main/res/layout/partial_layout_profile_section.xml" value="0.2833333333333333" />
         <entry key="home/home_host/src/main/res/menu/nav_menu_bottom_nav_home.xml" value="0.29791666666666666" />
