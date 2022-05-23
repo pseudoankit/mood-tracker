@@ -2,7 +2,6 @@ package lostankit7.android.entry_presentation.fragment.addEntry
 
 import android.view.LayoutInflater
 import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.fragment.findNavController
 import lostankit7.android.entry_domain.entities.MoodEntry
 import lostankit7.android.entry_domain.entities.MoodIcon
 import lostankit7.android.entry_presentation.adapter.RvMoodIconAdapter
@@ -20,7 +19,6 @@ class AddMoodEntryFragment : BaseDaggerFragment<FragmentAddMoodEntryBinding, Moo
     private val moodIconAdapter = RvMoodIconAdapter(context, ::onMoodIconSelected)
 
     override fun registerObservers() {
-        super.registerObservers()
         viewModel.moodIconsLiveData.observe(viewLifecycleOwner) {
             moodIconAdapter.submitList(it)
         }
@@ -40,7 +38,7 @@ class AddMoodEntryFragment : BaseDaggerFragment<FragmentAddMoodEntryBinding, Moo
 
     override fun initListeners() {
 
-        binding.btnBack.setOnClickListener { findNavController().popBackStack() }
+        binding.btnBack.setOnClickListener { activity?.onBackPressed() }
 
         binding.btnEditMood.setOnClickListener {
             navigateTo(
