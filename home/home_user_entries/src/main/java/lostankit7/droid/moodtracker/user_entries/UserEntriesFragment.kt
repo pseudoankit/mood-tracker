@@ -1,18 +1,17 @@
-package lostankit7.droid.moodtracker.home.presentation
+package lostankit7.droid.moodtracker.user_entries
 
 import android.view.LayoutInflater
 import android.view.MenuItem
 import androidx.lifecycle.ViewModelProvider
-import lostankit7.android.entry_presentation.R
-import lostankit7.android.entry_presentation.viewmodel.UserEntriesViewModel
 import lostankit7.droid.moodtracker.core.domain.entities.shared.UserEntry
 import lostankit7.droid.moodtracker.core.presentation.base.fragment.BaseDaggerFragment
 import lostankit7.droid.moodtracker.core.presentation.shared.adapter.RvUserEntriesAdapter
-import lostankit7.droid.moodtracker.home.databinding.FragmentUserEntriesBinding
+import lostankit7.droid.moodtracker.user_entries.databinding.FragmentUserEntriesBinding
+import lostankit7.droid.moodtracker.user_entries.viewmodel.UserEntriesViewModel
 
 class UserEntriesFragment : BaseDaggerFragment<FragmentUserEntriesBinding, UserEntriesViewModel>() {
 
-    val adapter = RvUserEntriesAdapter(::onItemClicked)
+    private val adapter = RvUserEntriesAdapter(::onItemClicked)
 
     override fun initRecyclerView() {
         binding.rvUserEntries.adapter = adapter

@@ -1,4 +1,4 @@
-package lostankit7.android.entry_presentation.viewmodel
+package lostankit7.droid.moodtracker.user_entries.viewmodel
 
 import lostankit7.android.entry_domain.repository.UserEntriesRepository
 import lostankit7.droid.moodtracker.core.domain.entities.shared.UserEntry
