@@ -12,9 +12,6 @@ import lostankit7.droid.moodtracker.core.MyApplication
 
 object Utils {
 
-    val Fragment.mActionBar: CommonActionBarBinding?
-        get() = (this.parentFragment as? AddUserEntryHostFragment)?.actionBar
-
     val FragmentActivity.entryComponent: EntryComponent
         get() = DaggerEntryComponent.builder()
             .coreAppComponent((application as MyApplication).coreAppComponent).build()

@@ -4,8 +4,13 @@ import androidx.annotation.IdRes
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.NavOptions
+import androidx.navigation.Navigation
 import androidx.navigation.fragment.NavHostFragment
 import lostankit7.droid.moodtracker.core.R
+
+/** function to find root nav host i.e., nav controller of Main Activity */
+val Fragment.findRootNavHost: NavController?
+    get() = this.activity?.let { Navigation.findNavController(it, R.id.fragment_container_root) }
 
 fun Fragment.findNavHost(@IdRes viewId: Int): NavController {
     val navHostFragment = childFragmentManager
