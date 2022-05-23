@@ -1,6 +1,7 @@
 package lostankit7.android.entry_presentation.di
 
 import android.content.Context
+import androidx.fragment.app.FragmentActivity
 import dagger.Component
 import lostankit7.android.entry_data.di.EntryDatabaseModule
 import lostankit7.android.entry_data.di.LocalDbModule
@@ -14,6 +15,7 @@ import lostankit7.android.entry_presentation.fragment.editEntry.edittask.Display
 import lostankit7.android.entry_presentation.fragment.editEntry.edittask.UpsertTaskIconFragment
 import lostankit7.droid.moodtracker.core.di.component.CoreAppComponent
 import lostankit7.droid.moodtracker.core.di.scope.ApplicationContext
+import lostankit7.droid.moodtracker.core.utils.coreAppComponent
 
 @Component(modules = [
     ViewModelModule::class,
@@ -21,8 +23,14 @@ import lostankit7.droid.moodtracker.core.di.scope.ApplicationContext
 ], dependencies = [CoreAppComponent::class])
 interface EntryComponent {
 
+    companion object {
+        val FragmentActivity.entryComponent: EntryComponent
+            get() = DaggerEntryComponent.builder()
+                .coreAppComponent(application.coreAppComponent).build()
+    }
+
     @ApplicationContext
-    fun provideContext() : Context
+    fun provideContext(): Context
 
     fun inject(frag: AddMoodEntryFragment)
     fun inject(frag: AddTaskEntryFragment)

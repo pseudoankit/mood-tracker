@@ -11,7 +11,7 @@ import lostankit7.android.entry_presentation.R
 import lostankit7.android.entry_presentation.adapter.RvTaskAdapter
 import lostankit7.android.entry_presentation.adapter.TaskIconRvAdapter
 import lostankit7.android.entry_presentation.databinding.FragmentAddTaskEntryBinding
-import lostankit7.android.entry_presentation.utils.Utils.entryComponent
+import lostankit7.android.entry_presentation.di.EntryComponent.Companion.entryComponent
 import lostankit7.android.entry_presentation.viewmodel.TaskEntryViewModel
 import lostankit7.droid.moodtracker.core.domain.entities.shared.BaseIcon
 import lostankit7.droid.moodtracker.core.presentation.base.fragment.BaseDaggerFragment

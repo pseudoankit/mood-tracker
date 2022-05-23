@@ -8,6 +8,7 @@ import lostankit7.droid.moodtracker.core.presentation.base.fragment.BaseDaggerFr
 import lostankit7.droid.moodtracker.core.presentation.shared.adapter.RvUserEntriesAdapter
 import lostankit7.droid.moodtracker.user_entries.R
 import lostankit7.droid.moodtracker.user_entries.databinding.FragmentUserEntriesBinding
+import lostankit7.droid.moodtracker.user_entries.di.component.HomeUserEntriesComponent.Companion.userEntryComponent
 import lostankit7.droid.moodtracker.user_entries.presentation.viewmodel.UserEntriesViewModel
 
 class UserEntriesFragment :
@@ -35,13 +36,13 @@ class UserEntriesFragment :
     override fun registerObservers() {
         super.registerObservers()
 
-//        viewModel.allEntriesLiveData.observe(viewLifecycleOwner) {
-//            adapter.submitList(it)
-//        }
+        viewModel.allEntriesLiveData.observe(viewLifecycleOwner) {
+            adapter.submitList(it)
+        }
     }
 
     override fun injectFragment() {
-
+        activity?.userEntryComponent?.inject(this)
     }
 
     override fun inflateLayout(layoutInflater: LayoutInflater) =

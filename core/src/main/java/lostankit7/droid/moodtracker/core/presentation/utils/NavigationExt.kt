@@ -1,12 +1,25 @@
 package lostankit7.droid.moodtracker.core.presentation.utils
 
 import androidx.annotation.IdRes
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.NavOptions
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.NavHostFragment
 import lostankit7.droid.moodtracker.core.R
+
+@Suppress("UNCHECKED_CAST")
+fun <F : Fragment> AppCompatActivity.getFragment(fragmentClass: Class<F>): F? {
+    (this.supportFragmentManager.fragments.first() as? NavHostFragment)?.apply {
+        childFragmentManager.fragments.forEach {
+            if (fragmentClass.isAssignableFrom(it.javaClass)) {
+                return it as F
+            }
+        }
+    }
+    return null
+}
 
 /** function to find root nav host i.e., nav controller of Main Activity */
 val Fragment.findRootNavHost: NavController?
