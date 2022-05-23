@@ -1,54 +1,30 @@
 package lostankit7.droid.moodtracker.presentation
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.findNavController
-import androidx.navigation.ui.setupWithNavController
-import lostankit7.android.entry_presentation.AddUserEntryActivity
+import androidx.navigation.fragment.NavHostFragment
 import lostankit7.droid.moodtracker.R
-import lostankit7.droid.moodtracker.core.presentation.utils.UiUtils.hide
-import lostankit7.droid.moodtracker.core.presentation.utils.UiUtils.show
 import lostankit7.droid.moodtracker.databinding.ActivityMainBinding
 
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityMainBinding
-    private val navController by lazy(LazyThreadSafetyMode.NONE) { findNavController(R.id.fragment_container) }
+    private val binding by lazy(LazyThreadSafetyMode.NONE) {
+        ActivityMainBinding.inflate(layoutInflater)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        initListener()
-        setUpBottomNavigation()
+        inflateGraphToHostContainer()
     }
 
-    private fun initListener() {
-        binding.fabAddUserEntry.setOnClickListener { addEntryButtonClicked() }
-    }
-
-    private fun addEntryButtonClicked() {
-        startActivity(Intent(this, AddUserEntryActivity::class.java))
-    }
-
-    private fun setUpBottomNavigation() {
-        with(binding.bottomNavBar) {
-            background = null
-            menu.getItem(2).isEnabled = false
-            setupWithNavController(navController)
-        }
-    }
-
-    private fun showBottomNav() {
-        binding.bottomLayout.show()
-        binding.fragmentBottomGuide.show()
-    }
-
-    private fun hideBottomNav() {
-        binding.bottomLayout.hide()
-        binding.fragmentBottomGuide.hide()
+    private fun inflateGraphToHostContainer() {
+        val myNavHostFragment =
+            supportFragmentManager.findFragmentById(R.id.fragment_container_root) as NavHostFragment
+        val inflater = myNavHostFragment.navController.navInflater
+        val graph = inflater.inflate(R.navigation.nav_graph)
+        myNavHostFragment.navController.graph = graph
     }
 }

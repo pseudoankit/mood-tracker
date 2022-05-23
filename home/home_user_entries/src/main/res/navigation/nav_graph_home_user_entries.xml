@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph_home_user_entries"
+    app:startDestination="@id/userEntriesFragment">
+
+    <fragment
+        android:id="@+id/userEntriesFragment"
+        android:name="lostankit7.droid.moodtracker.user_entries.presentation.fragment.UserEntriesFragment"
+        android:label="UserEntriesFragment" />
+</navigation>

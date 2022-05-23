@@ -3,105 +3,37 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="../../../../layout/custom_preview.xml" value="0.17135416666666667" />
-        <entry key="..\:/Users/kumar/.gradle/caches/transforms-3/51af7829921406165d1d0a211091d440/transformed/jetified-AndroidCustomViews-1.2/res/drawable/bg_rounded_ripple.xml" value="0.28055555555555556" />
-        <entry key="..\:/Users/kumar/.gradle/caches/transforms-3/51af7829921406165d1d0a211091d440/transformed/jetified-AndroidCustomViews-1.2/res/drawable/bg_rounded_white.xml" value="0.15925925925925927" />
-        <entry key="..\:/Users/kumar/.gradle/caches/transforms-3/51af7829921406165d1d0a211091d440/transformed/jetified-AndroidCustomViews-1.2/res/drawable/bg_rounded_white_stroke.xml" value="0.35625" />
-        <entry key="..\:/Users/kumar/AndroidStudioProjects/MoodTracker/app/src/main/res/drawable/bg_rounded_ripple.xml" value="0.35625" />
-        <entry key="..\:/Users/kumar/AndroidStudioProjects/MoodTracker/app/src/main/res/drawable/bg_rounded_white.xml" value="0.337890625" />
-        <entry key="..\:/Users/kumar/AndroidStudioProjects/MoodTracker/app/src/main/res/drawable/bg_rounded_white_stroke_gray.xml" value="0.28055555555555556" />
-        <entry key="..\:/Users/kumar/AndroidStudioProjects/MoodTracker/app/src/main/res/drawable/bg_white_stroke_gray_ripple.xml" value="0.28055555555555556" />
-        <entry key="..\:/Users/kumar/AndroidStudioProjects/MoodTracker/app/src/main/res/drawable/bg_white_stroke_n_ripple.xml" value="0.35625" />
-        <entry key="..\:/Users/kumar/AndroidStudioProjects/MoodTracker/app/src/main/res/drawable/menu_options.xml" value="0.22037037037037038" />
-        <entry key="..\:/Users/kumar/AndroidStudioProjects/MoodTracker/app/src/main/res/layout/action_bar.xml" value="0.2234375" />
-        <entry key="..\:/Users/kumar/AndroidStudioProjects/MoodTracker/app/src/main/res/layout/activity_main.xml" value="0.25" />
-        <entry key="..\:/Users/kumar/AndroidStudioProjects/MoodTracker/app/src/main/res/layout/dialog_option_menu.xml" value="0.22395833333333334" />
-        <entry key="..\:/Users/kumar/AndroidStudioProjects/MoodTracker/app/src/main/res/layout/dialog_text_entry.xml" value="0.22604166666666667" />
-        <entry key="..\:/Users/kumar/AndroidStudioProjects/MoodTracker/app/src/main/res/layout/fragment_add_mood_entry.xml" value="0.22395833333333334" />
-        <entry key="..\:/Users/kumar/AndroidStudioProjects/MoodTracker/app/src/main/res/layout/fragment_calendar.xml" value="0.33645833333333336" />
-        <entry key="..\:/Users/kumar/AndroidStudioProjects/MoodTracker/app/src/main/res/layout/fragment_display_list.xml" value="0.22395833333333334" />
-        <entry key="..\:/Users/kumar/AndroidStudioProjects/MoodTracker/app/src/main/res/layout/fragment_display_user_entries.xml" value="0.22395833333333334" />
-        <entry key="..\:/Users/kumar/AndroidStudioProjects/MoodTracker/app/src/main/res/layout/fragment_edit.xml" value="0.18425925925925926" />
-        <entry key="..\:/Users/kumar/AndroidStudioProjects/MoodTracker/app/src/main/res/layout/fragment_edit_mood.xml" value="0.176" />
-        <entry key="..\:/Users/kumar/AndroidStudioProjects/MoodTracker/app/src/main/res/layout/fragment_edit_task.xml" value="0.22604166666666667" />
-        <entry key="..\:/Users/kumar/AndroidStudioProjects/MoodTracker/app/src/main/res/layout/fragment_home_bottom_navigation.xml" value="0.1675925925925926" />
-        <entry key="..\:/Users/kumar/AndroidStudioProjects/MoodTracker/app/src/main/res/layout/fragment_home_common.xml" value="0.22395833333333334" />
-        <entry key="..\:/Users/kumar/AndroidStudioProjects/MoodTracker/app/src/main/res/layout/fragment_mood_entry.xml" value="0.2234375" />
-        <entry key="..\:/Users/kumar/AndroidStudioProjects/MoodTracker/app/src/main/res/layout/fragment_more.xml" value="0.25" />
-        <entry key="..\:/Users/kumar/AndroidStudioProjects/MoodTracker/app/src/main/res/layout/fragment_show_list.xml" value="0.22395833333333334" />
-        <entry key="..\:/Users/kumar/AndroidStudioProjects/MoodTracker/app/src/main/res/layout/fragment_splash.xml" value="0.10364583333333334" />
-        <entry key="..\:/Users/kumar/AndroidStudioProjects/MoodTracker/app/src/main/res/layout/fragment_task_entry.xml" value="0.264" />
-        <entry key="..\:/Users/kumar/AndroidStudioProjects/MoodTracker/app/src/main/res/layout/fragment_upsert_mood_icon.xml" value="0.2234375" />
-        <entry key="..\:/Users/kumar/AndroidStudioProjects/MoodTracker/app/src/main/res/layout/fragment_upsert_mood_task_icon.xml" value="0.22395833333333334" />
-        <entry key="..\:/Users/kumar/AndroidStudioProjects/MoodTracker/app/src/main/res/layout/fragment_user_entries.xml" value="0.10740740740740741" />
-        <entry key="..\:/Users/kumar/AndroidStudioProjects/MoodTracker/app/src/main/res/layout/item_date.xml" value="0.33645833333333336" />
-        <entry key="..\:/Users/kumar/AndroidStudioProjects/MoodTracker/app/src/main/res/layout/item_edit_mood_icon.xml" value="0.25" />
-        <entry key="..\:/Users/kumar/AndroidStudioProjects/MoodTracker/app/src/main/res/layout/item_icon_list.xml" value="0.33" />
-        <entry key="..\:/Users/kumar/AndroidStudioProjects/MoodTracker/app/src/main/res/layout/item_names.xml" value="0.33645833333333336" />
-        <entry key="..\:/Users/kumar/AndroidStudioProjects/MoodTracker/app/src/main/res/layout/item_rv_empy_state.xml" value="0.33645833333333336" />
-        <entry key="..\:/Users/kumar/AndroidStudioProjects/MoodTracker/app/src/main/res/layout/item_rv_expandable_view.xml" value="0.33645833333333336" />
-        <entry key="..\:/Users/kumar/AndroidStudioProjects/MoodTracker/app/src/main/res/layout/item_rv_mood_icon.xml" value="0.16" />
-        <entry key="..\:/Users/kumar/AndroidStudioProjects/MoodTracker/app/src/main/res/layout/item_rv_single_selection.xml" value="0.5" />
-        <entry key="..\:/Users/kumar/AndroidStudioProjects/MoodTracker/app/src/main/res/layout/item_rv_single_text.xml" value="0.2" />
-        <entry key="..\:/Users/kumar/AndroidStudioProjects/MoodTracker/app/src/main/res/layout/item_rv_suggested_mood.xml" value="0.3359375" />
-        <entry key="..\:/Users/kumar/AndroidStudioProjects/MoodTracker/app/src/main/res/layout/item_rv_task.xml" value="0.17222222222222222" />
-        <entry key="..\:/Users/kumar/AndroidStudioProjects/MoodTracker/app/src/main/res/layout/item_rv_task_icon.xml" value="0.3359375" />
-        <entry key="..\:/Users/kumar/AndroidStudioProjects/MoodTracker/app/src/main/res/layout/item_rv_user_entrie.xml" value="0.33" />
-        <entry key="..\:/Users/kumar/AndroidStudioProjects/MoodTracker/app/src/main/res/layout/item_rv_user_entries.xml" value="0.33" />
-        <entry key="..\:/Users/kumar/AndroidStudioProjects/MoodTracker/app/src/main/res/menu/menu_options.xml" value="0.22395833333333334" />
-        <entry key="app/src/main/res/drawable/bg_circle.xml" value="0.22037037037037038" />
-        <entry key="app/src/main/res/drawable/bg_rounded_ripple.xml" value="0.22037037037037038" />
-        <entry key="app/src/main/res/drawable/bg_rounded_white.xml" value="0.22037037037037038" />
-        <entry key="app/src/main/res/drawable/bg_rounded_white_ripple.xml" value="0.22037037037037038" />
-        <entry key="app/src/main/res/drawable/bg_rounded_white_stroke_gray.xml" value="0.22037037037037038" />
-        <entry key="app/src/main/res/drawable/circular_view.xml" value="0.22037037037037038" />
-        <entry key="app/src/main/res/layout/action_bar.xml" value="0.29791666666666666" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.29791666666666666" />
-        <entry key="app/src/main/res/layout/dialog_text_entry.xml" value="0.29791666666666666" />
-        <entry key="app/src/main/res/layout/fragment_add_mood_entry.xml" value="0.29791666666666666" />
-        <entry key="app/src/main/res/layout/fragment_add_task_entry.xml" value="0.29791666666666666" />
-        <entry key="app/src/main/res/layout/fragment_calendar.xml" value="0.159375" />
-        <entry key="app/src/main/res/layout/fragment_display_list.xml" value="0.29791666666666666" />
-        <entry key="app/src/main/res/layout/fragment_home_bottom_navigation.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/fragment_more.xml" value="0.29791666666666666" />
-        <entry key="app/src/main/res/layout/fragment_splash.xml" value="0.10260416666666666" />
-        <entry key="app/src/main/res/layout/fragment_upsert_mood_task_icon.xml" value="0.29791666666666666" />
-        <entry key="app/src/main/res/layout/item_icon_list.xml" value="0.29791666666666666" />
-        <entry key="app/src/main/res/layout/item_rv_empy_state.xml" value="0.29791666666666666" />
-        <entry key="app/src/main/res/layout/item_rv_single_selection.xml" value="0.29791666666666666" />
-        <entry key="app/src/main/res/layout/item_rv_task_icon.xml" value="0.29791666666666666" />
-        <entry key="app/src/main/res/layout/item_text_chips.xml" value="0.29791666666666666" />
-        <entry key="app/src/main/res/layout/partial_layout_profile_section.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/task_entry_action_bar.xml" value="0.29791666666666666" />
-        <entry key="app/src/main/res/menu/menu_bottom_navigation.xml" value="0.29791666666666666" />
-        <entry key="app/src/main/res/menu/menu_options.xml" value="0.29791666666666666" />
-        <entry key="core/core_presentation/src/main/res/layout/common_action_bar.xml" value="0.159375" />
-        <entry key="core/core_presentation/src/main/res/layout/item_rv_empy_state.xml" value="0.29791666666666666" />
-        <entry key="core/core_presentation/src/main/res/layout/item_text_chips.xml" value="0.29791666666666666" />
-        <entry key="core/presentation/src/main/res/drawable/bg_rounded_white.xml" value="0.1925925925925926" />
-        <entry key="core/presentation/src/main/res/drawable/bg_rounded_white_ripple.xml" value="0.1925925925925926" />
-        <entry key="core/presentation/src/main/res/drawable/bg_rounded_white_stroke_gray.xml" value="0.1925925925925926" />
-        <entry key="core/presentation/src/main/res/drawable/bg_rounded_white_stroke_gray_ripple.xml" value="0.1925925925925926" />
-        <entry key="core/presentation/src/main/res/layout/dialog_text_entry.xml" value="0.29791666666666666" />
-        <entry key="core/presentation/src/main/res/layout/task_entry_action_bar.xml" value="0.29791666666666666" />
-        <entry key="core/src/main/res/layout/item_rv_empy_state.xml" value="0.29791666666666666" />
-        <entry key="entry/entry_presentation/src/main/res/layout/activity_add_user_entry.xml" value="0.29791666666666666" />
-        <entry key="entry/entry_presentation/src/main/res/layout/fragment_add_mood_entry.xml" value="0.29791666666666666" />
-        <entry key="entry/entry_presentation/src/main/res/layout/fragment_add_task_entry.xml" value="0.29791666666666666" />
-        <entry key="entry/entry_presentation/src/main/res/layout/fragment_add_user_entry_base.xml" value="0.2833333333333333" />
-        <entry key="entry/entry_presentation/src/main/res/layout/fragment_display_list.xml" value="0.29791666666666666" />
-        <entry key="entry/entry_presentation/src/main/res/layout/fragment_display_user_entries.xml" value="0.29791666666666666" />
-        <entry key="entry/entry_presentation/src/main/res/layout/fragment_upsert_mood_task_icon.xml" value="0.29791666666666666" />
-        <entry key="entry/entry_presentation/src/main/res/layout/item_rv_mood_icon.xml" value="0.29791666666666666" />
-        <entry key="entry/entry_presentation/src/main/res/layout/item_rv_user_entries.xml" value="0.29791666666666666" />
-        <entry key="entry/entry_presentation/src/main/res/menu/menu_options.xml" value="0.29791666666666666" />
+        <entry key="add_user_entry/entry_presentation/src/main/res/layout/fragment_add_user_entry_host.xml" value="0.12962962962962962" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.11574074074074074" />
+        <entry key="app/src/main/res/layout/fragment_splash.xml" value="0.11574074074074074" />
+        <entry key="core/src/main/res/layout/item_rv_user_entries.xml" value="0.2833333333333333" />
+        <entry key="core/src/main/res/layout/partial_host_fragment_container.xml" value="0.29791666666666666" />
+        <entry key="core/src/main/res/layout/partial_root_fragment_container.xml" value="0.29791666666666666" />
+        <entry key="core/src/main/res/menu/menu_options.xml" value="0.2833333333333333" />
+        <entry key="core/src/main/res/menu/menu_options_item_user_entries.xml" value="0.29791666666666666" />
+        <entry key="entry/entry_presentation/src/main/res/layout/common_action_bar.xml" value="0.29791666666666666" />
+        <entry key="entry/entry_presentation/src/main/res/layout/fragment_add_mood_entry.xml" value="0.11944444444444445" />
+        <entry key="entry/entry_presentation/src/main/res/layout/fragment_add_user_entry.xml" value="0.11944444444444445" />
+        <entry key="entry/entry_presentation/src/main/res/layout/fragment_add_user_entry_host.xml" value="0.29791666666666666" />
+        <entry key="entry/entry_presentation/src/main/res/layout/fragment_display_user_entries.xml" value="0.2833333333333333" />
+        <entry key="home/home_base/src/main/res/layout/fragment_calendar.xml" value="0.2833333333333333" />
+        <entry key="home/home_base/src/main/res/layout/fragment_more.xml" value="0.1361111111111111" />
+        <entry key="home/home_base/src/main/res/layout/fragment_user_entries.xml" value="0.2833333333333333" />
+        <entry key="home/home_base/src/main/res/layout/partial_layout_profile_section.xml" value="0.2833333333333333" />
+        <entry key="home/home_base/src/main/res/menu/home_bottom_nav_menu.xml" value="0.2833333333333333" />
+        <entry key="home/home_calendar/src/main/res/layout/fragment_calendar.xml" value="0.29791666666666666" />
+        <entry key="home/home_host/src/main/res/layout/fragment_home.xml" value="0.13240740740740742" />
+        <entry key="home/home_host/src/main/res/layout/partial_layout_profile_section.xml" value="0.2833333333333333" />
+        <entry key="home/home_host/src/main/res/menu/nav_menu_bottom_nav_home.xml" value="0.29791666666666666" />
+        <entry key="home/home_more/src/main/res/layout/fragment_more.xml" value="0.29791666666666666" />
+        <entry key="home/home_more/src/main/res/layout/partial_layout_profile_section.xml" value="0.29791666666666666" />
+        <entry key="home/home_user_entries/src/main/res/layout/fragment_user_entries.xml" value="0.29791666666666666" />
+        <entry key="home/src/main/res/layout/fragment_home.xml" value="0.29791666666666666" />
+        <entry key="home/src/main/res/layout/fragment_user_entries.xml" value="0.2833333333333333" />
+        <entry key="home/src/main/res/menu/home_bottom_nav_menu.xml" value="0.11574074074074074" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK">
-    <output url="file://$PROJECT_DIR$/build/classes" />
-  </component>
-  <component name="ProjectType">
-    <option name="id" value="Android" />
-  </component>
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK" />
 </project>
