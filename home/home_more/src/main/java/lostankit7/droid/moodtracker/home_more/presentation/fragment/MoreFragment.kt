@@ -1,4 +1,4 @@
-package lostankit7.droid.moodtracker.home.presentation
+package lostankit7.droid.moodtracker.home_more.presentation.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,10 +7,10 @@ import lostankit7.droid.helper.hide
 import lostankit7.droid.helper.show
 import lostankit7.droid.moodtracker.core.presentation.base.fragment.BaseFragment
 import lostankit7.droid.moodtracker.core.presentation.utils.ViewExt.hideKeyBoard
-import lostankit7.droid.moodtracker.home.R
-import lostankit7.droid.moodtracker.home.databinding.FragmentMoreBinding
+import lostankit7.droid.moodtracker.home_more.R
+import lostankit7.droid.moodtracker.home_more.databinding.FragmentMoreBinding
 
-class MoreFragment : BaseFragment<FragmentMoreBinding>() {
+internal class MoreFragment : BaseFragment<FragmentMoreBinding>() {
 
     private var isEditEnabled = false
 
@@ -36,7 +36,7 @@ class MoreFragment : BaseFragment<FragmentMoreBinding>() {
     }
 
     private fun saveAndDisableProfileEdit() = with(binding.layoutProfile) {
-        //save profile name to pref
+        //todo save profile name to pref
         activity?.hideKeyBoard()
         isEditEnabled = false
         btnEditProfile.text = resources.getString(R.string.fas_edit)

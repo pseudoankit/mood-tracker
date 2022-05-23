@@ -5,13 +5,10 @@
     app:startDestination="@id/nav_graph_home_user_entries">
 
     <include app:graph="@navigation/nav_graph_home_user_entries" />
+    <include app:graph="@navigation/nav_graph_home_more" />
 
     <fragment
         android:id="@+id/calendarFragment"
         android:name="lostankit7.droid.moodtracker.home.presentation.CalendarFragment"
         android:label="CalendarFragment" />
-    <fragment
-        android:id="@+id/moreFragment"
-        android:name="lostankit7.droid.moodtracker.home.presentation.MoreFragment"
-        android:label="MoreFragment" />
 </navigation>
