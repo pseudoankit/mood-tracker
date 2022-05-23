@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="header_add_mood_entry">Tell us about your mood</string>
+    <string name="enter_mood_name">Enter mood name</string>
+    <string name="text_add_new_mood">Add New Mood</string>
+    <string name="error_empty_mood_icon">Please select any emoji</string>
+    <string name="header_add_task_entry">What have you been up to?</string>
+    <string name="et_note_hint">Add Note</string>
+    <string name="text_add_new_category">Add New Category</string>
+    <string name="text_add_new_task">Add New Task</string>
+    <string name="text_enter_category">Enter Category</string>
+    <string name="edit_tasks">Edit Tasks</string>
+    <string name="text_edit_moods">Edit Moods</string>
+</resources>
