@@ -16,6 +16,7 @@ import lostankit7.android.entry_presentation.viewmodel.TaskEntryViewModel
 import lostankit7.droid.moodtracker.core.domain.entities.shared.BaseIcon
 import lostankit7.droid.moodtracker.core.presentation.base.fragment.BaseDaggerFragment
 import lostankit7.droid.moodtracker.core.presentation.utils.ViewExt.hideKeyBoard
+import lostankit7.droid.moodtracker.core.presentation.utils.findRootNavHost
 
 class AddTaskEntryFragment : BaseDaggerFragment<FragmentAddTaskEntryBinding, TaskEntryViewModel>() {
 
@@ -68,7 +69,7 @@ class AddTaskEntryFragment : BaseDaggerFragment<FragmentAddTaskEntryBinding, Tas
     fun saveEntry() {
         activity?.hideKeyBoard()
         viewModel.saveEntry(args.moodEntry, binding.etNote.text.toString())
-        //todo navigate to homepage
+        findRootNavHost?.popBackStack(R.id.addUserEntryHostFragment, true)
     }
 
     override fun inflateLayout(layoutInflater: LayoutInflater) =
