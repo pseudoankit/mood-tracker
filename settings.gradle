@@ -19,4 +19,3 @@ include ':home:home_host'
 include ':home:home_user_entries'
 include ':home:home_calendar'
 include ':home:home_more'
-include ':home:home_common'  //todo removeit

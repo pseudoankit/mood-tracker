@@ -20,7 +20,6 @@
             <option value="$PROJECT_DIR$/core" />
             <option value="$PROJECT_DIR$/home" />
             <option value="$PROJECT_DIR$/home/home_calendar" />
-            <option value="$PROJECT_DIR$/home/home_common" />
             <option value="$PROJECT_DIR$/home/home_host" />
             <option value="$PROJECT_DIR$/home/home_more" />
             <option value="$PROJECT_DIR$/home/home_user_entries" />
