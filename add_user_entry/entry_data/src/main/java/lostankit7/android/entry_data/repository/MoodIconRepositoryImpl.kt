@@ -11,7 +11,7 @@ import lostankit7.android.entry_domain.repository.MoodIconRepository
 
 class MoodIconRepositoryImpl(private val moodIconDao: MoodIconDao) : MoodIconRepository {
 
-    override val moodIcons: LiveData<List<MoodIcon>> =
+    override fun moodIcons(): LiveData<List<MoodIcon>> =
         moodIconDao.getMoodIcons().map { it.toMoodIcon() }
 
     override suspend fun insertMoodIcons(icons: List<MoodIcon>) {

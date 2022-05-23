@@ -21,7 +21,7 @@ class MoodEntryViewModel @Inject constructor(
     val errorMessageLiveData: LiveData<UiText> get() = _errorMessageLiveData
 
     val suggestedMoodNamesLiveData get() = suggestedMoodNameRepository.suggestedMoodNames
-    val moodIconsLiveData: LiveData<List<MoodIcon>> get() = moodRepository.moodIcons
+    val moodIconsLiveData: LiveData<List<MoodIcon>> get() = moodRepository.moodIcons()
     val suggestedMoodLiveData get() = suggestedMoodIconRepo.suggestedMoodIcons
 
     fun saveMoodIcon(moodName: String, moodIcon: String, iconId: Int?) {

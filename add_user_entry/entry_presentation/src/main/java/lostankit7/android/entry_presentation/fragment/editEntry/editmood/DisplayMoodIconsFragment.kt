@@ -40,8 +40,6 @@ class DisplayMoodIconsFragment :
     }
 
     override fun registerObservers() {
-        super.registerObservers()
-
         viewModel.moodIconsLiveData.observe(viewLifecycleOwner) {
             adapter.submitList(it)
         }
