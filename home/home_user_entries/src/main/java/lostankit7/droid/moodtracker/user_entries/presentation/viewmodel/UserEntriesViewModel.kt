@@ -9,7 +9,7 @@ class UserEntriesViewModel @Inject constructor(
     private val repository: UserEntriesRepository,
 ) : BaseViewModel() {
 
-    val allEntriesLiveData = repository.userEntries
+    val allEntriesLiveData get() = repository.userEntries()
 
     fun singleDateUserEntries(date: String) = repository.userEntries(date)
 

@@ -11,7 +11,7 @@ import lostankit7.droid.moodtracker.core.domain.entities.shared.UserEntry
 
 class UserEntryRepositoryImpl(private val dao: UserEntryDao) : UserEntriesRepository {
 
-    override val userEntries: LiveData<List<UserEntry>> = dao.userEntries().map { it.toUserEntry }
+    override fun userEntries(): LiveData<List<UserEntry>> = dao.userEntries().map { it.toUserEntry }
 
     override fun userEntries(date: String) = dao.userEntries(date).map { it.toUserEntry }
 
