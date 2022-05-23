@@ -12,7 +12,9 @@ class TaskIconRepositoryImpl(private val dao: TaskIconDao) : TaskIconRepository 
 
     override fun getTaskIcons(category: String) = dao.getTaskIcons(category).map { it.toTaskIcon }
 
-    override suspend fun insertTask(it: TaskIcon) = dao.insertTaskIcon(it.toLocalTaskIconInsert)
+    override suspend fun insertTask(it: TaskIcon) {
+        dao.insertTaskIcon(it.toLocalTaskIconInsert)
+    }
 
     override suspend fun insertTaskIcons(list: List<TaskIcon>) =
         dao.insertTaskIcons(list.toLocalTaskIconInsert)

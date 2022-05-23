@@ -6,7 +6,6 @@ import dagger.Module
 import dagger.multibindings.IntoMap
 import lostankit7.android.entry_presentation.viewmodel.MoodEntryViewModel
 import lostankit7.android.entry_presentation.viewmodel.TaskEntryViewModel
-import lostankit7.android.entry_presentation.viewmodel.UserEntriesViewModel
 import lostankit7.droid.moodtracker.core_presentation.di.viewmodel.ViewModelKey
 
 @Module
@@ -21,10 +20,4 @@ abstract class ViewModelModule {
     @IntoMap
     @ViewModelKey(TaskEntryViewModel::class)
     abstract fun bindsTaskEntryViewModel(taskEntryViewModel: TaskEntryViewModel): ViewModel
-
-    @Binds
-    @IntoMap
-    @ViewModelKey(UserEntriesViewModel::class)
-    abstract fun bindsUserEntriesViewModel(userEntriesViewModel: UserEntriesViewModel): ViewModel
-
 }

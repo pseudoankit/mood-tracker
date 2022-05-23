@@ -29,6 +29,9 @@ android {
 dependencies {
     implementation(project(Modules.core))
     implementation(project(Modules.entryPresentation))
+    implementation(project(Modules.homeUserEntries))
+    implementation(project(Modules.homeCalendar))
+    implementation(project(Modules.homeMore))
 
     implementation(Dependencies.customViews)
     implementation(Dependencies.navigationFragment)

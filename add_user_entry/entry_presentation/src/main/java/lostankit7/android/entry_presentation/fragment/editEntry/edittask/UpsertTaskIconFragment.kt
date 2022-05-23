@@ -12,9 +12,7 @@ import lostankit7.android.entry_presentation.R
 import lostankit7.android.entry_presentation.adapter.ChipsRvAdapter
 import lostankit7.android.entry_presentation.adapter.TaskIconRvAdapter
 import lostankit7.android.entry_presentation.databinding.FragmentUpsertMoodTaskIconBinding
-import lostankit7.android.entry_presentation.utils.ActionBarUtils.showSaveButton
 import lostankit7.android.entry_presentation.utils.Utils.entryComponent
-import lostankit7.android.entry_presentation.utils.Utils.mActionBar
 import lostankit7.android.entry_presentation.viewmodel.TaskEntryViewModel
 import lostankit7.droid.moodtracker.core.domain.entities.shared.BaseIcon
 import lostankit7.droid.moodtracker.core.presentation.base.fragment.BaseDaggerFragment
@@ -75,8 +73,8 @@ class UpsertTaskIconFragment :
                     viewModel.updateTask(icon)
                 } ?: viewModel.insertTask(icon)
 
+                activity?.hideKeyBoard()
                 navController.popBackStack()
-                requireActivity().hideKeyBoard()
             }
         }
     }
@@ -88,12 +86,6 @@ class UpsertTaskIconFragment :
         args.editTaskIcon?.apply {
             binding.tvSelectedIcon.text = icon
             binding.edtSelectedName.setText(name)
-        }
-    }
-
-    override fun updateActionBar() {
-        mActionBar?.apply {
-            showSaveButton()
         }
     }
 
