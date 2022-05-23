@@ -5,6 +5,8 @@
 
 multi modular android application in which user can track their daily activities , moods and tasks etc..
 
+[Medium article](https://lazycoder21.medium.com/android-jetpack-navigation-in-multi-modular-apps-50b240a00dff) to demonstrate using nested fragments in navigation component
+
 Tech Used : 
   Dagger2
   Coroutines
