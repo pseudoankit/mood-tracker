@@ -18,6 +18,10 @@ fun Fragment.findNavHost(@IdRes viewId: Int): NavController {
     return navHostFragment.navController
 }
 
+/** returns primary fragment, in the [containerId]*/
+fun Fragment.getCurrentFragment(@IdRes containerId: Int) =
+    run { childFragmentManager.findFragmentById(containerId)?.childFragmentManager?.primaryNavigationFragment }
+
 private const val NO_ANIMATION = -1
 private const val ANIMATE_TOP_BOTTOM = 1
 
