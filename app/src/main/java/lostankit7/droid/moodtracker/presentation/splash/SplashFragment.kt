@@ -10,7 +10,7 @@ import lostankit7.droid.moodtracker.R
 import lostankit7.droid.moodtracker.core.presentation.base.fragment.BaseDaggerFragment
 import lostankit7.droid.moodtracker.core.utils.Constants
 import lostankit7.droid.moodtracker.databinding.FragmentSplashBinding
-import lostankit7.droid.moodtracker.di.component.DaggerAppComponent
+import lostankit7.droid.moodtracker.di.component.AppComponent.Companion.appComponent
 
 class SplashFragment : BaseDaggerFragment<FragmentSplashBinding, SplashViewModel>() {
 
@@ -43,7 +43,7 @@ class SplashFragment : BaseDaggerFragment<FragmentSplashBinding, SplashViewModel
         FragmentSplashBinding.inflate(layoutInflater)
 
     override fun injectFragment() {
-        DaggerAppComponent.builder().coreAppComponent(coreAppComponent).build().inject(this)
+        activity?.appComponent?.inject(this)
     }
 
     override fun initiateViewModel(viewModelProvider: ViewModelProvider) =

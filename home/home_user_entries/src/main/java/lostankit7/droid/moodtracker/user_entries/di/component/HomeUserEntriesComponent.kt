@@ -5,7 +5,7 @@ import dagger.Component
 import lostankit7.android.entry_data.di.EntryDatabaseModule
 import lostankit7.android.entry_data.di.LocalDbModule
 import lostankit7.droid.moodtracker.core.di.component.CoreAppComponent
-import lostankit7.droid.moodtracker.core.utils.coreAppComponent
+import lostankit7.droid.moodtracker.core.di.component.CoreAppComponent.Companion.coreAppComponent
 import lostankit7.droid.moodtracker.user_entries.di.module.ViewModelModule
 import lostankit7.droid.moodtracker.user_entries.presentation.fragment.UserEntriesFragment
 
@@ -16,7 +16,7 @@ import lostankit7.droid.moodtracker.user_entries.presentation.fragment.UserEntri
 interface HomeUserEntriesComponent {
 
     companion object {
-        val FragmentActivity.userEntryComponent: HomeUserEntriesComponent
+        val FragmentActivity.createComponent: HomeUserEntriesComponent
             get() = DaggerHomeUserEntriesComponent.builder()
                 .coreAppComponent(application.coreAppComponent)
                 .build()
