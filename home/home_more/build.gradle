@@ -22,9 +22,14 @@ android {
     }
     kotlinOptions {
         jvmTarget = '1.8'
+        useIR = true
     }
     buildFeatures {
         viewBinding true
+        compose true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion Versions.COMPOSE
     }
 }
 
@@ -32,9 +37,22 @@ dependencies {
     implementation(project(Modules.CORE))
 
     implementation(Dependencies.CUSTOM_VIEWS)
-    implementation(Dependencies.MATERIAL)
-    implementation(Dependencies.NAVIGATION_FRAGMENT)
-    implementation(Dependencies.NAVIGATION_UI)
+
+    implementation(Dependencies.COMPOSE_RUNTIME)
+    implementation(Dependencies.COMPOSE_COMPILER)
+    implementation(Dependencies.COMPOSE_TOOL_PREVIEW)
+    implementation(Dependencies.COMPOSE_MATERIAL)
+    implementation(Dependencies.COMPOSE_UI)
+
     implementation(Dependencies.DAGGER)
     kapt(Dependencies.DAGGER_COMPILER)
+
+    implementation(Dependencies.CORE_KTX)
+    implementation(Dependencies.APP_COMPAT)
+    implementation(Dependencies.MATERIAL)
+
+    implementation(Dependencies.NAVIGATION_UI)
+    implementation(Dependencies.NAVIGATION_FRAGMENT)
+
+    implementation(Dependencies.VIEW_MODEL)
 }
