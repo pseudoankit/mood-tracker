@@ -4,13 +4,13 @@ plugins {
 }
 
 android {
-    compileSdk ProjectConfig.compileSdk
+    compileSdk ProjectConfig.COMPILE_SDK
 
     defaultConfig {
-        minSdk ProjectConfig.minSdk
-        targetSdk ProjectConfig.targetSdk
-        versionCode ProjectConfig.versionCode
-        versionName ProjectConfig.versionName
+        minSdk ProjectConfig.MIN_SDK
+        targetSdk ProjectConfig.TARGET_SDK
+        versionCode ProjectConfig.VERSION_CODE
+        versionName ProjectConfig.VERSION_NAME
 
     }
 
@@ -27,16 +27,16 @@ android {
 }
 
 dependencies {
-    implementation(project(Modules.core))
-    implementation(project(Modules.entryPresentation))
-    implementation(project(Modules.homeUserEntries))
-    implementation(project(Modules.homeCalendar))
-    implementation(project(Modules.homeMore))
+    implementation(project(Modules.CORE))
+    implementation(project(Modules.ENTRY_PRESENTATION))
+    implementation(project(Modules.HOME_USER_ENTRIES))
+    implementation(project(Modules.HOME_CALENDAR))
+    implementation(project(Modules.HOME_MORE))
 
-    implementation(Dependencies.customViews)
-    implementation(Dependencies.navigationFragment)
-    implementation(Dependencies.navigationUI)
-    implementation(Dependencies.coreKtx)
-    implementation(Dependencies.appCompat)
-    implementation(Dependencies.material)
+    implementation(Dependencies.CUSTOM_VIEWS)
+    implementation(Dependencies.NAVIGATION_FRAGMENT)
+    implementation(Dependencies.NAVIGATION_UI)
+    implementation(Dependencies.CORE_KTX)
+    implementation(Dependencies.APP_COMPAT)
+    implementation(Dependencies.MATERIAL)
 }

@@ -6,14 +6,14 @@ plugins {
 }
 
 android {
-    compileSdk ProjectConfig.compileSdk
+    compileSdk ProjectConfig.COMPILE_SDK
 
     defaultConfig {
-        applicationId ProjectConfig.applicationId
-        minSdk ProjectConfig.minSdk
-        targetSdk ProjectConfig.targetSdk
-        versionCode ProjectConfig.versionCode
-        versionName ProjectConfig.versionName
+        applicationId ProjectConfig.APPLICATION_ID
+        minSdk ProjectConfig.MIN_SDK
+        targetSdk ProjectConfig.TARGET_SDK
+        versionCode ProjectConfig.VERSION_CODE
+        versionName ProjectConfig.VERSION_NAME
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -40,35 +40,35 @@ android {
 }
 
 dependencies {
-    implementation(project(Modules.core))
-    implementation(project(Modules.entryData))
-    implementation(project(Modules.entryDomain))
-    implementation(project(Modules.entryPresentation))
-    implementation(project(Modules.homeHost))
-    implementation(project(Modules.homeUserEntries))
-    implementation(project(Modules.homeCalendar))
-    implementation(project(Modules.homeMore))
+    implementation(project(Modules.CORE))
+    implementation(project(Modules.ENTRY_DATA))
+    implementation(project(Modules.ENTRY_DOMAIN))
+    implementation(project(Modules.ENTRY_PRESENTATION))
+    implementation(project(Modules.HOME_HOST))
+    implementation(project(Modules.HOME_USER_ENTRIES))
+    implementation(project(Modules.HOME_CALENDAR))
+    implementation(project(Modules.HOME_MORE))
 
     //custom views
-    implementation(Dependencies.customViews)
+    implementation(Dependencies.CUSTOM_VIEWS)
 
     // Room components
-    implementation(Dependencies.roomKtx)
-    implementation(Dependencies.roomRuntime)
-    kapt(Dependencies.roomCompiler)
+    implementation(Dependencies.ROOM_KTX)
+    implementation(Dependencies.ROOM_RUNTIME)
+    kapt(Dependencies.ROOM_COMPILER)
 
     //live data , view model
-    implementation(Dependencies.viewModel)
-    implementation(Dependencies.liveData)
+    implementation(Dependencies.VIEW_MODEL)
+    implementation(Dependencies.LIVE_DATA)
 
-    implementation(Dependencies.navigationFragment)
-    implementation(Dependencies.navigationUI)
+    implementation(Dependencies.NAVIGATION_FRAGMENT)
+    implementation(Dependencies.NAVIGATION_UI)
 
     //di
-    implementation(Dependencies.dagger)
-    kapt(Dependencies.daggerCompiler)
+    implementation(Dependencies.DAGGER)
+    kapt(Dependencies.DAGGER_COMPILER)
 
-    implementation(Dependencies.coreKtx)
-    implementation(Dependencies.appCompat)
-    implementation(Dependencies.material)
+    implementation(Dependencies.CORE_KTX)
+    implementation(Dependencies.APP_COMPAT)
+    implementation(Dependencies.MATERIAL)
 }

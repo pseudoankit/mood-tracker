@@ -1,8 +1,8 @@
 object ProjectConfig {
-    const val applicationId = "lostankit7.droid.moodtracker"
-    const val compileSdk = 31
-    const val minSdk = 21
-    const val targetSdk = 31
-    const val versionCode = 1
-    const val versionName = "1.0"
+    const val APPLICATION_ID = "lostankit7.droid.moodtracker"
+    const val COMPILE_SDK = 31
+    const val MIN_SDK = 21
+    const val TARGET_SDK = 31
+    const val VERSION_CODE = 1
+    const val VERSION_NAME = "1.0"
 }

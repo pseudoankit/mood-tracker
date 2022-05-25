@@ -5,13 +5,13 @@ plugins {
 }
 
 android {
-    compileSdk ProjectConfig.compileSdk
+    compileSdk ProjectConfig.COMPILE_SDK
 
     defaultConfig {
-        minSdk ProjectConfig.minSdk
-        targetSdk ProjectConfig.targetSdk
-        versionCode ProjectConfig.versionCode
-        versionName ProjectConfig.versionName
+        minSdk ProjectConfig.MIN_SDK
+        targetSdk ProjectConfig.TARGET_SDK
+        versionCode ProjectConfig.VERSION_CODE
+        versionName ProjectConfig.VERSION_NAME
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
@@ -34,14 +34,14 @@ android {
 
 dependencies {
 
-    implementation(project(Modules.core))
-    implementation(project(Modules.entryDomain))
+    implementation(project(Modules.CORE))
+    implementation(project(Modules.ENTRY_DOMAIN))
 
-    implementation(Dependencies.dagger)
-    kapt(Dependencies.daggerCompiler)
+    implementation(Dependencies.DAGGER)
+    kapt(Dependencies.DAGGER_COMPILER)
 
-    implementation(Dependencies.liveData)
-    implementation(Dependencies.roomKtx)
-    api(Dependencies.roomRuntime)
-    kapt(Dependencies.roomCompiler)
+    implementation(Dependencies.LIVE_DATA)
+    implementation(Dependencies.ROOM_KTX)
+    api(Dependencies.ROOM_RUNTIME)
+    kapt(Dependencies.ROOM_COMPILER)
 }

@@ -1,11 +1,10 @@
 object Build {
-    private const val androidBuildToolsVersion = "7.0.4"
-    const val androidBuildTools = "com.android.tools.build:gradle:$androidBuildToolsVersion"
+    private const val ANDROID_BUILD_TOOLS_VERSION = "7.0.4"
+    const val ANDROID_BUILD_TOOLS = "com.android.tools.build:gradle:$ANDROID_BUILD_TOOLS_VERSION"
 
-    const val kotlinVersion = "1.6.0"
-    const val kotlinGradlePlugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:${kotlinVersion}"
+    const val KOTLIN_VERSION = "1.6.10"
+    const val KOTLIN_GRADLE_PLUGIN = "org.jetbrains.kotlin:kotlin-gradle-plugin:${KOTLIN_VERSION}"
 
-    private const val navigationVersion = "2.4.2"
-    const val navigationSafeArgs =
-        "androidx.navigation:navigation-safe-args-gradle-plugin:$navigationVersion"
+    const val NAVIGATION_SAGE_ARGS =
+        "androidx.navigation:navigation-safe-args-gradle-plugin:${Dependencies.NAVIGATION_VERSION}"
 }

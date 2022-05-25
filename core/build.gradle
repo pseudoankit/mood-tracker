@@ -5,13 +5,13 @@ plugins {
 }
 
 android {
-    compileSdk ProjectConfig.compileSdk
+    compileSdk ProjectConfig.COMPILE_SDK
 
     defaultConfig {
-        minSdk ProjectConfig.minSdk
-        targetSdk ProjectConfig.targetSdk
-        versionCode ProjectConfig.versionCode
-        versionName ProjectConfig.versionName
+        minSdk ProjectConfig.MIN_SDK
+        targetSdk ProjectConfig.TARGET_SDK
+        versionCode ProjectConfig.VERSION_CODE
+        versionName ProjectConfig.VERSION_NAME
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -34,17 +34,17 @@ android {
 }
 
 dependencies {
-    implementation(Dependencies.customViews)
+    implementation(Dependencies.CUSTOM_VIEWS)
 
-    implementation(Dependencies.dagger)
-    kapt(Dependencies.daggerCompiler)
+    implementation(Dependencies.DAGGER)
+    kapt(Dependencies.DAGGER_COMPILER)
 
-    implementation(Dependencies.coreKtx)
-    implementation(Dependencies.appCompat)
-    implementation(Dependencies.material)
+    implementation(Dependencies.CORE_KTX)
+    implementation(Dependencies.APP_COMPAT)
+    implementation(Dependencies.MATERIAL)
 
-    implementation(Dependencies.navigationUI)
-    implementation(Dependencies.navigationFragment)
+    implementation(Dependencies.NAVIGATION_UI)
+    implementation(Dependencies.NAVIGATION_FRAGMENT)
 
-    implementation(Dependencies.viewModel)
+    implementation(Dependencies.VIEW_MODEL)
 }

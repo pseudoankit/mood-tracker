@@ -6,13 +6,13 @@ plugins {
 }
 
 android {
-    compileSdk ProjectConfig.compileSdk
+    compileSdk ProjectConfig.COMPILE_SDK
 
     defaultConfig {
-        minSdk ProjectConfig.minSdk
-        targetSdk ProjectConfig.targetSdk
-        versionCode ProjectConfig.versionCode
-        versionName ProjectConfig.versionName
+        minSdk ProjectConfig.MIN_SDK
+        targetSdk ProjectConfig.TARGET_SDK
+        versionCode ProjectConfig.VERSION_CODE
+        versionName ProjectConfig.VERSION_NAME
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
@@ -34,6 +34,6 @@ android {
 }
 
 dependencies {
-    implementation(project(Modules.core))
-    implementation(Dependencies.liveData)
+    implementation(project(Modules.CORE))
+    implementation(Dependencies.LIVE_DATA)
 }
