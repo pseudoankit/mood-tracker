@@ -6,7 +6,7 @@ import lostankit7.android.entry_domain.entities.MoodEntry
 import lostankit7.android.entry_domain.entities.MoodIcon
 import lostankit7.android.entry_presentation.adapter.RvMoodIconAdapter
 import lostankit7.android.entry_presentation.databinding.FragmentAddMoodEntryBinding
-import lostankit7.android.entry_presentation.utils.Utils.entryComponent
+import lostankit7.android.entry_presentation.di.EntryComponent.Companion.entryComponent
 import lostankit7.android.entry_presentation.viewmodel.MoodEntryViewModel
 import lostankit7.droid.moodtracker.core.presentation.base.fragment.BaseDaggerFragment
 import lostankit7.droid.moodtracker.core.presentation.utils.DateTimeUtils.getCurrentDate

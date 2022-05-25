@@ -1,8 +1,6 @@
 package lostankit7.droid.moodtracker.presentation.splash
 
-import android.os.Bundle
 import android.view.LayoutInflater
-import android.view.View
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import kotlinx.coroutines.delay
@@ -10,12 +8,12 @@ import lostankit7.droid.moodtracker.R
 import lostankit7.droid.moodtracker.core.presentation.base.fragment.BaseDaggerFragment
 import lostankit7.droid.moodtracker.core.utils.Constants
 import lostankit7.droid.moodtracker.databinding.FragmentSplashBinding
-import lostankit7.droid.moodtracker.di.component.DaggerAppComponent
+import lostankit7.droid.moodtracker.di.component.AppComponent.Companion.appComponent
 
 class SplashFragment : BaseDaggerFragment<FragmentSplashBinding, SplashViewModel>() {
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+    override fun init() {
+        navController.popBackStack()
 
         viewModel.saveDefaultIcons(
             SplashFragmentDataProvider.moodIcons(requireContext()),
@@ -31,19 +29,17 @@ class SplashFragment : BaseDaggerFragment<FragmentSplashBinding, SplashViewModel
             delay(Constants.SPLASH_TIME)
             navigateAfterSplash()
         }
-
     }
 
     private fun navigateAfterSplash() {
-        //todo launch as single top
-        navController.navigate(R.id.nav_graph_home)
+        navController.navigate(R.id.nav_graph_home_host)
     }
 
     override fun inflateLayout(layoutInflater: LayoutInflater) =
         FragmentSplashBinding.inflate(layoutInflater)
 
     override fun injectFragment() {
-        DaggerAppComponent.builder().coreAppComponent(coreAppComponent).build().inject(this)
+        activity?.appComponent?.inject(this)
     }
 
     override fun initiateViewModel(viewModelProvider: ViewModelProvider) =
