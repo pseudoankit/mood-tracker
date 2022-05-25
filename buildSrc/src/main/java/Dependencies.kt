@@ -50,6 +50,8 @@ object Dependencies {
 
     //compose version
     const val COMPOSE_UI = "androidx.compose.ui:ui:${Versions.COMPOSE}"
+    const val COMPOSE_RUNTIME = "androidx.compose.runtime:runtime:${Versions.COMPOSE}"
+    const val COMPOSE_COMPILER = "androidx.compose.compiler:compiler:${Versions.COMPOSE}"
     const val COMPOSE_MATERIAL = "androidx.compose.material:material:${Versions.COMPOSE}"
     const val COMPOSE_TOOL_PREVIEW = "androidx.compose.ui:ui-tooling-preview:${Versions.COMPOSE}"
 
