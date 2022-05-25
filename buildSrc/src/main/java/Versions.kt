@@ -1,0 +1,15 @@
+internal object Versions {
+    const val KOTLIN = "1.6.10"
+    const val ANDROID_BUILD_TOOLS = "7.0.4"
+    const val LIFECYCLE = "2.4.1"
+    const val MATERIAL = "1.6.0"
+    const val CORE_KTX = "1.7.0"
+    const val APP_COMPAT = "1.4.0"
+    const val COROUTINES = "1.6.0"
+    const val DAGGER = "2.40.5"
+    const val RETROFIT = "2.9.0"
+    const val OKHTTP = "5.0.0-alpha.2"
+    const val ROOM = "2.4.0"
+    const val COMPOSE = "1.1.0"
+    const val NAVIGATION = "2.4.2"
+}

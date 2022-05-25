@@ -3,64 +3,54 @@ object Dependencies {
     const val CUSTOM_VIEWS = "com.github.lostankit7:AndroidCustomViews:1.2"
 
     //lifecycle
-    private const val LIFECYCLE_VERSION = "2.4.1"
-    const val VIEW_MODEL = "androidx.lifecycle:lifecycle-viewmodel-ktx:$LIFECYCLE_VERSION"
-    const val LIVE_DATA = "androidx.lifecycle:lifecycle-livedata-ktx:$LIFECYCLE_VERSION"
-    const val LIFE_CYCLE_COMMON = "androidx.lifecycle:lifecycle-common-java8:$LIFECYCLE_VERSION"
+    const val VIEW_MODEL = "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.LIFECYCLE}"
+    const val LIVE_DATA = "androidx.lifecycle:lifecycle-livedata-ktx:${Versions.LIFECYCLE}"
+    const val LIFE_CYCLE_COMMON = "androidx.lifecycle:lifecycle-common-java8:${Versions.LIFECYCLE}"
 
 
     //navigation component
     //navigation component dep. for navigating fragments w.r.t. to id in menu and graph
-    const val NAVIGATION_VERSION = "2.4.2"
     const val NAVIGATION_FRAGMENT =
-        "androidx.navigation:navigation-fragment-ktx:$NAVIGATION_VERSION"
-    const val NAVIGATION_UI = "androidx.navigation:navigation-ui-ktx:$NAVIGATION_VERSION"
+        "androidx.navigation:navigation-fragment-ktx:${Versions.NAVIGATION}"
+    const val NAVIGATION_UI = "androidx.navigation:navigation-ui-ktx:${Versions.NAVIGATION}"
 
 
     //google material
-    private const val MATERAIL_VERSION = "1.6.0"
-    const val MATERIAL = "com.google.android.material:material:$MATERAIL_VERSION"
+    const val MATERIAL = "com.google.android.material:material:${Versions.MATERIAL}"
 
     //androidX
-    private const val CORE_KTX_VERSION = "1.7.0"
-    const val CORE_KTX = "androidx.core:core-ktx:$CORE_KTX_VERSION"
+    const val CORE_KTX = "androidx.core:core-ktx:${Versions.CORE_KTX}"
 
-    private const val APP_COMPAT_VERSION = "1.4.0"
-    const val APP_COMPAT = "androidx.appcompat:appcompat:$APP_COMPAT_VERSION"
+    const val APP_COMPAT = "androidx.appcompat:appcompat:${Versions.APP_COMPAT}"
 
 
     //coroutines
-    private const val COROUTINES_VERSION = "1.6.0"
-    const val COROUTINES = "org.jetbrains.kotlinx:kotlinx-coroutines-core:$COROUTINES_VERSION"
+    const val COROUTINES = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.COROUTINES}"
 
 
     //dagger
-    private const val DAGGER_VERSION = "2.40.5"
-    const val DAGGER = "com.google.dagger:dagger:$DAGGER_VERSION"
-    const val DAGGER_COMPILER = "com.google.dagger:dagger-compiler:$DAGGER_VERSION"
+    const val DAGGER = "com.google.dagger:dagger:${Versions.DAGGER}"
+    const val DAGGER_COMPILER = "com.google.dagger:dagger-compiler:${Versions.DAGGER}"
 
 
     //retrofit
-    private const val RETROFIT_VERSION = "2.9.0"
-    const val RETROFIT = "com.squareup.retrofit2:retrofit:$RETROFIT_VERSION"
-    const val MOSHI_CONVERTOR = "com.squareup.retrofit2:converter-moshi:$RETROFIT_VERSION"
+    const val RETROFIT = "com.squareup.retrofit2:retrofit:${Versions.RETROFIT}"
+    const val MOSHI_CONVERTOR = "com.squareup.retrofit2:converter-moshi:${Versions.RETROFIT}"
 
-    private const val OKHTTP_VERSION = "5.0.0-alpha.2"
-    const val OKHTTP = "com.squareup.okhttp3:okhttp:$OKHTTP_VERSION"
+    const val OKHTTP = "com.squareup.okhttp3:okhttp:${Versions.OKHTTP}"
     const val OKHTTP_LOGGING_INTERCEPTOR =
-        "com.squareup.okhttp3:logging-interceptor:$OKHTTP_VERSION"
+        "com.squareup.okhttp3:logging-interceptor:${Versions.OKHTTP}"
 
 
     //room
-    private const val ROOM_VERSION = "2.4.0"
-    const val ROOM_RUNTIME = "androidx.room:room-runtime:$ROOM_VERSION"
-    const val ROOM_COMPILER = "androidx.room:room-compiler:$ROOM_VERSION"
-    const val ROOM_KTX = "androidx.room:room-ktx:$ROOM_VERSION"
+    const val ROOM_RUNTIME = "androidx.room:room-runtime:${Versions.ROOM}"
+    const val ROOM_COMPILER = "androidx.room:room-compiler:${Versions.ROOM}"
+    const val ROOM_KTX = "androidx.room:room-ktx:${Versions.ROOM}"
 
 
     //compose version
-    private const val COMPOSE_VERSION = "1.0.0"
-    const val COMPOSE_UI = "androidx.compose.ui:ui:$COMPOSE_VERSION"
-    const val COMPOSE_MATERIAL = "androidx.compose.material:material:$COMPOSE_VERSION"
-    const val COMPOSE_TOOL_PREVIEW = "androidx.compose.ui:ui-tooling-preview:$COMPOSE_VERSION"
+    const val COMPOSE_UI = "androidx.compose.ui:ui:${Versions.COMPOSE}"
+    const val COMPOSE_MATERIAL = "androidx.compose.material:material:${Versions.COMPOSE}"
+    const val COMPOSE_TOOL_PREVIEW = "androidx.compose.ui:ui-tooling-preview:${Versions.COMPOSE}"
+
 }
