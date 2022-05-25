@@ -12,7 +12,7 @@
     <color name="stroke_color">#A39696</color>
 
     <color name="splash_background">@color/purple_500</color>
-    <color name="hint_color">#aaa</color>
+    <color name="hint_color">#AAAAAA</color>
 
     <!-- add new entries -->
     <color name="header_text_color">@android:color/black</color>
