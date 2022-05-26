@@ -3,51 +3,50 @@ package lostankit7.droid.moodtracker.home_more.presentation.fragment
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
-import lostankit7.droid.helper.hide
-import lostankit7.droid.helper.show
-import lostankit7.droid.moodtracker.core.presentation.base.fragment.BaseFragment
-import lostankit7.droid.moodtracker.core.presentation.utils.ViewExt.hideKeyBoard
-import lostankit7.droid.moodtracker.home_more.R
-import lostankit7.droid.moodtracker.home_more.databinding.FragmentMoreBinding
+import android.view.ViewGroup
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
+import androidx.compose.ui.ExperimentalComposeUiApi
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.ComposeView
+import androidx.compose.ui.platform.ViewCompositionStrategy
+import androidx.lifecycle.ViewModelProvider
+import lostankit7.droid.moodtracker.core.presentation.base.fragment.BaseComposeDaggerFragment
+import lostankit7.droid.moodtracker.core_ui.compose.values.LocalSpacing
+import lostankit7.droid.moodtracker.home_more.di.component.HomeMoreComponent.Companion.createComponent
+import lostankit7.droid.moodtracker.home_more.presentation.compose.HomeMoreScreen
+import lostankit7.droid.moodtracker.home_more.presentation.viewmodel.MoreViewModel
 
-class MoreFragment : BaseFragment<FragmentMoreBinding>() {
+@ExperimentalComposeUiApi
+class MoreFragment : BaseComposeDaggerFragment<MoreViewModel>() {
 
-    private var isEditEnabled = false
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-    }
-
-    override fun initListeners() {
-        binding.layoutProfile.btnEditProfile.setOnClickListener {
-            if (isEditEnabled) saveAndDisableProfileEdit() else enableProfileEdit()
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?,
+    ): View? {
+        return context?.let { context ->
+            ComposeView(context).apply {
+                setViewCompositionStrategy(ViewCompositionStrategy.DisposeOnViewTreeLifecycleDestroyed)
+                setContent {
+                    Box(
+                        modifier = Modifier
+                            .fillMaxSize()
+                            .padding(LocalSpacing.current.screenPadding)
+                    ) {
+                        HomeMoreScreen(viewModel)
+                    }
+                }
+            }
         }
     }
 
-    private fun enableProfileEdit() = with(binding.layoutProfile) {
-        isEditEnabled = true
-        btnEditProfile.text = resources.getString(R.string.fas_tick)
-        rootLayout.apply {
-            isClickable = true
-            txtUserName.hide()
-            edtUserName.show()
-        }
+    override fun ViewModelProvider.initiateViewModel(): MoreViewModel {
+        return get(MoreViewModel::class.java)
     }
 
-    private fun saveAndDisableProfileEdit() = with(binding.layoutProfile) {
-        //todo save profile name to pref
-        activity?.hideKeyBoard()
-        isEditEnabled = false
-        btnEditProfile.text = resources.getString(R.string.fas_edit)
-        rootLayout.apply {
-            isClickable = false
-            txtUserName.show()
-            edtUserName.hide()
-        }
+    override fun injectFragment() {
+        activity?.createComponent?.inject(this)
     }
-
-    override fun inflateLayout(layoutInflater: LayoutInflater) =
-        FragmentMoreBinding.inflate(layoutInflater)
-
 }

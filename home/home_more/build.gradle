@@ -25,11 +25,21 @@ android {
     }
     buildFeatures {
         viewBinding true
+        compose true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion Versions.COMPOSE
     }
 }
 
 dependencies {
     implementation(project(Modules.CORE))
+    implementation(project(Modules.CORE_UI))
+    implementation(Dependencies.COMPOSE_RUNTIME)
+    implementation(Dependencies.COMPOSE_COMPILER)
+    implementation(Dependencies.COMPOSE_TOOL_PREVIEW)
+    implementation(Dependencies.COMPOSE_MATERIAL)
+    implementation(Dependencies.COMPOSE_UI)
 
     implementation(Dependencies.CUSTOM_VIEWS)
     implementation(Dependencies.MATERIAL)
