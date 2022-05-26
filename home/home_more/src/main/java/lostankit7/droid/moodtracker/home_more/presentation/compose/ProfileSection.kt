@@ -17,6 +17,7 @@ import androidx.constraintlayout.compose.ConstraintSet
 import lostankit7.droid.moodtracker.core_ui.compose.values.Dimensions
 import lostankit7.droid.moodtracker.core_ui.compose.values.LocalSpacing
 import lostankit7.droid.moodtracker.core_ui.compose.values.StrokeColor
+import lostankit7.droid.moodtracker.core_ui.compose.values.spacing
 import lostankit7.droid.moodtracker.core_ui.compose.view.CustomTextField
 import lostankit7.droid.moodtracker.home_more.R
 import lostankit7.droid.moodtracker.home_more.presentation.viewmodel.MoreViewModel
@@ -24,54 +25,17 @@ import lostankit7.droid.moodtracker.home_more.presentation.viewmodel.MoreViewMod
 private const val PROFILE_BOX = "profile_box"
 private const val PROFILE_EDIT_BTN = "profile_edt_btn"
 
-val spacing @Composable get() = LocalSpacing.current
-
 @Composable
 fun ProfileSection(
     viewModel: MoreViewModel,
 ) {
-    val spacing = LocalSpacing.current
-
     ConstraintLayout(
         createConstraints(spacing),
         modifier = Modifier
             .fillMaxWidth()
     ) {
-        Row(
-            modifier = Modifier
-                .fillMaxWidth()
-                .layoutId(PROFILE_BOX)
-                .border(
-                    width = spacing.strokeLvl2,
-                    color = StrokeColor,
-                    shape = RoundedCornerShape(spacing.cornerRadius)
-                )
-                .padding(horizontal = spacing.dp_10, vertical = spacing.dp_7),
-            verticalAlignment = Alignment.CenterVertically
-        ) {
-            DrawProfileImage()
-            Spacer(modifier = Modifier.width(spacing.dp_15))
-            DrawProfileNameEdt(viewModel = viewModel)
-            Spacer(modifier = Modifier.width(spacing.dp_10))
-        }
-        Image(
-            painter = painterResource(id = R.drawable.ic_me),
-            contentDescription = "Edit Profile",
-            modifier = Modifier
-                .size(spacing.dp_35)
-                .layoutId(PROFILE_EDIT_BTN)
-                .offset(x = spacing.dp_4, y = -spacing.dp_15)
-                .clip(CircleShape)
-                .border(
-                    width = spacing.strokeLvl1,
-                    color = StrokeColor,
-                    shape = CircleShape
-                )
-                .clickable {
-                    viewModel.state.profileEditEnabled.value =
-                        !viewModel.state.profileEditEnabled.value
-                },
-        )
+        DrawProfileCore(viewModel)
+        DrawProfileEditButton(viewModel = viewModel)
     }
 }
 
@@ -91,16 +55,46 @@ private fun createConstraints(spacing: Dimensions): ConstraintSet = ConstraintSe
 }
 
 @Composable
-fun DrawProfileNameEdt(viewModel: MoreViewModel) {
-    val spacing = LocalSpacing.current
+fun DrawProfileEditButton(viewModel: MoreViewModel) {
+    Image(
+        painter = painterResource(id = R.drawable.ic_me),
+        contentDescription = "Edit Profile",
+        modifier = Modifier
+            .size(spacing.dp_35)
+            .layoutId(PROFILE_EDIT_BTN)
+            .offset(x = spacing.dp_4, y = -spacing.dp_15)
+            .clip(CircleShape)
+            .border(
+                width = spacing.strokeLvl1,
+                color = StrokeColor,
+                shape = CircleShape
+            )
+            .clickable {
+                viewModel.state.profileEditEnabled.value =
+                    !viewModel.state.profileEditEnabled.value
+            },
+    )
+}
 
-    CustomTextField(
+@Composable
+private fun DrawProfileCore(viewModel: MoreViewModel) {
+    Row(
         modifier = Modifier
             .fillMaxWidth()
-            .height(spacing.stdHeight),
-        text = viewModel.state.profileName,
-        readOnly = !viewModel.state.profileEditEnabled.value
-    )
+            .layoutId(PROFILE_BOX)
+            .border(
+                width = spacing.strokeLvl2,
+                color = StrokeColor,
+                shape = RoundedCornerShape(spacing.cornerRadius)
+            )
+            .padding(horizontal = spacing.dp_10, vertical = spacing.dp_7),
+        verticalAlignment = Alignment.CenterVertically
+    ) {
+        DrawProfileImage()
+        Spacer(modifier = Modifier.width(spacing.dp_15))
+        DrawProfileNameEdt(viewModel = viewModel)
+        Spacer(modifier = Modifier.width(spacing.dp_10))
+    }
 }
 
 @Composable
@@ -117,5 +111,18 @@ fun DrawProfileImage() {
             ),
         painter = painterResource(id = R.drawable.ic_me),
         contentDescription = "Profile Image",
+    )
+}
+
+@Composable
+fun DrawProfileNameEdt(viewModel: MoreViewModel) {
+    val spacing = LocalSpacing.current
+
+    CustomTextField(
+        modifier = Modifier
+            .fillMaxWidth()
+            .height(spacing.stdHeight),
+        text = viewModel.state.profileName,
+        readOnly = !viewModel.state.profileEditEnabled.value
     )
 }
