@@ -16,21 +16,26 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
-    buildTypes {
-        release {
-            minifyEnabled false
-        }
-    }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
     kotlinOptions {
         jvmTarget = '1.8'
+        useIR = true
     }
-    
+    buildFeatures {
+        compose true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion Versions.COMPOSE
+    }
 }
 
 dependencies {
-
+    implementation(Dependencies.COMPOSE_RUNTIME)
+    implementation(Dependencies.COMPOSE_COMPILER)
+    implementation(Dependencies.COMPOSE_TOOL_PREVIEW)
+    implementation(Dependencies.COMPOSE_MATERIAL)
+    implementation(Dependencies.COMPOSE_UI)
 }
