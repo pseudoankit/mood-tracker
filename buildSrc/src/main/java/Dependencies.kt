@@ -54,5 +54,7 @@ object Dependencies {
     const val COMPOSE_COMPILER = "androidx.compose.compiler:compiler:${Versions.COMPOSE}"
     const val COMPOSE_MATERIAL = "androidx.compose.material:material:${Versions.COMPOSE}"
     const val COMPOSE_TOOL_PREVIEW = "androidx.compose.ui:ui-tooling-preview:${Versions.COMPOSE}"
+    const val COMPOSE_CONSTRAINT =
+        "androidx.constraintlayout:constraintlayout-compose:${Versions.COMPOSE_CONSTRAINE}"
 
 }

@@ -40,6 +40,7 @@ dependencies {
     implementation(Dependencies.COMPOSE_TOOL_PREVIEW)
     implementation(Dependencies.COMPOSE_MATERIAL)
     implementation(Dependencies.COMPOSE_UI)
+    implementation(Dependencies.COMPOSE_CONSTRAINT)
 
     implementation(Dependencies.CUSTOM_VIEWS)
     implementation(Dependencies.MATERIAL)
