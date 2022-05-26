@@ -19,7 +19,7 @@ class TaskEntryViewModel @Inject constructor(
     val selectedTasksMap = mutableMapOf<Int, TaskIcon>()
 
     val suggestedTaskNamesLiveData get() = suggestedTaskNameRepository.suggestedNames
-    val suggestedTaskIconsLiveData get() = suggestedTaskRepo.suggestedTaskIcon
+    val suggestedTaskIconsLiveData get() = suggestedTaskRepo.suggestedTaskIcon()
     val taskCategoriesLiveData get() = taskCategoryRepo.taskCategories
 
     fun addCategory(item: TaskCategory) = launchIo { taskCategoryRepo.insertTaskCategory(item) }

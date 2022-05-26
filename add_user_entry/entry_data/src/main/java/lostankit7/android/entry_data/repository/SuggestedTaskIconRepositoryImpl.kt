@@ -11,7 +11,7 @@ class SuggestedTaskIconRepositoryImpl(
     private val dao: SuggestedTaskIconDao,
 ) : SuggestedTaskIconRepository {
 
-    override val suggestedTaskIcon = dao.suggestedTaskIcons().map { it.toSuggestedTaskIcon() }
+    override fun suggestedTaskIcon() = dao.suggestedTaskIcons().map { it.toSuggestedTaskIcon() }
 
     override suspend fun insertSuggestedTaskIcons(list: List<SuggestedTaskIcon>) =
         dao.insertSuggestedIcons(list.toLocalSuggestedTaskIconInsert())
