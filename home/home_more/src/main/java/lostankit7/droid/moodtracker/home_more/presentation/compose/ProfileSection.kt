@@ -24,32 +24,25 @@ fun ProfileSection(
     val spacing = LocalSpacing.current
     val context = LocalContext.current
 
-    Box(
+    Row(
         modifier = Modifier
-            .offset(y = spacing.dp_20)
             .fillMaxWidth()
-            .wrapContentWidth()
+            .offset(y = spacing.dp_20)
             .border(
                 width = spacing.strokeLvl2,
                 color = StrokeColor,
                 shape = RoundedCornerShape(spacing.cornerRadius)
             )
+            .padding(horizontal = spacing.dp_10, vertical = spacing.dp_7),
+        verticalAlignment = Alignment.CenterVertically
     ) {
-        Row(
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(horizontal = spacing.dp_10, vertical = spacing.dp_7),
-            verticalAlignment = Alignment.CenterVertically
-        ) {
-            DrawProfileImage()
-            Spacer(modifier = Modifier.width(spacing.dp_15))
-            DrawProfileNameEdt(viewModel = viewModel)
-            Spacer(modifier = Modifier.width(spacing.dp_10))
-        }
+        DrawProfileImage()
+        Spacer(modifier = Modifier.width(spacing.dp_15))
+        DrawProfileNameEdt(viewModel = viewModel)
+        Spacer(modifier = Modifier.width(spacing.dp_10))
     }
 }
 
-//todo generic edt
 @Composable
 fun DrawProfileNameEdt(viewModel: MoreViewModel) {
     val spacing = LocalSpacing.current
