@@ -14,6 +14,7 @@ import androidx.compose.ui.layout.layoutId
 import androidx.compose.ui.res.painterResource
 import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.constraintlayout.compose.ConstraintSet
+import lazycoder21.droid.compose.CircularFontAwesomeIcon
 import lazycoder21.droid.compose.FaIcons
 import lostankit7.droid.moodtracker.core_ui.compose.values.Dimensions
 import lostankit7.droid.moodtracker.core_ui.compose.values.LocalSpacing
@@ -62,7 +63,11 @@ fun DrawProfileEditButton(viewModel: MoreViewModel) {
         modifier = Modifier
             .layoutId(PROFILE_EDIT_BTN)
             .offset(x = spacing.dp_4, y = -spacing.dp_15),
-        backgroundColor = Color.White
+        backgroundColor = Color.White,
+        onClick = {
+            viewModel.state.profileEditEnabled.value =
+                !viewModel.state.profileEditEnabled.value
+        }
     )
 }
 

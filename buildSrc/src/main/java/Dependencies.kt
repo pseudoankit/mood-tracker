@@ -49,7 +49,7 @@ object Dependencies {
 
 
     //compose
-    const val COMPOSE_FONT_AWESOME = "com.github.lazycoder-21:ComposeFontAwesomeLibrary:v1.0.0"
+    const val COMPOSE_FONT_AWESOME = "com.github.lazycoder-21:ComposeFontAwesomeLibrary:v1.1.0"
     const val COMPOSE_UI = "androidx.compose.ui:ui:${Versions.COMPOSE}"
     const val COMPOSE_RUNTIME = "androidx.compose.runtime:runtime:${Versions.COMPOSE}"
     const val COMPOSE_COMPILER = "androidx.compose.compiler:compiler:${Versions.COMPOSE}"
