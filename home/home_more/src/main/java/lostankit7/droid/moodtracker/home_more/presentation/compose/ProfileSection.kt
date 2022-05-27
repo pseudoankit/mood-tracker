@@ -2,7 +2,6 @@ package lostankit7.droid.moodtracker.home_more.presentation.compose
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.border
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -10,15 +9,17 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.layoutId
 import androidx.compose.ui.res.painterResource
 import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.constraintlayout.compose.ConstraintSet
+import lazycoder21.droid.compose.FaIcons
 import lostankit7.droid.moodtracker.core_ui.compose.values.Dimensions
 import lostankit7.droid.moodtracker.core_ui.compose.values.LocalSpacing
 import lostankit7.droid.moodtracker.core_ui.compose.values.StrokeColor
-import lostankit7.droid.moodtracker.core_ui.compose.values.spacing
 import lostankit7.droid.moodtracker.core_ui.compose.view.CustomTextField
+import lostankit7.droid.moodtracker.core_ui.utils.spacing
 import lostankit7.droid.moodtracker.home_more.R
 import lostankit7.droid.moodtracker.home_more.presentation.viewmodel.MoreViewModel
 
@@ -56,23 +57,12 @@ private fun createConstraints(spacing: Dimensions): ConstraintSet = ConstraintSe
 
 @Composable
 fun DrawProfileEditButton(viewModel: MoreViewModel) {
-    Image(
-        painter = painterResource(id = R.drawable.ic_me),
-        contentDescription = "Edit Profile",
+    CircularFontAwesomeIcon(
+        icon = FaIcons.PencilAlt,
         modifier = Modifier
-            .size(spacing.dp_35)
             .layoutId(PROFILE_EDIT_BTN)
-            .offset(x = spacing.dp_4, y = -spacing.dp_15)
-            .clip(CircleShape)
-            .border(
-                width = spacing.strokeLvl1,
-                color = StrokeColor,
-                shape = CircleShape
-            )
-            .clickable {
-                viewModel.state.profileEditEnabled.value =
-                    !viewModel.state.profileEditEnabled.value
-            },
+            .offset(x = spacing.dp_4, y = -spacing.dp_15),
+        backgroundColor = Color.White
     )
 }
 

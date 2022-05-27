@@ -1,6 +1,5 @@
 package lostankit7.droid.moodtracker.core_ui.compose.values
 
-import androidx.compose.runtime.Composable
 import androidx.compose.runtime.compositionLocalOf
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.TextUnit
@@ -41,4 +40,3 @@ data class Dimensions(
 }
 
 val LocalSpacing = compositionLocalOf { Dimensions() }
-val spacing @Composable get() = LocalSpacing.current

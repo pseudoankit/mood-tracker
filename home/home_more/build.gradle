@@ -42,6 +42,7 @@ dependencies {
     implementation(Dependencies.COMPOSE_UI)
     implementation(Dependencies.COMPOSE_CONSTRAINT)
 
+    implementation(Dependencies.COMPOSE_FONT_AWESOME)
     implementation(Dependencies.CUSTOM_VIEWS)
     implementation(Dependencies.MATERIAL)
     implementation(Dependencies.NAVIGATION_FRAGMENT)
