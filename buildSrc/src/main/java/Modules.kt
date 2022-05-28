@@ -12,5 +12,6 @@ object Modules {
     const val HOME_MORE = ":home:home_more"
 
     //common
-    const val CORE = ":core"
+    const val CORE = ":common:core"
+    const val CORE_UI = ":common:core_ui"
 }

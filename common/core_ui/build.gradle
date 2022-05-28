@@ -25,7 +25,6 @@ android {
         useIR = true
     }
     buildFeatures {
-        viewBinding true
         compose true
     }
     composeOptions {
@@ -34,31 +33,9 @@ android {
 }
 
 dependencies {
-    implementation(project(Modules.CORE))
-    implementation(project(Modules.CORE_UI))
     implementation(Dependencies.COMPOSE_RUNTIME)
     implementation(Dependencies.COMPOSE_COMPILER)
     implementation(Dependencies.COMPOSE_TOOL_PREVIEW)
     implementation(Dependencies.COMPOSE_MATERIAL)
     implementation(Dependencies.COMPOSE_UI)
-
-    implementation(Dependencies.CUSTOM_VIEWS)
-
-    implementation(Dependencies.COMPOSE_RUNTIME)
-    implementation(Dependencies.COMPOSE_COMPILER)
-    implementation(Dependencies.COMPOSE_TOOL_PREVIEW)
-    implementation(Dependencies.COMPOSE_MATERIAL)
-    implementation(Dependencies.COMPOSE_UI)
-
-    implementation(Dependencies.DAGGER)
-    kapt(Dependencies.DAGGER_COMPILER)
-
-    implementation(Dependencies.CORE_KTX)
-    implementation(Dependencies.APP_COMPAT)
-    implementation(Dependencies.MATERIAL)
-
-    implementation(Dependencies.NAVIGATION_UI)
-    implementation(Dependencies.NAVIGATION_FRAGMENT)
-
-    implementation(Dependencies.VIEW_MODEL)
 }

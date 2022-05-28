@@ -3,14 +3,27 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="../../../../layout/compose-model-1653498701983.xml" value="0.2669376693766938" />
+        <entry key="../../../../layout/compose-model-1653503003309.xml" value="0.26422764227642276" />
+        <entry key="../../../../layout/compose-model-1653547756694.xml" value="0.25745257452574527" />
+        <entry key="../../../../layout/compose-model-1653565624266.xml" value="0.24525745257452575" />
+        <entry key="add_user_entry/entry_presentation/src/main/res/layout/dialog_text_entry.xml" value="0.12685185185185185" />
         <entry key="add_user_entry/entry_presentation/src/main/res/layout/fragment_add_user_entry_host.xml" value="0.12962962962962962" />
+        <entry key="add_user_entry/entry_presentation/src/main/res/layout/fragment_display_list.xml" value="0.159375" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.11574074074074074" />
         <entry key="app/src/main/res/layout/fragment_splash.xml" value="0.11574074074074074" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.18055555555555555" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1675925925925926" />
+        <entry key="common/core_ui/src/main/res/drawable/bg_rounded_ripple.xml" value="0.1675925925925926" />
+        <entry key="common/core_ui/src/main/res/layout/item_rv_empy_state.xml" value="0.159375" />
+        <entry key="core/src/main/res/drawable/bg_rounded_white_stroke_gray.xml" value="0.19166666666666668" />
         <entry key="core/src/main/res/layout/item_rv_user_entries.xml" value="0.2833333333333333" />
         <entry key="core/src/main/res/layout/partial_host_fragment_container.xml" value="0.29791666666666666" />
         <entry key="core/src/main/res/layout/partial_root_fragment_container.xml" value="0.29791666666666666" />
         <entry key="core/src/main/res/menu/menu_options.xml" value="0.2833333333333333" />
         <entry key="core/src/main/res/menu/menu_options_item_user_entries.xml" value="0.29791666666666666" />
+        <entry key="core/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1296875" />
+        <entry key="core/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1296875" />
         <entry key="entry/entry_presentation/src/main/res/layout/common_action_bar.xml" value="0.29791666666666666" />
         <entry key="entry/entry_presentation/src/main/res/layout/fragment_add_mood_entry.xml" value="0.11944444444444445" />
         <entry key="entry/entry_presentation/src/main/res/layout/fragment_add_user_entry.xml" value="0.11944444444444445" />
@@ -25,6 +38,7 @@
         <entry key="home/home_host/src/main/res/layout/fragment_home.xml" value="0.13240740740740742" />
         <entry key="home/home_host/src/main/res/layout/partial_layout_profile_section.xml" value="0.2833333333333333" />
         <entry key="home/home_host/src/main/res/menu/nav_menu_bottom_nav_home.xml" value="0.29791666666666666" />
+        <entry key="home/home_more/src/main/res/drawable/ic_android.xml" value="0.115625" />
         <entry key="home/home_more/src/main/res/layout/fragment_more.xml" value="0.29791666666666666" />
         <entry key="home/home_more/src/main/res/layout/partial_layout_profile_section.xml" value="0.29791666666666666" />
         <entry key="home/home_user_entries/src/main/res/layout/fragment_user_entries.xml" value="0.29791666666666666" />

@@ -9,7 +9,8 @@ dependencyResolutionManagement {
 rootProject.name = "Mood Tracker"
 include ':app'
 
-include ':core'
+include ':common:core'
+include ':common:core_ui'
 
 include ':add_user_entry:entry_data'
 include ':add_user_entry:entry_domain'
