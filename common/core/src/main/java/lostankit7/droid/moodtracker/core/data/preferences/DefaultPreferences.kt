@@ -9,12 +9,18 @@ class DefaultPreferences(
     private val prefs: SharedPreferences,
 ) : Preferences {
 
-    override fun isInitialLaunch(value: Boolean) {
-        prefs[Preferences.IS_INITIAL_LAUNCH] = value
-    }
+    override var isInitialLaunch: Boolean = false
+        get() = prefs[Preferences.IS_INITIAL_LAUNCH, true]
+        set(value) {
+            prefs[Preferences.IS_INITIAL_LAUNCH] = value
+            field = value
+        }
 
-    override fun isInitialLaunch(): Boolean {
-        return prefs[Preferences.IS_INITIAL_LAUNCH, true]
-    }
+    override var profileName: String = ""
+        get() = prefs[Preferences.USER_NAME, ""]
+        set(value) {
+            prefs[Preferences.USER_NAME] = value
+            field = value
+        }
 
 }

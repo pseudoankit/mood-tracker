@@ -5,12 +5,13 @@ import androidx.fragment.app.FragmentActivity
 import dagger.Component
 import lostankit7.droid.moodtracker.core.di.component.CoreAppComponent
 import lostankit7.droid.moodtracker.core.di.component.CoreAppComponent.Companion.coreAppComponent
+import lostankit7.droid.moodtracker.core.di.module.CoreDataModule
 import lostankit7.droid.moodtracker.home_more.di.module.ViewModelModule
 import lostankit7.droid.moodtracker.home_more.presentation.fragment.MoreFragment
 
 @Component(
     dependencies = [CoreAppComponent::class],
-    modules = [ViewModelModule::class]
+    modules = [ViewModelModule::class, CoreDataModule::class]
 )
 interface HomeMoreComponent {
 

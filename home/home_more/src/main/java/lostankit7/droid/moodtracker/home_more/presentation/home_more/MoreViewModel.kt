@@ -8,12 +8,16 @@ import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.receiveAsFlow
 import kotlinx.coroutines.launch
+import lostankit7.droid.moodtracker.core.domain.preferences.Preferences
+import lostankit7.droid.moodtracker.core.presentation.utils.launchIo
 import lostankit7.droid.moodtracker.core_ui.utils.UIEvent
 import javax.inject.Inject
 
-class MoreViewModel @Inject constructor() : ViewModel() {
+class MoreViewModel @Inject constructor(
+    private val prefs: Preferences,
+) : ViewModel() {
 
-    var state by mutableStateOf(HomeMoreUIState())
+    var state by mutableStateOf(HomeMoreUIState(profileName = prefs.profileName))
         private set
 
     private val _uiEvent = Channel<UIEvent>()
@@ -24,6 +28,9 @@ class MoreViewModel @Inject constructor() : ViewModel() {
             is HomeMoreEvent.AlterProfileEditEnabledState -> {
                 state = state.copy(profileEditEnabled = !state.profileEditEnabled)
                 onEvent(HomeMoreEvent.KeyboardState(state.profileEditEnabled))
+                viewModelScope.launchIo {
+                    prefs.profileName = state.profileName
+                }
             }
             is HomeMoreEvent.UpdateProfileName -> {
                 state = state.copy(profileName = event.name)
