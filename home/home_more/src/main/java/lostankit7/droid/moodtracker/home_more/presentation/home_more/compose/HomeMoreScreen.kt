@@ -15,6 +15,7 @@ import kotlinx.coroutines.flow.collect
 import lostankit7.droid.moodtracker.core_ui.utils.UIEvent
 import lostankit7.droid.moodtracker.core_ui.utils.noRippleClickable
 import lostankit7.droid.moodtracker.core_ui.utils.spacing
+import lostankit7.droid.moodtracker.core_ui.utils.update
 import lostankit7.droid.moodtracker.home_more.presentation.home_more.HomeMoreEvent
 import lostankit7.droid.moodtracker.home_more.presentation.home_more.MoreViewModel
 
@@ -26,7 +27,7 @@ fun HomeMoreScreen(viewModel: MoreViewModel) {
         viewModel.uiEvent.collect { event ->
             when (event) {
                 is UIEvent.Keyboard -> {
-                    if (event.open) keyboardController?.show() else keyboardController?.hide()
+                    keyboardController?.update(event.open)
                 }
             }
         }

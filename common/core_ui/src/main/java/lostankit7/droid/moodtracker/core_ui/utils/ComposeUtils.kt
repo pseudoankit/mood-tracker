@@ -9,6 +9,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.composed
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalSoftwareKeyboardController
+import androidx.compose.ui.platform.SoftwareKeyboardController
 import lostankit7.droid.moodtracker.core_ui.compose.values.LocalSpacing
 
 @ExperimentalComposeUiApi
@@ -24,4 +25,9 @@ inline fun Modifier.noRippleClickable(crossinline onClick: () -> Unit): Modifier
         interactionSource = remember { MutableInteractionSource() }) {
         onClick()
     }
+}
+
+@ExperimentalComposeUiApi
+fun SoftwareKeyboardController.update(open: Boolean) {
+    if (open) show() else hide()
 }
