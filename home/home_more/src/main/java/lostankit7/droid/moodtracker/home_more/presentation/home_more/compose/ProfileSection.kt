@@ -60,7 +60,7 @@ private fun createConstraints(spacing: Dimensions): ConstraintSet = ConstraintSe
 @Composable
 fun DrawProfileEditButton(viewModel: MoreViewModel) {
     CircularFontAwesomeIcon(
-        icon = FaIcons.PencilAlt,
+        icon = if (viewModel.state.profileEditEnabled) FaIcons.Check else FaIcons.PencilAlt,
         modifier = Modifier
             .layoutId(PROFILE_EDIT_BTN)
             .offset(x = spacing.dp_4, y = -spacing.dp_15),
