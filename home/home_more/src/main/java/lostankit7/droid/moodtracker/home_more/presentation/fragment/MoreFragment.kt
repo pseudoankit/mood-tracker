@@ -15,8 +15,8 @@ import androidx.lifecycle.ViewModelProvider
 import lostankit7.droid.moodtracker.core.presentation.base.fragment.BaseComposeDaggerFragment
 import lostankit7.droid.moodtracker.core_ui.compose.values.LocalSpacing
 import lostankit7.droid.moodtracker.home_more.di.component.HomeMoreComponent.Companion.createComponent
-import lostankit7.droid.moodtracker.home_more.presentation.compose.HomeMoreScreen
-import lostankit7.droid.moodtracker.home_more.presentation.viewmodel.MoreViewModel
+import lostankit7.droid.moodtracker.home_more.presentation.home_more.MoreViewModel
+import lostankit7.droid.moodtracker.home_more.presentation.home_more.compose.HomeMoreScreen
 
 @ExperimentalComposeUiApi
 class MoreFragment : BaseComposeDaggerFragment<MoreViewModel>() {

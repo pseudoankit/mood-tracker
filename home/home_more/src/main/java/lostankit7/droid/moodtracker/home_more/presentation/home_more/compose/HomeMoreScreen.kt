@@ -1,4 +1,4 @@
-package lostankit7.droid.moodtracker.home_more.presentation.compose
+package lostankit7.droid.moodtracker.home_more.presentation.home_more.compose
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -12,7 +12,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalSoftwareKeyboardController
 import androidx.compose.ui.tooling.preview.Preview
 import lostankit7.droid.moodtracker.core_ui.compose.values.LocalSpacing
-import lostankit7.droid.moodtracker.home_more.presentation.viewmodel.MoreViewModel
+import lostankit7.droid.moodtracker.home_more.presentation.home_more.MoreViewModel
 
 @ExperimentalComposeUiApi
 @Composable
@@ -24,7 +24,7 @@ fun HomeMoreScreen(viewModel: MoreViewModel) {
     Column(
         androidx.compose.ui.Modifier.fillMaxSize()
     ) {
-        ProfileSection(viewModel)
+        DrawProfileSection(viewModel)
         Spacer(modifier = Modifier.height(spacing.dp_10))
     }
 
