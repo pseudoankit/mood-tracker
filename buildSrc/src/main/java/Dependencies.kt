@@ -56,6 +56,9 @@ object Dependencies {
     const val COMPOSE_MATERIAL = "androidx.compose.material:material:${Versions.COMPOSE}"
     const val COMPOSE_TOOL_PREVIEW = "androidx.compose.ui:ui-tooling-preview:${Versions.COMPOSE}"
     const val COMPOSE_CONSTRAINT =
-        "androidx.constraintlayout:constraintlayout-compose:${Versions.COMPOSE_CONSTRAINE}"
-
+        "androidx.constraintlayout:constraintlayout-compose:${Versions.COMPOSE_CONSTRAINT}"
+    const val COMPOSE_ACTIVITY = "androidx.activity:activity-compose:${Versions.COMPOSE_ACTIVITY}"
+    const val COMPOSE_VIEWMODEL =
+        "androidx.lifecycle:lifecycle-viewmodel-compose:${Versions.COMPOSE_ACTIVITY}"
+    const val COMPOSE_IMAGE_PICKER = "com.himanshoe:pluck:1.0.0-RC1"
 }

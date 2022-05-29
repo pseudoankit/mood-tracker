@@ -2,6 +2,7 @@ package lostankit7.droid.moodtracker.home_more.presentation.home_more.compose
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.border
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -85,7 +86,7 @@ private fun DrawProfileComponent(viewModel: MoreViewModel) {
             .padding(horizontal = spacing.dp_10, vertical = spacing.dp_7),
         verticalAlignment = Alignment.CenterVertically
     ) {
-        DrawProfileImage()
+        DrawProfileImage(viewModel)
         Spacer(modifier = Modifier.width(spacing.dp_15))
         DrawProfileNameEdt(viewModel = viewModel)
         Spacer(modifier = Modifier.width(spacing.dp_10))
@@ -93,7 +94,7 @@ private fun DrawProfileComponent(viewModel: MoreViewModel) {
 }
 
 @Composable
-fun DrawProfileImage() {
+fun DrawProfileImage(viewModel: MoreViewModel) {
     val spacing = LocalSpacing.current
     Image(
         modifier = Modifier
@@ -103,9 +104,12 @@ fun DrawProfileImage() {
                 width = spacing.strokeLvl1,
                 color = StrokeColor,
                 shape = CircleShape
-            ),
-        painter = painterResource(id = R.drawable.ic_me),
+            )
+            .clickable(enabled = viewModel.state.profileEditEnabled) {
+
+            },
         contentDescription = "Profile Image",
+        painter = painterResource(id = R.drawable.ic_me)
     )
 }
 

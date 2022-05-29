@@ -41,6 +41,8 @@ dependencies {
     implementation(Dependencies.COMPOSE_MATERIAL)
     implementation(Dependencies.COMPOSE_UI)
     implementation(Dependencies.COMPOSE_CONSTRAINT)
+    implementation(Dependencies.COMPOSE_ACTIVITY)
+    implementation(Dependencies.COMPOSE_IMAGE_PICKER)
 
     implementation(Dependencies.COMPOSE_FONT_AWESOME)
     implementation(Dependencies.CUSTOM_VIEWS)
