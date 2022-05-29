@@ -1,4 +1,4 @@
-package lostankit7.droid.moodtracker.user_entries.presentation.fragment
+package lostankit7.droid.moodtracker.user_entries.presentation
 
 import android.view.LayoutInflater
 import android.view.MenuItem
@@ -9,7 +9,7 @@ import lostankit7.droid.moodtracker.core.presentation.shared.adapter.RvUserEntri
 import lostankit7.droid.moodtracker.user_entries.R
 import lostankit7.droid.moodtracker.user_entries.databinding.FragmentUserEntriesBinding
 import lostankit7.droid.moodtracker.user_entries.di.component.HomeUserEntriesComponent.Companion.createComponent
-import lostankit7.droid.moodtracker.user_entries.presentation.viewmodel.UserEntriesViewModel
+import lostankit7.droid.moodtracker.user_entries.presentation.user_entries.viewmodel.UserEntriesViewModel
 
 class UserEntriesFragment :
     BaseDaggerFragment<FragmentUserEntriesBinding, UserEntriesViewModel>() {

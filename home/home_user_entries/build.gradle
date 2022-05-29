@@ -38,6 +38,14 @@ dependencies {
     implementation(project(Modules.ENTRY_DATA))
     implementation(project(Modules.ENTRY_DOMAIN))
 
+    implementation(project(Modules.CORE_UI))
+    implementation(Dependencies.COMPOSE_RUNTIME)
+    implementation(Dependencies.COMPOSE_COMPILER)
+    implementation(Dependencies.COMPOSE_TOOL_PREVIEW)
+    implementation(Dependencies.COMPOSE_MATERIAL)
+    implementation(Dependencies.COMPOSE_UI)
+    implementation(Dependencies.COMPOSE_CONSTRAINT)
+
     implementation(Dependencies.MATERIAL)
     implementation(Dependencies.NAVIGATION_FRAGMENT)
     implementation(Dependencies.NAVIGATION_UI)

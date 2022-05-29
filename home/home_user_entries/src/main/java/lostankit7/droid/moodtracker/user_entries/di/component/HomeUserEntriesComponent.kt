@@ -7,7 +7,7 @@ import lostankit7.android.entry_data.di.LocalDbModule
 import lostankit7.droid.moodtracker.core.di.component.CoreAppComponent
 import lostankit7.droid.moodtracker.core.di.component.CoreAppComponent.Companion.coreAppComponent
 import lostankit7.droid.moodtracker.user_entries.di.module.ViewModelModule
-import lostankit7.droid.moodtracker.user_entries.presentation.fragment.UserEntriesFragment
+import lostankit7.droid.moodtracker.user_entries.presentation.UserEntriesFragment
 
 @Component(
     dependencies = [CoreAppComponent::class],
