@@ -8,19 +8,19 @@ import androidx.viewbinding.ViewBinding
 
 abstract class BaseRvAdapter<VB : ViewBinding, T : Any>(
     val mList: MutableList<T> = mutableListOf(),
-    val context: Context? = null
-) : RecyclerView.Adapter<BaseRvAdapter.Companion.ViewHolder<VB>>() {
+    val context: Context? = null,
+) : RecyclerView.Adapter<BaseViewHolder<VB>>() {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder<VB> {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseViewHolder<VB> {
         val binding = inflateLayout(LayoutInflater.from(parent.context), parent, false)
-        val holder = ViewHolder(binding)
+        val holder = BaseViewHolder(binding)
         onCreateHolder(holder, parent, viewType)
         return holder
     }
 
-    open fun onCreateHolder(holder: ViewHolder<VB>, parent: ViewGroup, viewType: Int) {}
+    open fun onCreateHolder(holder: BaseViewHolder<VB>, parent: ViewGroup, viewType: Int) {}
 
-    override fun onBindViewHolder(holder: ViewHolder<VB>, position: Int) {
+    override fun onBindViewHolder(holder: BaseViewHolder<VB>, position: Int) {
         bindViewHolder(mList[position], position, holder.binding)
     }
 
@@ -30,10 +30,6 @@ abstract class BaseRvAdapter<VB : ViewBinding, T : Any>(
     abstract fun inflateLayout(
         layoutInflater: LayoutInflater,
         parent: ViewGroup,
-        attachToParent: Boolean
+        attachToParent: Boolean,
     ): VB
-
-    companion object {
-        class ViewHolder<VB : ViewBinding>(val binding: VB) : RecyclerView.ViewHolder(binding.root)
-    }
 }

@@ -17,7 +17,9 @@ class UserEntriesFragment :
     private val adapter = RvUserEntriesAdapter(::onItemClicked)
 
     override fun initRecyclerView() {
-        binding.rvUserEntries.adapter = adapter
+        binding.rvUserEntries.apply {
+            adapter = this@UserEntriesFragment.adapter
+        }
     }
 
     private fun onItemClicked(menuItem: MenuItem, userEntry: UserEntry): Boolean {
