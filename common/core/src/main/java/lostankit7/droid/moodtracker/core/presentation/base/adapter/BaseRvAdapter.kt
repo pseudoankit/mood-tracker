@@ -13,12 +13,12 @@ abstract class BaseRvAdapter<VB : ViewBinding, T : Any>(
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder<VB> {
         val binding = inflateLayout(LayoutInflater.from(parent.context), parent, false)
-        onCreateViewHolder(binding)
-        return ViewHolder(binding)
+        val holder = ViewHolder(binding)
+        onCreateHolder(holder, parent, viewType)
+        return holder
     }
 
-    open fun onCreateViewHolder(binding: VB) {}
-
+    open fun onCreateHolder(holder: ViewHolder<VB>, parent: ViewGroup, viewType: Int) {}
 
     override fun onBindViewHolder(holder: ViewHolder<VB>, position: Int) {
         bindViewHolder(mList[position], position, holder.binding)
