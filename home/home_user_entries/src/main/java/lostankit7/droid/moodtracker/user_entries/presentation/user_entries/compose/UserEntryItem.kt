@@ -4,11 +4,15 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.unit.dp
 import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.constraintlayout.compose.ConstraintSet
+import lazycoder21.droid.compose.FaIcons
+import lazycoder21.droid.compose.FontAwesomeIcon
 import lostankit7.droid.moodtracker.core.domain.entities.shared.UserEntry
 import lostankit7.droid.moodtracker.core_ui.compose.values.Dimensions
 import lostankit7.droid.moodtracker.core_ui.utils.spacing
@@ -54,17 +58,27 @@ fun DrawTasks() {
 
 @Composable
 fun DrawMoodName(item: UserEntry) {
-
+    Text(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(spacing.dp_5),
+        text = item.moodName
+    )
 }
 
 @Composable
 fun DrawEntryDetails(item: UserEntry) {
-
+    Text(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(spacing.dp_5),
+        text = item.date
+    )
 }
 
 @Composable
 fun DrawMoodIcon(item: UserEntry) {
-
+    FontAwesomeIcon(FaIcons.PencilAlt, size = 45.dp)
 }
 
 

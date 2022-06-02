@@ -1,45 +1,43 @@
 package lostankit7.droid.moodtracker.user_entries.presentation
 
+import android.os.Bundle
 import android.view.LayoutInflater
-import android.view.MenuItem
+import android.view.View
+import android.view.ViewGroup
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.ComposeView
+import androidx.compose.ui.platform.ViewCompositionStrategy
 import androidx.lifecycle.ViewModelProvider
-import lostankit7.droid.moodtracker.core.domain.entities.shared.UserEntry
-import lostankit7.droid.moodtracker.core.presentation.base.fragment.BaseDaggerFragment
-import lostankit7.droid.moodtracker.core.presentation.shared.adapter.RvUserEntriesAdapter
-import lostankit7.droid.moodtracker.user_entries.R
-import lostankit7.droid.moodtracker.user_entries.databinding.FragmentUserEntriesBinding
+import lostankit7.droid.moodtracker.core.presentation.base.fragment.BaseComposeDaggerFragment
+import lostankit7.droid.moodtracker.core_ui.compose.values.LocalSpacing
 import lostankit7.droid.moodtracker.user_entries.di.component.HomeUserEntriesComponent.Companion.createComponent
+import lostankit7.droid.moodtracker.user_entries.presentation.user_entries.compose.DrawUserEntryScreen
 import lostankit7.droid.moodtracker.user_entries.presentation.user_entries.viewmodel.UserEntriesViewModel
 
 class UserEntriesFragment :
-    BaseDaggerFragment<FragmentUserEntriesBinding, UserEntriesViewModel>() {
+    BaseComposeDaggerFragment<UserEntriesViewModel>() {
 
-    private val adapter = RvUserEntriesAdapter(::onItemClicked)
-
-    override fun initRecyclerView() {
-        binding.rvUserEntries.apply {
-            adapter = this@UserEntriesFragment.adapter
-        }
-    }
-
-    private fun onItemClicked(menuItem: MenuItem, userEntry: UserEntry): Boolean {
-        return when (menuItem.itemId) {
-            R.id.edit -> {
-                true
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?,
+    ): View? {
+        return context?.let { context ->
+            ComposeView(context).apply {
+                setViewCompositionStrategy(ViewCompositionStrategy.DisposeOnViewTreeLifecycleDestroyed)
+                setContent {
+                    Box(
+                        modifier = Modifier
+                            .fillMaxSize()
+                            .padding(LocalSpacing.current.screenPadding)
+                    ) {
+                        DrawUserEntryScreen(viewModel)
+                    }
+                }
             }
-            R.id.delete -> {
-                viewModel.deleteUserEntry(userEntry)
-                true
-            }
-            else -> false
-        }
-    }
-
-    override fun registerObservers() {
-        super.registerObservers()
-
-        viewModel.allEntriesLiveData.observe(viewLifecycleOwner) {
-            adapter.submitList(it)
         }
     }
 
@@ -47,9 +45,5 @@ class UserEntriesFragment :
         activity?.createComponent?.inject(this)
     }
 
-    override fun inflateLayout(layoutInflater: LayoutInflater) =
-        FragmentUserEntriesBinding.inflate(layoutInflater)
-
-    override fun initiateViewModel(viewModelProvider: ViewModelProvider) =
-        viewModelProvider[UserEntriesViewModel::class.java]
+    override fun ViewModelProvider.initiateViewModel() = this[UserEntriesViewModel::class.java]
 }
