@@ -39,6 +39,7 @@ dependencies {
     implementation(project(Modules.ENTRY_DOMAIN))
 
     implementation(project(Modules.CORE_UI))
+    implementation(Dependencies.COMPOSE_FONT_AWESOME)
     implementation(Dependencies.COMPOSE_RUNTIME)
     implementation(Dependencies.COMPOSE_COMPILER)
     implementation(Dependencies.COMPOSE_TOOL_PREVIEW)

@@ -1,4 +1,7 @@
 package lostankit7.droid.moodtracker.user_entries.presentation.user_entries.uistate
 
-class UserEntriesState {
-}
+import lostankit7.droid.moodtracker.core.domain.entities.shared.UserEntry
+
+data class UserEntriesState(
+    val userEntries: List<UserEntry> = emptyList(),
+)

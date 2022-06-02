@@ -1,4 +1,4 @@
-package lostankit7.droid.moodtracker.home_more.presentation.fragment
+package lostankit7.droid.moodtracker.home_more.presentation
 
 import android.os.Bundle
 import android.view.LayoutInflater

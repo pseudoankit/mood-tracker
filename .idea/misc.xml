@@ -14,6 +14,7 @@
         <entry key="app/src/main/res/layout/fragment_splash.xml" value="0.11574074074074074" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.18055555555555555" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1675925925925926" />
+        <entry key="common/core/src/main/res/layout/item_rv_user_entries.xml" value="0.21311475409836064" />
         <entry key="common/core_ui/src/main/res/drawable/bg_rounded_ripple.xml" value="0.1675925925925926" />
         <entry key="common/core_ui/src/main/res/layout/item_rv_empy_state.xml" value="0.159375" />
         <entry key="core/src/main/res/drawable/bg_rounded_white_stroke_gray.xml" value="0.19166666666666668" />
