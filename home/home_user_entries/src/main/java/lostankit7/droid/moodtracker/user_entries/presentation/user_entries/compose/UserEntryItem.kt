@@ -8,20 +8,25 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.layoutId
 import androidx.compose.ui.unit.dp
 import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.constraintlayout.compose.ConstraintSet
+import lazycoder21.droid.compose.CircularFontAwesomeIcon
+import lazycoder21.droid.compose.FaIcon
 import lazycoder21.droid.compose.FaIcons
 import lazycoder21.droid.compose.FontAwesomeIcon
+import lostankit7.droid.moodtracker.core.domain.entities.shared.Icon.Companion.transformAsString
 import lostankit7.droid.moodtracker.core.domain.entities.shared.UserEntry
-import lostankit7.droid.moodtracker.core_ui.compose.values.Dimensions
+import lostankit7.droid.moodtracker.core_ui.compose.values.*
 import lostankit7.droid.moodtracker.core_ui.utils.spacing
 
-private const val MOOD_ICON = "mood_icon"
-private const val ENTRY_DETAILS = "entry_date"
-private const val MOOD_NAME = "mood_name"
-private const val TASKS = "tasks"
-private const val OPTION_BUTTON = "option_btn"
+private const val LAYOUT_MOOD_ICON = "mood_icon"
+private const val LAYOUT_ENTRY_DETAILS = "entry_date"
+private const val LAYOUT_MOOD_NAME = "mood_name"
+private const val LAYOUT_TASKS = "tasks"
+private const val LAYOUT_OPTION_BUTTON = "option_btn"
+private const val LAYOUT_NOTES = "notes"
 
 @Composable
 fun DrawUserEntryItem(
@@ -30,7 +35,7 @@ fun DrawUserEntryItem(
 ) {
     ConstraintLayout(
         constraintSet = createConstraints(spacing),
-        modifier = Modifier
+        modifier = modifier
             .fillMaxWidth()
             .background(
                 color = Color.White,
@@ -41,19 +46,50 @@ fun DrawUserEntryItem(
         DrawMoodIcon(item)
         DrawEntryDetails(item)
         DrawMoodName(item)
-        DrawTasks()
-        DrawOptionMenu()
+        DrawTasks(item)
+        DrawNotes(item)
+        DrawOptionMenu(item)
     }
 }
 
 @Composable
-fun DrawOptionMenu() {
+fun DrawNotes(item: UserEntry) {
+    if (item.note.isBlank()) return
 
+    Text(
+        modifier = Modifier
+            .fillMaxWidth()
+            .layoutId(LAYOUT_NOTES),
+        text = item.note,
+        fontSize = spacing.text.lvl4,
+        color = SecondaryTextColor,
+    )
 }
 
 @Composable
-fun DrawTasks() {
+fun DrawOptionMenu(item: UserEntry) {
+    CircularFontAwesomeIcon(
+        icon = FaIcons.EllipsisH,
+        modifier = Modifier
+            .layoutId(LAYOUT_OPTION_BUTTON),
+        size = spacing.optionMenuSize,
+        tint = SecondaryIconColor,
+        strokeWidth = spacing.strokeLvl1
+    )
+}
 
+@Composable
+fun DrawTasks(item: UserEntry) {
+    if (item.taskIcons.isEmpty()) return
+
+    FontAwesomeIcon(
+        modifier = Modifier
+            .fillMaxWidth()
+            .layoutId(LAYOUT_TASKS),
+        faIcon = FaIcon.Solid(item.taskIcons.transformAsString),
+        size = spacing.dp_18,
+        tint = UserEntryTaskColor
+    )
 }
 
 @Composable
@@ -61,8 +97,10 @@ fun DrawMoodName(item: UserEntry) {
     Text(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(spacing.dp_5),
-        text = item.moodName
+            .layoutId(LAYOUT_MOOD_NAME),
+        text = item.moodName,
+        fontSize = spacing.text.lvl6,
+        color = MoodIconColor
     )
 }
 
@@ -71,25 +109,35 @@ fun DrawEntryDetails(item: UserEntry) {
     Text(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(spacing.dp_5),
-        text = item.date
+            .layoutId(LAYOUT_ENTRY_DETAILS),
+        text = item.date,
+        fontSize = spacing.text.lvl3
     )
 }
 
 @Composable
 fun DrawMoodIcon(item: UserEntry) {
-    FontAwesomeIcon(FaIcons.PencilAlt, size = 45.dp)
+    FontAwesomeIcon(
+        faIcon = FaIcon.Regular(item.moodIcon),
+        size = 45.dp,
+        tint = MoodIconColor
+    )
 }
 
 
 private fun createConstraints(spacing: Dimensions) = ConstraintSet {
-    val moodIcon = createRefFor(MOOD_ICON)
-    val entryDetails = createRefFor(ENTRY_DETAILS)
-    val moodName = createRefFor(MOOD_NAME)
-    val tasks = createRefFor(TASKS)
-    val optionButton = createRefFor(OPTION_BUTTON)
-    val leftGuide = createGuidelineFromAbsoluteLeft(spacing.dp_50)
+    val moodIcon = createRefFor(LAYOUT_MOOD_ICON)
+    val entryDetails = createRefFor(LAYOUT_ENTRY_DETAILS)
+    val moodName = createRefFor(LAYOUT_MOOD_NAME)
+    val tasks = createRefFor(LAYOUT_TASKS)
+    val optionButton = createRefFor(LAYOUT_OPTION_BUTTON)
+    val leftGuide = createGuidelineFromStart(spacing.dp_50)
+    val notes = createRefFor(LAYOUT_NOTES)
 
+    constrain(notes) {
+        top.linkTo(tasks.bottom)
+        start.linkTo(leftGuide)
+    }
     constrain(moodIcon) {
         top.linkTo(parent.top)
         start.linkTo(parent.start)
