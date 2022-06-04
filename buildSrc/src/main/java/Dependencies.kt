@@ -61,4 +61,5 @@ object Dependencies {
     const val COMPOSE_VIEWMODEL =
         "androidx.lifecycle:lifecycle-viewmodel-compose:${Versions.COMPOSE_ACTIVITY}"
     const val COMPOSE_IMAGE_PICKER = "com.himanshoe:pluck:1.0.0-RC1"
+    const val COMPOSE_LIVEDATA = "androidx.compose.runtime:runtime-livedata:${Versions.COMPOSE}"
 }

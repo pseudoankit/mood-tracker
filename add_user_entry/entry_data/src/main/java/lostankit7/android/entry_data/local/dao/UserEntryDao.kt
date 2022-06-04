@@ -8,7 +8,7 @@ import lostankit7.android.entry_data.local.entities.LocalUserEntry
 interface UserEntryDao {
 
     @Query("SELECT * FROM LocalUserEntry")
-    fun userEntries(): List<LocalUserEntry>
+    fun userEntries(): LiveData<List<LocalUserEntry>>
 
     @Query("SELECT * FROM LocalUserEntry WHERE date = :date")
     fun userEntries(date: String): LiveData<List<LocalUserEntry>>
