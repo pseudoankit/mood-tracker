@@ -30,12 +30,15 @@ data class Dimensions(
     val text: Text = Text(),
     val strokeLvl1: Dp = .7.dp,
     val strokeLvl2: Dp = dp_2,
+    val optionMenuSize: Dp = 21.dp,
 ) {
     data class Text(
-        val xSmall: TextUnit = 8.sp,
-        val small: TextUnit = 11.sp,
-        val medium: TextUnit = 15.sp,
-        val header: TextUnit = 22.sp,
+        val lvl1: TextUnit = 8.sp,
+        val lvl2: TextUnit = 12.sp,
+        val lvl3: TextUnit = 14.sp,
+        val lvl4: TextUnit = 16.sp,
+        val lvl5: TextUnit = 20.sp,
+        val lvl6: TextUnit = 22.sp,
     )
 }
 
