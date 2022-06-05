@@ -16,8 +16,8 @@ import lazycoder21.droid.compose.CircularFontAwesomeIcon
 import lazycoder21.droid.compose.FaIcon
 import lazycoder21.droid.compose.FaIcons
 import lazycoder21.droid.compose.FontAwesomeIcon
+import lostankit7.android.entry_domain.entities.UserEntry
 import lostankit7.droid.moodtracker.core.domain.entities.shared.Icon.Companion.transformAsString
-import lostankit7.droid.moodtracker.core.domain.entities.shared.UserEntry
 import lostankit7.droid.moodtracker.core.presentation.utils.DateTimeUtils.getDay
 import lostankit7.droid.moodtracker.core_ui.compose.values.*
 import lostankit7.droid.moodtracker.core_ui.utils.context

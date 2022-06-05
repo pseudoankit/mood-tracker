@@ -2,8 +2,8 @@ package lostankit7.android.entry_domain.mapper
 
 import lostankit7.android.entry_domain.entities.MoodEntry
 import lostankit7.android.entry_domain.entities.TaskIcon
+import lostankit7.android.entry_domain.entities.UserEntry
 import lostankit7.droid.moodtracker.core.domain.entities.shared.Icon
-import lostankit7.droid.moodtracker.core.domain.entities.shared.UserEntry
 
 object Mapper {
     fun mapDataToUserEntry(

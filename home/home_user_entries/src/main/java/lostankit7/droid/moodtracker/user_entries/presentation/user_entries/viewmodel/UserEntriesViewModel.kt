@@ -3,8 +3,8 @@ package lostankit7.droid.moodtracker.user_entries.presentation.user_entries.view
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
+import lostankit7.android.entry_domain.entities.UserEntry
 import lostankit7.android.entry_domain.repository.UserEntriesRepository
-import lostankit7.droid.moodtracker.core.domain.entities.shared.UserEntry
 import lostankit7.droid.moodtracker.core.presentation.base.viewmodel.BaseViewModel
 import lostankit7.droid.moodtracker.user_entries.presentation.user_entries.event.UserEntriesEvent
 import lostankit7.droid.moodtracker.user_entries.presentation.user_entries.uistate.UserEntriesState

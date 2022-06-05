@@ -1,5 +1,6 @@
-package lostankit7.droid.moodtracker.core.domain.entities.shared
+package lostankit7.android.entry_domain.entities
 
+import lostankit7.droid.moodtracker.core.domain.entities.shared.Icon
 import lostankit7.droid.moodtracker.core.presentation.utils.DateTimeUtils.convertToDate
 import lostankit7.droid.moodtracker.core.presentation.utils.DateTimeUtils.convertToTime
 
