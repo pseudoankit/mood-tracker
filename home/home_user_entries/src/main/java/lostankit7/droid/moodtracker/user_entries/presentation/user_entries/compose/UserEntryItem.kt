@@ -80,13 +80,14 @@ fun DrawOptionMenu(item: UserEntry) {
 
 @Composable
 fun DrawTasks(item: UserEntry) {
-    if (item.taskIcons.isEmpty()) return
+    val taskIcons = item.taskIcons.transformAsString
+    if (taskIcons.isBlank()) return
 
     FontAwesomeIcon(
         modifier = Modifier
             .fillMaxWidth()
             .layoutId(LAYOUT_TASKS),
-        faIcon = FaIcon.Solid(item.taskIcons.transformAsString),
+        faIcon = FaIcon.Solid(taskIcons),
         size = spacing.dp_18,
         tint = UserEntryTaskColor
     )
