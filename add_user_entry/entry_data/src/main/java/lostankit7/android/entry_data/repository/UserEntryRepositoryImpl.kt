@@ -6,12 +6,13 @@ import lostankit7.android.entry_data.mapper.UserEntryMapper.toLocalUserEntryInse
 import lostankit7.android.entry_data.mapper.UserEntryMapper.toLocalUserEntryUpdate
 import lostankit7.android.entry_data.mapper.UserEntryMapper.toUserEntry
 import lostankit7.android.entry_domain.entities.UserEntry
+import lostankit7.android.entry_domain.entities.UserEntry.Companion.addDateHeaders
 import lostankit7.android.entry_domain.entities.UserEntry.Entry.Companion.sort
 import lostankit7.android.entry_domain.repository.UserEntriesRepository
 
 class UserEntryRepositoryImpl(private val dao: UserEntryDao) : UserEntriesRepository {
 
-    override fun userEntries() = dao.userEntries().map { it.toUserEntry.sort }
+    override fun userEntries() = dao.userEntries().map { it.toUserEntry.sort.addDateHeaders }
 
     override fun userEntries(date: String) = dao.userEntries(date).map { it.toUserEntry }
 

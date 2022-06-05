@@ -32,4 +32,20 @@ sealed class UserEntry {
                 }
         }
     }
+
+    companion object {
+        val List<Entry>.addDateHeaders: List<UserEntry>
+            get() = run {
+                val newList = mutableListOf<UserEntry>()
+                this.forEachIndexed { index, entry ->
+                    val date = entry.date
+                    val prevDate = this.getOrNull(index - 1)?.date
+                    val shouldInsertDate = prevDate == null || date != prevDate
+                    if (shouldInsertDate)
+                        newList.add(Date(date = date))
+                    newList.add(entry)
+                }
+                newList
+            }
+    }
 }

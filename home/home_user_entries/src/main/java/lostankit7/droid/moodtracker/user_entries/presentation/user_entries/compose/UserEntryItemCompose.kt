@@ -1,7 +1,7 @@
 package lostankit7.droid.moodtracker.user_entries.presentation.user_entries.compose
 
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
 import androidx.compose.material.Card
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
@@ -12,6 +12,7 @@ import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.withStyle
 import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.constraintlayout.compose.ConstraintSet
+import androidx.constraintlayout.compose.Dimension
 import lazycoder21.droid.compose.CircularFontAwesomeIcon
 import lazycoder21.droid.compose.FaIcon
 import lazycoder21.droid.compose.FaIcons
@@ -30,33 +31,26 @@ private const val LAYOUT_MOOD_NAME = "mood_name"
 private const val LAYOUT_TASKS = "tasks"
 private const val LAYOUT_OPTION_BUTTON = "option_btn"
 private const val LAYOUT_NOTES = "notes"
+private const val LAYOUT_LEFT_STROKE = "left_stroke"
+private const val LAYOUT_RIGHT_STROKE = "right_stroke"
 
 @Composable
-fun DrawUserEntryItem(
+fun DrawUserEntries(
     item: UserEntry.Entry,
     modifier: Modifier = Modifier,
 ) {
-    Card(
-        elevation = spacing.elevation,
-        modifier = modifier
-            .fillMaxWidth(),
-    ) {
-        DrawUserEntries(item)
-    }
-}
-
-@Composable
-private fun DrawUserEntries(item: UserEntry.Entry) {
     ConstraintLayout(
         constraintSet = createConstraints(spacing),
-        modifier = Modifier.padding(vertical = spacing.dp_8, horizontal = spacing.dp_6)
+        modifier = modifier
     ) {
+        DrawLeftBorder()
         DrawMoodIcon(item)
         DrawEntryDetails(item)
         DrawMoodName(item)
         DrawTasks(item)
         DrawNotes(item)
         DrawOptionMenu(item)
+        DrawRightBorder()
     }
 }
 
@@ -144,8 +138,29 @@ private fun DrawMoodIcon(item: UserEntry.Entry) {
     FontAwesomeIcon(
         faIcon = FaIcon.Regular(item.moodIcon),
         size = spacing.userEntry.moodIconSize,
-        tint = MoodIconColor
+        tint = MoodIconColor,
+        modifier = Modifier.layoutId(LAYOUT_MOOD_ICON)
     )
+}
+
+@Composable
+fun DrawLeftBorder() {
+    Card(
+        elevation = spacing.elevationLow,
+        modifier = Modifier
+            .layoutId(LAYOUT_LEFT_STROKE)
+            .width(spacing.strokeLvl1),
+    ) {}
+}
+
+@Composable
+fun DrawRightBorder() {
+    Card(
+        elevation = spacing.elevationLow,
+        modifier = Modifier
+            .layoutId(LAYOUT_RIGHT_STROKE)
+            .width(spacing.strokeLvl1),
+    ) {}
 }
 
 
@@ -155,31 +170,51 @@ private fun createConstraints(spacing: Dimensions) = ConstraintSet {
     val moodName = createRefFor(LAYOUT_MOOD_NAME)
     val tasks = createRefFor(LAYOUT_TASKS)
     val optionButton = createRefFor(LAYOUT_OPTION_BUTTON)
-    val leftGuide = createGuidelineFromStart(spacing.dp_50)
     val notes = createRefFor(LAYOUT_NOTES)
+    val leftBorder = createRefFor(LAYOUT_LEFT_STROKE)
+    val rightBorder = createRefFor(LAYOUT_RIGHT_STROKE)
 
+    val leftGuide = createGuidelineFromStart(spacing.dp_4)
+    val rightGuide = createGuidelineFromEnd(spacing.dp_4)
+    val moodIconGuide = createGuidelineFromStart(spacing.dp_50)
+    val topGuide = createGuidelineFromTop(spacing.dp_8)
+
+    val borderMargin = spacing.dp_0
+
+    constrain(leftBorder) {
+        start.linkTo(parent.start)
+        top.linkTo(parent.top, borderMargin)
+        bottom.linkTo(parent.bottom, borderMargin)
+        height = Dimension.fillToConstraints
+    }
+    constrain(rightBorder) {
+        start.linkTo(parent.end)
+        top.linkTo(parent.top, borderMargin)
+        bottom.linkTo(parent.bottom, borderMargin)
+        height = Dimension.fillToConstraints
+    }
     constrain(notes) {
         top.linkTo(tasks.bottom)
-        start.linkTo(leftGuide)
+        start.linkTo(moodIconGuide)
     }
     constrain(moodIcon) {
-        top.linkTo(parent.top)
-        start.linkTo(parent.start)
+        top.linkTo(topGuide)
+        start.linkTo(leftGuide)
     }
     constrain(entryDetails) {
-        start.linkTo(leftGuide)
-        top.linkTo(parent.top)
+        start.linkTo(moodIconGuide)
+        top.linkTo(topGuide)
     }
     constrain(moodName) {
-        start.linkTo(leftGuide)
+        start.linkTo(moodIconGuide)
         top.linkTo(entryDetails.bottom)
     }
     constrain(tasks) {
-        start.linkTo(leftGuide)
+        start.linkTo(moodIconGuide)
         top.linkTo(moodName.bottom)
     }
     constrain(optionButton) {
-        end.linkTo(parent.end)
-        top.linkTo(parent.top)
+        end.linkTo(rightGuide)
+        top.linkTo(topGuide)
     }
 }

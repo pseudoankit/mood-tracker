@@ -7,7 +7,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
 data class Dimensions(
-    val lvl0: Dp = 0.dp,
+    val dp_0: Dp = 0.dp,
     val dp_2: Dp = 2.dp,
     val dp_4: Dp = 4.dp,
     val dp_6: Dp = 6.dp,
