@@ -4,37 +4,60 @@ import android.app.DatePickerDialog
 import android.app.TimePickerDialog
 import android.content.Context
 import lostankit7.droid.moodtracker.core.utils.Constants.AM
+import lostankit7.droid.moodtracker.core.utils.Constants.DATE_FORMAT
 import lostankit7.droid.moodtracker.core.utils.Constants.DATE_SEPARATOR
 import lostankit7.droid.moodtracker.core.utils.Constants.PM
 import lostankit7.droid.moodtracker.core.utils.Constants.TIME_FORMAT
 import lostankit7.droid.moodtracker.core.utils.Constants.TIME_SEPARATOR
+import java.text.ParseException
 import java.text.SimpleDateFormat
 import java.util.*
 
 object DateTimeUtils {
-    private const val DATE_FORMAT = "dd/MM/yyyy"
     private val dayNames =
         arrayOf("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday")
+
+    val String.convertToDate
+        get() = run {
+            try {
+                SimpleDateFormat(DATE_FORMAT, Locale.ENGLISH).parse(this)
+            } catch (e: ParseException) {
+                null
+            }
+        }
+
+    val String.convertToTime
+        get() = run {
+            try {
+                SimpleDateFormat(TIME_FORMAT, Locale.ENGLISH).parse(this)
+            } catch (e: ParseException) {
+                null
+            }
+        }
 
     /**
      * returns corresponding day of any date ,
      * default formatter = "dd/MM/yyyy"
      * */
-    fun String.getDay(formatter: String = DATE_FORMAT): String = run {
-        val calendar = Calendar.getInstance()
-        val parseDate = SimpleDateFormat(formatter, Locale.ENGLISH).parse(this) ?: return ""
-        calendar.time = parseDate
+    val String.getDay: String
+        get() = run {
+            val calendar = Calendar.getInstance()
+            val parseDate = this.convertToDate ?: return ""
+            calendar.time = parseDate
 
-        val day = calendar.get(Calendar.DAY_OF_WEEK)
-        return day.dayName
-    }
+            val day = calendar.get(Calendar.DAY_OF_WEEK)
+            day.dayName
+        }
 
     /**
      * function to convert int format of day to actual day
-     * @throws[IllegalArgumentException] if input not in range 0..6
+     * @throws[IllegalArgumentException] if input not in range 1..7
      * */
     val Int.dayName
-        get() = if (this in dayNames.indices) dayNames[this] else throw IllegalArgumentException("Day should be in 0..6")
+        get() = run {
+            val dayIndex = this - 1
+            dayNames.getOrElse(dayIndex) { throw IllegalArgumentException("Day should be in 1..7") }
+        }
 
     fun formatTime(h: Int, m: Int, ap: String): String {
         val hour = when {

@@ -7,10 +7,11 @@ import lostankit7.android.entry_data.mapper.UserEntryMapper.toLocalUserEntryUpda
 import lostankit7.android.entry_data.mapper.UserEntryMapper.toUserEntry
 import lostankit7.android.entry_domain.repository.UserEntriesRepository
 import lostankit7.droid.moodtracker.core.domain.entities.shared.UserEntry
+import lostankit7.droid.moodtracker.core.domain.entities.shared.UserEntry.Companion.sort
 
 class UserEntryRepositoryImpl(private val dao: UserEntryDao) : UserEntriesRepository {
 
-    override fun userEntries() = dao.userEntries().map { it.toUserEntry }
+    override fun userEntries() = dao.userEntries().map { it.toUserEntry.sort }
 
     override fun userEntries(date: String) = dao.userEntries(date).map { it.toUserEntry }
 

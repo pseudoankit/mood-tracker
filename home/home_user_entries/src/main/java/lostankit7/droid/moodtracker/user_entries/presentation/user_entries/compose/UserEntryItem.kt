@@ -116,7 +116,7 @@ private fun DrawMoodName(item: UserEntry) {
 @Composable
 private fun DrawEntryDetails(item: UserEntry) {
     val date = item.date
-    val day = item.date.getDay()
+    val day = item.date.getDay
     val time = item.time
 
     Text(
