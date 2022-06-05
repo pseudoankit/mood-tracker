@@ -9,7 +9,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.layoutId
-import androidx.compose.ui.unit.dp
+import androidx.compose.ui.text.SpanStyle
+import androidx.compose.ui.text.buildAnnotatedString
+import androidx.compose.ui.text.withStyle
 import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.constraintlayout.compose.ConstraintSet
 import lazycoder21.droid.compose.CircularFontAwesomeIcon
@@ -18,6 +20,7 @@ import lazycoder21.droid.compose.FaIcons
 import lazycoder21.droid.compose.FontAwesomeIcon
 import lostankit7.droid.moodtracker.core.domain.entities.shared.Icon.Companion.transformAsString
 import lostankit7.droid.moodtracker.core.domain.entities.shared.UserEntry
+import lostankit7.droid.moodtracker.core.presentation.utils.DateTimeUtils.getDay
 import lostankit7.droid.moodtracker.core_ui.compose.values.*
 import lostankit7.droid.moodtracker.core_ui.utils.spacing
 
@@ -61,7 +64,7 @@ fun DrawNotes(item: UserEntry) {
             .fillMaxWidth()
             .layoutId(LAYOUT_NOTES),
         text = item.note,
-        fontSize = spacing.text.lvl4,
+        fontSize = spacing.text.lvl3,
         color = SecondaryTextColor,
     )
 }
@@ -72,7 +75,7 @@ fun DrawOptionMenu(item: UserEntry) {
         icon = FaIcons.EllipsisH,
         modifier = Modifier
             .layoutId(LAYOUT_OPTION_BUTTON),
-        size = spacing.optionMenuSize,
+        size = spacing.userEntry.optionMenuSize,
         tint = SecondaryIconColor,
         strokeWidth = spacing.strokeLvl1
     )
@@ -100,19 +103,33 @@ fun DrawMoodName(item: UserEntry) {
             .fillMaxWidth()
             .layoutId(LAYOUT_MOOD_NAME),
         text = item.moodName,
-        fontSize = spacing.text.lvl6,
+        fontSize = spacing.text.lvl5,
         color = MoodIconColor
     )
 }
 
 @Composable
 fun DrawEntryDetails(item: UserEntry) {
+    val date = item.date
+    val day = item.date.getDay()
+
     Text(
         modifier = Modifier
             .fillMaxWidth()
             .layoutId(LAYOUT_ENTRY_DETAILS),
-        text = item.date,
-        fontSize = spacing.text.lvl3
+        text = buildAnnotatedString {
+            withStyle(
+                style = SpanStyle(color = PrimaryTextColor, fontSize = spacing.text.lvl4)
+            ) {
+                append(day)
+            }
+            append(", ")
+            withStyle(
+                style = SpanStyle(color = SecondaryTextColor, fontSize = spacing.text.lvl2)
+            ) {
+                append(date)
+            }
+        },
     )
 }
 
@@ -120,7 +137,7 @@ fun DrawEntryDetails(item: UserEntry) {
 fun DrawMoodIcon(item: UserEntry) {
     FontAwesomeIcon(
         faIcon = FaIcon.Regular(item.moodIcon),
-        size = 45.dp,
+        size = spacing.userEntry.moodIconSize,
         tint = MoodIconColor
     )
 }
