@@ -1,12 +1,13 @@
 package lostankit7.droid.moodtracker.presentation.splash
 
+import android.content.Context
 import lostankit7.android.entry_domain.entities.*
 import lostankit7.android.entry_domain.repository.*
 import lostankit7.droid.moodtracker.core.domain.preferences.Preferences
 import lostankit7.droid.moodtracker.core.presentation.base.viewmodel.BaseViewModel
 import javax.inject.Inject
 
-class SplashViewModel @Inject constructor(
+class MainViewModel @Inject constructor(
     private val prefs: Preferences,
     private val moodIconRepo: MoodIconRepository,
     private val suggestedMoodIconRepo: SuggestedMoodIconRepository,
@@ -14,17 +15,29 @@ class SplashViewModel @Inject constructor(
     private val taskCategoryRepo: TaskCategoryRepository,
     private val taskIconRepo: TaskIconRepository,
     private val suggestedMoodNameRep: SuggestedMoodNameRepository,
-    private val suggestedTaskNameRepository: SuggestedTaskNameRepository
+    private val suggestedTaskNameRepository: SuggestedTaskNameRepository,
 ) : BaseViewModel() {
 
-    fun saveDefaultIcons(
+    fun saveDefaultValues(context: Context) {
+        saveDefaultIcons(
+            SplashFragmentDataProvider.moodIcons(context),
+            SplashFragmentDataProvider.suggestedMoodIcons(),
+            SplashFragmentDataProvider.taskCategories(context),
+            SplashFragmentDataProvider.taskIcons(context),
+            SplashFragmentDataProvider.suggestedTaskIcons(),
+            SplashFragmentDataProvider.suggestedMoodNames(context),
+            SplashFragmentDataProvider.suggestedTaskNames(context)
+        )
+    }
+
+    private fun saveDefaultIcons(
         moodIcons: List<MoodIcon>,
         suggestedMoodIcons: List<SuggestedMoodIcon>,
         taskCategories: List<TaskCategory>,
         taskIcons: List<TaskIcon>,
         suggestedTaskIcons: List<SuggestedTaskIcon>,
         suggestedMoodNames: List<SuggestedMoodName>,
-        suggestedTaskNames: List<SuggestedTaskName>
+        suggestedTaskNames: List<SuggestedTaskName>,
     ) {
         if (!prefs.isInitialLaunch) return
 
