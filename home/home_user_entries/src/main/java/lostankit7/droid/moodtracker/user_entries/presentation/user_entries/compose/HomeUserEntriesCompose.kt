@@ -23,6 +23,7 @@ fun DrawUserEntryScreen(viewModel: UserEntriesViewModel) {
             DrawDateHeader(entries = entries, index = index)
             Spacer(modifier = Modifier.size(spacing.dp_10))
             DrawUserEntryItem(entries[index])
+            if (index == entries.size - 1) Spacer(modifier = Modifier.size(spacing.dp_10))
         }
     }
 }

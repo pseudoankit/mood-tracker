@@ -12,7 +12,7 @@ import androidx.compose.ui.platform.ComposeView
 import androidx.compose.ui.platform.ViewCompositionStrategy
 import androidx.lifecycle.ViewModelProvider
 import lostankit7.droid.moodtracker.core.presentation.base.fragment.BaseComposeDaggerFragment
-import lostankit7.droid.moodtracker.core_ui.compose.values.LocalSpacing
+import lostankit7.droid.moodtracker.core_ui.utils.spacing
 import lostankit7.droid.moodtracker.user_entries.di.component.HomeUserEntriesComponent.Companion.createComponent
 import lostankit7.droid.moodtracker.user_entries.presentation.user_entries.compose.DrawUserEntryScreen
 import lostankit7.droid.moodtracker.user_entries.presentation.user_entries.viewmodel.UserEntriesViewModel
@@ -32,7 +32,7 @@ class UserEntriesFragment :
                     Box(
                         modifier = Modifier
                             .fillMaxSize()
-                            .padding(LocalSpacing.current.screenPadding)
+                            .padding(spacing.screenPadding)
                     ) {
                         DrawUserEntryScreen(viewModel)
                     }
