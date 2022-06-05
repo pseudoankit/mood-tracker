@@ -4,7 +4,6 @@ import android.app.DatePickerDialog
 import android.app.TimePickerDialog
 import android.content.Context
 import lostankit7.droid.moodtracker.core.utils.Constants.AM
-import lostankit7.droid.moodtracker.core.utils.Constants.DATE_FORMAT
 import lostankit7.droid.moodtracker.core.utils.Constants.DATE_SEPARATOR
 import lostankit7.droid.moodtracker.core.utils.Constants.PM
 import lostankit7.droid.moodtracker.core.utils.Constants.TIME_FORMAT
@@ -13,6 +12,29 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 object DateTimeUtils {
+    private const val DATE_FORMAT = "dd/MM/yyyy"
+    private val dayNames =
+        arrayOf("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday")
+
+    /**
+     * returns corresponding day of any date ,
+     * default formatter = "dd/MM/yyyy"
+     * */
+    fun String.getDay(formatter: String = DATE_FORMAT): String = run {
+        val calendar = Calendar.getInstance()
+        val parseDate = SimpleDateFormat(formatter, Locale.ENGLISH).parse(this) ?: return ""
+        calendar.time = parseDate
+
+        val day = calendar.get(Calendar.DAY_OF_WEEK)
+        return day.dayName
+    }
+
+    /**
+     * function to convert int format of day to actual day
+     * @throws[IllegalArgumentException] if input not in range 0..6
+     * */
+    val Int.dayName
+        get() = if (this in dayNames.indices) dayNames[this] else throw IllegalArgumentException("Day should be in 0..6")
 
     fun formatTime(h: Int, m: Int, ap: String): String {
         val hour = when {
