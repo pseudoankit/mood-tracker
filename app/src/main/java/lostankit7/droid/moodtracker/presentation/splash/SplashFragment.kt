@@ -2,6 +2,7 @@ package lostankit7.droid.moodtracker.presentation.splash
 
 import android.view.LayoutInflater
 import androidx.lifecycle.lifecycleScope
+import kotlinx.coroutines.delay
 import lostankit7.droid.moodtracker.R
 import lostankit7.droid.moodtracker.core.presentation.base.fragment.BaseFragment
 import lostankit7.droid.moodtracker.databinding.FragmentSplashBinding
