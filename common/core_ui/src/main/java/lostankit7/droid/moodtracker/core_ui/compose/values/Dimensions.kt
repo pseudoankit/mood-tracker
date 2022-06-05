@@ -24,14 +24,23 @@ data class Dimensions(
     val screenPadding: Dp = dp_10,
     val stdHeight: Dp = 45.dp,
     val defButtonHeight: Dp = 40.dp,
-    val cornerRadius: Dp = 8.dp,
     val elevation: Dp = 3.dp,
-    val profileImage: Dp = 75.dp,
-    val text: Text = Text(),
+    val cornerRadius: Dp = 8.dp,
     val strokeLvl1: Dp = .7.dp,
     val strokeLvl2: Dp = dp_2,
-    val optionMenuSize: Dp = 18.dp,
+    val text: Text = Text(),
+    val userEntry: UserEntryDimens = UserEntryDimens(),
+    val more: HomeMore = HomeMore(),
 ) {
+    data class HomeMore(
+        val profileImage: Dp = 75.dp,
+    )
+
+    data class UserEntryDimens(
+        val moodIconSize: Dp = 45.dp,
+        val optionMenuSize: Dp = 18.dp,
+    )
+
     data class Text(
         val lvl1: TextUnit = 8.sp,
         val lvl2: TextUnit = 12.sp,

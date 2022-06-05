@@ -98,7 +98,7 @@ fun DrawProfileImage(viewModel: MoreViewModel) {
     val spacing = LocalSpacing.current
     Image(
         modifier = Modifier
-            .size(spacing.profileImage)
+            .size(spacing.more.profileImage)
             .clip(CircleShape)
             .border(
                 width = spacing.strokeLvl1,
