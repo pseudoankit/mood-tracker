@@ -42,11 +42,15 @@ data class Dimensions(
     )
 
     data class Text(
-        val lvl1: TextUnit = 8.sp,
-        val lvl2: TextUnit = 12.sp,
-        val lvl3: TextUnit = 16.sp,
-        val lvl4: TextUnit = 20.sp,
-        val lvl5: TextUnit = 24.sp,
+        val lvl1: TextUnit = 4.sp,
+        val lvl2: TextUnit = 8.sp,
+        val lvl3: TextUnit = 10.sp,
+        val lvl4: TextUnit = 10.sp,
+        val lvl5: TextUnit = 12.sp,
+        val lvl6: TextUnit = 14.sp,
+        val lvl7: TextUnit = 16.sp,
+        val lvl8: TextUnit = 20.sp,
+        val lvl9: TextUnit = 24.sp,
     )
 }
 

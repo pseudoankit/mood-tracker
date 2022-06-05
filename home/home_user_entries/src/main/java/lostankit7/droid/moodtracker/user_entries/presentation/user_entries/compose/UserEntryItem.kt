@@ -22,7 +22,9 @@ import lostankit7.droid.moodtracker.core.domain.entities.shared.Icon.Companion.t
 import lostankit7.droid.moodtracker.core.domain.entities.shared.UserEntry
 import lostankit7.droid.moodtracker.core.presentation.utils.DateTimeUtils.getDay
 import lostankit7.droid.moodtracker.core_ui.compose.values.*
+import lostankit7.droid.moodtracker.core_ui.utils.context
 import lostankit7.droid.moodtracker.core_ui.utils.spacing
+import lostankit7.droid.moodtracker.user_entries.R
 
 private const val LAYOUT_MOOD_ICON = "mood_icon"
 private const val LAYOUT_ENTRY_DETAILS = "entry_date"
@@ -57,14 +59,14 @@ fun DrawUserEntryItem(
 
 @Composable
 fun DrawNotes(item: UserEntry) {
-    if (item.note.isBlank()) return
+    if (item.notes.isBlank()) return
 
     Text(
         modifier = Modifier
             .fillMaxWidth()
             .layoutId(LAYOUT_NOTES),
-        text = item.note,
-        fontSize = spacing.text.lvl3,
+        text = context.getString(R.string.notes_prefix) + item.notes,
+        fontSize = spacing.text.lvl7,
         color = SecondaryTextColor,
     )
 }
@@ -103,7 +105,7 @@ fun DrawMoodName(item: UserEntry) {
             .fillMaxWidth()
             .layoutId(LAYOUT_MOOD_NAME),
         text = item.moodName,
-        fontSize = spacing.text.lvl5,
+        fontSize = spacing.text.lvl8,
         color = MoodIconColor
     )
 }
@@ -112,6 +114,7 @@ fun DrawMoodName(item: UserEntry) {
 fun DrawEntryDetails(item: UserEntry) {
     val date = item.date
     val day = item.date.getDay()
+    val time = item.time
 
     Text(
         modifier = Modifier
@@ -119,15 +122,21 @@ fun DrawEntryDetails(item: UserEntry) {
             .layoutId(LAYOUT_ENTRY_DETAILS),
         text = buildAnnotatedString {
             withStyle(
-                style = SpanStyle(color = PrimaryTextColor, fontSize = spacing.text.lvl4)
+                style = SpanStyle(color = PrimaryTextColor, fontSize = spacing.text.lvl8)
             ) {
                 append(day)
             }
             append(", ")
             withStyle(
-                style = SpanStyle(color = SecondaryTextColor, fontSize = spacing.text.lvl2)
+                style = SpanStyle(color = SecondaryTextColor, fontSize = spacing.text.lvl6)
             ) {
                 append(date)
+            }
+            append(" ")
+            withStyle(
+                style = SpanStyle(color = TimeColor, fontSize = spacing.text.lvl5)
+            ) {
+                append(time)
             }
         },
     )

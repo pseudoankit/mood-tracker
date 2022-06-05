@@ -23,7 +23,7 @@ object UserEntryMapper {
             if (tNames.isEmpty()) tNames.append(DB_ENTRY_SEPARATOR)
 
             return LocalUserEntry(
-                date, time, moodIcon, moodName, tIcons.substring(1), tNames.substring(1), note
+                date, time, moodIcon, moodName, tIcons.substring(1), tNames.substring(1), notes
             )
         }
     val UserEntry.toLocalUserEntryUpdate
