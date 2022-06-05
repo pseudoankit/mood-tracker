@@ -15,6 +15,7 @@ import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.TextUnit
@@ -39,7 +40,7 @@ fun CustomTextField(
         modifier = modifier
             .border(
                 width = spacing.strokeLvl1,
-                color = StrokeColor,
+                color = if (readOnly) Color.Transparent else StrokeColor,
                 shape = RoundedCornerShape(size = spacing.cornerRadius)
             )
             .fillMaxWidth()

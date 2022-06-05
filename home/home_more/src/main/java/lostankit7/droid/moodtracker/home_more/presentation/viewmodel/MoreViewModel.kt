@@ -14,6 +14,6 @@ class MoreViewModel @Inject constructor() : ViewModel() {
     data class State(
         val profilePic: MutableState<Int> = mutableStateOf(R.drawable.ic_me),
         val profileName: MutableState<String> = mutableStateOf(""),
-        val isProfileEditEnabled: MutableState<Boolean> = mutableStateOf(false),
+        val profileEditEnabled: MutableState<Boolean> = mutableStateOf(false),
     )
 }

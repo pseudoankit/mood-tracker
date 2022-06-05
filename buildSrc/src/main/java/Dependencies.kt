@@ -48,11 +48,14 @@ object Dependencies {
     const val ROOM_KTX = "androidx.room:room-ktx:${Versions.ROOM}"
 
 
-    //compose version
+    //compose
+    const val COMPOSE_FONT_AWESOME = "com.github.lazycoder-21:ComposeFontAwesomeLibrary:v1.0.0"
     const val COMPOSE_UI = "androidx.compose.ui:ui:${Versions.COMPOSE}"
     const val COMPOSE_RUNTIME = "androidx.compose.runtime:runtime:${Versions.COMPOSE}"
     const val COMPOSE_COMPILER = "androidx.compose.compiler:compiler:${Versions.COMPOSE}"
     const val COMPOSE_MATERIAL = "androidx.compose.material:material:${Versions.COMPOSE}"
     const val COMPOSE_TOOL_PREVIEW = "androidx.compose.ui:ui-tooling-preview:${Versions.COMPOSE}"
+    const val COMPOSE_CONSTRAINT =
+        "androidx.constraintlayout:constraintlayout-compose:${Versions.COMPOSE_CONSTRAINE}"
 
 }
