@@ -15,16 +15,6 @@ class SplashFragment : BaseFragment<FragmentSplashBinding>() {
     override fun init() {
         navController.popBackStack()
 
-        viewModel.saveDefaultIcons(
-            SplashFragmentDataProvider.moodIcons(requireContext()),
-            SplashFragmentDataProvider.suggestedMoodIcons(),
-            SplashFragmentDataProvider.taskCategories(requireContext()),
-            SplashFragmentDataProvider.taskIcons(requireContext()),
-            SplashFragmentDataProvider.suggestedTaskIcons(),
-            SplashFragmentDataProvider.suggestedMoodNames(requireContext()),
-            SplashFragmentDataProvider.suggestedTaskNames(requireContext())
-        )
-
         lifecycleScope.launchWhenCreated {
             delay(SPLASH_TIME)
             navigateAfterSplash()
