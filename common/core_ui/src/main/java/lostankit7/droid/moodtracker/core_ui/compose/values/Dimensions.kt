@@ -24,6 +24,7 @@ data class Dimensions(
     val screenPadding: Dp = dp_10,
     val stdHeight: Dp = 45.dp,
     val defButtonHeight: Dp = 40.dp,
+    val elevationLow: Dp = 1.dp,
     val elevation: Dp = 3.dp,
     val cornerRadius: Dp = 8.dp,
     val strokeLvl1: Dp = .7.dp,

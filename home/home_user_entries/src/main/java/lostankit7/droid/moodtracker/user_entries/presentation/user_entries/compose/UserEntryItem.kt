@@ -1,13 +1,11 @@
 package lostankit7.droid.moodtracker.user_entries.presentation.user_entries.compose
 
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.Card
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.layoutId
 import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.buildAnnotatedString
@@ -38,15 +36,20 @@ fun DrawUserEntryItem(
     item: UserEntry,
     modifier: Modifier = Modifier,
 ) {
+    Card(
+        elevation = spacing.elevation,
+        modifier = modifier
+            .fillMaxWidth(),
+    ) {
+        DrawUserEntries(item)
+    }
+}
+
+@Composable
+private fun DrawUserEntries(item: UserEntry) {
     ConstraintLayout(
         constraintSet = createConstraints(spacing),
-        modifier = modifier
-            .fillMaxWidth()
-            .background(
-                color = Color.White,
-                shape = RoundedCornerShape(spacing.cornerRadius)
-            )
-            .padding(spacing.dp_10)
+        modifier = Modifier.padding(vertical = spacing.dp_8, horizontal = spacing.dp_6)
     ) {
         DrawMoodIcon(item)
         DrawEntryDetails(item)
@@ -58,7 +61,7 @@ fun DrawUserEntryItem(
 }
 
 @Composable
-fun DrawNotes(item: UserEntry) {
+private fun DrawNotes(item: UserEntry) {
     if (item.notes.isBlank()) return
 
     Text(
@@ -72,7 +75,7 @@ fun DrawNotes(item: UserEntry) {
 }
 
 @Composable
-fun DrawOptionMenu(item: UserEntry) {
+private fun DrawOptionMenu(item: UserEntry) {
     CircularFontAwesomeIcon(
         icon = FaIcons.EllipsisH,
         modifier = Modifier
@@ -84,7 +87,7 @@ fun DrawOptionMenu(item: UserEntry) {
 }
 
 @Composable
-fun DrawTasks(item: UserEntry) {
+private fun DrawTasks(item: UserEntry) {
     val taskIcons = item.taskIcons.transformAsString
     if (taskIcons.isBlank()) return
 
@@ -99,7 +102,7 @@ fun DrawTasks(item: UserEntry) {
 }
 
 @Composable
-fun DrawMoodName(item: UserEntry) {
+private fun DrawMoodName(item: UserEntry) {
     Text(
         modifier = Modifier
             .fillMaxWidth()
@@ -111,7 +114,7 @@ fun DrawMoodName(item: UserEntry) {
 }
 
 @Composable
-fun DrawEntryDetails(item: UserEntry) {
+private fun DrawEntryDetails(item: UserEntry) {
     val date = item.date
     val day = item.date.getDay()
     val time = item.time
@@ -143,7 +146,7 @@ fun DrawEntryDetails(item: UserEntry) {
 }
 
 @Composable
-fun DrawMoodIcon(item: UserEntry) {
+private fun DrawMoodIcon(item: UserEntry) {
     FontAwesomeIcon(
         faIcon = FaIcon.Regular(item.moodIcon),
         size = spacing.userEntry.moodIconSize,
