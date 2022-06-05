@@ -7,13 +7,16 @@ import androidx.lifecycle.ViewModelProvider
 import lostankit7.droid.moodtracker.core.di.viewmodel.ViewModelFactory
 import javax.inject.Inject
 
-abstract class BaseComposeDaggerFragment<VM : ViewModel> : Fragment() {
+abstract class BaseComposeDaggerFragment<VM : ViewModel>(activityScope: Boolean = false) :
+    Fragment() {
 
     @Inject
     lateinit var viewModelFactory: ViewModelFactory
 
     val viewModel: VM by lazy(LazyThreadSafetyMode.NONE) {
-        ViewModelProvider(this, viewModelFactory).initiateViewModel()
+        ViewModelProvider(
+            if (activityScope) requireActivity() else this, viewModelFactory
+        ).initiateViewModel()
     }
 
     override fun onAttach(context: Context) {
