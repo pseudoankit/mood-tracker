@@ -26,7 +26,7 @@ class SplashViewModel @Inject constructor(
         suggestedMoodNames: List<SuggestedMoodName>,
         suggestedTaskNames: List<SuggestedTaskName>
     ) {
-        if (!prefs.isInitialLaunch()) return
+        if (!prefs.isInitialLaunch) return
 
         launchIo {
             moodIconRepo.insertMoodIcons(moodIcons)
@@ -38,6 +38,6 @@ class SplashViewModel @Inject constructor(
             suggestedTaskNameRepository.insertSuggestions(suggestedTaskNames)
         }
         //todo if insertion fails
-        prefs.isInitialLaunch(false)
+        prefs.isInitialLaunch = false
     }
 }

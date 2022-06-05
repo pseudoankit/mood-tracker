@@ -9,6 +9,7 @@ import lostankit7.android.entry_presentation.R
 import lostankit7.android.entry_presentation.databinding.ItemIconWithTextListBinding
 import lostankit7.droid.moodtracker.core.domain.entities.shared.BaseIcon
 import lostankit7.droid.moodtracker.core.presentation.base.adapter.BaseDiffRvAdapter
+import lostankit7.droid.moodtracker.core.presentation.base.adapter.BaseViewHolder
 import lostankit7.droid.moodtracker.core.presentation.utils.DialogHelper
 
 class IconListRvAdapter(
@@ -17,8 +18,8 @@ class IconListRvAdapter(
 ) : BaseDiffRvAdapter<ItemIconWithTextListBinding, BaseIcon>() {
 
     override fun onCreateHolder(
-        holder: BaseDiffRvAdapter.Companion.ViewHolder<ItemIconWithTextListBinding>,
-        parent: ViewGroup, viewType: Int
+        holder: BaseViewHolder<ItemIconWithTextListBinding>,
+        parent: ViewGroup, viewType: Int,
     ) {
         super.onCreateHolder(holder, parent, viewType)
 

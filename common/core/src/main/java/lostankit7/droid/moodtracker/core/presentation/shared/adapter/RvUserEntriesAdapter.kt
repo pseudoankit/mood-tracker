@@ -10,6 +10,7 @@ import lostankit7.droid.moodtracker.core.R
 import lostankit7.droid.moodtracker.core.databinding.ItemRvUserEntriesBinding
 import lostankit7.droid.moodtracker.core.domain.entities.shared.UserEntry
 import lostankit7.droid.moodtracker.core.presentation.base.adapter.BaseDiffRvAdapter
+import lostankit7.droid.moodtracker.core.presentation.base.adapter.BaseViewHolder
 import lostankit7.droid.moodtracker.core.presentation.utils.DialogHelper
 import lostankit7.droid.moodtracker.core.presentation.utils.ViewExt.hide
 
@@ -18,9 +19,9 @@ class RvUserEntriesAdapter(
 ) : BaseDiffRvAdapter<ItemRvUserEntriesBinding, UserEntry>() {
 
     override fun onCreateHolder(
-        holder: BaseDiffRvAdapter.Companion.ViewHolder<ItemRvUserEntriesBinding>,
+        holder: BaseViewHolder<ItemRvUserEntriesBinding>,
         parent: ViewGroup,
-        viewType: Int
+        viewType: Int,
     ) {
         super.onCreateHolder(holder, parent, viewType)
 
@@ -58,11 +59,6 @@ class RvUserEntriesAdapter(
     }
 
     override fun inflateLayout(
-        layoutInflater: LayoutInflater, parent: ViewGroup, attachToParent: Boolean
+        layoutInflater: LayoutInflater, parent: ViewGroup, attachToParent: Boolean,
     ) = ItemRvUserEntriesBinding.inflate(layoutInflater, parent, false)
-
-    companion object {
-        fun newInstance(itemClicked: (MenuItem, UserEntry) -> Boolean) =
-            RvUserEntriesAdapter(itemClicked)
-    }
 }

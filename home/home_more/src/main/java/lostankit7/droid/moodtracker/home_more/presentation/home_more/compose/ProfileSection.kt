@@ -1,7 +1,8 @@
-package lostankit7.droid.moodtracker.home_more.presentation.compose
+package lostankit7.droid.moodtracker.home_more.presentation.home_more.compose
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.border
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -14,6 +15,7 @@ import androidx.compose.ui.layout.layoutId
 import androidx.compose.ui.res.painterResource
 import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.constraintlayout.compose.ConstraintSet
+import lazycoder21.droid.compose.CircularFontAwesomeIcon
 import lazycoder21.droid.compose.FaIcons
 import lostankit7.droid.moodtracker.core_ui.compose.values.Dimensions
 import lostankit7.droid.moodtracker.core_ui.compose.values.LocalSpacing
@@ -21,13 +23,14 @@ import lostankit7.droid.moodtracker.core_ui.compose.values.StrokeColor
 import lostankit7.droid.moodtracker.core_ui.compose.view.CustomTextField
 import lostankit7.droid.moodtracker.core_ui.utils.spacing
 import lostankit7.droid.moodtracker.home_more.R
-import lostankit7.droid.moodtracker.home_more.presentation.viewmodel.MoreViewModel
+import lostankit7.droid.moodtracker.home_more.presentation.home_more.HomeMoreEvent
+import lostankit7.droid.moodtracker.home_more.presentation.home_more.MoreViewModel
 
 private const val PROFILE_BOX = "profile_box"
 private const val PROFILE_EDIT_BTN = "profile_edt_btn"
 
 @Composable
-fun ProfileSection(
+fun DrawProfileSection(
     viewModel: MoreViewModel,
 ) {
     ConstraintLayout(
@@ -35,7 +38,7 @@ fun ProfileSection(
         modifier = Modifier
             .fillMaxWidth()
     ) {
-        DrawProfileCore(viewModel)
+        DrawProfileComponent(viewModel)
         DrawProfileEditButton(viewModel = viewModel)
     }
 }
@@ -58,16 +61,19 @@ private fun createConstraints(spacing: Dimensions): ConstraintSet = ConstraintSe
 @Composable
 fun DrawProfileEditButton(viewModel: MoreViewModel) {
     CircularFontAwesomeIcon(
-        icon = FaIcons.PencilAlt,
+        icon = if (viewModel.state.profileEditEnabled) FaIcons.Check else FaIcons.PencilAlt,
         modifier = Modifier
             .layoutId(PROFILE_EDIT_BTN)
             .offset(x = spacing.dp_4, y = -spacing.dp_15),
-        backgroundColor = Color.White
+        backgroundColor = Color.White,
+        onClick = {
+            viewModel.onEvent(HomeMoreEvent.AlterProfileEditEnabledState)
+        }
     )
 }
 
 @Composable
-private fun DrawProfileCore(viewModel: MoreViewModel) {
+private fun DrawProfileComponent(viewModel: MoreViewModel) {
     Row(
         modifier = Modifier
             .fillMaxWidth()
@@ -80,7 +86,7 @@ private fun DrawProfileCore(viewModel: MoreViewModel) {
             .padding(horizontal = spacing.dp_10, vertical = spacing.dp_7),
         verticalAlignment = Alignment.CenterVertically
     ) {
-        DrawProfileImage()
+        DrawProfileImage(viewModel)
         Spacer(modifier = Modifier.width(spacing.dp_15))
         DrawProfileNameEdt(viewModel = viewModel)
         Spacer(modifier = Modifier.width(spacing.dp_10))
@@ -88,7 +94,7 @@ private fun DrawProfileCore(viewModel: MoreViewModel) {
 }
 
 @Composable
-fun DrawProfileImage() {
+fun DrawProfileImage(viewModel: MoreViewModel) {
     val spacing = LocalSpacing.current
     Image(
         modifier = Modifier
@@ -98,9 +104,12 @@ fun DrawProfileImage() {
                 width = spacing.strokeLvl1,
                 color = StrokeColor,
                 shape = CircleShape
-            ),
-        painter = painterResource(id = R.drawable.ic_me),
+            )
+            .clickable(enabled = viewModel.state.profileEditEnabled) {
+
+            },
         contentDescription = "Profile Image",
+        painter = painterResource(id = R.drawable.ic_me)
     )
 }
 
@@ -113,6 +122,9 @@ fun DrawProfileNameEdt(viewModel: MoreViewModel) {
             .fillMaxWidth()
             .height(spacing.stdHeight),
         text = viewModel.state.profileName,
-        readOnly = !viewModel.state.profileEditEnabled.value
+        onValueChanged = {
+            viewModel.onEvent(HomeMoreEvent.UpdateProfileName(it))
+        },
+        readOnly = !viewModel.state.profileEditEnabled
     )
 }

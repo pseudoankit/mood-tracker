@@ -31,8 +31,17 @@ class AddTaskEntryFragment : BaseDaggerFragment<FragmentAddTaskEntryBinding, Tas
     private val adapter = RvTaskAdapter(::provideTaskIcons, ::onTaskSelected)
 
     private fun provideTaskIcons(category: String, adapter: TaskIconRvAdapter) {
-        viewModel.getTaskIcons(category).observe(viewLifecycleOwner) {
-            adapter.submitList(it)
+        viewModel.getTaskIcons(category).observe(viewLifecycleOwner) { list ->
+            reSelectPreviousSelectedIcons(list)
+            adapter.submitList(list)
+        }
+    }
+
+    private fun reSelectPreviousSelectedIcons(list: List<TaskIcon>) {
+        list.forEach { icon ->
+            viewModel.selectedTasksMap[icon.id]?.let {
+                icon.isSelected = true
+            }
         }
     }
 
@@ -55,10 +64,11 @@ class AddTaskEntryFragment : BaseDaggerFragment<FragmentAddTaskEntryBinding, Tas
     }
 
     private fun onTaskSelected(task: BaseIcon) = with(viewModel) {
-        if (selectedTasksMap.containsKey(task.hashCode()))
-            selectedTasksMap.remove(task.hashCode())
-        else
-            selectedTasksMap[task.hashCode()] = task as TaskIcon
+        selectedTasksMap[task.id]?.let {
+            selectedTasksMap.remove(task.id)
+        } ?: run {
+            selectedTasksMap[task.id] = task as TaskIcon
+        }
     }
 
     override fun initRecyclerView() {

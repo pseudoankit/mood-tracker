@@ -11,8 +11,6 @@ import androidx.compose.material.LocalTextStyle
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.MutableState
-import androidx.compose.runtime.mutableStateOf
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -25,8 +23,8 @@ import lostankit7.droid.moodtracker.core_ui.compose.values.StrokeColor
 @Composable
 fun CustomTextField(
     modifier: Modifier = Modifier,
-    text: MutableState<String> = mutableStateOf(""),
-    onValueChanged: (String) -> Unit = { text.value = it },
+    text: String,
+    onValueChanged: (String) -> Unit,
     placeholderText: String = "",
     readOnly: Boolean = false,
     textStyle: TextStyle = TextStyle.Default,
@@ -45,7 +43,7 @@ fun CustomTextField(
             )
             .fillMaxWidth()
             .padding(spacing.dp_10),
-        value = text.value,
+        value = text,
         onValueChange = onValueChanged,
         singleLine = true,
         cursorBrush = SolidColor(MaterialTheme.colors.primary),
@@ -57,7 +55,7 @@ fun CustomTextField(
             ) {
                 if (leadingIcon != null) leadingIcon()
                 Box(Modifier.weight(1f)) {
-                    if (text.value.isEmpty()) Text(
+                    if (text.isEmpty()) Text(
                         placeholderText,
                         style = LocalTextStyle.current.copy(
                             color = MaterialTheme.colors.onSurface.copy(alpha = 0.3f),

@@ -8,7 +8,6 @@ object Constants {
     const val TIME_FORMAT = "KK:mm a"
     const val AM = "AM"
     const val PM = "PM"
-    const val SPLASH_TIME = 1500L
 }
 
 

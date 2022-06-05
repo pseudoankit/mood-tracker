@@ -5,13 +5,14 @@ import android.view.ViewGroup
 import lostankit7.android.entry_domain.entities.Suggestion
 import lostankit7.droid.moodtracker.core.databinding.ItemTextChipsBinding
 import lostankit7.droid.moodtracker.core.presentation.base.adapter.BaseDiffRvAdapter
+import lostankit7.droid.moodtracker.core.presentation.base.adapter.BaseViewHolder
 
 class ChipsRvAdapter(private val itemClick: (Suggestion) -> Unit) :
     BaseDiffRvAdapter<ItemTextChipsBinding, Suggestion>() {
 
     override fun onCreateHolder(
-        holder: BaseDiffRvAdapter.Companion.ViewHolder<ItemTextChipsBinding>,
-        parent: ViewGroup, viewType: Int
+        holder: BaseViewHolder<ItemTextChipsBinding>,
+        parent: ViewGroup, viewType: Int,
     ) {
         super.onCreateHolder(holder, parent, viewType)
         holder.binding.root.setOnClickListener { itemClick(getItem(holder.adapterPosition)) }

@@ -11,6 +11,8 @@ internal object Versions {
     const val OKHTTP = "5.0.0-alpha.2"
     const val ROOM = "2.4.0"
     const val COMPOSE = "1.1.0"
-    const val COMPOSE_CONSTRAINE = "1.0.1"
+    const val COMPOSE_CONSTRAINT = "1.0.1"
     const val NAVIGATION = "2.4.2"
+    const val COMPOSE_ACTIVITY = "1.4.0"
+    const val COMPOSE_VIEWMODEL = "2.4.0"
 }
