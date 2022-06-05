@@ -28,7 +28,7 @@ class UserEntriesViewModel @Inject constructor(
 
     fun singleDateUserEntries(date: String) = repository.userEntries(date)
 
-    fun deleteUserEntry(userEntry: UserEntry) = launchIo { repository.deleteUserEntry(userEntry) }
+    fun deleteUserEntry(entry: UserEntry.Entry) = launchIo { repository.deleteUserEntry(entry) }
 
-    fun updateUserEntry(userEntry: UserEntry) = launchIo { repository.updateUserEntry(userEntry) }
+    fun updateUserEntry(entry: UserEntry.Entry) = launchIo { repository.updateUserEntry(entry) }
 }

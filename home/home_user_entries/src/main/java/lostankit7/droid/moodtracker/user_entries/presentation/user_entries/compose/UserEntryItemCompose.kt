@@ -33,7 +33,7 @@ private const val LAYOUT_NOTES = "notes"
 
 @Composable
 fun DrawUserEntryItem(
-    item: UserEntry,
+    item: UserEntry.Entry,
     modifier: Modifier = Modifier,
 ) {
     Card(
@@ -46,7 +46,7 @@ fun DrawUserEntryItem(
 }
 
 @Composable
-private fun DrawUserEntries(item: UserEntry) {
+private fun DrawUserEntries(item: UserEntry.Entry) {
     ConstraintLayout(
         constraintSet = createConstraints(spacing),
         modifier = Modifier.padding(vertical = spacing.dp_8, horizontal = spacing.dp_6)
@@ -61,7 +61,7 @@ private fun DrawUserEntries(item: UserEntry) {
 }
 
 @Composable
-private fun DrawNotes(item: UserEntry) {
+private fun DrawNotes(item: UserEntry.Entry) {
     if (item.notes.isBlank()) return
 
     Text(
@@ -75,7 +75,7 @@ private fun DrawNotes(item: UserEntry) {
 }
 
 @Composable
-private fun DrawOptionMenu(item: UserEntry) {
+private fun DrawOptionMenu(item: UserEntry.Entry) {
     CircularFontAwesomeIcon(
         icon = FaIcons.EllipsisH,
         modifier = Modifier
@@ -87,7 +87,7 @@ private fun DrawOptionMenu(item: UserEntry) {
 }
 
 @Composable
-private fun DrawTasks(item: UserEntry) {
+private fun DrawTasks(item: UserEntry.Entry) {
     val taskIcons = item.taskIcons.transformAsString
     if (taskIcons.isBlank()) return
 
@@ -102,7 +102,7 @@ private fun DrawTasks(item: UserEntry) {
 }
 
 @Composable
-private fun DrawMoodName(item: UserEntry) {
+private fun DrawMoodName(item: UserEntry.Entry) {
     Text(
         modifier = Modifier
             .fillMaxWidth()
@@ -114,7 +114,7 @@ private fun DrawMoodName(item: UserEntry) {
 }
 
 @Composable
-private fun DrawEntryDetails(item: UserEntry) {
+private fun DrawEntryDetails(item: UserEntry.Entry) {
     val date = item.date
     val day = item.date.getDay
     val time = item.time
@@ -131,12 +131,6 @@ private fun DrawEntryDetails(item: UserEntry) {
             }
             append(", ")
             withStyle(
-                style = SpanStyle(color = SecondaryTextColor, fontSize = spacing.text.lvl6)
-            ) {
-                append(date)
-            }
-            append(" ")
-            withStyle(
                 style = SpanStyle(color = TimeColor, fontSize = spacing.text.lvl5)
             ) {
                 append(time)
@@ -146,7 +140,7 @@ private fun DrawEntryDetails(item: UserEntry) {
 }
 
 @Composable
-private fun DrawMoodIcon(item: UserEntry) {
+private fun DrawMoodIcon(item: UserEntry.Entry) {
     FontAwesomeIcon(
         faIcon = FaIcon.Regular(item.moodIcon),
         size = spacing.userEntry.moodIconSize,

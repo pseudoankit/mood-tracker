@@ -8,9 +8,9 @@ import lostankit7.droid.moodtracker.core.utils.Constants.DB_ENTRY_SEPARATOR
 object UserEntryMapper {
 
     val List<LocalUserEntry>.toUserEntry
-        get() = map { it.toUserEntry }
+        get() = map { it.toEntry }
 
-    val UserEntry.toLocalUserEntryInsert: LocalUserEntry
+    val UserEntry.Entry.toLocalUserEntryInsert: LocalUserEntry
         get() {
             val tIcons = StringBuilder("")
             val tNames = StringBuffer("")
@@ -26,9 +26,9 @@ object UserEntryMapper {
                 date, time, moodIcon, moodName, tIcons.substring(1), tNames.substring(1), notes
             )
         }
-    val UserEntry.toLocalUserEntryUpdate
+    val UserEntry.Entry.toLocalUserEntryUpdate
         get() = toLocalUserEntryInsert.also { it.id = id }
-    val LocalUserEntry.toUserEntry: UserEntry
+    val LocalUserEntry.toEntry: UserEntry.Entry
         get() {
             val taskIcons = mutableListOf<Icon>()
 
@@ -39,6 +39,6 @@ object UserEntryMapper {
                 taskIcons.add(Icon(icon = icons[i], name = names[i]))
             }
 
-            return UserEntry(date, time, moodIcon, moodName, taskIcons, note, id)
+            return UserEntry.Entry(date, time, moodIcon, moodName, taskIcons, note, id)
         }
 }

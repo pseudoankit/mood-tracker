@@ -29,7 +29,7 @@ fun DrawUserEntryScreen(viewModel: UserEntriesViewModel) {
 }
 
 @Composable
-fun DrawDateHeader(entries: List<UserEntry>, index: Int) {
+fun DrawDateHeader(entries: List<UserEntry.Entry>, index: Int) {
     val currItem = entries[index].date
     val prevItem = entries.getOrNull(index - 1)?.date
     val dateHeader = if (currItem == prevItem) null else currItem

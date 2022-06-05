@@ -10,14 +10,14 @@ object Mapper {
         moodEntry: MoodEntry,
         tasksMap: MutableMap<Int, TaskIcon>,
         note: String,
-    ): UserEntry {
+    ): UserEntry.Entry {
         val taskIcons = mutableListOf<Icon>()
 
         for ((_, taskIcon) in tasksMap) {
             taskIcons.add(taskIcon.toIcon)
         }
 
-        return UserEntry(
+        return UserEntry.Entry(
             moodEntry.date,
             moodEntry.time,
             moodEntry.moodIcon.icon,

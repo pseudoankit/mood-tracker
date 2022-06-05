@@ -3,8 +3,8 @@ package lostankit7.droid.moodtracker.user_entries.presentation.user_entries.uist
 import lostankit7.android.entry_domain.entities.UserEntry
 
 data class UserEntriesState(
-    val userEntries: List<UserEntry> = emptyList(),
+    val entries: List<UserEntry.Entry> = emptyList(),
     val isLoading: Boolean = false,
 ) {
-    val emptyState get() = userEntries.isEmpty()
+    val emptyState get() = entries.isEmpty()
 }
