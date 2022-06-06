@@ -30,9 +30,9 @@ fun DrawUserEntryScreen(viewModel: UserEntriesViewModel) {
 
             when (val currItem = entries[index]) {
                 is UserEntry.Date -> {
-                    DrawMonthCompose(currItem, prevItem)
+                    DrawMonthHeader(currItem, prevItem)
                     Spacer(modifier = Modifier.size(spacing.dp_10))
-                    DrawHeaderDate(currItem.date)
+                    DrawDateHeader(currItem.date)
                 }
                 is UserEntry.Entry -> {
                     DrawUserEntryItem(
@@ -48,7 +48,7 @@ fun DrawUserEntryScreen(viewModel: UserEntriesViewModel) {
 }
 
 @Composable
-fun DrawMonthCompose(currItem: UserEntry.Date, prevItem: UserEntry?) {
+private fun DrawMonthHeader(currItem: UserEntry.Date, prevItem: UserEntry?) {
     val currItemDate = currItem.date
     val prevItemDate = (prevItem as? UserEntry.Entry)?.date
 
@@ -64,7 +64,7 @@ fun DrawMonthCompose(currItem: UserEntry.Date, prevItem: UserEntry?) {
             text = month,
             modifier = Modifier.align(Alignment.Center),
             color = PrimaryTextColor,
-            fontSize = spacing.text.lvl6,
+            fontSize = spacing.text.lvl8,
             fontWeight = FontWeight.SemiBold
         )
     }
@@ -88,7 +88,7 @@ private fun CloseBoxIfLastEntryOfSameDate(list: List<UserEntry>, index: Int) {
 }
 
 @Composable
-private fun DrawHeaderDate(date: String) {
+private fun DrawDateHeader(date: String) {
     Card(
         modifier = Modifier
             .fillMaxWidth(),
