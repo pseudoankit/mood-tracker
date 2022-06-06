@@ -14,8 +14,26 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 object DateTimeUtils {
-    private val dayNames =
+    private val daysName =
         arrayOf("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday")
+    private val monthsName = arrayOf("January", "February", "March", "April", "May", "June",
+        "July", "August", "September", "October", "November", "December")
+
+    fun getMonthIfDatesNotFallInSameMonth(prev: String?, curr: String): String? {
+        val currDate = Calendar.getInstance().apply {
+            time = curr.convertToDate ?: return null
+        }
+        val currMonth = currDate[Calendar.MONTH]
+
+        if (prev == null) return monthsName.getOrNull(currMonth)
+
+        val prevDate = Calendar.getInstance().apply {
+            time = prev.convertToDate ?: return null
+        }
+        val prevMonth = prevDate[Calendar.MONTH]
+
+        return if (currMonth == prevMonth) null else monthsName.getOrNull(currMonth)
+    }
 
     val String.convertToDate
         get() = run {
@@ -56,7 +74,7 @@ object DateTimeUtils {
     val Int.dayName
         get() = run {
             val dayIndex = this - 1
-            dayNames.getOrElse(dayIndex) { throw IllegalArgumentException("Day should be in 1..7") }
+            daysName.getOrElse(dayIndex) { throw IllegalArgumentException("Day should be in 1..7") }
         }
 
     fun formatTime(h: Int, m: Int, ap: String): String {

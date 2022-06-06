@@ -9,7 +9,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.font.FontWeight
 import lostankit7.android.entry_domain.entities.UserEntry
+import lostankit7.droid.moodtracker.core.presentation.utils.DateTimeUtils
+import lostankit7.droid.moodtracker.core_ui.compose.values.PrimaryTextColor
 import lostankit7.droid.moodtracker.core_ui.utils.spacing
 import lostankit7.droid.moodtracker.user_entries.presentation.user_entries.viewmodel.UserEntriesViewModel
 
@@ -22,15 +25,18 @@ fun DrawUserEntryScreen(viewModel: UserEntriesViewModel) {
         modifier = Modifier.fillMaxSize()
     ) {
         items(entries.size) { index ->
-            when (val entry = entries[index]) {
+
+            val prevItem = entries.getOrNull(index - 1)
+
+            when (val currItem = entries[index]) {
                 is UserEntry.Date -> {
+                    DrawMonthCompose(currItem, prevItem)
                     Spacer(modifier = Modifier.size(spacing.dp_10))
-                    DrawHeaderDate(entry.date)
+                    DrawHeaderDate(currItem.date)
                 }
                 is UserEntry.Entry -> {
                     DrawUserEntryItem(
-                        currItem = entry,
-                        prevItem = entries.getOrNull(index - 1)
+                        currItem = currItem, prevItem = prevItem
                     )
                     CloseBoxIfLastEntryOfSameDate(entries, index)
                 }
@@ -42,6 +48,29 @@ fun DrawUserEntryScreen(viewModel: UserEntriesViewModel) {
 }
 
 @Composable
+fun DrawMonthCompose(currItem: UserEntry.Date, prevItem: UserEntry?) {
+    val currItemDate = currItem.date
+    val prevItemDate = (prevItem as? UserEntry.Entry)?.date
+
+    val month =
+        DateTimeUtils.getMonthIfDatesNotFallInSameMonth(prevItemDate, currItemDate) ?: return
+
+    Box(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(top = spacing.dp_6)
+    ) {
+        Text(
+            text = month,
+            modifier = Modifier.align(Alignment.Center),
+            color = PrimaryTextColor,
+            fontSize = spacing.text.lvl6,
+            fontWeight = FontWeight.SemiBold
+        )
+    }
+}
+
+@Composable
 private fun CloseBoxIfLastEntryOfSameDate(list: List<UserEntry>, index: Int) {
     val nextItem = list.getOrNull(index + 1)
     if (nextItem != null && nextItem !is UserEntry.Date) return
@@ -49,11 +78,12 @@ private fun CloseBoxIfLastEntryOfSameDate(list: List<UserEntry>, index: Int) {
     Card(
         modifier = Modifier
             .fillMaxWidth()
-            .height(spacing.dp_2),
+            .height(spacing.dp_1),
         shape = RoundedCornerShape(
             bottomEnd = spacing.cornerRadius,
             bottomStart = spacing.cornerRadius
-        )
+        ),
+        elevation = spacing.elevationLow
     ) {}
 }
 
@@ -66,7 +96,7 @@ private fun DrawHeaderDate(date: String) {
             topStart = spacing.cornerRadius,
             topEnd = spacing.cornerRadius
         ),
-        elevation = spacing.elevationLow
+        elevation = spacing.elevation
     ) {
         Box(
             modifier = Modifier

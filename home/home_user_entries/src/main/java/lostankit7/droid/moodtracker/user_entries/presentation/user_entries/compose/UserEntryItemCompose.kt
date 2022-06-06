@@ -108,7 +108,7 @@ private fun DrawTasks(item: UserEntry.Entry) {
         modifier = Modifier
             .fillMaxWidth()
             .layoutId(LAYOUT_TASKS)
-            .padding(bottom = spacing.dp_4),
+            .padding(bottom = spacing.dp_4, top = spacing.dp_2),
         faIcon = FaIcon.Solid(taskIcons),
         size = spacing.dp_18,
         tint = UserEntryTaskColor
