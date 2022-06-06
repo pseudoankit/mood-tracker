@@ -35,7 +35,7 @@ private const val LAYOUT_LEFT_STROKE = "left_stroke"
 private const val LAYOUT_RIGHT_STROKE = "right_stroke"
 
 @Composable
-fun DrawUserEntries(
+fun DrawUserEntryItem(
     item: UserEntry.Entry,
     modifier: Modifier = Modifier,
 ) {

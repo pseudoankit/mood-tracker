@@ -24,12 +24,12 @@ fun DrawUserEntryScreen(viewModel: UserEntriesViewModel) {
         items(entries.size) { index ->
             when (val entry = entries[index]) {
                 is UserEntry.Date -> {
-                    //end previous date
                     Spacer(modifier = Modifier.size(spacing.dp_10))
                     DrawHeaderDate(entry.date)
                 }
                 is UserEntry.Entry -> {
                     DrawUserEntryItem(entry)
+                    CloseBoxIfLastEntryOfSameDate(entries, index)
                 }
             }
 
@@ -39,26 +39,37 @@ fun DrawUserEntryScreen(viewModel: UserEntriesViewModel) {
 }
 
 @Composable
-fun DrawHeaderDate(date: String) {
+private fun CloseBoxIfLastEntryOfSameDate(list: List<UserEntry>, index: Int) {
+    val nextItem = list.getOrNull(index + 1)
+    if (nextItem != null && nextItem !is UserEntry.Date) return
+
+    Card(
+        modifier = Modifier
+            .fillMaxWidth()
+            .height(spacing.dp_2),
+        shape = RoundedCornerShape(
+            bottomEnd = spacing.cornerRadius,
+            bottomStart = spacing.cornerRadius
+        )
+    ) {}
+}
+
+@Composable
+private fun DrawHeaderDate(date: String) {
     Card(
         modifier = Modifier
             .fillMaxWidth(),
         shape = RoundedCornerShape(
             topStart = spacing.cornerRadius,
             topEnd = spacing.cornerRadius
-        )
+        ),
+        elevation = spacing.elevationLow
     ) {
-        Box {
+        Box(
+            modifier = Modifier
+                .padding(vertical = spacing.dp_4)
+        ) {
             Text(text = date, modifier = Modifier.align(Alignment.Center))
         }
     }
-}
-
-@Composable
-fun DrawUserEntryItem(
-    item: UserEntry.Entry,
-) {
-    DrawUserEntries(
-        item,
-    )
 }
