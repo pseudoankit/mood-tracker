@@ -7,12 +7,20 @@ import androidx.viewbinding.ViewBinding
 import lostankit7.droid.moodtracker.core.di.viewmodel.ViewModelFactory
 import javax.inject.Inject
 
-abstract class BaseDaggerFragment<VB : ViewBinding, VM : ViewModel> : BaseFragment<VB>() {
+abstract class BaseDaggerFragment<VB : ViewBinding, VM : ViewModel>(
+    activityScope: Boolean = false,
+) : BaseFragment<VB>() {
 
     @Inject
     lateinit var viewModelFactory: ViewModelFactory
 
-    val viewModel: VM by lazy(LazyThreadSafetyMode.NONE) { initiateViewModel(ViewModelProvider(this, viewModelFactory)) }
+    val viewModel: VM by lazy(LazyThreadSafetyMode.NONE) {
+        initiateViewModel(
+            ViewModelProvider(
+                if (activityScope) requireActivity() else this, viewModelFactory
+            )
+        )
+    }
 
     override fun onAttach(context: Context) {
         super.onAttach(context)

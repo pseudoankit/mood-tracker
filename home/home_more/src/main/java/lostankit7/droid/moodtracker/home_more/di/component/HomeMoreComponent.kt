@@ -7,7 +7,7 @@ import lostankit7.droid.moodtracker.core.di.component.CoreAppComponent
 import lostankit7.droid.moodtracker.core.di.component.CoreAppComponent.Companion.coreAppComponent
 import lostankit7.droid.moodtracker.core.di.module.CoreDataModule
 import lostankit7.droid.moodtracker.home_more.di.module.ViewModelModule
-import lostankit7.droid.moodtracker.home_more.presentation.fragment.MoreFragment
+import lostankit7.droid.moodtracker.home_more.presentation.MoreFragment
 
 @Component(
     dependencies = [CoreAppComponent::class],

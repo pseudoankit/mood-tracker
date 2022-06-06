@@ -9,7 +9,7 @@ import lostankit7.droid.moodtracker.core.di.component.CoreAppComponent.Companion
 import lostankit7.droid.moodtracker.core.di.module.CoreDataModule
 import lostankit7.droid.moodtracker.core.di.scope.ApplicationScope
 import lostankit7.droid.moodtracker.di.module.ViewModelModule
-import lostankit7.droid.moodtracker.presentation.splash.SplashFragment
+import lostankit7.droid.moodtracker.presentation.MainActivity
 
 @ApplicationScope
 @Component(
@@ -28,5 +28,5 @@ interface AppComponent {
                 .build()
     }
 
-    fun inject(frag: SplashFragment)
+    fun inject(frag: MainActivity)
 }

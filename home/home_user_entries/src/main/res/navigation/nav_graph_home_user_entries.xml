@@ -6,6 +6,6 @@
 
     <fragment
         android:id="@+id/userEntriesFragment"
-        android:name="lostankit7.droid.moodtracker.user_entries.presentation.fragment.UserEntriesFragment"
+        android:name="lostankit7.droid.moodtracker.user_entries.presentation.UserEntriesFragment"
         android:label="UserEntriesFragment" />
 </navigation>

@@ -49,7 +49,7 @@ private fun createConstraints(spacing: Dimensions): ConstraintSet = ConstraintSe
     val editButton = createRefFor(PROFILE_EDIT_BTN)
 
     constrain(profileBox) {
-        top.linkTo(parent.top, margin = spacing.dp_15)
+        top.linkTo(parent.top, margin = spacing.dp_16)
     }
 
     constrain(editButton) {
@@ -64,7 +64,7 @@ fun DrawProfileEditButton(viewModel: MoreViewModel) {
         icon = if (viewModel.state.profileEditEnabled) FaIcons.Check else FaIcons.PencilAlt,
         modifier = Modifier
             .layoutId(PROFILE_EDIT_BTN)
-            .offset(x = spacing.dp_4, y = -spacing.dp_15),
+            .offset(x = spacing.dp_4, y = -spacing.dp_16),
         backgroundColor = Color.White,
         onClick = {
             viewModel.onEvent(HomeMoreEvent.AlterProfileEditEnabledState)
@@ -83,11 +83,11 @@ private fun DrawProfileComponent(viewModel: MoreViewModel) {
                 color = StrokeColor,
                 shape = RoundedCornerShape(spacing.cornerRadius)
             )
-            .padding(horizontal = spacing.dp_10, vertical = spacing.dp_7),
+            .padding(horizontal = spacing.dp_10, vertical = spacing.dp_8),
         verticalAlignment = Alignment.CenterVertically
     ) {
         DrawProfileImage(viewModel)
-        Spacer(modifier = Modifier.width(spacing.dp_15))
+        Spacer(modifier = Modifier.width(spacing.dp_16))
         DrawProfileNameEdt(viewModel = viewModel)
         Spacer(modifier = Modifier.width(spacing.dp_10))
     }
@@ -98,7 +98,7 @@ fun DrawProfileImage(viewModel: MoreViewModel) {
     val spacing = LocalSpacing.current
     Image(
         modifier = Modifier
-            .size(spacing.profileImage)
+            .size(spacing.more.profileImage)
             .clip(CircleShape)
             .border(
                 width = spacing.strokeLvl1,

@@ -16,11 +16,6 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
-    buildTypes {
-        release {
-            minifyEnabled false
-        }
-    }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -30,13 +25,26 @@ android {
     }
     buildFeatures {
         viewBinding true
+        compose true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion Versions.COMPOSE
     }
 }
+
 
 dependencies {
     implementation(project(Modules.CORE))
     implementation(project(Modules.ENTRY_DATA))
     implementation(project(Modules.ENTRY_DOMAIN))
+
+    implementation(project(Modules.CORE_UI))
+    implementation(Dependencies.COMPOSE_FONT_AWESOME)
+    implementation(Dependencies.COMPOSE_LIVEDATA)
+    implementation(Dependencies.COMPOSE_COMPILER)
+    implementation(Dependencies.COMPOSE_MATERIAL)
+    implementation(Dependencies.COMPOSE_UI)
+    implementation(Dependencies.COMPOSE_CONSTRAINT)
 
     implementation(Dependencies.MATERIAL)
     implementation(Dependencies.NAVIGATION_FRAGMENT)

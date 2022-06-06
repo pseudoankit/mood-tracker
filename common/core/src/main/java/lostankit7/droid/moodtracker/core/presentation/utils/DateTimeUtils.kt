@@ -9,10 +9,73 @@ import lostankit7.droid.moodtracker.core.utils.Constants.DATE_SEPARATOR
 import lostankit7.droid.moodtracker.core.utils.Constants.PM
 import lostankit7.droid.moodtracker.core.utils.Constants.TIME_FORMAT
 import lostankit7.droid.moodtracker.core.utils.Constants.TIME_SEPARATOR
+import java.text.ParseException
 import java.text.SimpleDateFormat
 import java.util.*
 
 object DateTimeUtils {
+    private val daysName =
+        arrayOf("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday")
+    private val monthsName = arrayOf("January", "February", "March", "April", "May", "June",
+        "July", "August", "September", "October", "November", "December")
+
+    fun getMonthIfDatesNotFallInSameMonth(prev: String?, curr: String): String? {
+        val currDate = Calendar.getInstance().apply {
+            time = curr.convertToDate ?: return null
+        }
+        val currMonth = currDate[Calendar.MONTH]
+
+        if (prev == null) return monthsName.getOrNull(currMonth)
+
+        val prevDate = Calendar.getInstance().apply {
+            time = prev.convertToDate ?: return null
+        }
+        val prevMonth = prevDate[Calendar.MONTH]
+
+        return if (currMonth == prevMonth) null else monthsName.getOrNull(currMonth)
+    }
+
+    val String.convertToDate
+        get() = run {
+            try {
+                SimpleDateFormat(DATE_FORMAT, Locale.ENGLISH).parse(this)
+            } catch (e: ParseException) {
+                null
+            }
+        }
+
+    val String.convertToTime
+        get() = run {
+            try {
+                SimpleDateFormat(TIME_FORMAT, Locale.ENGLISH).parse(this)
+            } catch (e: ParseException) {
+                null
+            }
+        }
+
+    /**
+     * returns corresponding day of any date ,
+     * default formatter = "dd/MM/yyyy"
+     * */
+    val String.getDay: String
+        get() = run {
+            val calendar = Calendar.getInstance()
+            val parseDate = this.convertToDate ?: return ""
+            calendar.time = parseDate
+
+            val day = calendar.get(Calendar.DAY_OF_WEEK)
+            day.dayName
+        }
+
+    /**
+     * function to convert int format of day to actual day
+     * @throws[IllegalArgumentException] if input not in range 1..7
+     * */
+    val Int.dayName
+        get() = run {
+            val dayIndex = this - 1
+            daysName.getOrElse(dayIndex) { throw IllegalArgumentException("Day should be in 1..7") }
+        }
 
     fun formatTime(h: Int, m: Int, ap: String): String {
         val hour = when {

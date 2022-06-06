@@ -49,7 +49,7 @@ object Dependencies {
 
 
     //compose
-    const val COMPOSE_FONT_AWESOME = "com.github.lazycoder-21:ComposeFontAwesomeLibrary:v1.1.0"
+    const val COMPOSE_FONT_AWESOME = "com.github.lazycoder-21:ComposeFontAwesomeLibrary:v1.2.0"
     const val COMPOSE_UI = "androidx.compose.ui:ui:${Versions.COMPOSE}"
     const val COMPOSE_RUNTIME = "androidx.compose.runtime:runtime:${Versions.COMPOSE}"
     const val COMPOSE_COMPILER = "androidx.compose.compiler:compiler:${Versions.COMPOSE}"
@@ -61,4 +61,5 @@ object Dependencies {
     const val COMPOSE_VIEWMODEL =
         "androidx.lifecycle:lifecycle-viewmodel-compose:${Versions.COMPOSE_ACTIVITY}"
     const val COMPOSE_IMAGE_PICKER = "com.himanshoe:pluck:1.0.0-RC1"
+    const val COMPOSE_LIVEDATA = "androidx.compose.runtime:runtime-livedata:${Versions.COMPOSE}"
 }
