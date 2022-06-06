@@ -28,7 +28,10 @@ fun DrawUserEntryScreen(viewModel: UserEntriesViewModel) {
                     DrawHeaderDate(entry.date)
                 }
                 is UserEntry.Entry -> {
-                    DrawUserEntryItem(entry)
+                    DrawUserEntryItem(
+                        currItem = entry,
+                        prevItem = entries.getOrNull(index - 1)
+                    )
                     CloseBoxIfLastEntryOfSameDate(entries, index)
                 }
             }

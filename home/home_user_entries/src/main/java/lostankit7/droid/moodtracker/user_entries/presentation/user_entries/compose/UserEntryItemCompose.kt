@@ -1,6 +1,9 @@
 package lostankit7.droid.moodtracker.user_entries.presentation.user_entries.compose
 
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.material.Card
 import androidx.compose.material.Text
@@ -10,6 +13,7 @@ import androidx.compose.ui.layout.layoutId
 import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.withStyle
+import androidx.compose.ui.unit.dp
 import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.constraintlayout.compose.ConstraintSet
 import androidx.constraintlayout.compose.Dimension
@@ -33,25 +37,40 @@ private const val LAYOUT_OPTION_BUTTON = "option_btn"
 private const val LAYOUT_NOTES = "notes"
 private const val LAYOUT_LEFT_STROKE = "left_stroke"
 private const val LAYOUT_RIGHT_STROKE = "right_stroke"
+private const val LAYOUT_TOP_SEPARATOR = "top_sep"
 
 @Composable
 fun DrawUserEntryItem(
-    item: UserEntry.Entry,
+    currItem: UserEntry.Entry,
+    prevItem: UserEntry?,
     modifier: Modifier = Modifier,
 ) {
     ConstraintLayout(
         constraintSet = createConstraints(spacing),
         modifier = modifier
     ) {
+        DrawTopSeparatorIfNotFirstEntry(prevItem)
         DrawLeftBorder()
-        DrawMoodIcon(item)
-        DrawEntryDetails(item)
-        DrawMoodName(item)
-        DrawTasks(item)
-        DrawNotes(item)
-        DrawOptionMenu(item)
+        DrawMoodIcon(currItem)
+        DrawEntryDetails(currItem)
+        DrawMoodName(currItem)
+        DrawTasks(currItem)
+        DrawNotes(currItem)
+        DrawOptionMenu(currItem)
         DrawRightBorder()
     }
+}
+
+@Composable
+fun DrawTopSeparatorIfNotFirstEntry(prevItem: UserEntry?) {
+    if (prevItem == null || prevItem is UserEntry.Date) return
+
+    Box(
+        modifier = Modifier
+            .width(1.5.dp)
+            .layoutId(LAYOUT_TOP_SEPARATOR)
+            .background(ThemeColor)
+    ) {}
 }
 
 @Composable
@@ -88,7 +107,8 @@ private fun DrawTasks(item: UserEntry.Entry) {
     FontAwesomeIcon(
         modifier = Modifier
             .fillMaxWidth()
-            .layoutId(LAYOUT_TASKS),
+            .layoutId(LAYOUT_TASKS)
+            .padding(bottom = spacing.dp_4),
         faIcon = FaIcon.Solid(taskIcons),
         size = spacing.dp_18,
         tint = UserEntryTaskColor
@@ -173,11 +193,12 @@ private fun createConstraints(spacing: Dimensions) = ConstraintSet {
     val notes = createRefFor(LAYOUT_NOTES)
     val leftBorder = createRefFor(LAYOUT_LEFT_STROKE)
     val rightBorder = createRefFor(LAYOUT_RIGHT_STROKE)
+    val topSeparator = createRefFor(LAYOUT_TOP_SEPARATOR)
 
     val leftGuide = createGuidelineFromStart(spacing.dp_4)
     val rightGuide = createGuidelineFromEnd(spacing.dp_4)
     val moodIconGuide = createGuidelineFromStart(spacing.dp_50)
-    val topGuide = createGuidelineFromTop(spacing.dp_8)
+    val topGuide = createGuidelineFromTop(spacing.dp_14)
 
     val borderMargin = spacing.dp_0
 
@@ -188,7 +209,7 @@ private fun createConstraints(spacing: Dimensions) = ConstraintSet {
         height = Dimension.fillToConstraints
     }
     constrain(rightBorder) {
-        start.linkTo(parent.end)
+        start.linkTo(parent.end, (-.8).dp)
         top.linkTo(parent.top, borderMargin)
         bottom.linkTo(parent.bottom, borderMargin)
         height = Dimension.fillToConstraints
@@ -216,5 +237,12 @@ private fun createConstraints(spacing: Dimensions) = ConstraintSet {
     constrain(optionButton) {
         end.linkTo(rightGuide)
         top.linkTo(topGuide)
+    }
+    constrain(topSeparator) {
+        start.linkTo(parent.start)
+        end.linkTo(parent.end)
+        top.linkTo(parent.top)
+        bottom.linkTo(topGuide)
+        height = Dimension.value(spacing.dp_12)
     }
 }
