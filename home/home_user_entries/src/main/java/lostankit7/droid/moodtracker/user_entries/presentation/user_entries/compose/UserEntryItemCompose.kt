@@ -5,7 +5,6 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
-import androidx.compose.material.Card
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -25,6 +24,8 @@ import lostankit7.android.entry_domain.entities.UserEntry
 import lostankit7.droid.moodtracker.core.domain.entities.shared.Icon.Companion.transformAsString
 import lostankit7.droid.moodtracker.core.presentation.utils.DateTimeUtils.getDay
 import lostankit7.droid.moodtracker.core_ui.compose.values.*
+import lostankit7.droid.moodtracker.core_ui.compose.view.Shadow
+import lostankit7.droid.moodtracker.core_ui.compose.view.ShadowDirection
 import lostankit7.droid.moodtracker.core_ui.utils.context
 import lostankit7.droid.moodtracker.core_ui.utils.spacing
 import lostankit7.droid.moodtracker.user_entries.R
@@ -165,22 +166,22 @@ private fun DrawMoodIcon(item: UserEntry.Entry) {
 
 @Composable
 fun DrawLeftBorder() {
-    Card(
-        elevation = spacing.elevationLow,
+    Shadow(
+        direction = ShadowDirection.LEFT,
         modifier = Modifier
+            .width(spacing.dp_4)
             .layoutId(LAYOUT_LEFT_STROKE)
-            .width(spacing.strokeLvl1),
-    ) {}
+    )
 }
 
 @Composable
 fun DrawRightBorder() {
-    Card(
-        elevation = spacing.elevationLow,
+    Shadow(
+        direction = ShadowDirection.RIGHT,
         modifier = Modifier
+            .width(spacing.dp_4)
             .layoutId(LAYOUT_RIGHT_STROKE)
-            .width(spacing.strokeLvl1),
-    ) {}
+    )
 }
 
 
@@ -203,7 +204,7 @@ private fun createConstraints(spacing: Dimensions) = ConstraintSet {
     val borderMargin = spacing.dp_0
 
     constrain(leftBorder) {
-        start.linkTo(parent.start)
+        start.linkTo(parent.start, -spacing.dp_4)
         top.linkTo(parent.top, borderMargin)
         bottom.linkTo(parent.bottom, borderMargin)
         height = Dimension.fillToConstraints

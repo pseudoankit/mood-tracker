@@ -13,6 +13,8 @@ import androidx.compose.ui.text.font.FontWeight
 import lostankit7.android.entry_domain.entities.UserEntry
 import lostankit7.droid.moodtracker.core.presentation.utils.DateTimeUtils
 import lostankit7.droid.moodtracker.core_ui.compose.values.PrimaryTextColor
+import lostankit7.droid.moodtracker.core_ui.compose.view.Shadow
+import lostankit7.droid.moodtracker.core_ui.compose.view.ShadowDirection
 import lostankit7.droid.moodtracker.core_ui.utils.spacing
 import lostankit7.droid.moodtracker.user_entries.presentation.user_entries.viewmodel.UserEntriesViewModel
 
@@ -75,16 +77,12 @@ private fun CloseBoxIfLastEntryOfSameDate(list: List<UserEntry>, index: Int) {
     val nextItem = list.getOrNull(index + 1)
     if (nextItem != null && nextItem !is UserEntry.Date) return
 
-    Card(
+    Shadow(
+        direction = ShadowDirection.BOTTOM,
         modifier = Modifier
             .fillMaxWidth()
-            .height(spacing.dp_1),
-        shape = RoundedCornerShape(
-            bottomEnd = spacing.cornerRadius,
-            bottomStart = spacing.cornerRadius
-        ),
-        elevation = spacing.elevationLow
-    ) {}
+            .height(spacing.dp_4)
+    )
 }
 
 @Composable
