@@ -27,7 +27,6 @@
             <option value="$PROJECT_DIR$/feature_user_entry/entry_presentation" />
           </set>
         </option>
-        <option name="resolveModulePerSourceSet" value="false" />
       </GradleProjectSettings>
     </option>
   </component>
